@@ -116,25 +116,24 @@ function switchLang(lang) {
   const t = translations[lang];
   if (!t) return;
 
-  // index.html translations
-  document.getElementById("hero-title").textContent = t.heroTitle;
-  document.getElementById("hero-text").textContent = t.heroText;
-  document.getElementById("about-title").textContent = t.aboutTitle;
-  document.getElementById("about1").textContent = t.about1;
-  document.getElementById("about2").textContent = t.about2;
-  document.getElementById("about3").textContent = t.about3;
-  document.getElementById("about4").textContent = t.about4;
-  document.getElementById("about5").textContent = t.about5;
-  document.getElementById("mission-title").textContent = t.missionTitle;
-  document.getElementById("mission-text").textContent = t.missionText;
+  // INDEX
+  document.getElementById("hero-title")?.textContent = t.heroTitle;
+  document.getElementById("hero-text")?.textContent = t.heroText;
+  document.getElementById("about-title")?.textContent = t.aboutTitle;
+  document.getElementById("about1")?.textContent = t.about1;
+  document.getElementById("about2")?.textContent = t.about2;
+  document.getElementById("about3")?.textContent = t.about3;
+  document.getElementById("about4")?.textContent = t.about4;
+  document.getElementById("about5")?.textContent = t.about5;
+  document.getElementById("mission-title")?.textContent = t.missionTitle;
+  document.getElementById("mission-text")?.textContent = t.missionText;
 
-  // history.html translations
-  if (document.getElementById("hist-title")) {
-    document.getElementById("hist-title").textContent = t.histTitle;
-    for (let i = 1; i <= 11; i++) {
-      if (document.getElementById("hist" + i)) {
-        document.getElementById("hist" + i).textContent = t["hist" + i];
-      }
-    }
+  // HISTORY
+  document.getElementById("hist-title")?.textContent = t.histTitle;
+  for (let i = 1; i <= 11; i++) {
+    document.getElementById("hist" + i)?.textContent = t["hist" + i];
   }
+
+  // Optional: HTML lang attribute
+  document.getElementById("html-tag")?.setAttribute("lang", lang);
 }
