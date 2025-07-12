@@ -17,20 +17,10 @@
       margin: auto;
       padding: 20px;
     }
-
-    main h2, main h3 {
-      color: #87cefa;
-    }
-
-    main p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    .highlight {
-      color: #87cefa;
-      font-weight: bold;
-    }
+    main h2, main h3 { color: #87cefa; }
+    main p { margin-bottom: 1rem; line-height: 1.6; }
+    .highlight { color: #87cefa; font-weight: bold; }
+    .lang-box { position: fixed; top: 10px; right: 10px; z-index: 999; }
   </style>
 </head>
 <body>
@@ -38,6 +28,20 @@
     <h1 style="font-size:2.2rem; color:#87cefa;">The Story of State 214</h1>
     <p style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic; margin-top: 5px;">ALL STARS UNITED</p>
   </header>
+
+  <div class="lang-box">
+    <label for="lang-select">🌐 Language:</label>
+    <select id="lang-select" onchange="switchLang(this.value)">
+      <option value="en">🇬🇧 English</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="pl">🇵🇱 Polski</option>
+      <option value="th">🇹🇭 ภาษาไทย</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+    </select>
+  </div>
 
   <nav>
     <ul>
@@ -83,5 +87,7 @@
   <footer style="text-align:center;">
     <p>© 2025 State 214 Community – Built by players, for players · All Stars United</p>
   </footer>
+
+  <script src="lang.js"></script>
 </body>
 </html>
