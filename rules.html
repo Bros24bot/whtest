@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>State Rules</title>
+  <title>Kill Event Rules – BIA</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -51,16 +51,44 @@
       color: #87cefa;
     }
 
-    main p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
+    .rule-section {
+      background: #1a1a1a;
+      margin: 20px auto;
+      padding: 20px;
+      border-left: 5px solid #87cefa;
+      text-align: left;
+    }
+
+    .rule-section h3 {
+      color: #f0f0f0;
+      margin-bottom: 10px;
+    }
+
+    .rule-section p {
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+
+    .not-allowed {
+      color: #ff4c4c;
+      font-weight: bold;
+    }
+
+    .allowed {
+      color: #32cd32;
+      font-weight: bold;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1 style="font-size:2.2rem; color:#87cefa;">State Rules</h1>
-    <p style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">ALL STARS UNITED</p>
+    <h1 style="font-size:2.2rem; color:#87cefa;">Kill Event (KE) Rules</h1>
+    <p style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">Brothers in Arms (BIA)</p>
   </header>
 
   <nav>
@@ -75,10 +103,22 @@
   </nav>
 
   <main>
-    <section>
-      <h2>Understand the rules that guide our state.</h2>
-      <p>Content coming soon...</p>
-    </section>
+    <h2>📢 KE Rules – Please respect all guidelines during the event</h2>
+
+    <div class="rule-section">
+      <h3>1️⃣ Attacking Resource Points</h3>
+      <p class="not-allowed">❌ Not allowed. Attacking resource gathering points is strictly prohibited.</p>
+    </div>
+
+    <div class="rule-section">
+      <h3>2️⃣ Attacking NAP 5, SUB Members, or Players Inside NAP 5/SUB Base or HQ</h3>
+      <p class="not-allowed">❌ Not allowed. Do not attack players under NAP 5, SUB alliances, or those located in NAP 5/SUB base or HQ.</p>
+    </div>
+
+    <div class="rule-section">
+      <h3>3️⃣ Attacking Players Outside of NAP or Without an Alliance</h3>
+      <p class="allowed">✅ Allowed. You may attack these players without any restrictions.</p>
+    </div>
   </main>
 
   <footer>
