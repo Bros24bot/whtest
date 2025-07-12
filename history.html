@@ -20,13 +20,13 @@
 </head>
 <body>
   <header>
-    <h1 style="font-size:2.2rem; color:#87cefa;" id="hist-title">From Foundation to Frost: The Rise of State 214</h1>
+    <h1 id="hist-title" style="font-size:2.2rem; color:#87cefa;">From Foundation to Frost: The Rise of State 214</h1>
     <p style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">ALL STARS UNITED</p>
   </header>
 
   <div class="lang-box">
     <label for="lang-select">🌐 Language:</label>
-    <select id="lang-select" onchange="switchLang(this.value)">
+    <select id="lang-select">
       <option value="en">🇬🇧 English</option>
       <option value="de">🇩🇪 Deutsch</option>
       <option value="pl">🇵🇱 Polski</option>
@@ -75,5 +75,18 @@
   </footer>
 
   <script src="lang.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("preferredLang") || "en";
+      document.getElementById("lang-select").value = savedLang;
+      switchLang(savedLang);
+    });
+
+    document.getElementById("lang-select").addEventListener("change", function () {
+      const newLang = this.value;
+      localStorage.setItem("preferredLang", newLang);
+      switchLang(newLang);
+    });
+  </script>
 </body>
 </html>
