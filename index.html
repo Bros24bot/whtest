@@ -26,7 +26,7 @@
 
   <div class="lang-box">
     <label for="lang-select">🌐 Language:</label>
-    <select id="lang-select" onchange="switchLang(this.value)">
+    <select id="lang-select">
       <option value="en">🇬🇧 English</option>
       <option value="de">🇩🇪 Deutsch</option>
       <option value="pl">🇵🇱 Polski</option>
@@ -79,5 +79,18 @@
   </footer>
 
   <script src="lang.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("preferredLang") || "en";
+      document.getElementById("lang-select").value = savedLang;
+      switchLang(savedLang);
+    });
+
+    document.getElementById("lang-select").addEventListener("change", function () {
+      const newLang = this.value;
+      localStorage.setItem("preferredLang", newLang);
+      switchLang(newLang);
+    });
+  </script>
 </body>
 </html>
