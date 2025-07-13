@@ -88,6 +88,11 @@
       <option value="es">🇪🇸 Español</option>
       <option value="th">🇹🇭 ไทย</option>
       <option value="ar">🇸🇦 العربية</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="id">🇮🇩 Indonesia</option>
+      <option value="ko">🇰🇷 한국어</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="zh">🇨🇳 中文</option>
     </select>
   </div>
 
@@ -140,7 +145,7 @@
   <script>
     $(document).ready(function() {
       // Load the JSON file with translations
-      $.getJSON('history.json?' + new Date().getTime(), function(data) {
+      $.getJSON('history.json', function(data) {
         console.log("JSON Loaded:", data); // Debugging to check if the JSON is loaded
 
         const translatePage = (lang) => {
