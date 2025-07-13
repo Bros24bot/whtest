@@ -64,10 +64,10 @@
     /* Image styling to make it responsive */
     main img {
       width: 100%;
-      max-width: 400px; /* Set maximum width to 400px */
-      height: auto; /* Maintain aspect ratio */
+      max-width: 400px;
+      height: auto;
       display: block;
-      margin: 0 auto; /* Center the image */
+      margin: 0 auto;
     }
   </style>
 </head>
@@ -140,7 +140,7 @@
   <script>
     $(document).ready(function() {
       // Load the JSON file with translations
-      $.getJSON('history.json', function(data) {
+      $.getJSON('history.json?' + new Date().getTime(), function(data) {
         console.log("JSON Loaded:", data); // Debugging to check if the JSON is loaded
 
         const translatePage = (lang) => {
