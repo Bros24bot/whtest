@@ -189,7 +189,7 @@
 
   <script>
     // Function to load and translate the page based on the selected language
-    $.getJSON('index.json', function(data) {
+    $.getJSON('rules.json', function(data) {
       const translatePage = (lang) => {
         $('#page-title').text(data[lang]["page-title"]);
         $('#intro-text').text(data[lang]["home"]);
