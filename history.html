@@ -139,7 +139,7 @@
 
   <script>
     // Function to load and translate the page based on the selected language
-    $.getJSON('whtest/history.json', function(data) {
+    $.getJSON('history.json', function(data) {
       const translatePage = (lang) => {
         $('#page-title').text(data[lang]["page-title"]);
         $('#intro-text').text(data[lang]["home"]);
