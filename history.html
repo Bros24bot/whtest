@@ -6,14 +6,48 @@
   <title>History of State 214</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; background: #0f0f0f; color: #fff; margin: 0; padding: 0; }
-    header, footer { text-align: center; padding: 10px; background: #111; }
-    nav ul { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; padding: 0; background: #1c1c1c; margin: 0; }
-    nav ul li { margin: 5px 15px; }
-    nav ul li a { color: #87cefa; text-decoration: none; font-weight: bold; }
-    main { text-align: center; max-width: 900px; margin: auto; padding: 20px; }
-    main h2, main h3 { color: #87cefa; }
-    main p { margin-bottom: 1rem; line-height: 1.6; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      text-align: center;
+      padding: 10px;
+      background: #111;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      background: #1c1c1c;
+      margin: 0;
+    }
+    nav ul li {
+      margin: 5px 15px;
+    }
+    nav ul li a {
+      color: #87cefa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    main h2, main h3 {
+      color: #87cefa;
+    }
+    main p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
     .highlight { color: #87cefa; font-weight: bold; }
 
     .dropdown {
@@ -29,11 +63,11 @@
 
     /* Image styling to make it responsive */
     main img {
-      width: 100%;  /* Ensure the image takes up full available width */
+      width: 100%;
       max-width: 400px; /* Set maximum width to 400px */
       height: auto; /* Maintain aspect ratio */
-      display: block; /* Centering the image */
-      margin: 0 auto; /* Horizontally center the image */
+      display: block;
+      margin: 0 auto; /* Center the image */
     }
   </style>
 </head>
@@ -105,7 +139,7 @@
 
   <script>
     // Function to load and translate the page based on the selected language
-    $.getJSON('history.json', function(data) {
+    $.getJSON('whtest/history.json', function(data) {
       const translatePage = (lang) => {
         $('#page-title').text(data[lang]["page-title"]);
         $('#intro-text').text(data[lang]["home"]);
