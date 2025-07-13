@@ -142,32 +142,27 @@
   <main>
     <h2 id="ke-title">📢 Kill Event (KE) Rules – Please respect all guidelines during the event</h2>
 
-    <!-- Event Rules (1, 2, 3) -->
-    <div class="rule-section">
-      <h3 id="rule-1">1️⃣ Attacking Resource Points</h3>
+    <!-- Kill Event Rules (1, 2, 3) -->
+    <section class="rule-section">
+      <h3 id="event-title">1️⃣ Kill Event – Brothers in Arms (BIA)</h3>
+      <h4 id="rule-1">1️⃣ Attacking Resource Points</h4>
       <p id="rule-1-text" class="not-allowed">❌ Not allowed. Attacking resource gathering points is strictly prohibited.</p>
-    </div>
 
-    <div class="rule-section">
-      <h3 id="rule-2">2️⃣ Attacking NAP 5, SUB Members, or Players Inside NAP 5/SUB Base or HQ</h3>
+      <h4 id="rule-2">2️⃣ Attacking NAP 5, SUB Members, or Players Inside NAP 5/SUB Base or HQ</h4>
       <p id="rule-2-text" class="not-allowed">❌ Not allowed. Do not attack players under NAP 5, SUB alliances, or those located in NAP 5/SUB base or HQ.</p>
-    </div>
 
-    <div class="rule-section">
-      <h3 id="rule-3">3️⃣ Attacking Players Outside of NAP or Without an Alliance</h3>
+      <h4 id="rule-3">3️⃣ Attacking Players Outside of NAP or Without an Alliance</h4>
       <p id="rule-3-text" class="allowed">✅ Allowed. You may attack these players without any restrictions.</p>
-    </div>
+    </section>
 
-    <!-- Extra Rules (4 and 5) -->
-    <div class="rule-section">
-      <h3 id="rule-4">4️⃣ Castle Rotation for the Top 5 Alliances</h3>
-      <p id="rule-4-text" class="allowed">✅ The top 5 alliances will rotate control of the castle every 2 weeks. This ensures that every alliance within the Big 5 has an opportunity to control the castle.</p>
-    </div>
+    <!-- Castle Rotation and Facility Assignment Rules (4, 5) -->
+    <section class="rule-section">
+      <h3 id="castle-title">4️⃣ Castle Rotation</h3>
+      <p id="castle-text" class="allowed">✅ The top 5 alliances will rotate control of the castle every 2 weeks. This ensures that every alliance within the Big 5 has an opportunity to control the castle.</p>
 
-    <div class="rule-section">
-      <h3 id="rule-5">5️⃣ Assignment of Facilities</h3>
-      <p id="rule-5-text" class="allowed">✅ Facilities within the state will be shared and assigned on a fixed basis. Each alliance will be assigned its designated facilities to ensure efficient operations during the event.</p>
-    </div>
+      <h3 id="facility-title">5️⃣ Facility Assignment</h3>
+      <p id="facility-text" class="allowed">✅ Facilities within the state will be shared and assigned on a fixed basis. Each alliance will be assigned its designated facilities to ensure efficient operations during the event.</p>
+    </section>
 
   </main>
 
@@ -182,16 +177,17 @@
         $('#page-title').text(data[lang]["page-title"]);
         $('#intro-text').text(data[lang]["home"]);
         $('#ke-title').text(data[lang]["ke-title"]);
+        $('#event-title').text(data[lang]["event-title"]);
         $('#rule-1').text(data[lang]["rule-1"]);
         $('#rule-1-text').text(data[lang]["rule-1-text"]);
         $('#rule-2').text(data[lang]["rule-2"]);
         $('#rule-2-text').text(data[lang]["rule-2-text"]);
         $('#rule-3').text(data[lang]["rule-3"]);
         $('#rule-3-text').text(data[lang]["rule-3-text"]);
-        $('#rule-4').text(data[lang]["rule-4"]);
-        $('#rule-4-text').text(data[lang]["rule-4-text"]);
-        $('#rule-5').text(data[lang]["rule-5"]);
-        $('#rule-5-text').text(data[lang]["rule-5-text"]);
+        $('#castle-title').text(data[lang]["castle-title"]);
+        $('#castle-text').text(data[lang]["castle-text"]);
+        $('#facility-title').text(data[lang]["facility-title"]);
+        $('#facility-text').text(data[lang]["facility-text"]);
         $('#footer-text').text(data[lang]["footer-text"]);
       };
 
