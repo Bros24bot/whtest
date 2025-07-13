@@ -100,6 +100,12 @@
       <option value="es">🇪🇸 Español</option>
       <option value="th">🇹🇭 ไทย</option>
       <option value="ar">🇸🇦 العربية</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="id">🇮🇩 Indonesia</option>
+      <option value="ko">🇰🇷 한국어</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="zh">🇨🇳 中文</option>
+      <option value="uk">🇺🇦 Українська</option>
     </select>
   </div>
 
@@ -151,7 +157,7 @@
 
   <script>
     // Funktion zum Laden und Übersetzen der Seite basierend auf der Sprache
-    $.getJSON('history.json', function(data) {
+    $.getJSON('index.json', function(data) {
       const translatePage = (lang) => {
         $('#page-title').text(data[lang]["page-title"]);
         $('#intro-text').text(data[lang]["home"]);
