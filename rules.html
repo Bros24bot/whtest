@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kill Event Rules – BIA</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,7 +17,7 @@
 
     header, footer {
       text-align: center;
-      padding: 10px;
+      padding: 20px;
       background: #111;
     }
 
@@ -47,7 +48,7 @@
       padding: 20px;
     }
 
-    main h1, main h2 {
+    main h1, main h2, main h3 {
       color: #87cefa;
     }
 
@@ -57,6 +58,7 @@
       padding: 20px;
       border-left: 5px solid #87cefa;
       text-align: left;
+      border-radius: 10px;
     }
 
     .rule-section h3 {
@@ -83,13 +85,48 @@
       font-size: 0.9rem;
       color: #aaa;
     }
+
+    .rotate {
+      color: #ffcc00;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .dropdown select {
+      font-size: 16px;
+      padding: 5px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1 style="font-size:2.2rem; color:#87cefa;">Kill Event (KE) Rules</h1>
-    <p style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">Brothers in Arms (BIA)</p>
+    <h1 id="page-title" style="font-size: 2.5rem; color:#87cefa;">Kill Event (KE) Rules</h1>
+    <p id="intro-text" style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">Brothers in Arms (BIA)</p>
   </header>
+
+  <!-- Dropdown-Menü für Sprachwahl -->
+  <div class="dropdown">
+    <select id="language-select">
+      <option value="en">🇬🇧 English</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="pl">🇵🇱 Polski</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="th">🇹🇭 ไทย</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="id">🇮🇩 Indonesia</option>
+      <option value="ko">🇰🇷 한국어</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="zh">🇨🇳 中文</option>
+      <option value="uk">🇺🇦 Українська</option>
+    </select>
+  </div>
 
   <nav>
     <ul>
@@ -103,26 +140,68 @@
   </nav>
 
   <main>
-    <h2>📢 KE Rules – Please respect all guidelines during the event</h2>
+    <h2 id="ke-title">📢 Kill Event (KE) Rules – Please respect all guidelines during the event</h2>
 
     <div class="rule-section">
-      <h3>1️⃣ Attacking Resource Points</h3>
-      <p class="not-allowed">❌ Not allowed. Attacking resource gathering points is strictly prohibited.</p>
+      <h3 id="rule-1">1️⃣ Attacking Resource Points</h3>
+      <p id="rule-1-text" class="not-allowed">❌ Not allowed. Attacking resource gathering points is strictly prohibited.</p>
     </div>
 
     <div class="rule-section">
-      <h3>2️⃣ Attacking NAP 5, SUB Members, or Players Inside NAP 5/SUB Base or HQ</h3>
-      <p class="not-allowed">❌ Not allowed. Do not attack players under NAP 5, SUB alliances, or those located in NAP 5/SUB base or HQ.</p>
+      <h3 id="rule-2">2️⃣ Attacking NAP 5, SUB Members, or Players Inside NAP 5/SUB Base or HQ</h3>
+      <p id="rule-2-text" class="not-allowed">❌ Not allowed. Do not attack players under NAP 5, SUB alliances, or those located in NAP 5/SUB base or HQ.</p>
     </div>
 
     <div class="rule-section">
-      <h3>3️⃣ Attacking Players Outside of NAP or Without an Alliance</h3>
-      <p class="allowed">✅ Allowed. You may attack these players without any restrictions.</p>
+      <h3 id="rule-3">3️⃣ Attacking Players Outside of NAP or Without an Alliance</h3>
+      <p id="rule-3-text" class="allowed">✅ Allowed. You may attack these players without any restrictions.</p>
     </div>
+
+    <div class="rule-section">
+      <h3 id="rule-4">4️⃣ Fort Rotation for the Top 5 Alliances</h3>
+      <p id="rule-4-text" class="allowed">✅ The top 5 alliances will rotate control of the fortress every 2 weeks. This ensures that every alliance within the Big 5 has an opportunity to control the fort.</p>
+    </div>
+
+    <div class="rule-section">
+      <h3 id="rule-5">5️⃣ Assignment of Facilities</h3>
+      <p id="rule-5-text" class="allowed">✅ Facilities within the state will be shared and assigned on a fixed basis. Each alliance will be assigned its designated facilities to ensure efficient operations during the event.</p>
+    </div>
+
   </main>
 
   <footer>
-    <p>© 2025 State 214 Community – Built by players, for players · All Stars United</p>
+    <p id="footer-text">© 2025 State 214 Community – Built by players, for players · All Stars United</p>
   </footer>
+
+  <script>
+    // Function to load and translate the page based on the selected language
+    $.getJSON('index.json', function(data) {
+      const translatePage = (lang) => {
+        $('#page-title').text(data[lang]["page-title"]);
+        $('#intro-text').text(data[lang]["home"]);
+        $('#ke-title').text(data[lang]["ke-title"]);
+        $('#rule-1').text(data[lang]["rule-1"]);
+        $('#rule-1-text').text(data[lang]["rule-1-text"]);
+        $('#rule-2').text(data[lang]["rule-2"]);
+        $('#rule-2-text').text(data[lang]["rule-2-text"]);
+        $('#rule-3').text(data[lang]["rule-3"]);
+        $('#rule-3-text').text(data[lang]["rule-3-text"]);
+        $('#rule-4').text(data[lang]["rule-4"]);
+        $('#rule-4-text').text(data[lang]["rule-4-text"]);
+        $('#rule-5').text(data[lang]["rule-5"]);
+        $('#rule-5-text').text(data[lang]["rule-5-text"]);
+        $('#footer-text').text(data[lang]["footer-text"]);
+      };
+
+      // Set default language to English
+      translatePage('en');
+
+      // Change language when the user selects from the dropdown
+      $('#language-select').change(function() {
+        const selectedLang = $(this).val();
+        translatePage(selectedLang);
+      });
+    });
+  </script>
 </body>
 </html>
