@@ -81,6 +81,19 @@
       font-size: 16px;
       padding: 5px;
     }
+
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-links img {
+      max-width: 200px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -144,9 +157,16 @@
       <p id="mission-text">We aim to keep State 214 fair, organized, and united. Through diplomacy, leadership and active communication, we foster a thriving community of diverse players from all over the world.</p>
     </section>
 
-    <section style="margin-top: 20px;">
+    <!-- Discord + YouTube Buttons -->
+    <section class="social-links">
+      <!-- Discord Button -->
       <a href="https://discord.gg/8WUuREnTAm" target="_blank">
-        <img src="assets/discord.jpg" alt="Join Discord" style="max-width:200px; border-radius: 10px;" />
+        <img src="assets/discord.jpg" alt="Join Discord" />
+      </a>
+
+      <!-- YouTube Button mit Renee -->
+      <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank">
+        <img src="assets/renee.jpg" alt="Follow on YouTube" />
       </a>
     </section>
   </main>
@@ -156,7 +176,6 @@
   </footer>
 
   <script>
-    // Funktion zum Laden und Übersetzen der Seite basierend auf der Sprache
     $.getJSON('index.json', function(data) {
       const translatePage = (lang) => {
         $('#page-title').text(data[lang]["page-title"]);
@@ -174,10 +193,8 @@
         $('#footer-text').text(data[lang]["footer-text"]);
       };
 
-      // Standard-Sprache setzen (Englisch)
       translatePage('en');
 
-      // Sprachwechsel beim Auswahl des Dropdown-Menüs
       $('#language-select').change(function() {
         const selectedLang = $(this).val();
         translatePage(selectedLang);
