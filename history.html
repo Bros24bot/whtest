@@ -15,7 +15,13 @@
     main h2, main h3 { color: #87cefa; }
     main p { margin-bottom: 1rem; line-height: 1.6; }
     .highlight { color: #87cefa; font-weight: bold; }
-    header img { width: 100%; max-width: 400px; height: auto; display: block; margin: 0 auto; }
+    header img {
+      width: 100%; /* Ensures the image is responsive */
+      max-width: 400px; /* Maximum size of the image */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Center the image */
+      margin: 0 auto; /* Center alignment */
+    }
   </style>
 </head>
 <body>
