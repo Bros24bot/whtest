@@ -139,36 +139,42 @@
 
   <script>
     // Function to load and translate the page based on the selected language
-    $.getJSON('history.json', function(data) {
-      const translatePage = (lang) => {
-        $('#page-title').text(data[lang]["page-title"]);
-        $('#intro-text').text(data[lang]["home"]);
-        $('#history-title').text(data[lang]["history"]);
-        $('#introduction').text(data[lang]["introduction"]);
-        $('#growth').text(data[lang]["growth"]);
-        $('#losses-title').text(data[lang]["losses-and-challenges"]);
-        $('#losses').text(data[lang]["losses-text"]);
-        $('#alliances-title').text(data[lang]["new-alliances"]);
-        $('#alliances-text').text(data[lang]["new-alliances-text"]);
-        $('#key-milestones-title').text(data[lang]["key-milestones"]);
-        $('#key-milestones').text(data[lang]["key-milestones-text"]);
-        $('#fusion').text(data[lang]["fusion"]);
-        $('#recent-developments-title').text(data[lang]["recent-developments"]);
-        $('#recent-developments').text(data[lang]["recent-developments-text"]);
-        $('#looking-ahead-title').text(data[lang]["looking-ahead"]);
-        $('#looking-ahead').text(data[lang]["looking-ahead-text"]);
-        $('#core-alliances-title').text(data[lang]["core-alliances"]);
-        $('#core-alliances-text').text(data[lang]["core-alliances-text"]);
-        $('#footer-text').text(data[lang]["footer-text"]);
-      };
+    $(document).ready(function() {
+      // Load the JSON file with translations
+      $.getJSON('history.json', function(data) {
+        const translatePage = (lang) => {
+          // Update the page content with the corresponding language
+          $('#page-title').text(data[lang]["page-title"]);
+          $('#intro-text').text(data[lang]["home"]);
+          $('#history-title').text(data[lang]["history"]);
+          $('#introduction').text(data[lang]["introduction"]);
+          $('#growth').text(data[lang]["growth"]);
+          $('#losses-title').text(data[lang]["losses-and-challenges"]);
+          $('#losses').text(data[lang]["losses-text"]);
+          $('#alliances-title').text(data[lang]["new-alliances"]);
+          $('#alliances-text').text(data[lang]["new-alliances-text"]);
+          $('#key-milestones-title').text(data[lang]["key-milestones"]);
+          $('#key-milestones').text(data[lang]["key-milestones-text"]);
+          $('#fusion').text(data[lang]["fusion"]);
+          $('#recent-developments-title').text(data[lang]["recent-developments"]);
+          $('#recent-developments').text(data[lang]["recent-developments-text"]);
+          $('#looking-ahead-title').text(data[lang]["looking-ahead"]);
+          $('#looking-ahead').text(data[lang]["looking-ahead-text"]);
+          $('#core-alliances-title').text(data[lang]["core-alliances"]);
+          $('#core-alliances-text').text(data[lang]["core-alliances-text"]);
+          $('#footer-text').text(data[lang]["footer-text"]);
+        };
 
-      // Default language set to English
-      translatePage('en');
+        // Default language set to English
+        translatePage('en');
 
-      // Language change when dropdown is selected
-      $('#language-select').change(function() {
-        const selectedLang = $(this).val();
-        translatePage(selectedLang);
+        // Language change when dropdown is selected
+        $('#language-select').change(function() {
+          const selectedLang = $(this).val();
+          translatePage(selectedLang);
+        });
+      }).fail(function() {
+        console.error("Error loading the JSON file.");
       });
     });
   </script>
