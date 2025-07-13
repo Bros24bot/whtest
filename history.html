@@ -172,6 +172,7 @@
         // Change language when the user selects from the dropdown
         $('#language-select').change(function() {
           const selectedLang = $(this).val();
+          console.log('Selected language:', selectedLang); // Prüfe den ausgewählten Wert
           translatePage(selectedLang);
         });
       }).fail(function() {
