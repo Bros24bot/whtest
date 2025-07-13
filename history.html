@@ -138,12 +138,12 @@
   </footer>
 
   <script>
-    // Function to load and translate the page based on the selected language
     $(document).ready(function() {
-      // Load the JSON file with translations
+      // Try to load the JSON file and check if it's loaded correctly
       $.getJSON('history.json', function(data) {
+        console.log(data); // Debug: Check if JSON is loaded correctly
+
         const translatePage = (lang) => {
-          // Update the page content with the corresponding language
           $('#page-title').text(data[lang]["page-title"]);
           $('#intro-text').text(data[lang]["home"]);
           $('#history-title').text(data[lang]["history"]);
@@ -165,10 +165,10 @@
           $('#footer-text').text(data[lang]["footer-text"]);
         };
 
-        // Default language set to English
+        // Default language is English
         translatePage('en');
 
-        // Language change when dropdown is selected
+        // Change language when dropdown is selected
         $('#language-select').change(function() {
           const selectedLang = $(this).val();
           translatePage(selectedLang);
