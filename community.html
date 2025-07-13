@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Community – State 214</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -70,13 +71,45 @@
     .discord-banner img:hover {
       transform: scale(1.02);
     }
+
+    .dropdown {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .dropdown select {
+      font-size: 16px;
+      padding: 5px;
+    }
+
   </style>
 </head>
 <body>
   <header>
-    <h1 style="font-size:2.2rem; color:#87cefa;">Whiteout Survival – State 214</h1>
-    <p style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">ALL STARS UNITED</p>
+    <h1 id="page-title" style="font-size:2.2rem; color:#87cefa;">Whiteout Survival – State 214</h1>
+    <p id="intro-text" style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">ALL STARS UNITED</p>
   </header>
+
+  <!-- Dropdown-Menü für Sprachwahl -->
+  <div class="dropdown">
+    <select id="language-select">
+      <option value="en">🇬🇧 English</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="pl">🇵🇱 Polski</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="th">🇹🇭 ไทย</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="id">🇮🇩 Indonesia</option>
+      <option value="ko">🇰🇷 한국어</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="zh">🇨🇳 中文</option>
+      <option value="uk">🇺🇦 Українська</option>
+    </select>
+  </div>
 
   <nav>
     <ul>
@@ -84,14 +117,14 @@
       <li><a href="history.html">📖 History</a></li>
       <li><a href="alliances.html">🛡️ Alliances</a></li>
       <li><a href="rules.html">📜 Rules</a></li>
-      <li><a href="fort.html">🏰 Fort</a></li>
+      <li><a href="fort.html">🏰 Castle</a></li>
       <li><a href="community.html">💬 Community</a></li>
     </ul>
   </nav>
 
   <main>
-    <h2>🤝 Join Our Discord</h2>
-    <p>Stay informed, connect with allies, participate in events, and be part of State 214's united voice.</p>
+    <h2 id="community-title">🤝 Join Our Discord</h2>
+    <p id="community-description">Stay informed, connect with allies, participate in events, and be part of State 214's united voice.</p>
     <div class="discord-banner">
       <a href="https://discord.gg/8WUuREnTAm" target="_blank">
         <img src="assets/discord.jpg" alt="Join our Discord" />
@@ -100,7 +133,29 @@
   </main>
 
   <footer>
-    <p>© 2025 State 214 Community – Built by players, for players · All Stars United</p>
+    <p id="footer-text">© 2025 State 214 Community – Built by players, for players · All Stars United</p>
   </footer>
+
+  <script>
+    // Function to load and translate the page based on the selected language
+    $.getJSON('community.json', function(data) {
+      const translatePage = (lang) => {
+        $('#page-title').text(data[lang]["page-title"]);
+        $('#intro-text').text(data[lang]["home"]);
+        $('#community-title').text(data[lang]["community-title"]);
+        $('#community-description').text(data[lang]["community-description"]);
+        $('#footer-text').text(data[lang]["footer-text"]);
+      };
+
+      // Set default language to English
+      translatePage('en');
+
+      // Change language when the user selects from the dropdown
+      $('#language-select').change(function() {
+        const selectedLang = $(this).val();
+        translatePage(selectedLang);
+      });
+    });
+  </script>
 </body>
 </html>
