@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>History of State 214</title>
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body { font-family: Arial, sans-serif; background: #0f0f0f; color: #fff; margin: 0; padding: 0; }
     header, footer { text-align: center; padding: 10px; background: #111; }
@@ -15,7 +15,18 @@
     main h2, main h3 { color: #87cefa; }
     main p { margin-bottom: 1rem; line-height: 1.6; }
     .highlight { color: #87cefa; font-weight: bold; }
-    
+
+    .dropdown {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .dropdown select {
+      font-size: 16px;
+      padding: 5px;
+    }
+
     /* Image styling to make it responsive */
     main img {
       width: 100%;  /* Ensure the image takes up full available width */
@@ -28,9 +39,23 @@
 </head>
 <body>
   <header>
-    <h1 style="font-size:2.2rem; color:#87cefa;">The History of State 214</h1>
-    <p style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">All Stars United</p>
+    <h1 id="page-title">The History of State 214</h1>
+    <p id="intro-text"><strong>All Stars United</strong></p>
   </header>
+
+  <!-- Dropdown for language selection -->
+  <div class="dropdown">
+    <select id="language-select">
+      <option value="en">🇬🇧 English</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="pl">🇵🇱 Polski</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="th">🇹🇭 ไทย</option>
+      <option value="ar">🇸🇦 العربية</option>
+    </select>
+  </div>
 
   <nav>
     <ul>
@@ -44,40 +69,74 @@
   </nav>
 
   <main>
-    <!-- Banner Image placed directly above the <h2> heading with max-width of 400px -->
     <img src="assets/history.jpg" alt="State 214 Banner" />
 
-    <h2>State 214: A Story of Growth and Unity</h2>
+    <h2 id="history-title">State 214: A Story of Growth and Unity</h2>
+    <p id="introduction">State 214 was officially launched in April 2023, entering the world of Whiteout Survival amidst fierce competition and dynamic leadership. Despite early challenges—internal power struggles, shifting alliances, and growing pains—the state quickly found its footing through collaboration, diplomacy, and a shared commitment to the community over individual control.</p>
 
-    <p>State 214 was officially launched in April 2023, entering the world of Whiteout Survival amidst fierce competition and dynamic leadership. Despite early challenges—internal power struggles, shifting alliances, and growing pains—the state quickly found its footing through collaboration, diplomacy, and a shared commitment to the community over individual control.</p>
+    <p id="growth">Through countless battles, strategic decisions, and community efforts, State 214 has become one of the most successful and respected states in the game. Its strength lies in the cohesion and teamwork fostered among its players, allowing for consistent growth and achievement.</p>
 
-    <p>Through countless battles, strategic decisions, and community efforts, State 214 has become one of the most successful and respected states in the game. Its strength lies in the cohesion and teamwork fostered among its players, allowing for consistent growth and achievement.</p>
+    <h3 id="losses-title">Losses and Challenges: January - March 2024</h3>
+    <p id="losses">From January to March 2024, State 214 experienced significant losses. We saw the dissolution of several key alliances, including AXE (formerly TEX), BLK, and part of USA, as they began to disband and leave the state. This period was a challenging time, as our best alliances and dear friends, such as TDS/TLS, also followed suit, leaving a void.</p>
 
-    <h3>Losses and Challenges: January - March 2024</h3>
-    <p>From January to March 2024, State 214 experienced significant losses. We saw the dissolution of several key alliances, including AXE (formerly TEX), BLK, and part of USA, as they began to disband and leave the state. This period was a challenging time, as our best alliances and dear friends, such as TDS/TLS, also followed suit, leaving a void.</p>
+    <h3 id="alliances-title">Challenges with New Alliances: September - December 2024</h3>
+    <p id="alliances-text">In September 2024, we welcomed a new alliance that initially joined State 214 with good intentions. However, after a short period, some members of this alliance showed a lack of interest in collaboration and instead spread chaos and discord. As a unified state, we faced this challenge together, particularly with the support of <strong>ODA</strong>. In December 2024, the entire state took a stand against the disruptive players. By January 2025, after much unrest, the remaining members of this alliance were forced to consider and eventually execute a transfer, thus restoring order and unity within State 214.</p>
 
-    <h3>Challenges with New Alliances: September - December 2024</h3>
-    <p>In September 2024, we welcomed a new alliance that initially joined State 214 with good intentions. However, after a short period, some members of this alliance showed a lack of interest in collaboration and instead spread chaos and discord. As a unified state, we faced this challenge together, particularly with the support of <strong>ODA</strong>. In December 2024, the entire state took a stand against the disruptive players. By January 2025, after much unrest, the remaining members of this alliance were forced to consider and eventually execute a transfer, thus restoring order and unity within State 214.</p>
+    <h3 id="key-milestones-title">Key Milestones</h3>
+    <p id="key-milestones">In April 2024, State 214 welcomed <strong>ODA</strong> from State 245, marking a pivotal moment in its development. Their leadership and participation played a crucial role in reorganizing the state, alongside <strong>DOA</strong>, to improve coordination and reinforce the alliances that would define the state’s success.</p>
 
-    <h3>Key Milestones</h3>
-    <p>In April 2024, State 214 welcomed <strong>ODA</strong> from State 245, marking a pivotal moment in its development. Their leadership and participation played a crucial role in reorganizing the state, alongside <strong>DOA</strong>, to improve coordination and reinforce the alliances that would define the state’s success.</p>
+    <p id="fusion">The great state fusion in winter 2025 was another significant turning point. State 214 absorbed skilled players from State 196, further boosting its power, diversity, and ambition. The merger was more than just an increase in numbers; it strengthened the community and injected new passion and drive into the state.</p>
 
-    <p>The great state fusion in winter 2025 was another significant turning point. State 214 absorbed skilled players from State 196, further boosting its power, diversity, and ambition. The merger was more than just an increase in numbers; it strengthened the community and injected new passion and drive into the state.</p>
+    <h3 id="recent-developments-title">Recent Developments</h3>
+    <p id="recent-developments">In the past month, PBT made a successful alliance transition, joined by several talented players. This transition, combined with the latest transfer window, has propelled the state to new heights. These changes have not only strengthened our alliances but also deepened friendships and reinforced the sense of unity that defines State 214.</p>
 
-    <h3>Recent Developments</h3>
-    <p>In the past month, PBT made a successful alliance transition, joined by several talented players. This transition, combined with the latest transfer window, has propelled the state to new heights. These changes have not only strengthened our alliances but also deepened friendships and reinforced the sense of unity that defines State 214.</p>
+    <h3 id="looking-ahead-title">Looking Ahead</h3>
+    <p id="looking-ahead">The future of State 214 is focused on a common goal: the Frostdragon Tyrant. The ambition now is to unite three elite alliances in this high-stakes event and, ultimately, to bring the Tyrant itself under State 214’s banner. This vision drives our community to keep pushing the limits of what we can achieve together.</p>
 
-    <h3>Looking Ahead</h3>
-    <p>The future of State 214 is focused on a common goal: the Frostdragon Tyrant. The ambition now is to unite three elite alliances in this high-stakes event and, ultimately, to bring the Tyrant itself under State 214’s banner. This vision drives our community to keep pushing the limits of what we can achieve together.</p>
+    <p id="core-alliances">State 214 stands as a testament to what can be accomplished when players unite with a shared purpose. Our collective achievements, backed by strategic alliances and a commitment to growth, have made us a model for success in the world of Whiteout Survival.</p>
 
-    <p>State 214 stands as a testament to what can be accomplished when players unite with a shared purpose. Our collective achievements, backed by strategic alliances and a commitment to growth, have made us a model for success in the world of Whiteout Survival.</p>
-
-    <h3>Core Alliances</h3>
-    <p>The strength of State 214 lies in its core alliances: <strong>SRC, BKK, PBT, DOA, ODA, FRZ, GIN, FLR</strong>.</p>
+    <h3 id="core-alliances-title">Core Alliances</h3>
+    <p id="core-alliances-text">The strength of State 214 lies in its core alliances: <strong>SRC, BKK, PBT, DOA, ODA, FRZ, GIN, FLR</strong>.</p>
   </main>
 
   <footer>
-    <p>© 2025 State 214 Community – Built by players, for players · All Stars United</p>
+    <p id="footer-text">© 2025 State 214 Community – Built by players, for players · All Stars United</p>
   </footer>
+
+  <script>
+    // Function to load and translate the page based on the selected language
+    $.getJSON('history.json', function(data) {
+      const translatePage = (lang) => {
+        $('#page-title').text(data[lang]["page-title"]);
+        $('#intro-text').text(data[lang]["home"]);
+        $('#history-title').text(data[lang]["history"]);
+        $('#introduction').text(data[lang]["introduction"]);
+        $('#growth').text(data[lang]["growth"]);
+        $('#losses-title').text(data[lang]["losses-and-challenges"]);
+        $('#losses').text(data[lang]["losses-text"]);
+        $('#alliances-title').text(data[lang]["new-alliances"]);
+        $('#alliances-text').text(data[lang]["new-alliances-text"]);
+        $('#key-milestones-title').text(data[lang]["key-milestones"]);
+        $('#key-milestones').text(data[lang]["key-milestones-text"]);
+        $('#fusion').text(data[lang]["fusion"]);
+        $('#recent-developments-title').text(data[lang]["recent-developments"]);
+        $('#recent-developments').text(data[lang]["recent-developments-text"]);
+        $('#looking-ahead-title').text(data[lang]["looking-ahead"]);
+        $('#looking-ahead').text(data[lang]["looking-ahead-text"]);
+        $('#core-alliances-title').text(data[lang]["core-alliances"]);
+        $('#core-alliances-text').text(data[lang]["core-alliances-text"]);
+        $('#footer-text').text(data[lang]["footer-text"]);
+      };
+
+      // Default language set to English
+      translatePage('en');
+
+      // Language change when dropdown is selected
+      $('#language-select').change(function() {
+        const selectedLang = $(this).val();
+        translatePage(selectedLang);
+      });
+    });
+  </script>
 </body>
 </html>
