@@ -49,7 +49,7 @@
     }
 
     main h1, main h2, main h3 {
-      color: #87cefa;
+      color: #87cefa; /* Diese Farbe wird für alle Überschriften verwendet */
     }
 
     .rule-section {
@@ -101,10 +101,10 @@
       padding: 5px;
     }
 
-    /* Centering specific section titles with the same color */
+    /* Centering specific section titles and ensuring the same color */
     .center-title {
       text-align: center;
-      color: #87cefa;  /* Same color for all section titles */
+      color: #87cefa;  /* Hellblaue Farbe für alle Überschriften */
     }
 
     .separate-section {
@@ -189,7 +189,7 @@
 
   <script>
     // Function to load and translate the page based on the selected language
-    $.getJSON('rules.json', function(data) {
+    $.getJSON('index.json', function(data) {
       const translatePage = (lang) => {
         $('#page-title').text(data[lang]["page-title"]);
         $('#intro-text').text(data[lang]["home"]);
