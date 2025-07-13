@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fortress Strategy – State 214</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -74,9 +75,29 @@
 </head>
 <body>
   <header>
-    <h1 style="font-size:2.2rem; color:#87cefa;">Fortress Strategy</h1>
-    <p style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">ALL STARS UNITED</p>
+    <h1 id="page-title" style="font-size:2.2rem; color:#87cefa;">Fortress Strategy</h1>
+    <p id="intro-text" style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">ALL STARS UNITED</p>
   </header>
+
+  <!-- Dropdown-Menü für Sprachwahl -->
+  <div class="dropdown">
+    <select id="language-select">
+      <option value="en">🇬🇧 English</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="pl">🇵🇱 Polski</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="th">🇹🇭 ไทย</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="id">🇮🇩 Indonesia</option>
+      <option value="ko">🇰🇷 한국어</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="zh">🇨🇳 中文</option>
+      <option value="uk">🇺🇦 Українська</option>
+    </select>
+  </div>
 
   <nav>
     <ul>
@@ -92,25 +113,55 @@
   <main>
     <img src="assets/fortrules.jpg" alt="Fortress Rules Image" class="fort-image" />
 
-    <h2>⚔️ Fortress Strategy & Distribution</h2>
-    <p>At State 214, we believe that a fair and transparent fortress distribution is essential to maintaining a healthy and united state. Our strategy is built around teamwork, smart planning, and preparation for major events like <strong>State vs State (SvS)</strong> and the <strong>Frost Dragon Tyrant Event</strong>.</p>
+    <h2 id="fort-title">⚔️ Fortress Strategy & Distribution</h2>
+    <p id="fort-description">At State 214, we believe that a fair and transparent fortress distribution is essential to maintaining a healthy and united state. Our strategy is built around teamwork, smart planning, and preparation for major events like <strong>State vs State (SvS)</strong> and the <strong>Frost Dragon Tyrant Event</strong>.</p>
 
-    <p>The weekly fortress battles are not just for glory – they are a key part of our state’s long-term strategy. Here's how we structure the distribution:</p>
+    <p id="fort-details">The weekly fortress battles are not just for glory – they are a key part of our state’s long-term strategy. Here's how we structure the distribution:</p>
 
-    <h3>🏆 Ranking-Based Distribution SVS Prep</h3>
+    <h3 id="rank-title">🏆 Ranking-Based Distribution SVS Prep</h3>
     <ul>
-      <li><strong>Rank 1:</strong> 1x Stronghold & 4x Fort</li>
-      <li><strong>Rank 2:</strong> 1x Stronghold & 3x Fort</li>
-      <li><strong>Rank 3:</strong> 1x Stronghold & 2x Fort</li>
-      <li><strong>Rank 4:</strong> 1x Stronghold & 1x Fort</li>
-      <li><strong>Rank 5:</strong> 2x Fort</li>
+      <li><strong id="rank-1">Rank 1:</strong> 1x Stronghold & 4x Fort</li>
+      <li><strong id="rank-2">Rank 2:</strong> 1x Stronghold & 3x Fort</li>
+      <li><strong id="rank-3">Rank 3:</strong> 1x Stronghold & 2x Fort</li>
+      <li><strong id="rank-4">Rank 4:</strong> 1x Stronghold & 1x Fort</li>
+      <li><strong id="rank-5">Rank 5:</strong> 2x Fort</li>
     </ul>
 
-    <p><strong>Important:</strong> Rewards obtained from Forts and Strongholds should be used responsibly and saved for SvS battles. Every alliance is expected to contribute to our shared success in 214.</p>
+    <p id="important-note"><strong>Important:</strong> Rewards obtained from Forts and Strongholds should be used responsibly and saved for SvS battles. Every alliance is expected to contribute to our shared success in 214.</p>
   </main>
 
   <footer>
-    <p>© 2025 State 214 Community – Built by players, for players · All Stars United</p>
+    <p id="footer-text">© 2025 State 214 Community – Built by players, for players · All Stars United</p>
   </footer>
+
+  <script>
+    // Function to load and translate the page based on the selected language
+    $.getJSON('fort.json', function(data) {
+      const translatePage = (lang) => {
+        $('#page-title').text(data[lang]["page-title"]);
+        $('#intro-text').text(data[lang]["intro-text"]);
+        $('#fort-title').text(data[lang]["fort-title"]);
+        $('#fort-description').text(data[lang]["fort-description"]);
+        $('#fort-details').text(data[lang]["fort-details"]);
+        $('#rank-title').text(data[lang]["rank-title"]);
+        $('#rank-1').text(data[lang]["rank-1"]);
+        $('#rank-2').text(data[lang]["rank-2"]);
+        $('#rank-3').text(data[lang]["rank-3"]);
+        $('#rank-4').text(data[lang]["rank-4"]);
+        $('#rank-5').text(data[lang]["rank-5"]);
+        $('#important-note').text(data[lang]["important-note"]);
+        $('#footer-text').text(data[lang]["footer-text"]);
+      };
+
+      // Set default language to English
+      translatePage('en');
+
+      // Change language when the user selects from the dropdown
+      $('#language-select').change(function() {
+        const selectedLang = $(this).val();
+        translatePage(selectedLang);
+      });
+    });
+  </script>
 </body>
 </html>
