@@ -139,11 +139,12 @@
 
   <script>
     $(document).ready(function() {
-      // Try to load the JSON file and check if it's loaded correctly
+      // Load the JSON file with translations
       $.getJSON('history.json', function(data) {
-        console.log(data); // Debug: Check if JSON is loaded correctly
+        console.log("JSON Loaded:", data); // Debugging to check if the JSON is loaded
 
         const translatePage = (lang) => {
+          // Ensure that each element is populated with the right language content
           $('#page-title').text(data[lang]["page-title"]);
           $('#intro-text').text(data[lang]["home"]);
           $('#history-title').text(data[lang]["history"]);
@@ -165,10 +166,10 @@
           $('#footer-text').text(data[lang]["footer-text"]);
         };
 
-        // Default language is English
+        // Set default language to English
         translatePage('en');
 
-        // Change language when dropdown is selected
+        // Change language when the user selects from the dropdown
         $('#language-select').change(function() {
           const selectedLang = $(this).val();
           translatePage(selectedLang);
