@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News – State 214</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -75,7 +76,7 @@
 
     .news-banner {
       width: 100%;
-      max-width: 400px;
+      max-width: 360px;
       border-radius: 12px;
       margin: 20px auto;
       display: block;
@@ -121,38 +122,38 @@
 
   <main>
     <img src="assets/newspic.png" alt="State 214 News Banner" class="news-banner" />
-    <p class="date">30 July – 3 August 2025</p>
+    <p class="date" id="news-date">30 July – 3 August 2025</p>
 
     <section>
-      <h2>One Team – Five Alliances – 30 July</h2>
-      <p>
+      <h2 id="section1-title">One Team – Five Alliances – 30 July</h2>
+      <p id="section1-text1">
         On 30 July 2025, a major milestone was reached in State 214’s history. Through outstanding teamwork and unity,
         <strong>SRC</strong>, <strong>DOA</strong>, <strong>PBT</strong>, <strong>ODA</strong>, and <strong>BKK</strong> joined forces and registered together for the legendary Frostdragon Tyrant event.
         Over <strong>180 players</strong> participated – made possible by shared planning and unified leadership.
       </p>
-      <p>
+      <p id="section1-text2">
         From these five alliances, <strong>three combat groups</strong> were formed to coordinate the attack. This alliance-wide strategy transformed a challenging event into a structured team effort.
       </p>
     </section>
 
     <section>
-      <h2>The Battle Begins – 3 August</h2>
-      <p>
+      <h2 id="section2-title">The Battle Begins – 3 August</h2>
+      <p id="section2-text1">
         On 3 August, State 214’s united forces faced the mighty Frostdragon Tyrant. The coordination between alliances paid off:
         despite fierce competition, we proudly secured a <strong>strong second place</strong>, narrowly missing the top spot.
       </p>
-      <p>
+      <p id="section2-text2">
         The result reflected excellent preparation, trust across alliances, and the shared will to act as one State. This teamwork made the difference.
       </p>
     </section>
 
     <section>
-      <h2>Teamwork in Action</h2>
-      <p>
+      <h2 id="section3-title">Teamwork in Action</h2>
+      <p id="section3-text1">
         Five alliances, one vision – and three unified fighting groups. This event marked more than just participation: it showed that with planning and cooperation,
         State 214 can achieve great things through collective strength.
       </p>
-      <p><strong>Teamwork. Unity. One Goal – State 214.</strong></p>
+      <p id="section3-text2"><strong>Teamwork. Unity. One Goal – State 214.</strong></p>
     </section>
   </main>
 
@@ -164,8 +165,20 @@
     $.getJSON('news.json', function(data) {
       const translatePage = (lang) => {
         $('#footer-text').text(data[lang]["footer-text"]);
+        $('#news-date').text(data[lang]["date"]);
+        $('#section1-title').text(data[lang]["section1-title"]);
+        $('#section1-text1').text(data[lang]["section1-text1"]);
+        $('#section1-text2').text(data[lang]["section1-text2"]);
+        $('#section2-title').text(data[lang]["section2-title"]);
+        $('#section2-text1').text(data[lang]["section2-text1"]);
+        $('#section2-text2').text(data[lang]["section2-text2"]);
+        $('#section3-title').text(data[lang]["section3-title"]);
+        $('#section3-text1').text(data[lang]["section3-text1"]);
+        $('#section3-text2').text(data[lang]["section3-text2"]);
       };
+
       translatePage('en');
+
       $('#language-select').change(function() {
         const selectedLang = $(this).val();
         translatePage(selectedLang);
