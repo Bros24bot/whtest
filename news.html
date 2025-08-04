@@ -75,7 +75,7 @@
 
     .news-banner {
       width: 100%;
-      max-width: 600px;
+      max-width: 500px;
       border-radius: 12px;
       margin: 20px auto;
       display: block;
@@ -124,42 +124,34 @@
     <p class="date">30 July – 3 August 2025</p>
 
     <section>
-      <h2>A Historic Alliance in the Making – 30 July</h2>
+      <h2>One Team – Five Alliances – 30 July</h2>
       <p>
-        On 30 July 2025, a milestone was achieved in the history of State 214: thanks to exceptional coordination and unity,
-        we successfully registered three alliances to participate in the legendary Frostdragon Tyrant event.
-        Through collaborative efforts between <strong>SRC</strong>, <strong>DOA</strong>, <strong>PBT</strong>, <strong>ODA</strong>, and <strong>BKK</strong>, more than <strong>180 players</strong> were mobilized – a feat that would have been unthinkable without this level of synergy.
+        On 30 July 2025, a major milestone was reached in State 214’s history. Through outstanding teamwork and unity,
+        <strong>SRC</strong>, <strong>DOA</strong>, <strong>PBT</strong>, <strong>ODA</strong>, and <strong>BKK</strong> jointly registered for the legendary Frostdragon Tyrant event.
+        Over <strong>180 players</strong> took part – a result only made possible through seamless collaboration.
       </p>
       <p>
-        It was not just about strength or numbers – it was about trust, communication, and teamwork.
-        Each alliance brought its strengths to the table, resulting in one of the most coordinated rally formations our state has ever witnessed.
-      </p>
-    </section>
-
-    <section>
-      <h2>The Tyrant Strikes – and So Does State 214 | 3 August</h2>
-      <p>
-        On 3 August, the moment arrived: the mighty Frostdragon Tyrant descended, and the alliances of State 214 stood ready.
-        Our players fought with determination and precision. Despite fierce global competition, State 214 delivered an outstanding performance
-        and secured a <strong>remarkable second place</strong> – narrowly missing the top spot.
-      </p>
-      <p>
-        This result reflects the incredible dedication and coordination that defines our state. While minor moments of miscommunication occurred,
-        they were swiftly addressed – a testament to our growing strength as a united front. This event not only demonstrated our combat effectiveness,
-        but also reinforced the deep bonds between our alliances.
+        It was not just a tactical move – it was a sign of strategic unity. Trust, planning, and cooperation created something unique: a State team effort beyond individual alliances.
       </p>
     </section>
 
     <section>
-      <h2>Looking Ahead</h2>
+      <h2>The Battle Begins – 3 August</h2>
       <p>
-        This victory in unity marks just the beginning. With this level of team spirit and strategic planning, future events will only further solidify
-        State 214’s place among the most organized and respected states in <strong>Whiteout Survival</strong>.
+        On 3 August, State 214’s alliances went into battle against the mighty Frostdragon Tyrant. Thanks to focused preparation and coordination,
+        we secured a <strong>strong second place</strong>, only narrowly missing the top spot.
       </p>
       <p>
-        To all <strong>180+ warriors</strong> who took part – you made history.
+        This performance highlights our state’s dedication and collective strength. While challenges arose, they were overcome – proving the potential of united action in Whiteout Survival.
       </p>
-      <p><strong>Stay united. Stay strong. State 214 – All Stars United.</strong></p>
+    </section>
+
+    <section>
+      <h2>Teamwork in Action</h2>
+      <p>
+        Five alliances, one vision: to represent State 214 as a single, powerful unit. This event marked a turning point in collaboration – not just a fight, but a statement of unity.
+      </p>
+      <p><strong>Teamwork. Unity. One Goal – State 214.</strong></p>
     </section>
   </main>
 
@@ -171,7 +163,6 @@
     $.getJSON('news.json', function(data) {
       const translatePage = (lang) => {
         $('#footer-text').text(data[lang]["footer-text"]);
-        // Add more translations if needed later
       };
       translatePage('en');
       $('#language-select').change(function() {
