@@ -103,20 +103,6 @@
       border-radius: 12px;
       object-fit: cover;
     }
-
-    .news {
-      margin-top: 30px;
-    }
-
-    .news h3 {
-      color: #ffa500;
-    }
-
-    .news ul {
-      display: inline-block;
-      text-align: left;
-      margin-top: 10px;
-    }
   </style>
 </head>
 <body>
@@ -125,6 +111,7 @@
     <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
   </header>
 
+  <!-- Dropdown-Menü für Sprachwahl -->
   <div class="dropdown">
     <select id="language-select">
       <option value="en">🇬🇧 English</option>
@@ -151,7 +138,6 @@
       <li><a href="alliances.html">🛡️ Alliances</a></li>
       <li><a href="rules.html">📜 Rules</a></li>
       <li><a href="fort.html">🏰 Fort</a></li>
-      <li><a href="#news">🔥 News</a></li>
       <li><a href="community.html">💬 Community</a></li>
     </ul>
   </nav>
@@ -175,25 +161,19 @@
       </ul>
     </section>
 
-    <!-- 🔥 NEWS Section -->
-    <section class="news" id="news">
-      <h3 id="news-title">📰 Latest News</h3>
-      <ul>
-        <li id="news1">🧊 SVS preparation begins this Friday – get your troops ready!</li>
-        <li id="news2">🏆 Alliance Mobilization results have been published.</li>
-        <li id="news3">📅 Next Fortress Battle: Saturday, 20:00 UTC</li>
-      </ul>
-    </section>
-
     <section class="community">
       <h3 id="mission-title">🌐 Our Mission</h3>
       <p id="mission-text">We aim to keep State 214 fair, organized, and united. Through diplomacy, leadership and active communication, we foster a thriving community of diverse players from all over the world.</p>
     </section>
 
+    <!-- Discord + YouTube Buttons (angepasst) -->
     <section class="social-links">
+      <!-- Discord Button -->
       <a href="https://discord.gg/8WUuREnTAm" target="_blank">
         <img src="assets/discord.jpg" alt="Join Discord" class="discord-img" />
       </a>
+
+      <!-- YouTube Button -->
       <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank">
         <img src="assets/renee.jpg" alt="Follow on YouTube" class="renee-img" />
       </a>
@@ -217,10 +197,6 @@
         $('#highlight3').text(data[lang]["highlight3"]);
         $('#highlight4').text(data[lang]["highlight4"]);
         $('#highlight5').text(data[lang]["highlight5"]);
-        $('#news-title').text(data[lang]["news-title"]);
-        $('#news1').text(data[lang]["news1"]);
-        $('#news2').text(data[lang]["news2"]);
-        $('#news3').text(data[lang]["news3"]);
         $('#mission-title').text(data[lang]["mission-title"]);
         $('#mission-text').text(data[lang]["mission-text"]);
         $('#footer-text').text(data[lang]["footer-text"]);
