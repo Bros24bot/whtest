@@ -82,27 +82,63 @@
       padding: 5px;
     }
 
+    /* Social-Karten-Layout */
     .social-links {
       margin-top: 20px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+      justify-content: center;
+      align-items: stretch;
+      gap: 24px;
       flex-wrap: wrap;
     }
-
-    .discord-img {
-      width: 250px;
-      height: 250px;
-      border-radius: 12px;
-      object-fit: cover;
+    .social-card {
+      background: #1c1c1c;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px #0005;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 16px 0 16px;
+      width: 270px;
+      max-width: 90vw;
+      transition: transform 0.12s;
+      text-decoration: none;
     }
-
-    .renee-img {
-      width: 350px;
-      height: 250px;
-      border-radius: 12px;
+    .social-card:hover {
+      transform: translateY(-4px) scale(1.03);
+      background: #23293a;
+    }
+    .social-card img {
+      width: 100%;
+      max-width: 238px;
+      height: 150px;
       object-fit: cover;
+      border-radius: 10px;
+      background: #222;
+      margin-bottom: 8px;
+      box-shadow: 0 0 8px #0005;
+    }
+    .social-card .caption {
+      color: #87cefa;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin: 6px 0 10px 0;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+      }
+      .social-card {
+        width: 96vw;
+        max-width: 420px;
+      }
+      .social-card img {
+        max-width: 99%;
+        height: 130px;
+      }
     }
   </style>
 </head>
@@ -168,21 +204,22 @@
       <p id="mission-text">We aim to keep State 214 fair, organized, and united. Through diplomacy, leadership and active communication, we foster a thriving community of diverse players from all over the world.</p>
     </section>
 
-    <!-- Social Buttons & Top.gg Widget -->
+    <!-- Social-Karten: Discord, YouTube, Bot -->
     <section class="social-links">
-      <!-- Discord Button -->
-      <a href="https://discord.gg/8WUuREnTAm" target="_blank">
-        <img src="assets/discord.jpg" alt="Join Discord" class="discord-img" />
+      <!-- Discord -->
+      <a href="https://discord.gg/8WUuREnTAm" target="_blank" class="social-card">
+        <img src="assets/discord.jpg" alt="Join Discord" />
+        <div class="caption">Discord</div>
       </a>
-
-      <!-- YouTube Button -->
-      <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank">
-        <img src="assets/renee.jpg" alt="Follow on YouTube" class="renee-img" />
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" class="social-card">
+        <img src="assets/renee.jpg" alt="Follow on YouTube" />
+        <div class="caption">YouTube</div>
       </a>
-
-      <!-- Bros24 Bot Werbung: Top.gg Widget -->
-      <a href="https://top.gg/bot/1387844888187375758" target="_blank" style="display:block; margin-top:25px;">
-        <img src="https://top.gg/api/widget/1387844888187375758.svg" alt="Add Bros24 Bot on top.gg" style="max-width:340px; width:100%; border-radius:12px; background:#222; box-shadow:0 2px 12px #0004;"/>
+      <!-- Bros24 Bot: Top.gg Widget -->
+      <a href="https://top.gg/bot/1387844888187375758" target="_blank" class="social-card">
+        <img src="https://top.gg/api/widget/1387844888187375758.svg" alt="Add Bros24 Bot on top.gg" style="background:#222;" />
+        <div class="caption">Bros24 Bot</div>
       </a>
     </section>
   </main>
