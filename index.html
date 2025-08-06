@@ -88,7 +88,7 @@
       display: flex;
       justify-content: center;
       align-items: stretch;
-      gap: 24px;
+      gap: 18px;  /* Minimaler Abstand */
       flex-wrap: wrap;
     }
     .social-card {
@@ -99,10 +99,11 @@
       flex-direction: column;
       align-items: center;
       padding: 12px 16px 0 16px;
-      width: 270px;
+      width: 240px;
       max-width: 90vw;
       transition: transform 0.12s;
       text-decoration: none;
+      min-height: 240px;
     }
     .social-card:hover {
       transform: translateY(-4px) scale(1.03);
@@ -110,8 +111,8 @@
     }
     .social-card img {
       width: 100%;
-      max-width: 238px;
-      height: 150px;
+      max-width: 210px;
+      height: 135px;
       object-fit: cover;
       border-radius: 10px;
       background: #222;
@@ -129,7 +130,7 @@
       .social-links {
         flex-direction: column;
         align-items: center;
-        gap: 22px;
+        gap: 16px;
       }
       .social-card {
         width: 96vw;
@@ -137,7 +138,7 @@
       }
       .social-card img {
         max-width: 99%;
-        height: 130px;
+        height: 120px;
       }
     }
   </style>
@@ -218,7 +219,7 @@
       </a>
       <!-- Bros24 Bot: Direkt Invite -->
       <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" class="social-card">
-        <img src="assets/bros24bot.jpg" alt="Invite Bros24 Bot" />
+        <img src="assets/brosbot.jpg" alt="Invite Bros24 Bot" />
         <div class="caption">Bros24 Bot (Invite)</div>
       </a>
     </section>
