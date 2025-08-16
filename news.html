@@ -122,8 +122,9 @@
 
   <main>
     <img src="assets/newspic.png" alt="State 214 News Banner" class="news-banner" />
-    <p class="date" id="news-date">30 July – 3 August 2025</p>
+    <p class="date" id="news-date">30 July – 16 August 2025</p>
 
+    <!-- SECTION 1 -->
     <section>
       <h2 id="section1-title">One Team – Five Alliances – 30 July</h2>
       <p id="section1-text1">
@@ -136,6 +137,7 @@
       </p>
     </section>
 
+    <!-- SECTION 2 -->
     <section>
       <h2 id="section2-title">The Battle Begins – 3 August</h2>
       <p id="section2-text1">
@@ -147,6 +149,7 @@
       </p>
     </section>
 
+    <!-- SECTION 3 -->
     <section>
       <h2 id="section3-title">Teamwork in Action</h2>
       <p id="section3-text1">
@@ -154,6 +157,24 @@
         State 214 can achieve great things through collective strength.
       </p>
       <p id="section3-text2"><strong>Teamwork. Unity. One Goal – State 214.</strong></p>
+    </section>
+
+    <!-- SECTION 4: SVS WEEK -->
+    <section>
+      <h2 id="section4-title">SVS Victory – 16 August</h2>
+      <p id="section4-text1">
+        On 16 August 2025, State 214 achieved a historic triumph in the State vs State competition against State 249.
+        Already in the <strong>preparation phase</strong>, our State secured a clear lead through excellent organization and coordination.
+      </p>
+      <p id="section4-text2">
+        During the <strong>battle phase</strong>, our united forces conquered the enemy’s castle of State 249 –
+        a spectacular success and proof of courage, strategy, and teamwork.
+      </p>
+      <p id="section4-text3">
+        This victory was only possible thanks to the joint effort of our alliances:
+        <strong>ODA, PBT, BKK, SRC, and DOA</strong>. Together we have shown that State 214 stands strong as one.
+      </p>
+      <p id="section4-text4"><strong>Congratulations to all fighters of State 214 – this success belongs to us all!</strong></p>
     </section>
   </main>
 
@@ -175,6 +196,11 @@
         $('#section3-title').text(data[lang]["section3-title"]);
         $('#section3-text1').text(data[lang]["section3-text1"]);
         $('#section3-text2').text(data[lang]["section3-text2"]);
+        $('#section4-title').text(data[lang]["section4-title"]);
+        $('#section4-text1').text(data[lang]["section4-text1"]);
+        $('#section4-text2').text(data[lang]["section4-text2"]);
+        $('#section4-text3').text(data[lang]["section4-text3"]);
+        $('#section4-text4').text(data[lang]["section4-text4"]);
       };
 
       translatePage('en');
