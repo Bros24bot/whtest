@@ -82,63 +82,31 @@
       padding: 5px;
     }
 
-    /* Social-Karten-Layout */
+    /* Social-Widget-Layout */
     .social-links {
       margin-top: 20px;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      gap: 24px;
-      flex-wrap: wrap;
+      align-items: center;
     }
     .social-card {
       background: #1c1c1c;
       border-radius: 14px;
       box-shadow: 0 2px 16px #0005;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 16px 18px 0 18px;
-      width: 270px;
-      max-width: 95vw;
+      padding: 16px 18px 20px 18px;
+      width: 100%;
+      max-width: 600px;
       transition: transform 0.12s;
       text-decoration: none;
-      min-height: 290px;
     }
     .social-card:hover {
-      transform: translateY(-4px) scale(1.03);
+      transform: translateY(-2px) scale(1.01);
       background: #23293a;
     }
-    .social-card img {
-      width: 100%;
-      max-width: 235px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #222;
-      margin-bottom: 10px;
-      box-shadow: 0 0 10px #0005;
-    }
-    .social-card .caption {
-      color: #87cefa;
-      font-weight: bold;
-      font-size: 1.14em;
-      margin: 8px 0 12px 0;
-      text-align: center;
-    }
     @media (max-width: 900px) {
-      .social-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-      }
       .social-card {
         width: 98vw;
         max-width: 420px;
-      }
-      .social-card img {
-        max-width: 99%;
-        height: 150px;
       }
     }
   </style>
@@ -205,23 +173,20 @@
       <p id="mission-text">We aim to keep State 214 fair, organized, and united. Through diplomacy, leadership and active communication, we foster a thriving community of diverse players from all over the world.</p>
     </section>
 
-    <!-- Social-Karten: Discord, YouTube, Bot Invite -->
+    <!-- Discord Widget -->
     <section class="social-links">
-      <!-- Discord -->
-      <a href="https://discord.gg/rNtp9vrkk9" target="_blank" class="social-card">
-        <img src="assets/discord.jpg" alt="Join Discord" />
-        <div class="caption">Discord</div>
-      </a>
-      <!-- YouTube -->
-      <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" class="social-card">
-        <img src="assets/renee.jpg" alt="Follow on YouTube" />
-        <div class="caption">YouTube</div>
-      </a>
-      <!-- Bros24 Bot: Direkt Invite -->
-      <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" class="social-card">
-        <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
-        <div class="caption">Bros24 Bot (Invite)</div>
-      </a>
+      <div class="social-card">
+        <h3 style="color:#87cefa; margin-bottom:12px; text-align:center;">💬 Join our Discord</h3>
+        <iframe 
+          src="https://discord.com/widget?id=1406043205446926497&theme=dark"
+          width="100%" 
+          height="500" 
+          allowtransparency="true" 
+          frameborder="0" 
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+          style="border-radius: 12px; box-shadow:0 0 12px rgba(0,0,0,0.5);">
+        </iframe>
+      </div>
     </section>
   </main>
 
