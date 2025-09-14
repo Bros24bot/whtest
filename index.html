@@ -4,28 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>State 214 – Whiteout Survival</title>
+  <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: Arial, sans-serif;
       background: #0f0f0f;
-      color: #f5f5f5;
+      color: #fff;
       margin: 0;
       padding: 0;
     }
 
     header, footer {
       text-align: center;
-      padding: 14px 10px;
+      padding: 10px;
       background: #111;
-      box-shadow: 0 2px 8px #000a;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 6px;
-      color: #87cefa;
-      text-shadow: 0 0 6px #004080;
     }
 
     nav ul {
@@ -34,113 +27,98 @@
       flex-wrap: wrap;
       list-style: none;
       padding: 0;
-      margin: 0;
       background: #1c1c1c;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
+      margin: 0;
     }
 
     nav ul li {
-      margin: 8px 16px;
+      margin: 5px 15px;
     }
 
     nav ul li a {
       color: #87cefa;
       text-decoration: none;
       font-weight: bold;
-      padding: 6px 10px;
-      border-radius: 6px;
-      transition: 0.25s;
-    }
-
-    nav ul li a:hover {
-      background: #2a2f3a;
-      color: #fff;
     }
 
     main {
       text-align: center;
       max-width: 900px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 20px;
     }
 
     main h2, main h3 {
       color: #87cefa;
     }
 
+    main ul {
+      display: inline-block;
+      text-align: left;
+      margin-top: 10px;
+    }
+
     main p {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
       line-height: 1.6;
     }
 
     .banner-small {
       width: 100%;
-      max-width: 600px; /* bleibt wie im Original */
+      max-width: 600px;
       border-radius: 12px;
-      margin: 0 auto 24px auto;
+      margin: 0 auto 20px auto;
       display: block;
-      box-shadow: 0 4px 16px #000a;
     }
 
     .dropdown {
       position: absolute;
-      top: 14px;
-      right: 14px;
+      top: 10px;
+      right: 10px;
     }
 
     .dropdown select {
-      font-size: 15px;
-      padding: 6px 8px;
-      border-radius: 6px;
-      border: none;
-      background: #1f2a3a;
-      color: #87cefa;
-      font-weight: bold;
+      font-size: 16px;
+      padding: 5px;
     }
 
-    /* Social-Links */
+    /* Social-Karten-Layout */
     .social-links {
-      margin-top: 26px;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       gap: 24px;
       flex-wrap: wrap;
     }
-
     .social-card {
       background: #1c1c1c;
       border-radius: 14px;
-      box-shadow: 0 2px 12px #0008;
+      box-shadow: 0 2px 16px #0005;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 16px 18px 12px 18px;
-      width: 270px; /* bleibt wie im Original */
+      padding: 16px 18px 0 18px;
+      width: 270px;
       max-width: 95vw;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.12s;
       text-decoration: none;
-      min-height: 290px; /* bleibt wie im Original */
+      min-height: 290px;
     }
-
     .social-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px #000b;
+      transform: translateY(-4px) scale(1.03);
       background: #23293a;
     }
-
     .social-card img {
       width: 100%;
-      max-width: 235px; /* bleibt wie im Original */
-      height: 220px;    /* bleibt wie im Original */
+      max-width: 235px;
+      height: 220px;
       object-fit: cover;
       border-radius: 12px;
       background: #222;
       margin-bottom: 10px;
       box-shadow: 0 0 10px #0005;
     }
-
     .social-card .caption {
       color: #87cefa;
       font-weight: bold;
@@ -148,12 +126,6 @@
       margin: 8px 0 12px 0;
       text-align: center;
     }
-
-    footer p {
-      font-size: 0.9em;
-      color: #aaa;
-    }
-
     @media (max-width: 900px) {
       .social-links {
         flex-direction: column;
@@ -177,6 +149,7 @@
     <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
   </header>
 
+  <!-- Dropdown-Menü für Sprachwahl -->
   <div class="dropdown">
     <select id="language-select">
       <option value="en">🇬🇧 English</option>
@@ -232,15 +205,19 @@
       <p id="mission-text">We aim to keep State 214 fair, organized, and united. Through diplomacy, leadership and active communication, we foster a thriving community of diverse players from all over the world.</p>
     </section>
 
+    <!-- Social-Karten: Discord, YouTube, Bot Invite -->
     <section class="social-links">
+      <!-- Discord -->
       <a href="https://discord.gg/rNtp9vrkk9" target="_blank" class="social-card">
         <img src="assets/discord.jpg" alt="Join Discord" />
         <div class="caption">Discord</div>
       </a>
+      <!-- YouTube -->
       <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" class="social-card">
         <img src="assets/renee.jpg" alt="Follow on YouTube" />
         <div class="caption">YouTube</div>
       </a>
+      <!-- Bros24 Bot: Direkt Invite -->
       <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" class="social-card">
         <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
         <div class="caption">Bros24 Bot (Invite)</div>
