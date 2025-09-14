@@ -98,7 +98,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 16px 18px 0 18px;
+      padding: 16px 18px 18px 18px;
       width: 270px;
       max-width: 95vw;
       transition: transform 0.12s;
@@ -205,18 +205,31 @@
       <p id="mission-text">We aim to keep State 214 fair, organized, and united. Through diplomacy, leadership and active communication, we foster a thriving community of diverse players from all over the world.</p>
     </section>
 
-    <!-- Social-Karten: Discord, YouTube, Bot Invite -->
+    <!-- Social-Karten: Discord (API), YouTube, Bot Invite -->
     <section class="social-links">
-      <!-- Discord -->
-      <a href="https://discord.gg/rNtp9vrkk9" target="_blank" class="social-card">
-        <img src="assets/discord.jpg" alt="Join Discord" />
-        <div class="caption">Discord</div>
-      </a>
+      <!-- Discord via API -->
+      <div class="social-card" style="max-width:600px; width:100%; padding:25px; text-align:center;">
+        <img src="assets/discord-icon.png" alt="Discord Logo" style="width:70px; margin-bottom:15px;">
+        <h3 style="color:#87cefa; margin-bottom:10px;">State 214 Discord</h3>
+        <p style="margin-bottom:20px;">
+          Join our community for events, guides and teamwork in <strong>Whiteout Survival</strong>.
+        </p>
+        <a id="discord-link" href="https://discord.gg/rNtp9vrkk9" target="_blank"
+           style="background:#5865F2; color:#fff; padding:12px 22px; border-radius:8px;
+                  font-weight:bold; text-decoration:none; display:inline-block; font-size:1.1em;">
+           🚀 Join Discord
+        </a>
+        <p id="discord-stats" style="margin-top:15px; font-size:0.9em; color:#aaa;">
+          Loading member stats…
+        </p>
+      </div>
+
       <!-- YouTube -->
       <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" class="social-card">
         <img src="assets/renee.jpg" alt="Follow on YouTube" />
         <div class="caption">YouTube</div>
       </a>
+
       <!-- Bros24 Bot: Direkt Invite -->
       <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" class="social-card">
         <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
@@ -254,6 +267,26 @@
         translatePage(selectedLang);
       });
     });
+
+    // Discord API für Mitgliederzahlen
+    fetch("https://discord.com/api/guilds/1406043205446926497/widget.json")
+      .then(response => response.json())
+      .then(data => {
+        const online = data.presence_count;
+        const total = data.members.length;
+        const invite = data.instant_invite;
+
+        document.getElementById("discord-stats").textContent =
+          `🌍 ${total} Members · 🔹 ${online} Online`;
+
+        if (invite) {
+          document.getElementById("discord-link").href = invite;
+        }
+      })
+      .catch(err => {
+        document.getElementById("discord-stats").textContent = "⚠️ Discord stats unavailable";
+        console.error("Discord API error:", err);
+      });
   </script>
 </body>
 </html>
