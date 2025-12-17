@@ -61,7 +61,6 @@
       padding: 5px;
     }
 
-    /* Image styling to make it responsive */
     main img {
       width: 100%;
       max-width: 400px;
@@ -77,7 +76,6 @@
     <p id="intro-text"><strong>All Stars United</strong></p>
   </header>
 
-  <!-- Dropdown for language selection -->
   <div class="dropdown">
     <select id="language-select">
       <option value="en">🇬🇧 English</option>
@@ -93,7 +91,7 @@
       <option value="ko">🇰🇷 한국어</option>
       <option value="ru">🇷🇺 Русский</option>
       <option value="zh">🇨🇳 中文</option>
-      <option value="uk">🇺🇦 Українська</option> <!-- Added Ukrainian -->
+      <option value="uk">🇺🇦 Українська</option>
     </select>
   </div>
 
@@ -129,15 +127,17 @@
     <p id="fusion">The great state fusion in winter 2025 was another significant turning point. State 214 absorbed skilled players from State 196, further boosting its power, diversity, and ambition. The merger was more than just an increase in numbers; it strengthened the community and injected new passion and drive into the state.</p>
 
     <h3 id="recent-developments-title">Recent Developments</h3>
-    <p id="recent-developments">In the past month, PBT made a successful alliance transition, joined by several talented players. This transition, combined with the latest transfer window, has propelled the state to new heights. These changes have not only strengthened our alliances but also deepened friendships and reinforced the sense of unity that defines State 214.</p>
+
+    <p id="recent-story-1"><span class="highlight">October 2025:</span> With regret, <strong>BKK</strong> transferred out of State 214. We sincerely thank them for the time and effort they invested here, and we wish them all the best on their new path.</p>
+
+    <p id="recent-story-2"><span class="highlight">November 2025:</span> State 214 was strengthened by an alliance arriving from State <strong>153</strong>. Together, they established <strong>LOU</strong> in 214 and immediately became a valuable part of our community. We look forward to strong, respectful cooperation.</p>
+
+    <p id="recent-story-3"><span class="highlight">December 2025:</span> <strong>ODA</strong> also left State 214. We are grateful for the shared journey and wish them continued success and good luck ahead.</p>
 
     <h3 id="looking-ahead-title">Looking Ahead</h3>
     <p id="looking-ahead">The future of State 214 is focused on a common goal: the Frostdragon Tyrant. The ambition now is to unite three elite alliances in this high-stakes event and, ultimately, to bring the Tyrant itself under State 214’s banner. This vision drives our community to keep pushing the limits of what we can achieve together.</p>
 
     <p id="core-alliances">State 214 stands as a testament to what can be accomplished when players unite with a shared purpose. Our collective achievements, backed by strategic alliances and a commitment to growth, have made us a model for success in the world of Whiteout Survival.</p>
-
-    <h3 id="core-alliances-title">Core Alliances</h3>
-    <p id="core-alliances-text">The strength of State 214 lies in its core alliances: <strong>SRC, BKK, PBT, DOA, ODA, FRZ, GIN</strong>.</p>
   </main>
 
   <footer>
@@ -146,12 +146,9 @@
 
   <script>
     $(document).ready(function() {
-      // Load the JSON file with translations
       $.getJSON('history.json', function(data) {
-        console.log("JSON Loaded:", data); // Debugging to check if the JSON is loaded
 
         const translatePage = (lang) => {
-          // Ensure that each element is populated with the right language content
           $('#page-title').text(data[lang]["page-title"]);
           $('#intro-text').text(data[lang]["home"]);
           $('#history-title').text(data[lang]["history"]);
@@ -164,24 +161,24 @@
           $('#key-milestones-title').text(data[lang]["key-milestones"]);
           $('#key-milestones').text(data[lang]["key-milestones-text"]);
           $('#fusion').text(data[lang]["fusion"]);
+
           $('#recent-developments-title').text(data[lang]["recent-developments"]);
-          $('#recent-developments').text(data[lang]["recent-developments-text"]);
+          $('#recent-story-1').html(data[lang]["recent-story-1"]);
+          $('#recent-story-2').html(data[lang]["recent-story-2"]);
+          $('#recent-story-3').html(data[lang]["recent-story-3"]);
+
           $('#looking-ahead-title').text(data[lang]["looking-ahead"]);
           $('#looking-ahead').text(data[lang]["looking-ahead-text"]);
-          $('#core-alliances-title').text(data[lang]["core-alliances"]);
-          $('#core-alliances-text').text(data[lang]["core-alliances-text"]);
           $('#footer-text').text(data[lang]["footer-text"]);
         };
 
-        // Set default language to English
         translatePage('en');
 
-        // Change language when the user selects from the dropdown
         $('#language-select').change(function() {
           const selectedLang = $(this).val();
-          console.log('Selected language:', selectedLang); // Prüfe den ausgewählten Wert
           translatePage(selectedLang);
         });
+
       }).fail(function() {
         console.error("Error loading the JSON file.");
       });
