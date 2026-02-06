@@ -37,7 +37,6 @@
       </div>
     </div>
 
-    <!-- NAV als Buttons (nicht UL) -->
     <nav class="nav">
       <div class="container nav-inner">
         <a href="index.html" class="active">🏠 Home</a>
@@ -136,7 +135,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-left">
-        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div> 
+        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
         <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
       </div>
 
@@ -171,10 +170,7 @@
       };
 
       translatePage('en');
-
-      $('#language-select').change(function() {
-        translatePage($(this).val());
-      });
+      $('#language-select').change(function() { translatePage($(this).val()); });
     });
   </script>
 </body>
