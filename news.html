@@ -1,3 +1,4 @@
+<!-- FILE: news.html  (ALLES ersetzen) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,215 +7,226 @@
   <title>News – State 214</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    header, footer {
-      text-align: center;
-      padding: 10px;
-      background: #111;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: #1c1c1c;
-    }
-
-    nav ul li {
-      margin: 5px 15px;
-    }
-
-    nav ul li a {
-      color: #87cefa;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    h1, h2, h3 {
-      color: #87cefa;
-    }
-
-    .date {
-      font-style: italic;
-      color: #ccc;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
-    .dropdown select {
-      font-size: 16px;
-      padding: 5px;
-    }
-
-    .news-banner {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 12px;
-      margin: 20px auto;
-      display: block;
-    }
-
-    /* Karten Layout für jedes Ereignis */
-    .news-card {
-      background: #1c1c1c;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-    }
-
-    .news-card h2 {
-      margin-top: 0;
-      color: #87cefa;
-    }
-
-    .news-card p {
-      line-height: 1.6;
-      color: #eee;
-    }
-  </style>
 </head>
-<body>
-  <header>
-    <h1 id="page-title" style="font-size:2.2rem; color:#87cefa;">Whiteout Survival – State 214</h1>
-    <p id="intro-text" style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">ALL STARS UNITED</p>
+
+<body class="page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 id="page-title">News</h1>
+        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+      </div>
+
+      <div class="lang">
+        <select id="language-select" aria-label="Language">
+          <option value="en">🇬🇧 English</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="pl">🇵🇱 Polski</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="th">🇹🇭 ไทย</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="id">🇮🇩 Indonesia</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="uk">🇺🇦 Українська</option>
+        </select>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a id="nav-home" href="index.html">🏠 Home</a>
+        <a id="nav-history" href="history.html">📖 History</a>
+        <a id="nav-alliances" href="alliances.html">🛡️ Alliances</a>
+        <a id="nav-rules" href="rules.html">📜 Rules</a>
+        <a id="nav-fort" href="fort.html">🏰 Fort</a>
+        <a id="nav-news" href="news.html" class="active">🔥 News</a>
+        <a id="nav-community" href="community.html">💬 Community</a>
+      </div>
+    </nav>
   </header>
 
-  <div class="dropdown">
-    <select id="language-select">
-      <option value="en">🇬🇧 English</option>
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="fr">🇫🇷 Français</option>
-      <option value="pl">🇵🇱 Polski</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="th">🇹🇭 ไทย</option>
-      <option value="ar">🇸🇦 العربية</option>
-      <option value="tr">🇹🇷 Türkçe</option>
-      <option value="id">🇮🇩 Indonesia</option>
-      <option value="ko">🇰🇷 한국어</option>
-      <option value="ru">🇷🇺 Русский</option>
-      <option value="zh">🇨🇳 中文</option>
-      <option value="uk">🇺🇦 Українська</option>
-    </select>
-  </div>
+  <main class="content">
+    <div class="container">
 
-  <nav>
-    <ul>
-      <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="history.html">📖 History</a></li>
-      <li><a href="alliances.html">🛡️ Alliances</a></li>
-      <li><a href="rules.html">📜 Rules</a></li>
-      <li><a href="fort.html">🏰 Fort</a></li>
-      <li><a href="news.html">🔥 News</a></li>
-      <li><a href="community.html">💬 Community</a></li>
-    </ul>
-  </nav>
+      <section class="hero">
+        <img src="assets/newspic.png" alt="State 214 News Banner" class="hero-img" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-kicker">STATE 214</div>
+          <h2 id="news-hero-title">🔥 News & Highlights</h2>
+          <p id="news-date">30 July – 16 August 2025</p>
+        </div>
+      </section>
 
-  <main>
-    <img src="assets/newspic.png" alt="State 214 News Banner" class="news-banner" />
-    <p class="date" id="news-date">30 July – 16 August 2025</p>
+      <section class="card">
+        <div class="section-head">
+          <h3 id="news-feed-title">News Feed</h3>
+          <p class="muted" id="news-feed-sub">Latest community highlights</p>
+        </div>
 
-    <!-- SECTION 1 -->
-    <section class="news-card">
-      <h2 id="section1-title">One Team – Five Alliances – 30 July</h2>
-      <p id="section1-text1"></p>
-      <p id="section1-text2"></p>
-    </section>
+        <div class="news-grid">
+          <!-- SECTION 1 -->
+          <article class="news-card">
+            <h2 class="news-title" id="section1-title">One Team – Five Alliances – 30 July</h2>
+            <p id="section1-text1"></p>
+            <p id="section1-text2"></p>
+          </article>
 
-    <!-- SECTION 2 -->
-    <section class="news-card">
-      <h2 id="section2-title">The Battle Begins – 3 August</h2>
-      <p id="section2-text1"></p>
-      <p id="section2-text2"></p>
-    </section>
+          <!-- SECTION 2 -->
+          <article class="news-card">
+            <h2 class="news-title" id="section2-title">The Battle Begins – 3 August</h2>
+            <p id="section2-text1"></p>
+            <p id="section2-text2"></p>
+          </article>
 
-    <!-- SECTION 3 -->
-    <section class="news-card">
-      <h2 id="section3-title">Teamwork in Action</h2>
-      <p id="section3-text1"></p>
-      <p id="section3-text2"></p>
-    </section>
+          <!-- SECTION 3 -->
+          <article class="news-card">
+            <h2 class="news-title" id="section3-title">Teamwork in Action</h2>
+            <p id="section3-text1"></p>
+            <p id="section3-text2"></p>
+          </article>
 
-    <!-- SECTION 4 -->
-    <section class="news-card">
-      <h2 id="section4-title">SVS Victory – 16 August</h2>
-      <p id="section4-text1"></p>
-      <p id="section4-text2"></p>
-      <p id="section4-text3"></p>
-      <p id="section4-text4"></p>
-    </section>
+          <!-- SECTION 4 -->
+          <article class="news-card">
+            <h2 class="news-title" id="section4-title">SVS Victory – 16 August</h2>
+            <p id="section4-text1"></p>
+            <p id="section4-text2"></p>
+            <p id="section4-text3"></p>
+            <p id="section4-text4"></p>
+          </article>
 
-    <!-- SECTION 5 -->
-    <section class="news-card">
-      <h2 id="section5-title">Another Triumph – 13 September</h2>
-      <p id="section5-text1"></p>
-      <p id="section5-text2"></p>
-      <p id="section5-text3"></p>
-      <p id="section5-text4"></p>
-      <p id="section5-text5"></p>
-    </section>
+          <!-- SECTION 5 -->
+          <article class="news-card">
+            <h2 class="news-title" id="section5-title">Another Triumph – 13 September</h2>
+            <p id="section5-text1"></p>
+            <p id="section5-text2"></p>
+            <p id="section5-text3"></p>
+            <p id="section5-text4"></p>
+            <p id="section5-text5"></p>
+          </article>
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <footer>
-    <p id="footer-text">© 2025 State 214 Community – Built by players, for players · All Stars United</p>
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
+        <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-line">
+          © WOSC — Whiteout Survival Community •
+          <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
+        </div>
+        <div class="footer-line">
+          Design & Build: <span class="footer-strong">Bros24</span>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
-    $.getJSON('news.json', function(data) {
-      const translatePage = (lang) => {
-        $('#footer-text').text(data[lang]["footer-text"]);
-        $('#news-date').text(data[lang]["date"]);
-        $('#section1-title').text(data[lang]["section1-title"]);
-        $('#section1-text1').text(data[lang]["section1-text1"]);
-        $('#section1-text2').text(data[lang]["section1-text2"]);
-        $('#section2-title').text(data[lang]["section2-title"]);
-        $('#section2-text1').text(data[lang]["section2-text1"]);
-        $('#section2-text2').text(data[lang]["section2-text2"]);
-        $('#section3-title').text(data[lang]["section3-title"]);
-        $('#section3-text1').text(data[lang]["section3-text1"]);
-        $('#section3-text2').text(data[lang]["section3-text2"]);
-        $('#section4-title').text(data[lang]["section4-title"]);
-        $('#section4-text1').text(data[lang]["section4-text1"]);
-        $('#section4-text2').text(data[lang]["section4-text2"]);
-        $('#section4-text3').text(data[lang]["section4-text3"]);
-        $('#section4-text4').text(data[lang]["section4-text4"]);
-        $('#section5-title').text(data[lang]["section5-title"]);
-        $('#section5-text1').text(data[lang]["section5-text1"]);
-        $('#section5-text2').text(data[lang]["section5-text2"]);
-        $('#section5-text3').text(data[lang]["section5-text3"]);
-        $('#section5-text4').text(data[lang]["section5-text4"]);
-        $('#section5-text5').text(data[lang]["section5-text5"]);
-      };
+    const FALLBACK_LANG = 'en';
+
+    function getSafe(dict, lang, key){
+      if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
+      if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
+      return null;
+    }
+
+    function translateCommon(dict, lang){
+      const home = getSafe(dict, lang, "home");
+      const history = getSafe(dict, lang, "history");
+      const alliances = getSafe(dict, lang, "alliances");
+      const rules = getSafe(dict, lang, "rules");
+      const fort = getSafe(dict, lang, "fort");
+      const news = getSafe(dict, lang, "news");
+      const community = getSafe(dict, lang, "community");
+
+      if(home) $('#nav-home').text('🏠 ' + home);
+      if(history) $('#nav-history').text('📖 ' + history);
+      if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
+      if(rules) $('#nav-rules').text('📜 ' + rules);
+      if(fort) $('#nav-fort').text('🏰 ' + fort);
+      if(news) $('#nav-news').text('🔥 ' + news);
+      if(community) $('#nav-community').text('💬 ' + community);
+    }
+
+    $.getJSON('news.json', function(data){
+      function translatePage(lang){
+        const pageTitle = getSafe(data, lang, "page-title");
+        const home = getSafe(data, lang, "home");
+
+        if(pageTitle) $('#page-title').text(pageTitle);
+        if(home) $('#intro-text').text(home);
+
+        const date = getSafe(data, lang, "date");
+        if(date) $('#news-date').text(date);
+
+        const s1t = getSafe(data, lang, "section1-title");
+        const s1a = getSafe(data, lang, "section1-text1");
+        const s1b = getSafe(data, lang, "section1-text2");
+        if(s1t) $('#section1-title').text(s1t);
+        if(s1a != null) $('#section1-text1').text(s1a);
+        if(s1b != null) $('#section1-text2').text(s1b);
+
+        const s2t = getSafe(data, lang, "section2-title");
+        const s2a = getSafe(data, lang, "section2-text1");
+        const s2b = getSafe(data, lang, "section2-text2");
+        if(s2t) $('#section2-title').text(s2t);
+        if(s2a != null) $('#section2-text1').text(s2a);
+        if(s2b != null) $('#section2-text2').text(s2b);
+
+        const s3t = getSafe(data, lang, "section3-title");
+        const s3a = getSafe(data, lang, "section3-text1");
+        const s3b = getSafe(data, lang, "section3-text2");
+        if(s3t) $('#section3-title').text(s3t);
+        if(s3a != null) $('#section3-text1').text(s3a);
+        if(s3b != null) $('#section3-text2').text(s3b);
+
+        const s4t = getSafe(data, lang, "section4-title");
+        const s4a = getSafe(data, lang, "section4-text1");
+        const s4b = getSafe(data, lang, "section4-text2");
+        const s4c = getSafe(data, lang, "section4-text3");
+        const s4d = getSafe(data, lang, "section4-text4");
+        if(s4t) $('#section4-title').text(s4t);
+        if(s4a != null) $('#section4-text1').text(s4a);
+        if(s4b != null) $('#section4-text2').text(s4b);
+        if(s4c != null) $('#section4-text3').text(s4c);
+        if(s4d != null) $('#section4-text4').text(s4d);
+
+        const s5t = getSafe(data, lang, "section5-title");
+        const s5a = getSafe(data, lang, "section5-text1");
+        const s5b = getSafe(data, lang, "section5-text2");
+        const s5c = getSafe(data, lang, "section5-text3");
+        const s5d = getSafe(data, lang, "section5-text4");
+        const s5e = getSafe(data, lang, "section5-text5");
+        if(s5t) $('#section5-title').text(s5t);
+        if(s5a != null) $('#section5-text1').text(s5a);
+        if(s5b != null) $('#section5-text2').text(s5b);
+        if(s5c != null) $('#section5-text3').text(s5c);
+        if(s5d != null) $('#section5-text4').text(s5d);
+        if(s5e != null) $('#section5-text5').text(s5e);
+
+        const footer = getSafe(data, lang, "footer-text");
+        if(footer) $('#footer-text').text(footer);
+
+        translateCommon(data, lang);
+      }
 
       translatePage('en');
 
-      $('#language-select').change(function() {
-        const selectedLang = $(this).val();
-        translatePage(selectedLang);
+      $('#language-select').on('change', function(){
+        translatePage($(this).val());
       });
     });
   </script>
