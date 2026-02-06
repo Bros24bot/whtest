@@ -1,9 +1,10 @@
+<!-- FILE: index.html  (ALLES ersetzen) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>State 214 – Whiteout Survival</title>
+  <title>State 214</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -12,7 +13,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <h1 id="page-title">Whiteout Survival – State 214</h1>
+        <h1 id="page-title">State 214</h1>
         <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
       </div>
 
@@ -36,6 +37,7 @@
       </div>
     </div>
 
+    <!-- NAV als Buttons (nicht UL) -->
     <nav class="nav">
       <div class="container nav-inner">
         <a href="index.html" class="active">🏠 Home</a>
@@ -59,9 +61,8 @@
           <div class="hero-kicker">STATE 214</div>
           <h2 id="welcome-title">Welcome to State 214</h2>
           <p id="welcome-text">
-            State 214 is a global hub of strategy, strength, and community in the world of <strong>Whiteout Survival</strong>.
-            Our alliances, events, and leadership stand out among the harsh frostlands.
-            Whether you're a competitive player or a passionate contributor — this is your home.
+            State 214 is a global hub of strategy, strength, and community. Our alliances, events, and leadership stand out
+            among the harsh frostlands. Whether you're a competitive player or a passionate contributor — this is your home.
           </p>
         </div>
       </section>
@@ -85,7 +86,7 @@
             we foster a thriving community of diverse players from all over the world.
           </p>
 
-          <div class="pill-row">
+          <div class="pill-row" aria-label="Alliances">
             <span class="pill top">LOU</span>
             <span class="pill top">DOA</span>
             <span class="pill top">SRC</span>
@@ -104,22 +105,28 @@
         </div>
 
         <div class="social-grid">
-          <a href="https://discord.gg/rNtp9vrkk9" target="_blank" class="social-card">
+          <a href="https://discord.gg/rNtp9vrkk9" target="_blank" rel="noopener" class="social-card">
             <img src="assets/discord.jpg" alt="Join Discord" />
-            <div class="caption">Discord</div>
-            <div class="sub">Join State 214</div>
+            <div class="card-text">
+              <div class="caption">Discord</div>
+              <div class="sub">Join State 214</div>
+            </div>
           </a>
 
-          <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" class="social-card">
+          <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" rel="noopener" class="social-card">
             <img src="assets/renee.jpg" alt="Follow on YouTube" />
-            <div class="caption">YouTube</div>
-            <div class="sub">Videos & guides</div>
+            <div class="card-text">
+              <div class="caption">YouTube</div>
+              <div class="sub">Videos & guides</div>
+            </div>
           </a>
 
-          <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" class="social-card">
+          <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener" class="social-card">
             <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
-            <div class="caption">Bros24 Bot</div>
-            <div class="sub">Invite & commands</div>
+            <div class="card-text">
+              <div class="caption">Bros24 Bot</div>
+              <div class="sub">Invite & commands</div>
+            </div>
           </a>
         </div>
       </section>
@@ -130,7 +137,6 @@
     <div class="container footer-grid">
       <div class="footer-left">
         <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
-        <!-- This stays translated via JSON -->
         <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
       </div>
 
@@ -161,15 +167,13 @@
         $('#highlight5').text(data[lang]["highlight5"]);
         $('#mission-title').text(data[lang]["mission-title"]);
         $('#mission-text').text(data[lang]["mission-text"]);
-        // Only the community line is translated; Bros24/WOSC stays static
         $('#footer-text').text(data[lang]["footer-text"]);
       };
 
       translatePage('en');
 
       $('#language-select').change(function() {
-        const selectedLang = $(this).val();
-        translatePage(selectedLang);
+        translatePage($(this).val());
       });
     });
   </script>
