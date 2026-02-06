@@ -6,227 +6,144 @@
   <title>State 214 – Whiteout Survival</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    header, footer {
-      text-align: center;
-      padding: 10px;
-      background: #111;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      list-style: none;
-      padding: 0;
-      background: #1c1c1c;
-      margin: 0;
-    }
-
-    nav ul li {
-      margin: 5px 15px;
-    }
-
-    nav ul li a {
-      color: #87cefa;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    main h2, main h3 {
-      color: #87cefa;
-    }
-
-    main ul {
-      display: inline-block;
-      text-align: left;
-      margin-top: 10px;
-    }
-
-    main p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    .banner-small {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 12px;
-      margin: 0 auto 20px auto;
-      display: block;
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
-    .dropdown select {
-      font-size: 16px;
-      padding: 5px;
-    }
-
-    /* Social-Karten-Layout */
-    .social-links {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .social-card {
-      background: #1c1c1c;
-      border-radius: 14px;
-      box-shadow: 0 2px 16px #0005;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 16px 18px 0 18px;
-      width: 270px;
-      max-width: 95vw;
-      transition: transform 0.12s;
-      text-decoration: none;
-      min-height: 290px;
-    }
-    .social-card:hover {
-      transform: translateY(-4px) scale(1.03);
-      background: #23293a;
-    }
-    .social-card img {
-      width: 100%;
-      max-width: 235px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #222;
-      margin-bottom: 10px;
-      box-shadow: 0 0 10px #0005;
-    }
-    .social-card .caption {
-      color: #87cefa;
-      font-weight: bold;
-      font-size: 1.14em;
-      margin: 8px 0 12px 0;
-      text-align: center;
-    }
-    @media (max-width: 900px) {
-      .social-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-      }
-      .social-card {
-        width: 98vw;
-        max-width: 420px;
-      }
-      .social-card img {
-        max-width: 99%;
-        height: 150px;
-      }
-    }
-  </style>
 </head>
-<body>
-  <header>
-    <h1 id="page-title">Whiteout Survival – State 214</h1>
-    <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+
+<body class="page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 id="page-title">Whiteout Survival – State 214</h1>
+        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+      </div>
+
+      <div class="lang">
+        <select id="language-select" aria-label="Language">
+          <option value="en">🇬🇧 English</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="pl">🇵🇱 Polski</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="th">🇹🇭 ไทย</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="id">🇮🇩 Indonesia</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="uk">🇺🇦 Українська</option>
+        </select>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="active">🏠 Home</a>
+        <a href="history.html">📖 History</a>
+        <a href="alliances.html">🛡️ Alliances</a>
+        <a href="rules.html">📜 Rules</a>
+        <a href="fort.html">🏰 Fort</a>
+        <a href="news.html">🔥 News</a>
+        <a href="community.html">💬 Community</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Dropdown-Menü für Sprachwahl -->
-  <div class="dropdown">
-    <select id="language-select">
-      <option value="en">🇬🇧 English</option>
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="fr">🇫🇷 Français</option>
-      <option value="pl">🇵🇱 Polski</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="th">🇹🇭 ไทย</option>
-      <option value="ar">🇸🇦 العربية</option>
-      <option value="tr">🇹🇷 Türkçe</option>
-      <option value="id">🇮🇩 Indonesia</option>
-      <option value="ko">🇰🇷 한국어</option>
-      <option value="ru">🇷🇺 Русский</option>
-      <option value="zh">🇨🇳 中文</option>
-      <option value="uk">🇺🇦 Українська</option>
-    </select>
-  </div>
+  <main class="content">
+    <div class="container">
+      <section class="hero">
+        <img src="assets/start.jpg" alt="State 214 Banner" class="hero-img" />
+        <div class="hero-overlay"></div>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="history.html">📖 History</a></li>
-      <li><a href="alliances.html">🛡️ Alliances</a></li>
-      <li><a href="rules.html">📜 Rules</a></li>
-      <li><a href="fort.html">🏰 Fort</a></li>
-      <li><a href="news.html">🔥 News</a></li>
-      <li><a href="community.html">💬 Community</a></li>
-    </ul>
-  </nav>
+        <div class="hero-content">
+          <div class="hero-kicker">STATE 214</div>
+          <h2 id="welcome-title">Welcome to State 214</h2>
+          <p id="welcome-text">
+            State 214 is a global hub of strategy, strength, and community in the world of <strong>Whiteout Survival</strong>.
+            Our alliances, events, and leadership stand out among the harsh frostlands.
+            Whether you're a competitive player or a passionate contributor — this is your home.
+          </p>
+        </div>
+      </section>
 
-  <main>
-    <img src="assets/start.jpg" alt="State 214 Banner" class="banner-small" />
+      <div class="grid-2">
+        <section class="card highlights">
+          <h3 id="about-title">❄️ About This Website</h3>
+          <ul class="list">
+            <li id="highlight1">🧭 Orientation for new players joining State 214</li>
+            <li id="highlight2">🏰 Fortress battle updates and schedules</li>
+            <li id="highlight3">🛡️ Alliance overviews and leadership contacts</li>
+            <li id="highlight4">📜 Official community rules and agreements</li>
+            <li id="highlight5">💬 Community tools such as Discord and events</li>
+          </ul>
+        </section>
 
-    <section class="hero">
-      <h2 id="welcome-title">Welcome to State 214</h2>
-      <p id="welcome-text">State 214 is a global hub of strategy, strength, and community in the world of <strong>Whiteout Survival</strong>. Our alliances, events, and leadership stand out among the harsh frostlands. Whether you're a competitive player or a passionate contributor — this is your home.</p>
-    </section>
+        <section class="card community">
+          <h3 id="mission-title">🌐 Our Mission</h3>
+          <p id="mission-text">
+            We aim to keep State 214 fair, organized, and united. Through diplomacy, leadership and active communication,
+            we foster a thriving community of diverse players from all over the world.
+          </p>
 
-    <section class="highlights">
-      <h3 id="about-title">❄️ About This Website</h3>
-      <ul>
-        <li id="highlight1">🧭 Orientation for new players joining State 214</li>
-        <li id="highlight2">🏰 Fortress battle updates and schedules</li>
-        <li id="highlight3">🛡️ Alliance overviews and leadership contacts</li>
-        <li id="highlight4">📜 Official community rules and agreements</li>
-        <li id="highlight5">💬 Community tools such as Discord and events</li>
-      </ul>
-    </section>
+          <div class="pill-row">
+            <span class="pill top">LOU</span>
+            <span class="pill top">DOA</span>
+            <span class="pill top">SRC</span>
+            <span class="pill">GIN</span>
+            <span class="pill">FRZ</span>
+            <span class="pill">LOL</span>
+            <span class="pill">sJw</span>
+          </div>
+        </section>
+      </div>
 
-    <section class="community">
-      <h3 id="mission-title">🌐 Our Mission</h3>
-      <p id="mission-text">We aim to keep State 214 fair, organized, and united. Through diplomacy, leadership and active communication, we foster a thriving community of diverse players from all over the world.</p>
-    </section>
+      <section class="card">
+        <div class="section-head">
+          <h3>Community</h3>
+          <p class="muted">Links & tools</p>
+        </div>
 
-    <!-- Social-Karten: Discord, YouTube, Bot Invite -->
-    <section class="social-links">
-      <!-- Discord -->
-      <a href="https://discord.gg/rNtp9vrkk9" target="_blank" class="social-card">
-        <img src="assets/discord.jpg" alt="Join Discord" />
-        <div class="caption">Discord</div>
-      </a>
-      <!-- YouTube -->
-      <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" class="social-card">
-        <img src="assets/renee.jpg" alt="Follow on YouTube" />
-        <div class="caption">YouTube</div>
-      </a>
-      <!-- Bros24 Bot: Direkt Invite -->
-      <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" class="social-card">
-        <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
-        <div class="caption">Bros24 Bot (Invite)</div>
-      </a>
-    </section>
+        <div class="social-grid">
+          <a href="https://discord.gg/rNtp9vrkk9" target="_blank" class="social-card">
+            <img src="assets/discord.jpg" alt="Join Discord" />
+            <div class="caption">Discord</div>
+            <div class="sub">Join State 214</div>
+          </a>
+
+          <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" class="social-card">
+            <img src="assets/renee.jpg" alt="Follow on YouTube" />
+            <div class="caption">YouTube</div>
+            <div class="sub">Videos & guides</div>
+          </a>
+
+          <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" class="social-card">
+            <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
+            <div class="caption">Bros24 Bot</div>
+            <div class="sub">Invite & commands</div>
+          </a>
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer>
-    <p id="footer-text">© 2025 State 214 Community – Built by players, for players · All Stars United</p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-left">
+        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
+        <!-- This stays translated via JSON -->
+        <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-line">
+          © WOSC — Whiteout Survival Community •
+          <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
+        </div>
+        <div class="footer-line">
+          Design & Build: <span class="footer-strong">Bros24</span>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
@@ -244,6 +161,7 @@
         $('#highlight5').text(data[lang]["highlight5"]);
         $('#mission-title').text(data[lang]["mission-title"]);
         $('#mission-text').text(data[lang]["mission-text"]);
+        // Only the community line is translated; Bros24/WOSC stays static
         $('#footer-text').text(data[lang]["footer-text"]);
       };
 
