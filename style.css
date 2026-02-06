@@ -23,6 +23,8 @@
 
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
+
+/* Fix: Avoid overlap by ensuring consistent flow and no negative margins anywhere */
 body{
   margin:0;
   color:var(--text);
@@ -36,6 +38,7 @@ body{
     linear-gradient(180deg, var(--bg1), var(--bg0) 42%, var(--bg2));
 }
 
+/* Links */
 a{ color:inherit; text-decoration:none; }
 a:hover{ opacity:.96; }
 
@@ -50,7 +53,7 @@ a:hover{ opacity:.96; }
 .site-header{
   position:sticky;
   top:0;
-  z-index:50;
+  z-index:1000;
   backdrop-filter: blur(12px);
   background: linear-gradient(180deg, rgba(10,16,36,.78), rgba(10,16,36,.58));
   border-bottom:1px solid var(--line);
@@ -85,24 +88,32 @@ a:hover{ opacity:.96; }
   color:rgba(238,242,255,.78);
 }
 
-/* Language select bigger + clean */
+/* Language select – FIX white-on-white: force dark dropdown menu + visible options */
 #language-select{
   min-width: 220px;
   padding: 12px 14px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.18);
   background: rgba(255,255,255,.07);
   color: var(--text);
   font-weight:900;
   box-shadow: 0 10px 26px rgba(0,0,0,.22);
   outline:none;
 }
+
+/* For Chromium/Windows: options may use system colors -> enforce dark */
+#language-select option{
+  background:#0b1230;
+  color:#eef2ff;
+}
+
+/* Focus */
 #language-select:focus{
   border-color: rgba(255,191,89,.55);
   box-shadow: 0 0 0 4px rgba(255,191,89,.14), 0 10px 26px rgba(0,0,0,.22);
 }
 
-/* NAV – big, centered, professional */
+/* NAV – centered */
 .nav{
   border-top:1px solid rgba(255,255,255,.08);
 }
@@ -122,6 +133,7 @@ a:hover{ opacity:.96; }
   font-weight:950;
   letter-spacing:.02em;
   transition: transform .14s ease, background .14s ease, border-color .14s ease;
+  white-space:nowrap;
 }
 .nav a:hover{
   transform: translateY(-2px);
@@ -133,24 +145,28 @@ a:hover{ opacity:.96; }
   border-color: rgba(255,191,89,.50);
 }
 
-/* CONTENT */
+/* CONTENT – FIX overlap: add safe top padding in case sticky header covers content */
+.content{
+  position:relative;
+}
 .content .container{
-  padding-top:22px;
-  padding-bottom:44px;
+  padding-top:24px;
+  padding-bottom:54px;
 }
 
-/* HERO – fixed sizing, centered text */
+/* HERO */
 .hero{
   position:relative;
   border-radius: var(--radius);
   overflow:hidden;
   border:1px solid rgba(255,255,255,.14);
   box-shadow: var(--shadow);
+  margin-bottom:18px; /* spacing so next cards never touch/overlap */
 }
 
 .hero-img{
   width:100%;
-  height: 420px;         /* Desktop */
+  height: 420px;
   object-fit: cover;
   object-position: center;
   display:block;
@@ -202,15 +218,16 @@ a:hover{ opacity:.96; }
   font-weight: 650;
 }
 
-/* GRID */
+/* GRID – FIX overlap: enforce min-height and gap */
 .grid-2{
   display:grid;
   grid-template-columns: 1.2fr .8fr;
   gap:18px;
-  margin-top:18px;
+  margin-top:0;
+  align-items:stretch;
 }
 
-/* CARD – “3D” */
+/* CARD */
 .card{
   border-radius: var(--radius);
   border:1px solid rgba(255,255,255,.14);
@@ -219,7 +236,10 @@ a:hover{ opacity:.96; }
   padding:20px;
   position:relative;
   overflow:hidden;
+  margin:0; /* no negative margins */
 }
+
+.card + .card{ margin-top:18px; } /* stacked cards spacing if any */
 
 .card::before{
   content:"";
@@ -275,11 +295,12 @@ a:hover{ opacity:.96; }
 }
 .muted{ margin:0; color: var(--muted); font-weight:700; }
 
-/* SOCIAL – fixed sizes so it never looks broken */
+/* SOCIAL */
 .social-grid{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap:16px;
+  align-items:stretch;
 }
 
 .social-card{
@@ -291,6 +312,7 @@ a:hover{ opacity:.96; }
   background: rgba(255,255,255,.055);
   box-shadow: 0 14px 34px rgba(0,0,0,.30);
   transition: transform .14s ease, border-color .14s ease, background .14s ease;
+  min-height: 260px; /* FIX: prevents weird overlap */
 }
 .social-card:hover{
   transform: translateY(-4px);
@@ -318,10 +340,11 @@ a:hover{ opacity:.96; }
   font-weight:750;
 }
 
-/* FOOTER – professional credits */
+/* FOOTER */
 .site-footer{
   border-top:1px solid rgba(255,255,255,.14);
   background: linear-gradient(180deg, rgba(10,16,36,.62), rgba(10,16,36,.84));
+  margin-top: 26px;
 }
 
 .footer-grid{
@@ -359,7 +382,7 @@ a:hover{ opacity:.96; }
 }
 .footer-link:hover{ text-decoration: underline; }
 
-/* MOBILE / RESPONSIVE */
+/* RESPONSIVE */
 @media (max-width: 980px){
   .grid-2{ grid-template-columns: 1fr; }
   .social-grid{ grid-template-columns: 1fr; }
@@ -373,20 +396,4 @@ a:hover{ opacity:.96; }
     flex-direction:column;
     align-items:stretch;
   }
-  .brand{ align-items:center; text-align:center; }
-  .lang{ width:100%; }
-  #language-select{ width:100%; min-width: unset; }
-
-  .nav-inner{ justify-content:stretch; }
-  .nav a{ flex:1 1 auto; text-align:center; }
-
-  .hero-content{
-    padding: 18px 16px 16px;
-    text-align:center;
-  }
-  .hero-kicker{ margin-left:auto; margin-right:auto; }
-  .hero-content p{ margin-left:auto; margin-right:auto; }
-
-  .footer-grid{ flex-direction:column; text-align:left; }
-  .footer-right{ text-align:left; }
-}
+  .brand{ align-items:
