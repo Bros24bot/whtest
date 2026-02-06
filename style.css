@@ -1,7 +1,6 @@
 /* FILE: style.css  (ALLES ersetzen)
-   Unified design for ALL pages + includes History timeline styles
+   Unified design for ALL pages + adds Alliances page layout + keeps History timeline styles
 */
-
 :root{
   --bg0:#070a14;
   --bg1:#0b1230;
@@ -19,7 +18,6 @@
 
   --radius:22px;
 
-  /* 3D depth */
   --shadow:0 26px 90px rgba(0,0,0,.52);
   --shadow2:0 14px 40px rgba(0,0,0,.36);
   --lift: 0 18px 55px rgba(0,0,0,.44);
@@ -154,7 +152,7 @@ a:hover{ opacity:.96; }
   padding-bottom:56px;
 }
 
-/* HERO */
+/* HERO (index/history) */
 .hero{
   position:relative;
   border-radius: var(--radius);
@@ -212,7 +210,7 @@ a:hover{ opacity:.96; }
   font-weight: 650;
 }
 
-/* GRID (index etc.) */
+/* GRID (index) */
 .grid-2{
   display:grid;
   grid-template-columns: 1.2fr .8fr;
@@ -221,7 +219,7 @@ a:hover{ opacity:.96; }
   margin-bottom: var(--gap);
 }
 
-/* CARD */
+/* CARD (global) */
 .card{
   border-radius: var(--radius);
   border:1px solid rgba(255,255,255,.14);
@@ -252,10 +250,7 @@ a:hover{ opacity:.96; }
   color: rgba(238,242,255,.78);
 }
 
-/* Lists / text */
-.list{ margin:0; padding-left:18px; }
-.list li{ margin:9px 0; }
-
+/* Section head */
 .section-head{
   display:flex;
   align-items:baseline;
@@ -264,6 +259,10 @@ a:hover{ opacity:.96; }
   margin-bottom:10px;
 }
 .muted{ margin:0; color: var(--muted); font-weight:700; }
+
+/* Lists */
+.list{ margin:0; padding-left:18px; }
+.list li{ margin:9px 0; }
 
 /* Pills */
 .pill-row{
@@ -285,7 +284,7 @@ a:hover{ opacity:.96; }
   background: rgba(255,191,89,.18);
 }
 
-/* SOCIAL (index/community cards) */
+/* SOCIAL (index) */
 .social-grid{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -359,6 +358,122 @@ a:hover{ opacity:.96; }
   box-shadow: 0 0 0 6px rgba(255,191,89,.10);
 }
 
+/* ALLIANCES PAGE */
+.alliances-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  margin-top: 12px;
+}
+
+.alliance-card{
+  border-radius: 20px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  box-shadow: 0 14px 34px rgba(0,0,0,.28);
+  overflow:hidden;
+  padding:18px;
+  position:relative;
+}
+
+.alliance-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    radial-gradient(520px 260px at 12% 10%, rgba(108,198,255,.10), transparent 62%),
+    radial-gradient(520px 260px at 88% 10%, rgba(255,191,89,.10), transparent 62%);
+  pointer-events:none;
+}
+.alliance-card > *{ position:relative; z-index:1; }
+
+.alliance-card.top{
+  border-color: rgba(255,191,89,.26);
+  background: linear-gradient(180deg, rgba(255,191,89,.07), rgba(255,255,255,.04));
+}
+
+.alliance-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.badge{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.07);
+  font-weight:950;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:12px;
+  color: rgba(238,242,255,.78);
+  margin-bottom:10px;
+}
+.badge.top{
+  border-color: rgba(255,191,89,.46);
+  background: rgba(255,191,89,.16);
+  color: rgba(255,235,205,.92);
+}
+
+.alliance-name{
+  margin:0;
+  font-size:22px;
+  font-weight:950;
+  letter-spacing:.02em;
+}
+.dim{
+  color: rgba(238,242,255,.64);
+  font-weight:800;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:10px 14px;
+  padding:12px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.10);
+  margin-bottom:12px;
+}
+
+.info{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:8px 8px;
+  border-radius:12px;
+  background: rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.info.full{
+  grid-column: 1 / -1;
+}
+
+.label{
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:950;
+  color: rgba(238,242,255,.62);
+}
+
+.value{
+  font-weight:900;
+  color: rgba(238,242,255,.92);
+}
+
+.desc{
+  color: rgba(238,242,255,.80);
+  font-weight:700;
+  line-height:1.6;
+}
+
 /* FOOTER */
 .site-footer{
   border-top:1px solid rgba(255,255,255,.14);
@@ -412,6 +527,7 @@ a:hover{ opacity:.96; }
 @media (max-width: 980px){
   .grid-2{ grid-template-columns: 1fr; }
   .social-grid{ grid-template-columns: 1fr; }
+  .info-grid{ grid-template-columns: 1fr; }
   .hero-img{ height: 320px; }
   .hero-content h2{ font-size:28px; }
   #language-select{ min-width: 200px; }
