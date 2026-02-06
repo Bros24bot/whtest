@@ -133,13 +133,13 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-left">
+    <div class="container footer-wrap">
+      <div class="footer-top">
         <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
         <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
       </div>
 
-      <div class="footer-right">
+      <div class="footer-bottom">
         <div class="footer-line">
           © WOSC — Whiteout Survival Community •
           <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
@@ -166,6 +166,7 @@
         $('#highlight5').text(data[lang]["highlight5"]);
         $('#mission-title').text(data[lang]["mission-title"]);
         $('#mission-text').text(data[lang]["mission-text"]);
+        // If your JSON still contains 2025, update index.json footer-text too.
         $('#footer-text').text(data[lang]["footer-text"]);
       };
 
