@@ -1,386 +1,219 @@
-/* FILE: style.css  (ALLES ersetzen) */
-/* This is the SAME base as your new index.css + adds timeline styles for history */
+<!-- FILE: history.html  (ALLES ersetzen) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>History of State 214</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
-:root{
-  --bg0:#070a14;
-  --bg1:#0b1230;
-  --bg2:#0a1024;
+<body class="page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 id="page-title">The History of State 214</h1>
+        <p id="intro-text"><strong>All Stars United</strong></p>
+      </div>
 
-  --text:#eef2ff;
-  --muted:rgba(238,242,255,.72);
+      <div class="lang">
+        <select id="language-select" aria-label="Language">
+          <option value="en">🇬🇧 English</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="pl">🇵🇱 Polski</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="th">🇹🇭 ไทย</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="id">🇮🇩 Indonesia</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="uk">🇺🇦 Українська</option>
+        </select>
+      </div>
+    </div>
 
-  --card1:rgba(18,28,58,.78);
-  --card2:rgba(12,20,44,.72);
-  --line:rgba(255,255,255,.12);
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="index.html">🏠 Home</a>
+        <a href="history.html" class="active">📖 History</a>
+        <a href="alliances.html">🛡️ Alliances</a>
+        <a href="rules.html">📜 Rules</a>
+        <a href="fort.html">🏰 Fort</a>
+        <a href="news.html">🔥 News</a>
+        <a href="community.html">💬 Community</a>
+      </div>
+    </nav>
+  </header>
 
-  --gold:#ffbf59;
-  --ice:#6cc6ff;
+  <main class="content">
+    <div class="container">
 
-  --radius:22px;
+      <!-- Hero (wie Startseite) -->
+      <section class="hero">
+        <img src="assets/history.jpg" alt="State 214 History Banner" class="hero-img" />
+        <div class="hero-overlay"></div>
 
-  --shadow:0 26px 90px rgba(0,0,0,.52);
-  --shadow2:0 14px 40px rgba(0,0,0,.36);
-  --lift: 0 18px 55px rgba(0,0,0,.44);
+        <div class="hero-content">
+          <div class="hero-kicker">STATE 214</div>
+          <h2 id="history-title">State 214: A Story of Growth and Unity</h2>
+          <p id="introduction">
+            State 214 was officially launched in April 2023, entering the world of Whiteout Survival amidst fierce competition and dynamic leadership.
+            Despite early challenges—internal power struggles, shifting alliances, and growing pains—the state quickly found its footing through collaboration,
+            diplomacy, and a shared commitment to the community over individual control.
+          </p>
+        </div>
+      </section>
 
-  --max:1100px;
-  --gap:18px;
-}
+      <!-- Content Blocks -->
+      <section class="card">
+        <h3>Growth</h3>
+        <p id="growth">
+          Through countless battles, strategic decisions, and community efforts, State 214 has become one of the most successful and respected states in the game.
+          Its strength lies in the cohesion and teamwork fostered among its players, allowing for consistent growth and achievement.
+        </p>
+      </section>
 
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
+      <section class="card">
+        <h3 id="losses-title">Losses and Challenges: January - March 2024</h3>
+        <p id="losses">
+          From January to March 2024, State 214 experienced significant losses. We saw the dissolution of several key alliances, including AXE (formerly TEX),
+          BLK, and part of USA, as they began to disband and leave the state. This period was a challenging time, as our best alliances and dear friends,
+          such as TDS/TLS, also followed suit, leaving a void.
+        </p>
+      </section>
 
-body{
-  margin:0;
-  color:var(--text);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.55;
+      <section class="card">
+        <h3 id="alliances-title">Challenges with New Alliances: September - December 2024</h3>
+        <p id="alliances-text">
+          In September 2024, we welcomed a new alliance that initially joined State 214 with good intentions. However, after a short period, some members of this
+          alliance showed a lack of interest in collaboration and instead spread chaos and discord. As a unified state, we faced this challenge together,
+          particularly with the support of <strong>ODA</strong>. In December 2024, the entire state took a stand against the disruptive players.
+          By January 2025, after much unrest, the remaining members of this alliance were forced to consider and eventually execute a transfer,
+          thus restoring order and unity within State 214.
+        </p>
+      </section>
 
-  background:
-    radial-gradient(980px 560px at 15% -10%, rgba(108,198,255,.22), transparent 58%),
-    radial-gradient(820px 560px at 85% 0%, rgba(255,191,89,.18), transparent 58%),
-    radial-gradient(1100px 700px at 50% 120%, rgba(108,198,255,.12), transparent 60%),
-    linear-gradient(180deg, var(--bg1), var(--bg0) 42%, var(--bg2));
-}
+      <section class="card">
+        <h3 id="key-milestones-title">Key Milestones</h3>
+        <p id="key-milestones">
+          In April 2024, State 214 welcomed <strong>ODA</strong> from State 245, marking a pivotal moment in its development. Their leadership and participation
+          played a crucial role in reorganizing the state, alongside <strong>DOA</strong>, to improve coordination and reinforce the alliances that would define
+          the state’s success.
+        </p>
 
-a{ color:inherit; text-decoration:none; }
-a:hover{ opacity:.96; }
+        <p id="fusion">
+          The great state fusion in winter 2025 was another significant turning point. State 214 absorbed skilled players from State 196, further boosting its
+          power, diversity, and ambition. The merger was more than just an increase in numbers; it strengthened the community and injected new passion and drive
+          into the state.
+        </p>
+      </section>
 
-.container{
-  width:100%;
-  max-width:var(--max);
-  margin:0 auto;
-  padding:18px;
-}
+      <!-- Recent developments in a clean timeline style -->
+      <section class="card">
+        <div class="section-head">
+          <h3 id="recent-developments-title">Recent Developments</h3>
+          <p class="muted">Latest state changes</p>
+        </div>
 
-/* HEADER */
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  backdrop-filter: blur(12px);
-  background: linear-gradient(180deg, rgba(10,16,36,.78), rgba(10,16,36,.58));
-  border-bottom:1px solid var(--line);
-}
+        <div class="timeline">
+          <div class="t-item" id="recent-story-1">
+            <span class="highlight">October 2025:</span> With regret, <strong>BKK</strong> transferred out of State 214. We sincerely thank them for the time and effort they invested here, and we wish them all the best on their new path.
+          </div>
 
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-}
+          <div class="t-item" id="recent-story-2">
+            <span class="highlight">November 2025:</span> State 214 was strengthened by an alliance arriving from State <strong>153</strong>. Together, they established <strong>LOU</strong> in 214 and immediately became a valuable part of our community. We look forward to strong, respectful cooperation.
+          </div>
 
-.brand{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  align-items:flex-start;
-}
+          <div class="t-item" id="recent-story-3">
+            <span class="highlight">December 2025:</span> <strong>ODA</strong> also left State 214. We are grateful for the shared journey and wish them continued success and good luck ahead.
+          </div>
 
-.brand h1{
-  margin:0;
-  font-size:18px;
-  font-weight:950;
-  letter-spacing:.10em;
-  text-transform:uppercase;
-}
+          <div class="t-item" id="recent-story-4">
+            <span class="highlight">January 2026:</span> During the State Transfer, <strong>PBT</strong> departed State 214. We appreciate the time we shared together and wish them all the best on their journey ahead.
+          </div>
+        </div>
+      </section>
 
-.brand p{
-  margin:0;
-  font-weight:900;
-  letter-spacing:.10em;
-  color:rgba(238,242,255,.78);
-}
+      <section class="card">
+        <h3 id="looking-ahead-title">Looking Ahead</h3>
+        <p id="looking-ahead">
+          The future of State 214 is focused on a common goal: the Frostdragon Tyrant. The ambition now is to unite three elite alliances in this high-stakes
+          event and, ultimately, to bring the Tyrant itself under State 214’s banner. This vision drives our community to keep pushing the limits of what we can
+          achieve together.
+        </p>
 
-/* Language select */
-#language-select{
-  min-width: 220px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.07);
-  color: var(--text);
-  font-weight:900;
-  box-shadow: 0 10px 26px rgba(0,0,0,.22);
-  outline:none;
-}
-#language-select option{
-  background:#0b1230;
-  color:#eef2ff;
-}
-#language-select:focus{
-  border-color: rgba(255,191,89,.55);
-  box-shadow: 0 0 0 4px rgba(255,191,89,.14), 0 10px 26px rgba(0,0,0,.22);
-}
+        <p id="core-alliances">
+          State 214 stands as a testament to what can be accomplished when players unite with a shared purpose. Our collective achievements, backed by strategic
+          alliances and a commitment to growth, have made us a model for success in the world of Whiteout Survival.
+        </p>
+      </section>
 
-/* NAV */
-.nav{
-  border-top:1px solid rgba(255,255,255,.08);
-}
-.nav-inner{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  justify-content:center;
-  padding-top:12px;
-  padding-bottom:14px;
-}
-.nav a{
-  padding:12px 14px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.05);
-  font-weight:950;
-  letter-spacing:.02em;
-  transition: transform .14s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
-  white-space:nowrap;
-  box-shadow: 0 8px 20px rgba(0,0,0,.20);
-}
-.nav a:hover{
-  transform: translateY(-2px);
-  box-shadow: var(--lift);
-  background: rgba(255,255,255,.07);
-  border-color: rgba(255,255,255,.20);
-}
-.nav a.active{
-  background: linear-gradient(180deg, rgba(255,191,89,.26), rgba(255,191,89,.12));
-  border-color: rgba(255,191,89,.50);
-}
+    </div>
+  </main>
 
-/* CONTENT */
-.content .container{
-  padding-top:24px;
-  padding-bottom:56px;
-}
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
+        <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
+      </div>
 
-/* HERO */
-.hero{
-  position:relative;
-  border-radius: var(--radius);
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.14);
-  box-shadow: var(--shadow);
-  margin-bottom: var(--gap);
-}
+      <div class="footer-bottom">
+        <div class="footer-line">
+          © WOSC — Whiteout Survival Community •
+          <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
+        </div>
+        <div class="footer-line">
+          Design & Build: <span class="footer-strong">Bros24</span>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-.hero-img{
-  width:100%;
-  height: 420px;
-  object-fit: cover;
-  object-position: center;
-  display:block;
-  filter: saturate(1.06) contrast(1.08);
-}
+  <script>
+    $(document).ready(function() {
+      $.getJSON('history.json', function(data) {
 
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(950px 520px at 20% 0%, rgba(108,198,255,.16), transparent 60%),
-    radial-gradient(950px 520px at 85% 0%, rgba(255,191,89,.14), transparent 60%),
-    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.74));
-}
+        const translatePage = (lang) => {
+          $('#page-title').text(data[lang]["page-title"]);
+          $('#intro-text').text(data[lang]["home"]);
+          $('#history-title').text(data[lang]["history"]);
+          $('#introduction').text(data[lang]["introduction"]);
+          $('#growth').text(data[lang]["growth"]);
+          $('#losses-title').text(data[lang]["losses-and-challenges"]);
+          $('#losses').text(data[lang]["losses-text"]);
+          $('#alliances-title').text(data[lang]["new-alliances"]);
+          $('#alliances-text').html(data[lang]["new-alliances-text"]);
+          $('#key-milestones-title').text(data[lang]["key-milestones"]);
+          $('#key-milestones').html(data[lang]["key-milestones-text"]);
+          $('#fusion').text(data[lang]["fusion"]);
 
-.hero-content{
-  position:absolute;
-  left:0; right:0; bottom:0;
-  padding: 26px 26px 22px;
-  text-align:left;
-  max-width: 980px;
-  margin: 0 auto;
-}
+          $('#recent-developments-title').text(data[lang]["recent-developments"]);
+          $('#recent-story-1').html(data[lang]["recent-story-1"]);
+          $('#recent-story-2').html(data[lang]["recent-story-2"]);
+          $('#recent-story-3').html(data[lang]["recent-story-3"]);
+          $('#recent-story-4').html(data[lang]["recent-story-4"]);
 
-.hero-kicker{
-  display:inline-flex;
-  padding:8px 14px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.08);
-  font-weight:950;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  box-shadow: 0 10px 26px rgba(0,0,0,.22);
-  margin-bottom:10px;
-}
+          $('#looking-ahead-title').text(data[lang]["looking-ahead"]);
+          $('#looking-ahead').text(data[lang]["looking-ahead-text"]);
+          $('#footer-text').text(data[lang]["footer-text"]);
+        };
 
-.hero-content h2{
-  margin:0 0 10px 0;
-  font-size: 34px;
-  font-weight: 950;
-  letter-spacing:.01em;
-}
+        translatePage('en');
 
-.hero-content p{
-  margin:0;
-  max-width: 85ch;
-  color: rgba(238,242,255,.86);
-  font-weight: 650;
-}
+        $('#language-select').change(function() {
+          translatePage($(this).val());
+        });
 
-/* CARD */
-.card{
-  border-radius: var(--radius);
-  border:1px solid rgba(255,255,255,.14);
-  background: linear-gradient(180deg, var(--card1), var(--card2));
-  box-shadow: var(--shadow2);
-  padding:20px;
-  position:relative;
-  overflow:hidden;
-  margin:0 0 var(--gap) 0;
-}
-
-.card::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background:
-    radial-gradient(520px 260px at 12% 10%, rgba(108,198,255,.14), transparent 62%),
-    radial-gradient(520px 260px at 88% 10%, rgba(255,191,89,.12), transparent 62%);
-  pointer-events:none;
-}
-.card > *{ position:relative; z-index:1; }
-
-.card h3{
-  margin:0 0 12px 0;
-  font-size:14px;
-  font-weight:950;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color: rgba(238,242,255,.78);
-}
-
-/* LIST / TEXT */
-.list{ margin:0; padding-left:18px; }
-.list li{ margin:9px 0; }
-
-.section-head{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:10px;
-}
-.muted{ margin:0; color: var(--muted); font-weight:700; }
-
-/* Highlight (for span.highlight) */
-.highlight{
-  color: rgba(108,198,255,.98);
-  font-weight: 950;
-}
-
-/* TIMELINE (History) */
-.timeline{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  padding-top:6px;
-}
-
-.t-item{
-  position:relative;
-  padding: 14px 14px 14px 16px;
-  border-radius: 16px;
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.05);
-  box-shadow: 0 10px 24px rgba(0,0,0,.22);
-}
-
-.t-item::before{
-  content:"";
-  position:absolute;
-  left:12px;
-  top:18px;
-  width:8px;
-  height:8px;
-  border-radius:999px;
-  background: rgba(255,191,89,.95);
-  box-shadow: 0 0 0 6px rgba(255,191,89,.10);
-}
-
-/* FOOTER */
-.site-footer{
-  border-top:1px solid rgba(255,255,255,.14);
-  background: linear-gradient(180deg, rgba(10,16,36,.62), rgba(10,16,36,.88));
-  margin-top: 32px;
-}
-
-.footer-wrap{
-  padding-top:22px;
-  padding-bottom:26px;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
-
-.footer-top{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  text-align:center;
-}
-
-.footer-brand{
-  font-weight:950;
-  letter-spacing:.10em;
-  text-transform:uppercase;
-  color: rgba(238,242,255,.86);
-}
-
-.footer-meta{
-  color: rgba(238,242,255,.60);
-  font-weight:750;
-}
-
-.footer-bottom{
-  display:flex;
-  justify-content:space-between;
-  gap:14px;
-  align-items:center;
-  flex-wrap:wrap;
-  border-top:1px solid rgba(255,255,255,.10);
-  padding-top:14px;
-}
-
-.footer-line{
-  color: rgba(238,242,255,.62);
-  font-weight:800;
-}
-.footer-strong{ color: rgba(238,242,255,.90); font-weight:950; }
-
-.footer-link{
-  color: rgba(108,198,255,.95);
-  font-weight:950;
-}
-.footer-link:hover{ text-decoration: underline; }
-
-/* RESPONSIVE */
-@media (max-width: 980px){
-  .hero-img{ height: 320px; }
-  .hero-content h2{ font-size:28px; }
-  #language-select{ min-width: 200px; }
-  .footer-bottom{ justify-content:center; text-align:center; }
-}
-
-@media (max-width: 760px){
-  .header-inner{
-    flex-direction:column;
-    align-items:stretch;
-  }
-  .brand{ align-items:center; text-align:center; }
-  .lang{ width:100%; }
-  #language-select{ width:100%; min-width: unset; }
-
-  .nav-inner{ justify-content:stretch; }
-  .nav a{ flex:1 1 auto; text-align:center; }
-
-  .hero-content{
-    padding: 18px 16px 16px;
-    text-align:center;
-  }
-  .hero-kicker{ margin-left:auto; margin-right:auto; }
-  .hero-content p{ margin-left:auto; margin-right:auto; }
-
-  .footer-bottom{
-    flex-direction:column;
-    align-items:center;
-  }
-}
+      }).fail(function() {
+        console.error("Error loading the JSON file.");
+      });
+    });
+  </script>
+</body>
+</html>
