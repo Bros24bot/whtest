@@ -39,13 +39,13 @@
 
     <nav class="nav">
       <div class="container nav-inner">
-        <a href="index.html">🏠 Home</a>
-        <a href="history.html">📖 History</a>
-        <a href="alliances.html" class="active">🛡️ Alliances</a>
-        <a href="rules.html">📜 Rules</a>
-        <a href="fort.html">🏰 Fort</a>
-        <a href="news.html">🔥 News</a>
-        <a href="community.html">💬 Community</a>
+        <a id="nav-home" href="index.html">🏠 Home</a>
+        <a id="nav-history" href="history.html">📖 History</a>
+        <a id="nav-alliances" href="alliances.html" class="active">🛡️ Alliances</a>
+        <a id="nav-rules" href="rules.html">📜 Rules</a>
+        <a id="nav-fort" href="fort.html">🏰 Fort</a>
+        <a id="nav-news" href="news.html">🔥 News</a>
+        <a id="nav-community" href="community.html">💬 Community</a>
       </div>
     </nav>
   </header>
@@ -54,8 +54,8 @@
     <div class="container">
       <section class="card">
         <div class="section-head">
-          <h3>Alliances</h3>
-          <p class="muted">Meet the core alliances of State 214</p>
+          <h3 id="alliances-head">Alliances</h3>
+          <p class="muted" id="alliances-sub">Meet the core alliances of State 214</p>
         </div>
 
         <div class="alliances-grid">
@@ -183,7 +183,7 @@
 
             <div class="desc">
               FRZ is a friendly alliance where all players support each other, follow the rules, and work towards common goals.
-              We share strategies and strengthen our community through Discord. Join to collaborate and enjoy the game together.
+              We share strategies and strengthen our community through Discord.
             </div>
           </article>
 
@@ -239,6 +239,66 @@
     </div>
   </footer>
 
-  <!-- If you want later: alliances.json translation like other pages -->
+  <script>
+    // Reuse an existing JSON (no new alliances.json needed):
+    // This updates header/nav/footer translations only.
+    // If a key is missing, it falls back to the existing text.
+
+    const FALLBACK_LANG = 'en';
+
+    function getSafe(dict, lang, key){
+      if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
+      if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
+      return null;
+    }
+
+    function translateCommon(dict, lang){
+      const pageTitle = getSafe(dict, lang, "page-title");
+      const home = getSafe(dict, lang, "home");
+      const history = getSafe(dict, lang, "history");
+      const alliances = getSafe(dict, lang, "alliances");
+      const rules = getSafe(dict, lang, "rules");
+      const fort = getSafe(dict, lang, "fort");
+      const news = getSafe(dict, lang, "news");
+      const community = getSafe(dict, lang, "community");
+      const footer = getSafe(dict, lang, "footer-text");
+
+      if(pageTitle) $('#page-title').text(pageTitle);
+      if(home) $('#intro-text').text(home);
+
+      if(home) $('#nav-home').text('🏠 ' + home);
+      if(history) $('#nav-history').text('📖 ' + history);
+      if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
+      if(rules) $('#nav-rules').text('📜 ' + rules);
+      if(fort) $('#nav-fort').text('🏰 ' + fort);
+      if(news) $('#nav-news').text('🔥 ' + news);
+      if(community) $('#nav-community').text('💬 ' + community);
+
+      if(footer) $('#footer-text').text(footer);
+    }
+
+    $(document).ready(function(){
+      // Pick ONE existing json that already contains the common keys above.
+      // Try index.json first, then history.json, then community.json (fallback).
+      const candidates = ['index.json','history.json','community.json'];
+
+      function tryLoad(i){
+        if(i >= candidates.length) return;
+
+        $.getJSON(candidates[i], function(data){
+          // init
+          translateCommon(data, FALLBACK_LANG);
+
+          $('#language-select').off('change').on('change', function(){
+            translateCommon(data, $(this).val());
+          });
+        }).fail(function(){
+          tryLoad(i+1);
+        });
+      }
+
+      tryLoad(0);
+    });
+  </script>
 </body>
 </html>
