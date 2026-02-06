@@ -1,3 +1,4 @@
+<!-- FILE: alliances.html  (ALLES ersetzen) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,190 +6,239 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alliances in State 214</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    header, footer {
-      text-align: center;
-      padding: 10px;
-      background: #111;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: #1c1c1c;
-    }
-
-    nav ul li {
-      margin: 5px 15px;
-    }
-
-    nav ul li a {
-      color: #87cefa;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1, h2 {
-      color: #87cefa;
-    }
-
-    .alliance-card {
-      background-color: #1a2636;
-      color: #e0e0e0;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      max-width: 900px;
-      text-align: left;
-    }
-
-    .alliance-card h3 {
-      color: #87cefa;
-      margin-bottom: 10px;
-    }
-
-    .alliance-info {
-      margin-bottom: 10px;
-    }
-
-    .alliance-info strong {
-      color: #ccc;
-      display: inline-block;
-      width: 240px;
-    }
-
-    .description {
-      margin-top: 10px;
-      font-style: italic;
-      color: #c0c0c0;
-    }
-  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>
-  <header>
-    <h1 style="font-size:2.2rem; color:#87cefa;">Alliances of State 214</h1>
-    <p style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">ALL STARS UNITED</p>
-  </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="history.html">📖 History</a></li>
-      <li><a href="alliances.html">🛡️ Alliances</a></li>
-      <li><a href="rules.html">📜 Rules</a></li>
-      <li><a href="fort.html">🏰 Fort</a></li>
-      <li><a href="#news">🔥 News</a></li>
-      <li><a href="community.html">💬 Community</a></li>
-    </ul>
-  </nav>
+<body class="page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 id="page-title">Alliances of State 214</h1>
+        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+      </div>
 
-  <main>
-    <h2>Meet the core alliances of State 214</h2>
-
-    <!-- SRC -->
-    <div class="alliance-card">
-      <h3>SRC – SiAMREPuBliC</h3>
-      <div class="alliance-info"><strong>Headquarters (Tundra):</strong> X:436 Y:807</div>
-      <div class="alliance-info"><strong>Primary Contact:</strong> ΉΣᎥƧΣПƁΣЯᎶ</div>
-      <div class="alliance-info"><strong>Bear Trap Event 1:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Bear Trap Event 2:</strong> 16:00 UTC</div>
-      <div class="alliance-info"><strong>Canyon Legion 1:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Canyon Legion 2:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Foundry Legion 1:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Foundry Legion 2:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Main Language:</strong> Thai & English</div>
-      <div class="description">SRC was born from zero and has grown by gathering active players from many different states since Generation 4. We’ve made it all the way to State 214 and we’re still going strong.
-We’re now recruiting new active members who want to grow together with us.
-Let’s build something great — together! 😊</div>
-    </div>
-
-    <!-- LOU -->
-    <div class="alliance-card">
-      <h3>LOU – LastOfUS</h3>
-      <div class="alliance-info"><strong>Headquarters (Tundra):</strong> X:756 Y:487</div>
-      <div class="alliance-info"><strong>Primary Contact:</strong> Aʀɪᴀɴᴀ</div>
-      <div class="alliance-info"><strong>Bear Trap Event 1:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Bear Trap Event 2:</strong> 01:30 UTC</div>
-      <div class="alliance-info"><strong>Canyon Legion 1:</strong> 19:00 UTC</div>
-      <div class="alliance-info"><strong>Canyon Legion 2:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Foundry Legion 1:</strong> 19:00 UTC</div>
-      <div class="alliance-info"><strong>Foundry Legion 2:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Main Language:</strong> English</div>
-      <div class="description">LOU (formerly-EV1). Born in 150, boosted by 153, traveled to 214, fused with AOW. Active, helpful, slightly chaotic—in a good way. Join us if you like fun battles and good company!</div>
-    </div>
-
-    <!-- DOA -->
-    <div class="alliance-card">
-      <h3>DOA – DeathOnArrival</h3>
-      <div class="alliance-info"><strong>Headquarters (Tundra):</strong> X:530 Y:793</div>
-      <div class="alliance-info"><strong>Primary Contact:</strong> Bros24</div>
-      <div class="alliance-info"><strong>Bear Trap Event 1:</strong> 19:00 UTC</div>
-      <div class="alliance-info"><strong>Bear Trap Event 2:</strong> 23:20 UTC</div>
-      <div class="alliance-info"><strong>Canyon Legion 1:</strong> 19:00 UTC</div>
-      <div class="alliance-info"><strong>Canyon Legion 2:</strong> 21:00 UTC</div>
-      <div class="alliance-info"><strong>Foundry Legion 1:</strong> 19:00 UTC</div>
-      <div class="alliance-info"><strong>Foundry Legion 2:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Main Language:</strong> German / English – all languages welcome</div>
-      <div class="description">
-        DOA is a well-established gaming alliance founded in April 2023 in State 214. Our community brings together German-speaking and international players, fostering an inclusive environment where language is never a barrier.  
-        We maintain a global presence both in-game and on Discord, welcoming members from all over the world who share our passion for teamwork, growth, and success.
+      <div class="lang">
+        <select id="language-select" aria-label="Language">
+          <option value="en">🇬🇧 English</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="pl">🇵🇱 Polski</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="th">🇹🇭 ไทย</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="id">🇮🇩 Indonesia</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="uk">🇺🇦 Українська</option>
+        </select>
       </div>
     </div>
 
-    <!-- FRZ -->
-    <div class="alliance-card">
-      <h3>FRZ – FROZEN-WRATH</h3>
-      <div class="alliance-info"><strong>Headquarters (Tundra):</strong> X:579 Y:752</div>
-      <div class="alliance-info"><strong>Primary Contact:</strong> Kevin</div>
-      <div class="alliance-info"><strong>Bear Trap Event 1:</strong> 18:00 UTC</div>
-      <div class="alliance-info"><strong>Bear Trap Event 2:</strong> 21:00 UTC</div>
-      <div class="alliance-info"><strong>Canyon Legion 1:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Canyon Legion 2:</strong> 19:00 UTC</div>
-      <div class="alliance-info"><strong>Foundry Legion 1:</strong> 14:00 UTC</div>
-      <div class="alliance-info"><strong>Foundry Legion 2:</strong> 19:00 UTC</div>
-      <div class="alliance-info"><strong>Main Language:</strong> German & English</div>
-      <div class="description">FRZ is a friendly alliance where all players support each other, follow the rules, and work towards common goals. We have already achieved some successes and look forward to the challenges ahead. We share information and strategies and strengthen our community through our Discord server. Here, you have the opportunity to collaborate with other players and enjoy the game together.</div>
-    </div>
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="index.html">🏠 Home</a>
+        <a href="history.html">📖 History</a>
+        <a href="alliances.html" class="active">🛡️ Alliances</a>
+        <a href="rules.html">📜 Rules</a>
+        <a href="fort.html">🏰 Fort</a>
+        <a href="news.html">🔥 News</a>
+        <a href="community.html">💬 Community</a>
+      </div>
+    </nav>
+  </header>
 
-    <!-- GIN -->
-    <div class="alliance-card">
-      <h3>GIN – GetInsideNothing</h3>
-      <div class="alliance-info"><strong>Headquarters (Tundra):</strong> [Insert Coordinates]</div>
-      <div class="alliance-info"><strong>Primary Contact:</strong> [Insert Contact Name or IGN]</div>
-      <div class="alliance-info"><strong>Bear Trap Event 1:</strong> [Insert Time]</div>
-      <div class="alliance-info"><strong>Bear Trap Event 2:</strong> [Insert Time]</div>
-      <div class="alliance-info"><strong>Canyon Legion 1:</strong> [Insert Time]</div>
-      <div class="alliance-info"><strong>Canyon Legion 2:</strong> [Insert Time]</div>
-      <div class="alliance-info"><strong>Foundry Legion 1:</strong> [Insert Time]</div>
-      <div class="alliance-info"><strong>Foundry Legion 2:</strong> [Insert Time]</div>
-      <div class="alliance-info"><strong>Main Language:</strong> [Insert Language]</div>
-      <div class="description">[description]</div>
-    </div>
+  <main class="content">
+    <div class="container">
+      <section class="card">
+        <div class="section-head">
+          <h3>Alliances</h3>
+          <p class="muted">Meet the core alliances of State 214</p>
+        </div>
 
+        <div class="alliances-grid">
+
+          <!-- TOP: SRC -->
+          <article class="alliance-card top">
+            <div class="alliance-head">
+              <div>
+                <div class="badge top">TOP ALLIANCE</div>
+                <h2 class="alliance-name">SRC <span class="dim">— SiAMREPuBliC</span></h2>
+              </div>
+            </div>
+
+            <div class="info-grid">
+              <div class="info"><span class="label">Headquarters (Tundra)</span><span class="value">X:436 Y:807</span></div>
+              <div class="info"><span class="label">Primary Contact</span><span class="value">ΉΣᎥƧΣПƁΣЯᎶ</span></div>
+
+              <div class="info"><span class="label">Bear Trap (1)</span><span class="value">14:00 UTC</span></div>
+              <div class="info"><span class="label">Bear Trap (2)</span><span class="value">16:00 UTC</span></div>
+
+              <div class="info"><span class="label">Canyon Legion (1)</span><span class="value">14:00 UTC</span></div>
+              <div class="info"><span class="label">Canyon Legion (2)</span><span class="value">14:00 UTC</span></div>
+
+              <div class="info"><span class="label">Foundry Legion (1)</span><span class="value">14:00 UTC</span></div>
+              <div class="info"><span class="label">Foundry Legion (2)</span><span class="value">14:00 UTC</span></div>
+
+              <div class="info full"><span class="label">Main Language</span><span class="value">Thai & English</span></div>
+            </div>
+
+            <div class="desc">
+              SRC was born from zero and has grown by gathering active players from many different states since Generation 4.
+              We’ve made it all the way to State 214 and we’re still going strong. We’re now recruiting new active members who
+              want to grow together with us. Let’s build something great — together! 😊
+            </div>
+          </article>
+
+          <!-- TOP: LOU -->
+          <article class="alliance-card top">
+            <div class="alliance-head">
+              <div>
+                <div class="badge top">TOP ALLIANCE</div>
+                <h2 class="alliance-name">LOU <span class="dim">— LastOfUS</span></h2>
+              </div>
+            </div>
+
+            <div class="info-grid">
+              <div class="info"><span class="label">Headquarters (Tundra)</span><span class="value">X:756 Y:487</span></div>
+              <div class="info"><span class="label">Primary Contact</span><span class="value">Aʀɪᴀɴᴀ</span></div>
+
+              <div class="info"><span class="label">Bear Trap (1)</span><span class="value">14:00 UTC</span></div>
+              <div class="info"><span class="label">Bear Trap (2)</span><span class="value">01:30 UTC</span></div>
+
+              <div class="info"><span class="label">Canyon Legion (1)</span><span class="value">19:00 UTC</span></div>
+              <div class="info"><span class="label">Canyon Legion (2)</span><span class="value">14:00 UTC</span></div>
+
+              <div class="info"><span class="label">Foundry Legion (1)</span><span class="value">19:00 UTC</span></div>
+              <div class="info"><span class="label">Foundry Legion (2)</span><span class="value">14:00 UTC</span></div>
+
+              <div class="info full"><span class="label">Main Language</span><span class="value">English</span></div>
+            </div>
+
+            <div class="desc">
+              LOU (formerly EV1). Born in 150, boosted by 153, traveled to 214, fused with AOW.
+              Active, helpful, slightly chaotic—in a good way. Join us if you like fun battles and good company!
+            </div>
+          </article>
+
+          <!-- TOP: DOA -->
+          <article class="alliance-card top">
+            <div class="alliance-head">
+              <div>
+                <div class="badge top">TOP ALLIANCE</div>
+                <h2 class="alliance-name">DOA <span class="dim">— DeathOnArrival</span></h2>
+              </div>
+            </div>
+
+            <div class="info-grid">
+              <div class="info"><span class="label">Headquarters (Tundra)</span><span class="value">X:530 Y:793</span></div>
+              <div class="info"><span class="label">Primary Contact</span><span class="value">Bros24</span></div>
+
+              <div class="info"><span class="label">Bear Trap (1)</span><span class="value">19:00 UTC</span></div>
+              <div class="info"><span class="label">Bear Trap (2)</span><span class="value">23:20 UTC</span></div>
+
+              <div class="info"><span class="label">Canyon Legion (1)</span><span class="value">19:00 UTC</span></div>
+              <div class="info"><span class="label">Canyon Legion (2)</span><span class="value">21:00 UTC</span></div>
+
+              <div class="info"><span class="label">Foundry Legion (1)</span><span class="value">19:00 UTC</span></div>
+              <div class="info"><span class="label">Foundry Legion (2)</span><span class="value">14:00 UTC</span></div>
+
+              <div class="info full"><span class="label">Main Language</span><span class="value">German / English — all languages welcome</span></div>
+            </div>
+
+            <div class="desc">
+              DOA is a well-established gaming alliance founded in April 2023 in State 214. Our community brings together
+              German-speaking and international players, fostering an inclusive environment where language is never a barrier.
+              We maintain a global presence both in-game and on Discord, welcoming members from all over the world who share
+              our passion for teamwork, growth, and success.
+            </div>
+          </article>
+
+          <!-- SMALLER: FRZ -->
+          <article class="alliance-card">
+            <div class="alliance-head">
+              <div>
+                <div class="badge">ALLIANCE</div>
+                <h2 class="alliance-name">FRZ <span class="dim">— FROZEN-WRATH</span></h2>
+              </div>
+            </div>
+
+            <div class="info-grid">
+              <div class="info"><span class="label">Headquarters (Tundra)</span><span class="value">X:579 Y:752</span></div>
+              <div class="info"><span class="label">Primary Contact</span><span class="value">Kevin</span></div>
+
+              <div class="info"><span class="label">Bear Trap (1)</span><span class="value">18:00 UTC</span></div>
+              <div class="info"><span class="label">Bear Trap (2)</span><span class="value">21:00 UTC</span></div>
+
+              <div class="info"><span class="label">Canyon Legion (1)</span><span class="value">14:00 UTC</span></div>
+              <div class="info"><span class="label">Canyon Legion (2)</span><span class="value">19:00 UTC</span></div>
+
+              <div class="info"><span class="label">Foundry Legion (1)</span><span class="value">14:00 UTC</span></div>
+              <div class="info"><span class="label">Foundry Legion (2)</span><span class="value">19:00 UTC</span></div>
+
+              <div class="info full"><span class="label">Main Language</span><span class="value">German & English</span></div>
+            </div>
+
+            <div class="desc">
+              FRZ is a friendly alliance where all players support each other, follow the rules, and work towards common goals.
+              We share strategies and strengthen our community through Discord. Join to collaborate and enjoy the game together.
+            </div>
+          </article>
+
+          <!-- SMALLER: GIN -->
+          <article class="alliance-card">
+            <div class="alliance-head">
+              <div>
+                <div class="badge">ALLIANCE</div>
+                <h2 class="alliance-name">GIN <span class="dim">— GetInsideNothing</span></h2>
+              </div>
+            </div>
+
+            <div class="info-grid">
+              <div class="info"><span class="label">Headquarters (Tundra)</span><span class="value">[Insert Coordinates]</span></div>
+              <div class="info"><span class="label">Primary Contact</span><span class="value">[Insert Contact Name or IGN]</span></div>
+
+              <div class="info"><span class="label">Bear Trap (1)</span><span class="value">[Insert Time]</span></div>
+              <div class="info"><span class="label">Bear Trap (2)</span><span class="value">[Insert Time]</span></div>
+
+              <div class="info"><span class="label">Canyon Legion (1)</span><span class="value">[Insert Time]</span></div>
+              <div class="info"><span class="label">Canyon Legion (2)</span><span class="value">[Insert Time]</span></div>
+
+              <div class="info"><span class="label">Foundry Legion (1)</span><span class="value">[Insert Time]</span></div>
+              <div class="info"><span class="label">Foundry Legion (2)</span><span class="value">[Insert Time]</span></div>
+
+              <div class="info full"><span class="label">Main Language</span><span class="value">[Insert Language]</span></div>
+            </div>
+
+            <div class="desc">[description]</div>
+          </article>
+
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer>
-    <p>© 2026 State 214 Community – Built by players, for players · All Stars United</p>
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
+        <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-line">
+          © WOSC — Whiteout Survival Community •
+          <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
+        </div>
+        <div class="footer-line">
+          Design & Build: <span class="footer-strong">Bros24</span>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <!-- If you want later: alliances.json translation like other pages -->
 </body>
 </html>
