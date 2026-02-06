@@ -1,221 +1,219 @@
+<!-- FILE: rules.html  (ALLES ersetzen) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kill Event Rules – BIA</title>
+  <title>Kill Event Rules</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    header, footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: #1c1c1c;
-    }
-
-    nav ul li {
-      margin: 5px 15px;
-    }
-
-    nav ul li a {
-      color: #87cefa;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    main h1, main h2, main h3 {
-      color: #87cefa;
-    }
-
-    .rule-section {
-      background: #1a1a1a;
-      margin: 20px auto;
-      padding: 20px;
-      border-left: 5px solid #87cefa;
-      text-align: left;
-      border-radius: 10px;
-    }
-
-    .rule-section h3 {
-      color: #f0f0f0;
-      margin-bottom: 10px;
-    }
-
-    .rule-section p {
-      margin: 8px 0;
-      line-height: 1.5;
-    }
-
-    .not-allowed {
-      color: #ff4c4c;
-      font-weight: bold;
-    }
-
-    .allowed {
-      color: #32cd32;
-      font-weight: bold;
-    }
-
-    footer {
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    .rotate {
-      color: #ffcc00;
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
-    .dropdown select {
-      font-size: 16px;
-      padding: 5px;
-    }
-
-    /* Centering specific section titles with the same color */
-    .center-title {
-      text-align: center;
-      color: #87cefa;  /* Same color for all section titles */
-    }
-
-    .separate-section {
-      background: #1a1a1a;
-      margin: 20px auto;
-      padding: 20px;
-      border-left: 5px solid #87cefa;
-      text-align: left;
-      border-radius: 10px;
-    }
-  </style>
 </head>
-<body>
-  <header>
-    <h1 id="page-title" style="font-size: 2.5rem; color:#87cefa;">Kill Event (KE) Rules</h1>
-    <p id="intro-text" style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">Brothers in Arms (BIA)</p>
+
+<body class="page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 id="page-title">Kill Event (KE) Rules</h1>
+        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+      </div>
+
+      <div class="lang">
+        <select id="language-select" aria-label="Language">
+          <option value="en">🇬🇧 English</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="pl">🇵🇱 Polski</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="th">🇹🇭 ไทย</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="id">🇮🇩 Indonesia</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="uk">🇺🇦 Українська</option>
+        </select>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a id="nav-home" href="index.html">🏠 Home</a>
+        <a id="nav-history" href="history.html">📖 History</a>
+        <a id="nav-alliances" href="alliances.html">🛡️ Alliances</a>
+        <a id="nav-rules" href="rules.html" class="active">📜 Rules</a>
+        <a id="nav-fort" href="fort.html">🏰 Fort</a>
+        <a id="nav-news" href="news.html">🔥 News</a>
+        <a id="nav-community" href="community.html">💬 Community</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Dropdown-Menü für Sprachwahl -->
-  <div class="dropdown">
-    <select id="language-select">
-      <option value="en">🇬🇧 English</option>
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="fr">🇫🇷 Français</option>
-      <option value="pl">🇵🇱 Polski</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="th">🇹🇭 ไทย</option>
-      <option value="ar">🇸🇦 العربية</option>
-      <option value="tr">🇹🇷 Türkçe</option>
-      <option value="id">🇮🇩 Indonesia</option>
-      <option value="ko">🇰🇷 한국어</option>
-      <option value="ru">🇷🇺 Русский</option>
-      <option value="zh">🇨🇳 中文</option>
-      <option value="uk">🇺🇦 Українська</option>
-    </select>
-  </div>
+  <main class="content">
+    <div class="container">
 
-  <nav>
-    <ul>
-      <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="history.html">📖 History</a></li>
-      <li><a href="alliances.html">🛡️ Alliances</a></li>
-      <li><a href="rules.html">📜 Rules</a></li>
-      <li><a href="fort.html">🏰 Fort</a></li>
-      <li><a href="news.html">🔥 News</a></li>
-      <li><a href="community.html">💬 Community</a></li>
-    </ul>
-  </nav>
+      <section class="card">
+        <div class="section-head">
+          <h3 id="ke-title">📢 Please respect all guidelines during the event</h3>
+          <p class="muted" id="ke-sub">State 214 ruleset</p>
+        </div>
 
-  <main>
-    <h2 id="ke-title">📢 Please respect all guidelines during the event</h2>
+        <div class="rules-grid">
 
-    <!-- Kill Event Rules (1, 2, 3) -->
-    <section class="rule-section">
-      <h3 class="center-title" id="event-title">1️⃣ Kill Event – Brothers in Arms (BIA)</h3>
-      <h4 id="rule-1">1️⃣ Attacking Resource Points</h4>
-      <p id="rule-1-text" class="not-allowed">❌ Not allowed. Attacking resource gathering points is strictly prohibited.</p>
+          <!-- KE RULES -->
+          <article class="rule-card">
+            <div class="rule-head">
+              <div class="badge">EVENT</div>
+              <h2 class="rule-title" id="event-title">1️⃣ Kill Event – Brothers in Arms (BIA)</h2>
+            </div>
 
-      <h4 id="rule-2">2️⃣ Attacking NAP 5, SUB Members, or Players Inside NAP 5/SUB Base or HQ</h4>
-      <p id="rule-2-text" class="not-allowed">❌ Not allowed. Do not attack players under NAP 5, SUB alliances, or those located in NAP 5/SUB base or HQ.</p>
+            <div class="rule-block">
+              <h4 id="rule-1">1️⃣ Attacking Resource Points</h4>
+              <p id="rule-1-text" class="state-bad">Not allowed. Attacking resource gathering points is strictly prohibited.</p>
+            </div>
 
-      <h4 id="rule-3">3️⃣ Attacking Players Outside of NAP or Without an Alliance</h4>
-      <p id="rule-3-text" class="allowed">✅ Allowed. You may attack these players without any restrictions.</p>
-    </section>
+            <div class="rule-block">
+              <h4 id="rule-2">2️⃣ Attacking NAP 5, SUB Members, or Players Inside NAP 5/SUB Base or HQ</h4>
+              <p id="rule-2-text" class="state-bad">Not allowed. Do not attack players under NAP 5, SUB alliances, or those located in NAP 5/SUB base or HQ.</p>
+            </div>
 
-    <!-- Castle Rotation and Facility Assignment Rules (4, 5) -->
-    <section class="separate-section">
-      <h3 class="center-title" id="castle-title">2️⃣ Castle Rotation</h3>
-      <p id="castle-text" class="allowed">✅ The top 5 alliances will rotate control of the castle every 2 weeks. This ensures that every alliance within the Big 5 has an opportunity to control the castle.</p>
-    </section>
+            <div class="rule-block">
+              <h4 id="rule-3">3️⃣ Attacking Players Outside of NAP or Without an Alliance</h4>
+              <p id="rule-3-text" class="state-good">Allowed. You may attack these players without any restrictions.</p>
+            </div>
+          </article>
 
-    <section class="separate-section">
-      <h3 class="center-title" id="facility-title">3️⃣ Facility Assignment</h3>
-      <p id="facility-text" class="allowed">✅ Facilities within the state will be shared and assigned on a fixed basis. Each alliance will be assigned its designated facilities to ensure efficient operations during the event.</p>
-    </section>
+          <!-- CASTLE ROTATION -->
+          <article class="rule-card">
+            <div class="rule-head">
+              <div class="badge">CASTLE</div>
+              <h2 class="rule-title" id="castle-title">2️⃣ Castle Rotation</h2>
+            </div>
+            <p id="castle-text" class="state-good">
+              The Top 3 alliances rotate control of the castle every 2 weeks. This ensures that every alliance within the Top 3 has an opportunity to control the castle.
+            </p>
 
+            <div class="pill-row">
+              <span class="pill top">TOP 3</span>
+              <span class="pill">2 WEEKS</span>
+              <span class="pill">ROTATION</span>
+            </div>
+          </article>
+
+          <!-- FACILITIES -->
+          <article class="rule-card">
+            <div class="rule-head">
+              <div class="badge">STATE</div>
+              <h2 class="rule-title" id="facility-title">3️⃣ Facility Assignment</h2>
+            </div>
+            <p id="facility-text" class="state-good">
+              Facilities within the state will be shared and assigned on a fixed basis. Each alliance will be assigned its designated facilities to ensure efficient operations during the event.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <footer>
-    <p id="footer-text">© 2025 State 214 Community – Built by players, for players · All Stars United</p>
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
+        <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-line">
+          © WOSC — Whiteout Survival Community •
+          <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
+        </div>
+        <div class="footer-line">
+          Design & Build: <span class="footer-strong">Bros24</span>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
-    // Function to load and translate the page based on the selected language
-    $.getJSON('rules.json', function(data) {
-      const translatePage = (lang) => {
-        $('#page-title').text(data[lang]["page-title"]);
-        $('#intro-text').text(data[lang]["home"]);
-        $('#ke-title').text(data[lang]["ke-title"]);
-        $('#event-title').text(data[lang]["event-title"]);
-        $('#rule-1').text(data[lang]["rule-1"]);
-        $('#rule-1-text').text(data[lang]["rule-1-text"]);
-        $('#rule-2').text(data[lang]["rule-2"]);
-        $('#rule-2-text').text(data[lang]["rule-2-text"]);
-        $('#rule-3').text(data[lang]["rule-3"]);
-        $('#rule-3-text').text(data[lang]["rule-3-text"]);
-        $('#castle-title').text(data[lang]["castle-title"]);
-        $('#castle-text').text(data[lang]["castle-text"]);
-        $('#facility-title').text(data[lang]["facility-title"]);
-        $('#facility-text').text(data[lang]["facility-text"]);
-        $('#footer-text').text(data[lang]["footer-text"]);
-      };
+    // Uses your existing rules.json (no rebuild needed). Adds safe fallbacks.
+    const FALLBACK_LANG = 'en';
 
-      // Set default language to English
+    function getSafe(dict, lang, key){
+      if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
+      if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
+      return null;
+    }
+
+    function translateCommon(dict, lang){
+      const home = getSafe(dict, lang, "home");
+      const history = getSafe(dict, lang, "history");
+      const alliances = getSafe(dict, lang, "alliances");
+      const rules = getSafe(dict, lang, "rules");
+      const fort = getSafe(dict, lang, "fort");
+      const news = getSafe(dict, lang, "news");
+      const community = getSafe(dict, lang, "community");
+
+      if(home) $('#nav-home').text('🏠 ' + home);
+      if(history) $('#nav-history').text('📖 ' + history);
+      if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
+      if(rules) $('#nav-rules').text('📜 ' + rules);
+      if(fort) $('#nav-fort').text('🏰 ' + fort);
+      if(news) $('#nav-news').text('🔥 ' + news);
+      if(community) $('#nav-community').text('💬 ' + community);
+    }
+
+    $.getJSON('rules.json', function(data){
+      function translatePage(lang){
+        const pageTitle = getSafe(data, lang, "page-title");
+        const intro = getSafe(data, lang, "home");
+        const keTitle = getSafe(data, lang, "ke-title");
+        const eventTitle = getSafe(data, lang, "event-title");
+        const r1 = getSafe(data, lang, "rule-1");
+        const r1t = getSafe(data, lang, "rule-1-text");
+        const r2 = getSafe(data, lang, "rule-2");
+        const r2t = getSafe(data, lang, "rule-2-text");
+        const r3 = getSafe(data, lang, "rule-3");
+        const r3t = getSafe(data, lang, "rule-3-text");
+        const castleTitle = getSafe(data, lang, "castle-title");
+        const castleText = getSafe(data, lang, "castle-text");
+        const facilityTitle = getSafe(data, lang, "facility-title");
+        const facilityText = getSafe(data, lang, "facility-text");
+        const footer = getSafe(data, lang, "footer-text");
+
+        if(pageTitle) $('#page-title').text(pageTitle);
+        if(intro) $('#intro-text').text(intro);
+        if(keTitle) $('#ke-title').text(keTitle);
+        if(eventTitle) $('#event-title').text(eventTitle);
+        if(r1) $('#rule-1').text(r1);
+        if(r1t) $('#rule-1-text').text(r1t);
+        if(r2) $('#rule-2').text(r2);
+        if(r2t) $('#rule-2-text').text(r2t);
+        if(r3) $('#rule-3').text(r3);
+        if(r3t) $('#rule-3-text').text(r3t);
+        if(castleTitle) $('#castle-title').text(castleTitle);
+
+        // Ensure Top 3 wording even if old JSON still says Top 5:
+        if(castleText){
+          const fixed = String(castleText)
+            .replace(/top\s*5/ig, 'Top 3')
+            .replace(/big\s*5/ig, 'Top 3');
+          $('#castle-text').text(fixed);
+        }
+
+        if(facilityTitle) $('#facility-title').text(facilityTitle);
+        if(facilityText) $('#facility-text').text(facilityText);
+        if(footer) $('#footer-text').text(footer);
+
+        translateCommon(data, lang);
+      }
+
       translatePage('en');
 
-      // Change language when the user selects from the dropdown
-      $('#language-select').change(function() {
-        const selectedLang = $(this).val();
-        translatePage(selectedLang);
+      $('#language-select').on('change', function(){
+        translatePage($(this).val());
       });
     });
   </script>
