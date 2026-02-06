@@ -1,3 +1,4 @@
+<!-- FILE: community.html  (ALLES ersetzen) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,212 +7,186 @@
   <title>Community – State 214</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    header, footer {
-      text-align: center;
-      padding: 10px;
-      background: #111;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: #1c1c1c;
-    }
-
-    nav ul li {
-      margin: 5px 15px;
-    }
-
-    nav ul li a {
-      color: #87cefa;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #87cefa;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
-    .dropdown select {
-      font-size: 16px;
-      padding: 5px;
-    }
-
-    /* Social-Karten-Layout */
-    .social-links {
-      margin-top: 32px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-    .social-card {
-      background: #1c1c1c;
-      border-radius: 14px;
-      box-shadow: 0 2px 16px #0005;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 16px 18px 0 18px;
-      width: 270px;
-      max-width: 95vw;
-      transition: transform 0.12s;
-      text-decoration: none;
-      min-height: 290px;
-    }
-    .social-card:hover {
-      transform: translateY(-4px) scale(1.03);
-      background: #23293a;
-    }
-    .social-card img {
-      width: 100%;
-      max-width: 235px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #222;
-      margin-bottom: 10px;
-      box-shadow: 0 0 10px #0005;
-    }
-    .social-card .caption {
-      color: #87cefa;
-      font-weight: bold;
-      font-size: 1.14em;
-      margin: 8px 0 12px 0;
-      text-align: center;
-    }
-    @media (max-width: 900px) {
-      .social-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-      }
-      .social-card {
-        width: 98vw;
-        max-width: 420px;
-      }
-      .social-card img {
-        max-width: 99%;
-        height: 150px;
-      }
-    }
-  </style>
 </head>
-<body>
-  <header>
-    <h1 id="page-title" style="font-size:2.2rem; color:#87cefa;">Whiteout Survival – State 214</h1>
-    <p id="intro-text" style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">ALL STARS UNITED</p>
+
+<body class="page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 id="page-title">Community</h1>
+        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+      </div>
+
+      <div class="lang">
+        <select id="language-select" aria-label="Language">
+          <option value="en">🇬🇧 English</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="pl">🇵🇱 Polski</option>
+          <option value="it">🇮🇩 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="th">🇹🇭 ไทย</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="id">🇮🇩 Indonesia</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="uk">🇺🇦 Українська</option>
+        </select>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a id="nav-home" href="index.html">🏠 Home</a>
+        <a id="nav-history" href="history.html">📖 History</a>
+        <a id="nav-alliances" href="alliances.html">🛡️ Alliances</a>
+        <a id="nav-rules" href="rules.html">📜 Rules</a>
+        <a id="nav-fort" href="fort.html">🏰 Fort</a>
+        <a id="nav-news" href="news.html">🔥 News</a>
+        <a id="nav-community" href="community.html" class="active">💬 Community</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Dropdown-Menü für Sprachwahl -->
-  <div class="dropdown">
-    <select id="language-select">
-      <option value="en">🇬🇧 English</option>
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="fr">🇫🇷 Français</option>
-      <option value="pl">🇵🇱 Polski</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="th">🇹🇭 ไทย</option>
-      <option value="ar">🇸🇦 العربية</option>
-      <option value="tr">🇹🇷 Türkçe</option>
-      <option value="id">🇮🇩 Indonesia</option>
-      <option value="ko">🇰🇷 한국어</option>
-      <option value="ru">🇷🇺 Русский</option>
-      <option value="zh">🇨🇳 中文</option>
-      <option value="uk">🇺🇦 Українська</option>
-    </select>
-  </div>
+  <main class="content">
+    <div class="container">
 
-  <nav>
-    <ul>
-      <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="history.html">📖 History</a></li>
-      <li><a href="alliances.html">🛡️ Alliances</a></li>
-      <li><a href="rules.html">📜 Rules</a></li>
-      <li><a href="fort.html">🏰 Fort</a></li>
-      <li><a href="news.html">🔥 News</a></li>
-      <li><a href="community.html">💬 Community</a></li>
-    </ul>
-  </nav>
+      <section class="hero">
+        <img src="assets/discord.jpg" alt="Community Banner" class="hero-img" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-kicker">STATE 214</div>
+          <h2 id="community-title">🤝 Join Our Community</h2>
+          <p id="community-description">
+            Stay informed, connect with allies, participate in events, and be part of State 214's united voice.
+          </p>
+        </div>
+      </section>
 
-  <main>
-    <h2 id="community-title">🤝 Join Our Community</h2>
-    <p id="community-description">Stay informed, connect with allies, participate in events, and be part of State 214's united voice.</p>
-    <section class="social-links">
-      <!-- Discord -->
-      <a href="https://discord.gg/rNtp9vrkk9" target="_blank" class="social-card">
-        <img src="assets/discord.jpg" alt="Join Discord" />
-        <div class="caption">Discord</div>
-      </a>
-      <!-- YouTube -->
-      <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" class="social-card">
-        <img src="assets/renee.jpg" alt="Follow on YouTube" />
-        <div class="caption">YouTube</div>
-      </a>
-      <!-- Bros24 Bot: Direkt Invite -->
-      <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" class="social-card">
-        <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
-        <div class="caption">Bros24 Bot (Invite)</div>
-      </a>
-    </section>
+      <section class="card">
+        <div class="section-head">
+          <h3 id="connect-title">Connect</h3>
+          <p class="muted" id="connect-sub">Discord • YouTube • Tools</p>
+        </div>
+
+        <div class="social-grid">
+          <!-- Discord -->
+          <a href="https://discord.gg/rNtp9vrkk9" target="_blank" rel="noopener" class="social-card">
+            <img src="assets/discord.jpg" alt="Join Discord" />
+            <div class="card-text">
+              <div class="caption" id="card-discord-title">Discord</div>
+              <div class="sub" id="card-discord-sub">Join the hub for events, guides, and coordination.</div>
+            </div>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" rel="noopener" class="social-card">
+            <img src="assets/renee.jpg" alt="Follow on YouTube" />
+            <div class="card-text">
+              <div class="caption" id="card-youtube-title">YouTube</div>
+              <div class="sub" id="card-youtube-sub">Highlights, guides, and community content.</div>
+            </div>
+          </a>
+
+          <!-- Bros24 Bot -->
+          <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands"
+             target="_blank" rel="noopener" class="social-card">
+            <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
+            <div class="card-text">
+              <div class="caption" id="card-bot-title">Bros24 Bot</div>
+              <div class="sub" id="card-bot-sub">Invite the bot for automation and tools.</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <footer>
-    <p id="footer-text">© 2026 State 214 Community – Built by players, for players · All Stars United</p>
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
+        <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-line">
+          © WOSC — Whiteout Survival Community •
+          <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
+        </div>
+        <div class="footer-line">
+          Design & Build: <span class="footer-strong">Bros24</span>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
-    // Function to load and translate the page based on the selected language
-    $.getJSON('community.json', function(data) {
-      const translatePage = (lang) => {
-        $('#page-title').text(data[lang]["page-title"]);
-        $('#intro-text').text(data[lang]["home"]);
-        $('#community-title').text(data[lang]["community-title"]);
-        $('#community-description').text(data[lang]["community-description"]);
-        $('#footer-text').text(data[lang]["footer-text"]);
-      };
+    const FALLBACK_LANG = 'en';
 
-      // Set default language to English
+    function getSafe(dict, lang, key){
+      if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
+      if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
+      return null;
+    }
+
+    function translateCommon(dict, lang){
+      const home = getSafe(dict, lang, "home");
+      const history = getSafe(dict, lang, "history");
+      const alliances = getSafe(dict, lang, "alliances");
+      const rules = getSafe(dict, lang, "rules");
+      const fort = getSafe(dict, lang, "fort");
+      const news = getSafe(dict, lang, "news");
+      const community = getSafe(dict, lang, "community");
+
+      if(home) $('#nav-home').text('🏠 ' + home);
+      if(history) $('#nav-history').text('📖 ' + history);
+      if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
+      if(rules) $('#nav-rules').text('📜 ' + rules);
+      if(fort) $('#nav-fort').text('🏰 ' + fort);
+      if(news) $('#nav-news').text('🔥 ' + news);
+      if(community) $('#nav-community').text('💬 ' + community);
+    }
+
+    $.getJSON('community.json', function(data){
+      function translatePage(lang){
+        const pageTitle = getSafe(data, lang, "page-title");
+        const intro = getSafe(data, lang, "home");
+        const title = getSafe(data, lang, "community-title");
+        const desc = getSafe(data, lang, "community-description");
+        const footer = getSafe(data, lang, "footer-text");
+
+        if(pageTitle) $('#page-title').text(pageTitle);
+        if(intro) $('#intro-text').text(intro);
+        if(title) $('#community-title').text(title);
+        if(desc) $('#community-description').text(desc);
+        if(footer) $('#footer-text').text(footer);
+
+        // Optional card texts (won't break if keys don't exist)
+        const cdT = getSafe(data, lang, "card-discord-title");
+        const cdS = getSafe(data, lang, "card-discord-sub");
+        const ytT = getSafe(data, lang, "card-youtube-title");
+        const ytS = getSafe(data, lang, "card-youtube-sub");
+        const btT = getSafe(data, lang, "card-bot-title");
+        const btS = getSafe(data, lang, "card-bot-sub");
+
+        if(cdT) $('#card-discord-title').text(cdT);
+        if(cdS) $('#card-discord-sub').text(cdS);
+        if(ytT) $('#card-youtube-title').text(ytT);
+        if(ytS) $('#card-youtube-sub').text(ytS);
+        if(btT) $('#card-bot-title').text(btT);
+        if(btS) $('#card-bot-sub').text(btS);
+
+        translateCommon(data, lang);
+      }
+
       translatePage('en');
 
-      // Change language when the user selects from the dropdown
-      $('#language-select').change(function() {
-        const selectedLang = $(this).val();
-        translatePage(selectedLang);
+      $('#language-select').on('change', function(){
+        translatePage($(this).val());
       });
     });
   </script>
