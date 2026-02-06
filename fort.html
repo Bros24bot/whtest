@@ -1,3 +1,4 @@
+<!-- FILE: fort.html  (ALLES ersetzen) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,184 +7,181 @@
   <title>Fortress Strategy – State 214</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    header, footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: #1c1c1c;
-    }
-
-    nav ul li {
-      margin: 5px 15px;
-    }
-
-    nav ul li a {
-      color: #87cefa;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    main h2, main h3 {
-      color: #87cefa;
-    }
-
-    main p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    ul {
-      text-align: left;
-      display: inline-block;
-      font-size: 1rem;
-      margin-top: 10px;
-    }
-
-    .fort-image {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      margin: 20px auto;
-      display: block;
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
-    .dropdown select {
-      font-size: 16px;
-      padding: 5px;
-    }
-
-    .center-title {
-      text-align: center;
-      color: #87cefa;
-    }
-
-    .separate-section {
-      background: #1a1a1a;
-      margin: 20px auto;
-      padding: 20px;
-      border-left: 5px solid #87cefa;
-      text-align: left;
-      border-radius: 10px;
-    }
-  </style>
 </head>
-<body>
-  <header>
-    <h1 id="page-title" style="font-size: 2.5rem; color:#87cefa;">Fortress Strategy</h1>
-    <p id="intro-text" style="font-size:1.2rem; color:#ccc; font-weight: bold; font-style: italic;">ALL STARS UNITED</p>
+
+<body class="page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 id="page-title">Fortress Strategy</h1>
+        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+      </div>
+
+      <div class="lang">
+        <select id="language-select" aria-label="Language">
+          <option value="en">🇬🇧 English</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="pl">🇵🇱 Polski</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="th">🇹🇭 ไทย</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="id">🇮🇩 Indonesia</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="uk">🇺🇦 Українська</option>
+        </select>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a id="nav-home" href="index.html">🏠 Home</a>
+        <a id="nav-history" href="history.html">📖 History</a>
+        <a id="nav-alliances" href="alliances.html">🛡️ Alliances</a>
+        <a id="nav-rules" href="rules.html">📜 Rules</a>
+        <a id="nav-fort" href="fort.html" class="active">🏰 Fort</a>
+        <a id="nav-news" href="news.html">🔥 News</a>
+        <a id="nav-community" href="community.html">💬 Community</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Dropdown-Menü für Sprachwahl -->
-  <div class="dropdown">
-    <select id="language-select">
-      <option value="en">🇬🇧 English</option>
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="fr">🇫🇷 Français</option>
-      <option value="pl">🇵🇱 Polski</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="th">🇹🇭 ไทย</option>
-      <option value="ar">🇸🇦 العربية</option>
-      <option value="tr">🇹🇷 Türkçe</option>
-      <option value="id">🇮🇩 Indonesia</option>
-      <option value="ko">🇰🇷 한국어</option>
-      <option value="ru">🇷🇺 Русский</option>
-      <option value="zh">🇨🇳 中文</option>
-      <option value="uk">🇺🇦 Українська</option>
-    </select>
-  </div>
+  <main class="content">
+    <div class="container">
 
-  <nav>
-    <ul>
-      <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="history.html">📖 History</a></li>
-      <li><a href="alliances.html">🛡️ Alliances</a></li>
-      <li><a href="rules.html">📜 Rules</a></li>
-      <li><a href="fort.html">🏰 Fort</a></li>
-      <li><a href="news.html">🔥 News</a></li>
-      <li><a href="community.html">💬 Community</a></li>
-    </ul>
-  </nav>
+      <section class="hero">
+        <img src="assets/fortrules.jpg" alt="Fortress Rules" class="hero-img" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-kicker">STATE 214</div>
+          <h2 id="fort-title">⚔️ Fortress Strategy & Distribution</h2>
+          <p id="fort-description">
+            At State 214, we believe that a fair and transparent fortress distribution is essential to maintaining a healthy and united state.
+            Our strategy is built around teamwork, smart planning, and preparation for major events like <strong>State vs State (SvS)</strong>
+            and the <strong>Frost Dragon Tyrant Event</strong>.
+          </p>
+        </div>
+      </section>
 
-  <main>
-    <img src="assets/fortrules.jpg" alt="Fortress Rules Image" class="fort-image" />
+      <section class="card">
+        <h3 id="fort-details-title">Distribution</h3>
+        <p id="fort-details">
+          The weekly fortress battles are not just for glory – they are a key part of our state’s long-term strategy. Here's how we structure the distribution:
+        </p>
 
-    <h2 id="fort-title">⚔️ Fortress Strategy & Distribution</h2>
-    <p id="fort-description">At State 214, we believe that a fair and transparent fortress distribution is essential to maintaining a healthy and united state. Our strategy is built around teamwork, smart planning, and preparation for major events like <strong>State vs State (SvS)</strong> and the <strong>Frost Dragon Tyrant Event</strong>.</p>
+        <div class="fort-grid">
+          <article class="fort-card top">
+            <div class="badge top">RANK 1</div>
+            <div class="fort-line" id="rank-1">2x Stronghold & 5x Fort</div>
+          </article>
 
-    <p id="fort-details">The weekly fortress battles are not just for glory – they are a key part of our state’s long-term strategy. Here's how we structure the distribution:</p>
+          <article class="fort-card">
+            <div class="badge">RANK 2</div>
+            <div class="fort-line" id="rank-2">1x Stronghold & 4x Fort</div>
+          </article>
 
-    <h3 id="rank-title">🏆 Ranking-Based Distribution SVS Prep</h3>
-    <ul>
-      <li><strong id="rank-1">Rank 1:</strong> 2x Stronghold & 5x Fort</li>
-      <li><strong id="rank-2">Rank 2:</strong> 1x Stronghold & 4x Fort</li>
-      <li><strong id="rank-3">Rank 3:</strong> 1x Stronghold & 3x Fort</li>
-    </ul>
+          <article class="fort-card">
+            <div class="badge">RANK 3</div>
+            <div class="fort-line" id="rank-3">1x Stronghold & 3x Fort</div>
+          </article>
+        </div>
 
-    <p id="important-note"><strong>Important:</strong> Rewards obtained from Forts and Strongholds should be used responsibly and saved for SvS battles. Every alliance is expected to contribute to our shared success in 214.</p>
+        <div class="rule-block" style="margin-top:16px;">
+          <h4 id="important-note-title">Important</h4>
+          <p id="important-note" class="state-good">
+            Rewards obtained from Forts and Strongholds should be used responsibly and saved for SvS battles.
+            Every alliance is expected to contribute to our shared success in 214.
+          </p>
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <footer>
-    <p id="footer-text">© 2026 State 214 Community – Built by players, for players · All Stars United</p>
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
+        <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-line">
+          © WOSC — Whiteout Survival Community •
+          <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
+        </div>
+        <div class="footer-line">
+          Design & Build: <span class="footer-strong">Bros24</span>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
-    // Function to load and translate the page based on the selected language
-    $.getJSON('fort.json', function(data) {
-      const translatePage = (lang) => {
-        $('#page-title').text(data[lang]["page-title"]);
-        $('#intro-text').text(data[lang]["intro-text"]);
-        $('#fort-title').text(data[lang]["fort-title"]);
-        $('#fort-description').text(data[lang]["fort-description"]);
-        $('#fort-details').text(data[lang]["fort-details"]);
-        $('#rank-title').text(data[lang]["rank-title"]);
-        $('#rank-1').text(data[lang]["rank-1"]);
-        $('#rank-2').text(data[lang]["rank-2"]);
-        $('#rank-3').text(data[lang]["rank-3"]);
-        $('#rank-4').text(data[lang]["rank-4"]);
-        $('#rank-5').text(data[lang]["rank-5"]);
-        $('#important-note').text(data[lang]["important-note"]);
-        $('#footer-text').text(data[lang]["footer-text"]);
-      };
+    const FALLBACK_LANG = 'en';
 
-      // Set default language to English
+    function getSafe(dict, lang, key){
+      if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
+      if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
+      return null;
+    }
+
+    function translateCommon(dict, lang){
+      const home = getSafe(dict, lang, "home");
+      const history = getSafe(dict, lang, "history");
+      const alliances = getSafe(dict, lang, "alliances");
+      const rules = getSafe(dict, lang, "rules");
+      const fort = getSafe(dict, lang, "fort");
+      const news = getSafe(dict, lang, "news");
+      const community = getSafe(dict, lang, "community");
+
+      if(home) $('#nav-home').text('🏠 ' + home);
+      if(history) $('#nav-history').text('📖 ' + history);
+      if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
+      if(rules) $('#nav-rules').text('📜 ' + rules);
+      if(fort) $('#nav-fort').text('🏰 ' + fort);
+      if(news) $('#nav-news').text('🔥 ' + news);
+      if(community) $('#nav-community').text('💬 ' + community);
+    }
+
+    $.getJSON('fort.json', function(data){
+      function translatePage(lang){
+        const pageTitle = getSafe(data, lang, "page-title");
+        const intro = getSafe(data, lang, "intro-text");
+        const fortTitle = getSafe(data, lang, "fort-title");
+        const fortDesc = getSafe(data, lang, "fort-description");
+        const fortDetails = getSafe(data, lang, "fort-details");
+        const rank1 = getSafe(data, lang, "rank-1");
+        const rank2 = getSafe(data, lang, "rank-2");
+        const rank3 = getSafe(data, lang, "rank-3");
+        const important = getSafe(data, lang, "important-note");
+        const footer = getSafe(data, lang, "footer-text");
+
+        if(pageTitle) $('#page-title').text(pageTitle);
+        if(intro) $('#intro-text').text(intro);
+
+        if(fortTitle) $('#fort-title').text(fortTitle);
+        if(fortDesc) $('#fort-description').html(fortDesc);   // keep <strong> if your JSON contains it
+        if(fortDetails) $('#fort-details').text(fortDetails);
+
+        if(rank1) $('#rank-1').text(rank1);
+        if(rank2) $('#rank-2').text(rank2);
+        if(rank3) $('#rank-3').text(rank3);
+
+        if(important) $('#important-note').text(important);
+        if(footer) $('#footer-text').text(footer);
+
+        translateCommon(data, lang);
+      }
+
       translatePage('en');
 
-      // Change language when the user selects from the dropdown
-      $('#language-select').change(function() {
-        const selectedLang = $(this).val();
-        translatePage(selectedLang);
+      $('#language-select').on('change', function(){
+        translatePage($(this).val());
       });
     });
   </script>
