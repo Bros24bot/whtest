@@ -5,6 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>History of State 214</title>
+
+  <!-- FAVICON / SITE ICON -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-192x192.png">
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -12,9 +18,16 @@
 <body class="page">
   <header class="site-header">
     <div class="container header-inner">
+
+      <!-- BRAND + HOME ICON (CLICKABLE) -->
       <div class="brand">
-        <h1 id="page-title">The History of State 214</h1>
-        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+        <a class="brand-home" href="index.html" aria-label="Go to Home">
+          <img src="/assets/favicon-192x192.png" alt="State 214" class="brand-logo">
+          <div class="brand-text">
+            <h1 id="page-title">The History of State 214</h1>
+            <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+          </div>
+        </a>
       </div>
 
       <div class="lang">
@@ -180,31 +193,34 @@
       return null;
     }
 
-    // Menü: unterstützt BEIDE Key-Styles:
-    // 1) index.json-style: nav-home, nav-history, ...
-    // 2) alte style keys: home/history/alliances/... + apply-nav
-    function navKey(dict, lang, id, fallbackKey){
-      return getSafe(dict, lang, "nav-" + id) || getSafe(dict, lang, fallbackKey);
+    // Entfernt führende Emojis/Icons, damit keine doppelten Emojis entstehen
+    function stripLeadingIcons(text){
+      if(!text) return "";
+      return String(text).replace(
+        /^[\s\u200D\uFE0F]*(?:[\p{Extended_Pictographic}\p{Emoji_Presentation}\p{Emoji}\u2600-\u27BF]\s*)+/gu,
+        ""
+      ).trim();
+    }
+
+    // Baut immer GENAU 1 Emoji + Label
+    function navLabel(t, navKey, plainKey, emoji, fallback){
+      const raw = t[navKey] ?? t[plainKey] ?? fallback;
+      const clean = stripLeadingIcons(raw);
+      return `${emoji} ${clean || stripLeadingIcons(fallback)}`;
     }
 
     function translateNav(dict, lang){
-      const home = navKey(dict, lang, "home", "home");
-      const history = navKey(dict, lang, "history", "history");
-      const alliances = navKey(dict, lang, "alliances", "alliances");
-      const rules = navKey(dict, lang, "rules", "rules");
-      const fort = navKey(dict, lang, "fort", "fort");
-      const news = navKey(dict, lang, "news", "news");
-      const apply = navKey(dict, lang, "apply", "apply-nav") || navKey(dict, lang, "apply", "apply");
-      const community = navKey(dict, lang, "community", "community");
-
-      if(home) $('#nav-home').text(home);
-      if(history) $('#nav-history').text(history);
-      if(alliances) $('#nav-alliances').text(alliances);
-      if(rules) $('#nav-rules').text(rules);
-      if(fort) $('#nav-fort').text(fort);
-      if(news) $('#nav-news').text(news);
-      if(apply) $('#nav-apply').text(apply);
-      if(community) $('#nav-community').text(community);
+      const t = dict[lang] || dict[FALLBACK_LANG] || {};
+      $('#nav-home').text(navLabel(t, "nav-home", "home", "🏠", "Home"));
+      $('#nav-history').text(navLabel(t, "nav-history", "history", "📖", "History"));
+      $('#nav-alliances').text(navLabel(t, "nav-alliances", "alliances", "🛡️", "Alliances"));
+      $('#nav-rules').text(navLabel(t, "nav-rules", "rules", "📜", "Rules"));
+      $('#nav-fort').text(navLabel(t, "nav-fort", "fort", "🏰", "Fort"));
+      $('#nav-news').text(navLabel(t, "nav-news", "news", "🔥", "News"));
+      // manche JSON nutzen apply-nav statt apply
+      const applyRaw = t["nav-apply"] ?? t["apply-nav"] ?? t["apply"] ?? "Apply";
+      $('#nav-apply').text(`📝 ${stripLeadingIcons(applyRaw)}`);
+      $('#nav-community').text(navLabel(t, "nav-community", "community", "💬", "Community"));
     }
 
     $(document).ready(function() {
@@ -212,7 +228,7 @@
 
         function translatePage(lang){
           const pageTitle = getSafe(data, lang, "page-title");
-          const introBrand = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home");
+          const introBrand = getSafe(data, lang, "intro-text") || "ALL STARS UNITED";
 
           const historyTitle = getSafe(data, lang, "history-title") || getSafe(data, lang, "page-title");
           const introduction = getSafe(data, lang, "introduction");
@@ -277,16 +293,13 @@
 
           if(footer) $('#footer-text').text(footer);
 
-          // NAV immer übersetzen
           translateNav(data, lang);
         }
 
-        // Init: saved lang
         const saved = localStorage.getItem(LANG_KEY) || 'en';
         $('#language-select').val(saved);
         translatePage(saved);
 
-        // Change
         $('#language-select').on('change', function() {
           const lang = $(this).val();
           localStorage.setItem(LANG_KEY, lang);
@@ -298,5 +311,14 @@
       });
     });
   </script>
+
+  <!--
+    EINMALIG in style.css hinzufügen (für alle Seiten):
+
+    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
+    .brand-text h1 { margin:0; }
+    .brand-text p { margin:0; }
+  -->
 </body>
 </html>
