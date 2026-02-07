@@ -127,6 +127,11 @@
   </footer>
 
   <script>
+    // FIX:
+    // - Header line (#intro-text) must use "intro-text" (ALL STARS UNITED), NOT "home"
+    // - Nav Home must use "home" (Home)
+    // - Keeps NAV order + Apply menu
+
     const FALLBACK_LANG = 'en';
 
     function getSafe(dict, lang, key){
@@ -136,7 +141,7 @@
     }
 
     function translateCommon(dict, lang){
-      const home = getSafe(dict, lang, "home");
+      const navHome = getSafe(dict, lang, "home");
       const history = getSafe(dict, lang, "history");
       const alliances = getSafe(dict, lang, "alliances");
       const rules = getSafe(dict, lang, "rules");
@@ -145,29 +150,29 @@
       const apply = getSafe(dict, lang, "apply-nav");
       const community = getSafe(dict, lang, "community");
 
-      if(home) $('#nav-home').text('🏠 ' + home);
+      if(navHome) $('#nav-home').text('🏠 ' + navHome);
       if(history) $('#nav-history').text('📖 ' + history);
       if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
       if(rules) $('#nav-rules').text('📜 ' + rules);
       if(fort) $('#nav-fort').text('🏰 ' + fort);
       if(news) $('#nav-news').text('🔥 ' + news);
-
-      // apply-nav already contains 📝 in your JSON, keep as-is
-      if(apply) $('#nav-apply').text(apply);
-
+      if(apply) $('#nav-apply').text(apply); // includes 📝 in JSON
       if(community) $('#nav-community').text('💬 ' + community);
     }
 
     $.getJSON('community.json', function(data){
       function translatePage(lang){
         const pageTitle = getSafe(data, lang, "page-title");
-        const intro = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home");
+        const introBrand = getSafe(data, lang, "intro-text"); // ALL STARS UNITED
         const title = getSafe(data, lang, "community-title");
         const desc = getSafe(data, lang, "community-description");
         const footer = getSafe(data, lang, "footer-text");
 
         if(pageTitle) $('#page-title').text(pageTitle);
-        if(intro) $('#intro-text').text(intro);
+
+        // IMPORTANT: do NOT fall back to "home" here
+        if(introBrand) $('#intro-text').text(introBrand);
+
         if(title) $('#community-title').text(title);
         if(desc) $('#community-description').text(desc);
         if(footer) $('#footer-text').text(footer);
@@ -195,6 +200,8 @@
       $('#language-select').on('change', function(){
         translatePage($(this).val());
       });
+    }).fail(function(){
+      console.warn('community.json could not be loaded.');
     });
   </script>
 </body>
