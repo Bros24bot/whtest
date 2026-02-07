@@ -1,4 +1,4 @@
-<!-- FILE: apply.html  (NEU anlegen) -->
+<!-- FILE: apply.html  (ALLES ersetzen) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +68,7 @@
 
             <div class="row">
               <label for="state">State *</label>
-              <input id="state" type="number" name="State" required min="1" step="1" placeholder="214">
+              <input id="state" type="number" name="State" required min="1" step="1" value="214">
             </div>
 
             <div class="row">
@@ -144,9 +144,8 @@
     </div>
   </footer>
 
-  <!-- Optional: translate header/footer if you later add apply.json -->
   <script>
-    // Keep language dropdown consistent (no page translations on apply yet)
+    // Keep language selection consistent across pages
     $('#language-select').change(function() {
       localStorage.setItem('state214_lang', $(this).val());
     });
