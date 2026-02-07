@@ -72,6 +72,11 @@
           <p class="muted" id="apply-subtitle">Apply to DOA / LOU / SRC in State 214</p>
         </div>
 
+        <!-- BANNER (apply.png) -->
+        <div class="apply-hero" aria-hidden="true">
+          <img src="apply.png" alt="Apply to State 214">
+        </div>
+
         <form action="https://formspree.io/f/xwvnkbvd" method="POST" class="apply-form">
           <div class="grid-2">
             <div class="row">
@@ -120,7 +125,8 @@
             </div>
           </div>
 
-          <div class="row">
+          <!-- MESSAGE: extra spacing + forced below grid -->
+          <div class="row message-row">
             <label for="msg" id="label-msg">Message *</label>
             <textarea id="msg" name="Message" rows="7" required
               placeholder="Tell us why you want to join, what are your event times and what you expect from the alliance."></textarea>
@@ -244,13 +250,5 @@
       loadLang(lang);
     });
   </script>
-
-  <!--
-    WICHTIG: Damit das Icon oben links gut aussieht, in style.css (einmalig):
-    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
-    .brand-text h1 { margin:0; }
-    .brand-text p { margin:0; }
-  -->
 </body>
 </html>
