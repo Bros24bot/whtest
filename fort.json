@@ -1,224 +1,449 @@
-<!-- FILE: fort.html  (ALLES ersetzen) -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fortress Strategy – State 214</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+{
+  "en": {
+    "page-title": "Fortress Strategy – State 214",
+    "intro-text": "ALL STARS UNITED",
 
-<body class="page">
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <h1 id="page-title">Fortress Strategy</h1>
-        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
-      </div>
+    "nav-home": "🏠 Home",
+    "nav-history": "📖 History",
+    "nav-alliances": "🛡️ Alliances",
+    "nav-rules": "📜 Rules",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 News",
+    "nav-apply": "📝 Apply",
+    "nav-community": "💬 Community",
 
-      <div class="lang">
-        <select id="language-select" aria-label="Language">
-          <option value="en">🇬🇧 English</option>
-          <option value="de">🇩🇪 Deutsch</option>
-          <option value="fr">🇫🇷 Français</option>
-          <option value="pl">🇵🇱 Polski</option>
-          <option value="it">🇮🇹 Italiano</option>
-          <option value="es">🇪🇸 Español</option>
-          <option value="th">🇹🇭 ไทย</option>
-          <option value="ar">🇸🇦 العربية</option>
-          <option value="tr">🇹🇷 Türkçe</option>
-          <option value="id">🇮🇩 Indonesia</option>
-          <option value="ko">🇰🇷 한국어</option>
-          <option value="ru">🇷🇺 Русский</option>
-          <option value="zh">🇨🇳 中文</option>
-          <option value="uk">🇺🇦 Українська</option>
-        </select>
-      </div>
-    </div>
+    "fort-title": "⚔️ Fortress Strategy & Distribution",
+    "fort-description": "At State 214, we believe that a fair and transparent fortress distribution is essential to maintaining a healthy and united state. Our strategy is built around teamwork, smart planning, and preparation for major events like State vs State (SvS) and the Frost Dragon Tyrant Event.",
+    "fort-details-title": "Distribution",
+    "fort-details": "The weekly fortress battles are not just for glory – they are a key part of our state’s long-term strategy. Here's how we structure the distribution:",
 
-    <nav class="nav">
-      <div class="container nav-inner">
-        <a id="nav-home" href="index.html">🏠 Home</a>
-        <a id="nav-history" href="history.html">📖 History</a>
-        <a id="nav-alliances" href="alliances.html">🛡️ Alliances</a>
-        <a id="nav-rules" href="rules.html">📜 Rules</a>
-        <a id="nav-fort" href="fort.html" class="active">🏰 Fort</a>
-        <a id="nav-news" href="news.html">🔥 News</a>
-        <a id="nav-apply" href="apply.html">📝 Apply</a>
-        <a id="nav-community" href="community.html">💬 Community</a>
-      </div>
-    </nav>
-  </header>
+    "rank-1": "Rank 1: 1x Stronghold & 4x Fort",
+    "rank-2": "Rank 2: 1x Stronghold & 3x Fort",
+    "rank-3": "Rank 3: 1x Stronghold & 2x Fort",
 
-  <main class="content">
-    <div class="container">
+    "rank-1-badge": "RANK 1",
+    "rank-2-badge": "RANK 2",
+    "rank-3-badge": "RANK 3",
 
-      <section class="hero">
-        <img src="assets/fortrules.jpg" alt="Fortress Rules" class="hero-img" />
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <div class="hero-kicker">STATE 214</div>
-          <h2 id="fort-title">⚔️ Fortress Strategy & Distribution</h2>
-          <p id="fort-description">
-            At State 214, we believe that a fair and transparent fortress distribution is essential to maintaining a healthy and united state.
-            Our strategy is built around teamwork, smart planning, and preparation for major events like <strong>State vs State (SvS)</strong>
-            and the <strong>Frost Dragon Tyrant Event</strong>.
-          </p>
-        </div>
-      </section>
+    "important-note-title": "Important",
+    "important-note": "Rewards obtained from Forts and Strongholds should be used responsibly and saved for SvS battles. Every alliance is expected to contribute to our shared success in 214.",
 
-      <section class="card">
-        <h3 id="fort-details-title">Distribution</h3>
-        <p id="fort-details">
-          The weekly fortress battles are not just for glory – they are a key part of our state’s long-term strategy. Here's how we structure the distribution:
-        </p>
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
 
-        <!-- TOP 3 ONLY -->
-        <div class="fort-grid">
-          <article class="fort-card top">
-            <div class="badge top" id="badge-rank1">RANK 1</div>
-            <div class="fort-line" id="rank-1">Rank 1: 1x Stronghold & 4x Fort</div>
-          </article>
+  "de": {
+    "page-title": "Burg-Strategie – State 214",
+    "intro-text": "ALL STARS UNITED",
 
-          <article class="fort-card">
-            <div class="badge" id="badge-rank2">RANK 2</div>
-            <div class="fort-line" id="rank-2">Rank 2: 1x Stronghold & 3x Fort</div>
-          </article>
+    "nav-home": "🏠 Start",
+    "nav-history": "📖 Geschichte",
+    "nav-alliances": "🛡️ Allianzen",
+    "nav-rules": "📜 Regeln",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 News",
+    "nav-apply": "📝 Bewerbung",
+    "nav-community": "💬 Community",
 
-          <article class="fort-card">
-            <div class="badge" id="badge-rank3">RANK 3</div>
-            <div class="fort-line" id="rank-3">Rank 3: 1x Stronghold & 2x Fort</div>
-          </article>
-        </div>
+    "fort-title": "⚔️ Burg-Strategie & Verteilung",
+    "fort-description": "In State 214 glauben wir, dass eine faire und transparente Burgverteilung entscheidend für einen gesunden und vereinten Staat ist. Unsere Strategie basiert auf Teamarbeit, kluger Planung und Vorbereitung auf große Ereignisse wie State vs State (SvS) und das Frost Dragon Tyrant Event.",
+    "fort-details-title": "Verteilung",
+    "fort-details": "Die wöchentlichen Burgkämpfe sind nicht nur für Ruhm – sie sind ein wichtiger Teil unserer langfristigen Staatsstrategie. So strukturieren wir die Verteilung:",
 
-        <div class="rule-block" style="margin-top:16px;">
-          <h4 id="important-note-title">Important</h4>
-          <p id="important-note" class="state-good">
-            Rewards obtained from Forts and Strongholds should be used responsibly and saved for SvS battles.
-            Every alliance is expected to contribute to our shared success in 214.
-          </p>
-        </div>
-      </section>
+    "rank-1": "Rang 1: 1x Festung & 4x Burg",
+    "rank-2": "Rang 2: 1x Festung & 3x Burg",
+    "rank-3": "Rang 3: 1x Festung & 2x Burg",
 
-    </div>
-  </main>
+    "rank-1-badge": "RANG 1",
+    "rank-2-badge": "RANG 2",
+    "rank-3-badge": "RANG 3",
 
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <div class="footer-top">
-        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
-        <div class="footer-meta" id="footer-text">© 2026 State 214 Community — Built by players, for players.</div>
-      </div>
+    "important-note-title": "Wichtig",
+    "important-note": "Belohnungen aus Burgen und Festungen sollen verantwortungsvoll genutzt und für SvS-Kämpfe gespart werden. Jede Allianz soll zu unserem gemeinsamen Erfolg in 214 beitragen.",
 
-      <div class="footer-bottom">
-        <div class="footer-line">
-          © WOSC — Whiteout Survival Community •
-          <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
-        </div>
-        <div class="footer-line">
-          Design &amp; Build: <span class="footer-strong">Bros24</span>
-        </div>
-      </div>
-    </div>
-  </footer>
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
 
-  <script>
-    const FALLBACK_LANG = 'en';
-    const LANG_KEY = 'state214_lang';
+  "fr": {
+    "page-title": "Stratégie de forteresse – État 214",
+    "intro-text": "ALL STARS UNITED",
 
-    function getSafe(dict, lang, key){
-      if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
-      if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
-      return null;
-    }
+    "nav-home": "🏠 Accueil",
+    "nav-history": "📖 Histoire",
+    "nav-alliances": "🛡️ Alliances",
+    "nav-rules": "📜 Règles",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 News",
+    "nav-apply": "📝 Candidature",
+    "nav-community": "💬 Communauté",
 
-    // enforce TOP 3 only (remove/ignore any old Top5 wording if it exists in text)
-    function forceTop3(str){
-      return String(str)
-        .replace(/\bTop\s*5\b/ig, 'Top 3')
-        .replace(/\bTOP\s*5\b/ig, 'TOP 3')
-        .replace(/\bBig\s*5\b/ig, 'Top 3')
-        .replace(/\bBIG\s*5\b/ig, 'TOP 3');
-    }
+    "fort-title": "⚔️ Stratégie & distribution de forteresse",
+    "fort-description": "Dans l'État 214, nous pensons qu'une distribution équitable et transparente des forteresses est essentielle pour maintenir un état sain et uni. Notre stratégie repose sur le travail d'équipe, une planification intelligente et la préparation à des événements majeurs comme State vs State (SvS) et l'événement Frost Dragon Tyrant.",
+    "fort-details-title": "Distribution",
+    "fort-details": "Les batailles hebdomadaires de forteresse ne sont pas seulement pour la gloire — elles font partie intégrante de notre stratégie à long terme. Voici comment nous structurons la distribution :",
 
-    function translateNav(dict, lang){
-      const t = dict[lang] || dict[FALLBACK_LANG] || {};
-      const nHome = t["nav-home"] || (t["home"] ? "🏠 " + t["home"] : null);
-      const nHistory = t["nav-history"] || (t["history"] ? "📖 " + t["history"] : null);
-      const nAlliances = t["nav-alliances"] || (t["alliances"] ? "🛡️ " + t["alliances"] : null);
-      const nRules = t["nav-rules"] || (t["rules"] ? "📜 " + t["rules"] : null);
-      const nFort = t["nav-fort"] || (t["fort"] ? "🏰 " + t["fort"] : null);
-      const nNews = t["nav-news"] || (t["news"] ? "🔥 " + t["news"] : null);
-      const nApply = t["nav-apply"] || t["apply-nav"] || (t["apply"] ? "📝 " + t["apply"] : null);
-      const nCommunity = t["nav-community"] || (t["community"] ? "💬 " + t["community"] : null);
+    "rank-1": "Rang 1 : 1x Forteresse & 4x Fort",
+    "rank-2": "Rang 2 : 1x Forteresse & 3x Fort",
+    "rank-3": "Rang 3 : 1x Forteresse & 2x Fort",
 
-      if(nHome) $('#nav-home').text(nHome);
-      if(nHistory) $('#nav-history').text(nHistory);
-      if(nAlliances) $('#nav-alliances').text(nAlliances);
-      if(nRules) $('#nav-rules').text(nRules);
-      if(nFort) $('#nav-fort').text(nFort);
-      if(nNews) $('#nav-news').text(nNews);
-      if(nApply) $('#nav-apply').text(nApply);
-      if(nCommunity) $('#nav-community').text(nCommunity);
-    }
+    "rank-1-badge": "RANG 1",
+    "rank-2-badge": "RANG 2",
+    "rank-3-badge": "RANG 3",
 
-    $(document).ready(function(){
-      $.getJSON('fort.json', function(data){
+    "important-note-title": "Important",
+    "important-note": "Les récompenses obtenues via les forts et forteresses doivent être utilisées de manière responsable et conservées pour les batailles SvS. Chaque alliance est censée contribuer à notre succès commun dans le 214.",
 
-        function translatePage(lang){
-          const pageTitle = getSafe(data, lang, "page-title");
-          const intro = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home");
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
 
-          const fortTitle = getSafe(data, lang, "fort-title");
-          const fortDesc = getSafe(data, lang, "fort-description");
-          const fortDetailsTitle = getSafe(data, lang, "fort-details-title") || getSafe(data, lang, "rank-title");
-          const fortDetails = getSafe(data, lang, "fort-details");
+  "pl": {
+    "page-title": "Strategia Twierdzy – State 214",
+    "intro-text": "ALL STARS UNITED",
 
-          // TOP 3 lines (use your new keys)
-          const rank1 = getSafe(data, lang, "rank-1");
-          const rank2 = getSafe(data, lang, "rank-2");
-          const rank3 = getSafe(data, lang, "rank-3");
+    "nav-home": "🏠 Start",
+    "nav-history": "📖 Historia",
+    "nav-alliances": "🛡️ Sojusze",
+    "nav-rules": "📜 Zasady",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 Aktualności",
+    "nav-apply": "📝 Rekrutacja",
+    "nav-community": "💬 Społeczność",
 
-          const importantTitle = getSafe(data, lang, "important-note-title") || "Important";
-          const important = getSafe(data, lang, "important-note");
-          const footer = getSafe(data, lang, "footer-text");
+    "fort-title": "⚔️ Strategia Twierdzy & Podział",
+    "fort-description": "W State 214 wierzymy, że uczciwy i przejrzysty podział twierdz jest kluczowy dla utrzymania zdrowego i zjednoczonego stanu. Nasza strategia opiera się na współpracy, mądrym planowaniu i przygotowaniach do dużych wydarzeń, takich jak State vs State (SvS) oraz Frost Dragon Tyrant Event.",
+    "fort-details-title": "Podział",
+    "fort-details": "Cotygodniowe walki o twierdze to nie tylko chwała — to kluczowa część długoterminowej strategii stanu. Oto jak wygląda podział:",
 
-          if(pageTitle) $('#page-title').text(pageTitle);
-          if(intro) $('#intro-text').text(intro);
+    "rank-1": "Ranga 1: 1x Twierdza & 4x Fort",
+    "rank-2": "Ranga 2: 1x Twierdza & 3x Fort",
+    "rank-3": "Ranga 3: 1x Twierdza & 2x Fort",
 
-          if(fortTitle) $('#fort-title').text(forceTop3(fortTitle));
-          if(fortDesc) $('#fort-description').text(forceTop3(fortDesc)); // your JSON is plain text
-          if(fortDetailsTitle) $('#fort-details-title').text(forceTop3(fortDetailsTitle));
-          if(fortDetails) $('#fort-details').text(forceTop3(fortDetails));
+    "rank-1-badge": "RANGA 1",
+    "rank-2-badge": "RANGA 2",
+    "rank-3-badge": "RANGA 3",
 
-          // update TOP 3 only
-          if(rank1) $('#rank-1').text(forceTop3(rank1));
-          if(rank2) $('#rank-2').text(forceTop3(rank2));
-          if(rank3) $('#rank-3').text(forceTop3(rank3));
+    "important-note-title": "Ważne",
+    "important-note": "Nagrody z fortów i twierdz należy wykorzystywać odpowiedzialnie i oszczędzać na walki SvS. Każdy sojusz ma obowiązek dokładać cegiełkę do wspólnego sukcesu w 214.",
 
-          if(importantTitle) $('#important-note-title').text(forceTop3(importantTitle));
-          if(important) $('#important-note').text(forceTop3(important));
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
 
-          if(footer) $('#footer-text').text(forceTop3(footer));
+  "it": {
+    "page-title": "Strategia della fortezza – Stato 214",
+    "intro-text": "ALL STARS UNITED",
 
-          translateNav(data, lang);
-        }
+    "nav-home": "🏠 Home",
+    "nav-history": "📖 Storia",
+    "nav-alliances": "🛡️ Alleanze",
+    "nav-rules": "📜 Regole",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 News",
+    "nav-apply": "📝 Candidati",
+    "nav-community": "💬 Comunità",
 
-        const saved = localStorage.getItem(LANG_KEY) || 'en';
-        $('#language-select').val(saved);
-        translatePage(saved);
+    "fort-title": "⚔️ Strategia & distribuzione della fortezza",
+    "fort-description": "Nello Stato 214 crediamo che una distribuzione equa e trasparente delle fortezze sia essenziale per mantenere uno stato sano e unito. La nostra strategia si basa sul lavoro di squadra, una pianificazione intelligente e la preparazione a grandi eventi come State vs State (SvS) e l'evento Frost Dragon Tyrant.",
+    "fort-details-title": "Distribuzione",
+    "fort-details": "Le battaglie settimanali non sono solo per la gloria — sono una parte fondamentale della nostra strategia a lungo termine. Ecco come strutturiamo la distribuzione:",
 
-        $('#language-select').on('change', function(){
-          const lang = $(this).val();
-          localStorage.setItem(LANG_KEY, lang);
-          translatePage(lang);
-        });
-      })
-      .fail(function(){
-        console.error("Error loading fort.json");
-      });
-    });
-  </script>
-</body>
-</html>
+    "rank-1": "Posizione 1: 1x Fortezza & 4x Forte",
+    "rank-2": "Posizione 2: 1x Fortezza & 3x Forte",
+    "rank-3": "Posizione 3: 1x Fortezza & 2x Forte",
+
+    "rank-1-badge": "POS. 1",
+    "rank-2-badge": "POS. 2",
+    "rank-3-badge": "POS. 3",
+
+    "important-note-title": "Importante",
+    "important-note": "Le ricompense ottenute da forti e fortezze devono essere usate in modo responsabile e conservate per le battaglie SvS. Ogni alleanza è tenuta a contribuire al nostro successo comune nel 214.",
+
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
+
+  "es": {
+    "page-title": "Estrategia de fortaleza – Estado 214",
+    "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 Inicio",
+    "nav-history": "📖 Historia",
+    "nav-alliances": "🛡️ Alianzas",
+    "nav-rules": "📜 Reglas",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 Noticias",
+    "nav-apply": "📝 Solicitar",
+    "nav-community": "💬 Comunidad",
+
+    "fort-title": "⚔️ Estrategia & distribución de fortaleza",
+    "fort-description": "En el Estado 214 creemos que una distribución justa y transparente de las fortalezas es esencial para mantener un estado sano y unido. Nuestra estrategia se basa en el trabajo en equipo, la planificación inteligente y la preparación para eventos importantes como State vs State (SvS) y el evento Frost Dragon Tyrant.",
+    "fort-details-title": "Distribución",
+    "fort-details": "Las batallas semanales no son solo por la gloria — son una parte clave de nuestra estrategia a largo plazo. Así es como estructuramos la distribución:",
+
+    "rank-1": "Rango 1: 1x Fortaleza & 4x Fuerte",
+    "rank-2": "Rango 2: 1x Fortaleza & 3x Fuerte",
+    "rank-3": "Rango 3: 1x Fortaleza & 2x Fuerte",
+
+    "rank-1-badge": "RANGO 1",
+    "rank-2-badge": "RANGO 2",
+    "rank-3-badge": "RANGO 3",
+
+    "important-note-title": "Importante",
+    "important-note": "Las recompensas obtenidas de fuertes y fortalezas deben usarse de forma responsable y guardarse para las batallas SvS. Se espera que cada alianza contribuya a nuestro éxito compartido en 214.",
+
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
+
+  "th": {
+    "page-title": "กลยุทธ์ป้อมปราการ – State 214",
+    "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 หน้าแรก",
+    "nav-history": "📖 ประวัติ",
+    "nav-alliances": "🛡️ พันธมิตร",
+    "nav-rules": "📜 กฎ",
+    "nav-fort": "🏰 ฟอร์ต",
+    "nav-news": "🔥 ข่าว",
+    "nav-apply": "📝 สมัครเข้าร่วม",
+    "nav-community": "💬 ชุมชน",
+
+    "fort-title": "⚔️ กลยุทธ์ & การจัดสรรป้อมปราการ",
+    "fort-description": "ใน State 214 เราเชื่อว่าการจัดสรรป้อมปราการอย่างยุติธรรมและโปร่งใสเป็นสิ่งสำคัญต่อการรักษารัฐให้แข็งแรงและเป็นหนึ่งเดียว กลยุทธ์ของเราสร้างบนการทำงานเป็นทีม การวางแผนที่ฉลาด และการเตรียมพร้อมสำหรับกิจกรรมใหญ่ เช่น State vs State (SvS) และ Frost Dragon Tyrant Event",
+    "fort-details-title": "การจัดสรร",
+    "fort-details": "การต่อสู้ป้อมปราการประจำสัปดาห์ไม่ใช่แค่เพื่อเกียรติยศ — แต่เป็นส่วนสำคัญของกลยุทธ์ระยะยาวของเรา นี่คือโครงสร้างการจัดสรร:",
+
+    "rank-1": "อันดับ 1: 1x ป้อมปราการ & 4x ฟอร์ต",
+    "rank-2": "อันดับ 2: 1x ป้อมปราการ & 3x ฟอร์ต",
+    "rank-3": "อันดับ 3: 1x ป้อมปราการ & 2x ฟอร์ต",
+
+    "rank-1-badge": "อันดับ 1",
+    "rank-2-badge": "อันดับ 2",
+    "rank-3-badge": "อันดับ 3",
+
+    "important-note-title": "สำคัญ",
+    "important-note": "ควรใช้รางวัลจากฟอร์ตและป้อมปราการอย่างรับผิดชอบและเก็บไว้สำหรับการต่อสู้ SvS ทุกพันธมิตรควรร่วมมือเพื่อความสำเร็จของรัฐ 214",
+
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
+
+  "ar": {
+    "page-title": "استراتيجية الحصون – State 214",
+    "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 الرئيسية",
+    "nav-history": "📖 التاريخ",
+    "nav-alliances": "🛡️ التحالفات",
+    "nav-rules": "📜 القواعد",
+    "nav-fort": "🏰 الحصن",
+    "nav-news": "🔥 الأخبار",
+    "nav-apply": "📝 تقديم طلب",
+    "nav-community": "💬 المجتمع",
+
+    "fort-title": "⚔️ استراتيجية & توزيع الحصون",
+    "fort-description": "في State 214 نؤمن أن توزيع الحصون بشكل عادل وشفاف أمر أساسي للحفاظ على دولة صحية وموحدة. استراتيجيتنا مبنية على العمل الجماعي والتخطيط الذكي والاستعداد لأحداث كبرى مثل State vs State (SvS) و Frost Dragon Tyrant Event.",
+    "fort-details-title": "التوزيع",
+    "fort-details": "معارك الحصون الأسبوعية ليست فقط من أجل المجد — بل هي جزء أساسي من استراتيجيتنا طويلة المدى. إليك كيف نُهيكل التوزيع:",
+
+    "rank-1": "المرتبة 1: 1x قلعة & 4x حصن",
+    "rank-2": "المرتبة 2: 1x قلعة & 3x حصن",
+    "rank-3": "المرتبة 3: 1x قلعة & 2x حصن",
+
+    "rank-1-badge": "المرتبة 1",
+    "rank-2-badge": "المرتبة 2",
+    "rank-3-badge": "المرتبة 3",
+
+    "important-note-title": "مهم",
+    "important-note": "يجب استخدام المكافآت التي يتم الحصول عليها من الحصون والقلاع بشكل مسؤول وحفظها لمعارك SvS. يُتوقع من كل تحالف أن يساهم في نجاحنا المشترك في 214.",
+
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
+
+  "tr": {
+    "page-title": "Kale Stratejisi – State 214",
+    "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 Ana Sayfa",
+    "nav-history": "📖 Tarih",
+    "nav-alliances": "🛡️ İttifaklar",
+    "nav-rules": "📜 Kurallar",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 Haberler",
+    "nav-apply": "📝 Başvuru",
+    "nav-community": "💬 Topluluk",
+
+    "fort-title": "⚔️ Kale Stratejisi & Dağıtım",
+    "fort-description": "State 214'te, adil ve şeffaf bir kale dağılımının sağlıklı ve birleşmiş bir devletin korunması için önemli olduğuna inanıyoruz. Stratejimiz takım çalışması, akıllı planlama ve State vs State (SvS) ile Frost Dragon Tyrant Event gibi büyük etkinliklere hazırlık üzerine kuruludur.",
+    "fort-details-title": "Dağıtım",
+    "fort-details": "Haftalık kale savaşları yalnızca zafer için değil — uzun vadeli stratejimizin önemli bir parçasıdır. Dağıtımı şöyle yapılandırıyoruz:",
+
+    "rank-1": "Sıra 1: 1x Kale & 4x Kale",
+    "rank-2": "Sıra 2: 1x Kale & 3x Kale",
+    "rank-3": "Sıra 3: 1x Kale & 2x Kale",
+
+    "rank-1-badge": "SIRA 1",
+    "rank-2-badge": "SIRA 2",
+    "rank-3-badge": "SIRA 3",
+
+    "important-note-title": "Önemli",
+    "important-note": "Kalelerden ve fortlardan elde edilen ödüller sorumlu bir şekilde kullanılmalı ve SvS savaşları için saklanmalıdır. Her ittifak 214'teki ortak başarımıza katkıda bulunmalıdır.",
+
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
+
+  "id": {
+    "page-title": "Strategi Benteng – State 214",
+    "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 Beranda",
+    "nav-history": "📖 Sejarah",
+    "nav-alliances": "🛡️ Aliansi",
+    "nav-rules": "📜 Aturan",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 Berita",
+    "nav-apply": "📝 Daftar",
+    "nav-community": "💬 Komunitas",
+
+    "fort-title": "⚔️ Strategi & Distribusi Benteng",
+    "fort-description": "Di State 214, kami percaya bahwa distribusi benteng yang adil dan transparan sangat penting untuk menjaga negara tetap sehat dan bersatu. Strategi kami dibangun di atas kerja tim, perencanaan cerdas, dan persiapan untuk acara besar seperti State vs State (SvS) dan Frost Dragon Tyrant Event.",
+    "fort-details-title": "Distribusi",
+    "fort-details": "Pertempuran benteng mingguan bukan hanya untuk kemuliaan — ini adalah bagian kunci dari strategi jangka panjang kami. Beginilah struktur distribusinya:",
+
+    "rank-1": "Peringkat 1: 1x Benteng & 4x Fort",
+    "rank-2": "Peringkat 2: 1x Benteng & 3x Fort",
+    "rank-3": "Peringkat 3: 1x Benteng & 2x Fort",
+
+    "rank-1-badge": "PERINGKAT 1",
+    "rank-2-badge": "PERINGKAT 2",
+    "rank-3-badge": "PERINGKAT 3",
+
+    "important-note-title": "Penting",
+    "important-note": "Hadiah yang diperoleh dari fort dan benteng harus digunakan dengan bijaksana dan disimpan untuk pertempuran SvS. Setiap aliansi diharapkan berkontribusi pada kesuksesan bersama kami di 214.",
+
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
+
+  "ko": {
+    "page-title": "요새 전략 – State 214",
+    "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 홈",
+    "nav-history": "📖 역사",
+    "nav-alliances": "🛡️ 동맹",
+    "nav-rules": "📜 규칙",
+    "nav-fort": "🏰 포트",
+    "nav-news": "🔥 뉴스",
+    "nav-apply": "📝 지원하기",
+    "nav-community": "💬 커뮤니티",
+
+    "fort-title": "⚔️ 요새 전략 & 분배",
+    "fort-description": "State 214에서는 공정하고 투명한 요새 분배가 건강하고 단합된 국가를 유지하는 데 중요하다고 믿습니다. 우리의 전략은 팀워크, 스마트한 계획, 그리고 State vs State (SvS) 및 Frost Dragon Tyrant Event 같은 주요 이벤트 준비를 기반으로 합니다.",
+    "fort-details-title": "분배",
+    "fort-details": "주간 요새 전투는 단순히 영광을 위한 것이 아니라 장기 전략의 핵심입니다. 분배 구조는 다음과 같습니다:",
+
+    "rank-1": "1위: 1x 요새 & 4x 포트",
+    "rank-2": "2위: 1x 요새 & 3x 포트",
+    "rank-3": "3위: 1x 요새 & 2x 포트",
+
+    "rank-1-badge": "1위",
+    "rank-2-badge": "2위",
+    "rank-3-badge": "3위",
+
+    "important-note-title": "중요",
+    "important-note": "요새와 포트에서 얻은 보상은 책임감 있게 사용하고 SvS 전투를 위해 보관해야 합니다. 모든 동맹은 214의 공동 성공에 기여해야 합니다.",
+
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
+
+  "ru": {
+    "page-title": "Стратегия форта – State 214",
+    "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 Главная",
+    "nav-history": "📖 История",
+    "nav-alliances": "🛡️ Альянсы",
+    "nav-rules": "📜 Правила",
+    "nav-fort": "🏰 Форт",
+    "nav-news": "🔥 Новости",
+    "nav-apply": "📝 Заявка",
+    "nav-community": "💬 Сообщество",
+
+    "fort-title": "⚔️ Стратегия & распределение форта",
+    "fort-description": "В State 214 мы считаем, что справедливое и прозрачное распределение фортов необходимо для здорового и единого государства. Наша стратегия основана на командной работе, умном планировании и подготовке к крупным событиям, таким как State vs State (SvS) и Frost Dragon Tyrant Event.",
+    "fort-details-title": "Распределение",
+    "fort-details": "Еженедельные битвы за форт — не только ради славы, это ключевая часть нашей долгосрочной стратегии. Вот как мы структурируем распределение:",
+
+    "rank-1": "Ранг 1: 1x Крепость & 4x Форт",
+    "rank-2": "Ранг 2: 1x Крепость & 3x Форт",
+    "rank-3": "Ранг 3: 1x Крепость & 2x Форт",
+
+    "rank-1-badge": "РАНГ 1",
+    "rank-2-badge": "РАНГ 2",
+    "rank-3-badge": "РАНГ 3",
+
+    "important-note-title": "Важно",
+    "important-note": "Награды, полученные из фортов и крепостей, следует использовать ответственно и сохранять для боёв SvS. Каждому альянсу следует вносить вклад в наш общий успех в 214.",
+
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
+
+  "zh": {
+    "page-title": "要塞策略 – State 214",
+    "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 首页",
+    "nav-history": "📖 历史",
+    "nav-alliances": "🛡️ 联盟",
+    "nav-rules": "📜 规则",
+    "nav-fort": "🏰 要塞",
+    "nav-news": "🔥 新闻",
+    "nav-apply": "📝 申请加入",
+    "nav-community": "💬 社区",
+
+    "fort-title": "⚔️ 要塞策略 & 分配",
+    "fort-description": "在 State 214，我们相信公平透明的要塞分配对保持健康团结的国家至关重要。我们的策略基于团队合作、智能规划，以及为 State vs State (SvS) 和 Frost Dragon Tyrant Event 等大型活动做准备。",
+    "fort-details-title": "分配",
+    "fort-details": "每周要塞战斗不仅仅为了荣耀——它是我们长期战略的重要部分。分配结构如下：",
+
+    "rank-1": "第1名：1x 要塞 & 4x 堡垒",
+    "rank-2": "第2名：1x 要塞 & 3x 堡垒",
+    "rank-3": "第3名：1x 要塞 & 2x 堡垒",
+
+    "rank-1-badge": "第1名",
+    "rank-2-badge": "第2名",
+    "rank-3-badge": "第3名",
+
+    "important-note-title": "重要",
+    "important-note": "从要塞和堡垒获得的奖励应负责任地使用，并为 SvS 战斗保留。每个联盟都应为 214 的共同成功做出贡献。",
+
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  },
+
+  "uk": {
+    "page-title": "Стратегія форту – State 214",
+    "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 Головна",
+    "nav-history": "📖 Історія",
+    "nav-alliances": "🛡️ Альянси",
+    "nav-rules": "📜 Правила",
+    "nav-fort": "🏰 Форт",
+    "nav-news": "🔥 Новини",
+    "nav-apply": "📝 Заявка",
+    "nav-community": "💬 Спільнота",
+
+    "fort-title": "⚔️ Стратегія & розподіл форту",
+    "fort-description": "У State 214 ми віримо, що справедливий і прозорий розподіл фортів є необхідним для підтримки здорової та єдиної держави. Наша стратегія побудована на командній роботі, розумному плануванні та підготовці до великих подій, таких як State vs State (SvS) та Frost Dragon Tyrant Event.",
+    "fort-details-title": "Розподіл",
+    "fort-details": "Щотижневі битви за форт — не лише заради слави, а важлива частина нашої довгострокової стратегії. Ось як ми структуруємо розподіл:",
+
+    "rank-1": "Ранг 1: 1x Фортеця & 4x Форт",
+    "rank-2": "Ранг 2: 1x Фортеця & 3x Форт",
+    "rank-3": "Ранг 3: 1x Фортеця & 2x Форт",
+
+    "rank-1-badge": "РАНГ 1",
+    "rank-2-badge": "РАНГ 2",
+    "rank-3-badge": "РАНГ 3",
+
+    "important-note-title": "Важливо",
+    "important-note": "Нагороди, отримані з фортів і фортець, потрібно використовувати відповідально та зберігати для боїв SvS. Кожен альянс має сприяти нашому спільному успіху в 214.",
+
+    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+  }
+}
