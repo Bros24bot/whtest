@@ -706,6 +706,24 @@ a:hover{ opacity:.96; }
 
 .footer-link:hover{ text-decoration: underline; }
 
+/* ===================== APPLY BANNER ===================== */
+.apply-hero{
+  margin: 12px 0 16px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.10);
+  box-shadow: 0 14px 40px rgba(0,0,0,.38);
+}
+.apply-hero img{
+  width: 100%;
+  height: 170px;          /* HIER anpassen: z.B. 140px wenn kleiner */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: saturate(1.06) contrast(1.08);
+}
+
 /* ===================== APPLY FORM ===================== */
 .apply-form{
   margin-top: 14px;
@@ -714,13 +732,22 @@ a:hover{ opacity:.96; }
 .apply-form .grid-2{
   display:grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px 18px;
+  gap: 16px 18px;         /* etwas mehr Luft, verhindert optische Kollision */
+  margin-bottom: 6px;     /* trennt Grid von Message-Bereich */
 }
 
 .apply-form .row{
   display:flex;
   flex-direction:column;
   gap: 8px;
+  position: relative;
+  z-index: 1;             /* sicher über Card-Glow */
+}
+
+/* Message tiefer + garantiert unter Grid */
+.apply-form .message-row{
+  margin-top: 10px;
+  clear: both;
 }
 
 .apply-form label{
@@ -729,6 +756,7 @@ a:hover{ opacity:.96; }
   text-transform: uppercase;
   font-weight: 950;
   color: rgba(238,242,255,.72);
+  margin: 0;
 }
 
 .apply-form input,
@@ -863,6 +891,8 @@ a:hover{ opacity:.96; }
   .hero-kicker{ margin-left:auto; margin-right:auto; }
 
   .footer-bottom{ flex-direction:column; align-items:center; }
+
+  .apply-hero img{ height: 150px; }
 
   :root{
     --news-img-h: var(--news-img-h-sm);
