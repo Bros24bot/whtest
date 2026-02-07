@@ -37,6 +37,7 @@
       </div>
     </div>
 
+    <!-- NAV (Reihenfolge wie im Screenshot): Home, History, Alliances, Rules, Fort, News, Apply, Community -->
     <nav class="nav">
       <div class="container nav-inner">
         <a id="nav-home" href="index.html">🏠 Home</a>
@@ -45,6 +46,7 @@
         <a id="nav-rules" href="rules.html">📜 Rules</a>
         <a id="nav-fort" href="fort.html" class="active">🏰 Fort</a>
         <a id="nav-news" href="news.html">🔥 News</a>
+        <a id="nav-apply" href="apply.html">📝 Apply</a>
         <a id="nav-community" href="community.html">💬 Community</a>
       </div>
     </nav>
@@ -115,7 +117,7 @@
           <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
         </div>
         <div class="footer-line">
-          Design & Build: <span class="footer-strong">Bros24</span>
+          Design &amp; Build: <span class="footer-strong">Bros24</span>
         </div>
       </div>
     </div>
@@ -137,6 +139,7 @@
       const rules = getSafe(dict, lang, "rules");
       const fort = getSafe(dict, lang, "fort");
       const news = getSafe(dict, lang, "news");
+      const apply = getSafe(dict, lang, "apply-nav");
       const community = getSafe(dict, lang, "community");
 
       if(home) $('#nav-home').text('🏠 ' + home);
@@ -145,19 +148,25 @@
       if(rules) $('#nav-rules').text('📜 ' + rules);
       if(fort) $('#nav-fort').text('🏰 ' + fort);
       if(news) $('#nav-news').text('🔥 ' + news);
+      if(apply) $('#nav-apply').text(apply); // apply-nav already includes 📝
       if(community) $('#nav-community').text('💬 ' + community);
     }
 
     $.getJSON('fort.json', function(data){
       function translatePage(lang){
         const pageTitle = getSafe(data, lang, "page-title");
-        const intro = getSafe(data, lang, "intro-text");
+        const intro = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home");
+
         const fortTitle = getSafe(data, lang, "fort-title");
         const fortDesc = getSafe(data, lang, "fort-description");
+        const fortDetailsTitle = getSafe(data, lang, "fort-details-title");
         const fortDetails = getSafe(data, lang, "fort-details");
+
         const rank1 = getSafe(data, lang, "rank-1");
         const rank2 = getSafe(data, lang, "rank-2");
         const rank3 = getSafe(data, lang, "rank-3");
+
+        const importantTitle = getSafe(data, lang, "important-note-title");
         const important = getSafe(data, lang, "important-note");
         const footer = getSafe(data, lang, "footer-text");
 
@@ -165,14 +174,17 @@
         if(intro) $('#intro-text').text(intro);
 
         if(fortTitle) $('#fort-title').text(fortTitle);
-        if(fortDesc) $('#fort-description').html(fortDesc);   // keep <strong> if your JSON contains it
+        if(fortDesc) $('#fort-description').html(fortDesc); // keep <strong> tags if present in JSON
+        if(fortDetailsTitle) $('#fort-details-title').text(fortDetailsTitle);
         if(fortDetails) $('#fort-details').text(fortDetails);
 
         if(rank1) $('#rank-1').text(rank1);
         if(rank2) $('#rank-2').text(rank2);
         if(rank3) $('#rank-3').text(rank3);
 
+        if(importantTitle) $('#important-note-title').text(importantTitle);
         if(important) $('#important-note').text(important);
+
         if(footer) $('#footer-text').text(footer);
 
         translateCommon(data, lang);
