@@ -705,6 +705,7 @@ a:hover{ opacity:.96; }
 
 .apply-form select{
   appearance: none;
+  color: rgba(238,242,255,.92);
   background-image:
     linear-gradient(45deg, transparent 50%, rgba(238,242,255,.70) 50%),
     linear-gradient(135deg, rgba(238,242,255,.70) 50%, transparent 50%);
@@ -714,6 +715,13 @@ a:hover{ opacity:.96; }
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
   padding-right: 36px;
+}
+
+/* FIX: dropdown options were white on white */
+.apply-form select option,
+.apply-form select optgroup{
+  background: #0b1230;
+  color: #eef2ff;
 }
 
 .apply-form button{
