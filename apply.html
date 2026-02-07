@@ -52,14 +52,14 @@
 
     <nav class="nav">
       <div class="container nav-inner">
-        <a href="index.html" id="nav-home"> Home</a>
-        <a href="history.html" id="nav-history"> History</a>
-        <a href="alliances.html" id="nav-alliances"> Alliances</a>
-        <a href="rules.html" id="nav-rules"> Rules</a>
-        <a href="fort.html" id="nav-fort"> Fort</a>
-        <a href="news.html" id="nav-news"> News</a>
-        <a href="apply.html" class="active" id="nav-apply"> Apply</a>
-        <a href="community.html" id="nav-community"> Community</a>
+        <a href="index.html" id="nav-home">🏠 Home</a>
+        <a href="history.html" id="nav-history">📖 History</a>
+        <a href="alliances.html" id="nav-alliances">🛡️ Alliances</a>
+        <a href="rules.html" id="nav-rules">📜 Rules</a>
+        <a href="fort.html" id="nav-fort">🏰 Fort</a>
+        <a href="news.html" id="nav-news">🔥 News</a>
+        <a href="apply.html" class="active" id="nav-apply">📝 Apply</a>
+        <a href="community.html" id="nav-community">💬 Community</a>
       </div>
     </nav>
   </header>
@@ -156,21 +156,38 @@
 
   <script>
     const LANG_KEY = "state214_lang";
+    const FALLBACK_LANG = "en";
+
+    // Entfernt führende Emojis/Icons + Spaces, damit nie doppelte Emojis entstehen
+    function stripLeadingIcons(text){
+      if(!text) return "";
+      return String(text).replace(
+        /^[\s\u200D\uFE0F]*(?:[\p{Extended_Pictographic}\p{Emoji_Presentation}\p{Emoji}\u2600-\u27BF]\s*)+/gu,
+        ""
+      ).trim();
+    }
+
+    // Baut immer GENAU 1 Emoji + Label (egal ob JSON schon Emojis enthält)
+    function navLabel(dict, navKey, plainKey, emoji, fallback){
+      const raw = dict[navKey] ?? dict[plainKey] ?? fallback;
+      const clean = stripLeadingIcons(raw);
+      return `${emoji} ${clean || stripLeadingIcons(fallback)}`;
+    }
 
     function applyTranslations(dict) {
       // Header
       $("#page-title").text(dict["page-title"] || "State 214");
       $("#intro-text").html("<strong>" + (dict["intro-text"] || "ALL STARS UNITED") + "</strong>");
 
-      // Nav (supports both apply / apply-nav)
-      $("#nav-home").text(dict["nav-home"] || (dict.home ? "🏠 " + dict.home : "🏠 Home"));
-      $("#nav-history").text(dict["nav-history"] || (dict.history ? "📖 " + dict.history : "📖 History"));
-      $("#nav-alliances").text(dict["nav-alliances"] || (dict.alliances ? "🛡️ " + dict.alliances : "🛡️ Alliances"));
-      $("#nav-rules").text(dict["nav-rules"] || (dict.rules ? "📜 " + dict.rules : "📜 Rules"));
-      $("#nav-fort").text(dict["nav-fort"] || (dict.fort ? "🏰 " + dict.fort : "🏰 Fort"));
-      $("#nav-news").text(dict["nav-news"] || (dict.news ? "🔥 " + dict.news : "🔥 News"));
-      $("#nav-apply").text(dict["nav-apply"] || dict["apply-nav"] || (dict.apply ? "📝 " + dict.apply : "📝 Apply"));
-      $("#nav-community").text(dict["nav-community"] || (dict.community ? "💬 " + dict.community : "💬 Community"));
+      // Nav (FIX: keine doppelten Emojis)
+      $("#nav-home").text(navLabel(dict, "nav-home", "home", "🏠", "Home"));
+      $("#nav-history").text(navLabel(dict, "nav-history", "history", "📖", "History"));
+      $("#nav-alliances").text(navLabel(dict, "nav-alliances", "alliances", "🛡️", "Alliances"));
+      $("#nav-rules").text(navLabel(dict, "nav-rules", "rules", "📜", "Rules"));
+      $("#nav-fort").text(navLabel(dict, "nav-fort", "fort", "🏰", "Fort"));
+      $("#nav-news").text(navLabel(dict, "nav-news", "news", "🔥", "News"));
+      $("#nav-apply").text(navLabel(dict, "nav-apply", "apply-nav", "📝", "Apply"));
+      $("#nav-community").text(navLabel(dict, "nav-community", "community", "💬", "Community"));
 
       // Apply Section
       $("#apply-title").text(dict["apply-title"] || "📝 Application Form");
@@ -207,7 +224,7 @@
     function loadLang(lang) {
       return $.getJSON("apply.json")
         .then((all) => {
-          const dict = all[lang] || all["en"] || {};
+          const dict = all[lang] || all[FALLBACK_LANG] || {};
           applyTranslations(dict);
         })
         .catch((err) => {
@@ -215,25 +232,21 @@
         });
     }
 
-    // Init: load saved lang + apply (runs after DOM is ready)
-    $(document).ready(function(){
-      const saved = localStorage.getItem(LANG_KEY) || "en";
-      $("#language-select").val(saved);
-      loadLang(saved);
+    // Init
+    const saved = localStorage.getItem(LANG_KEY) || FALLBACK_LANG;
+    $("#language-select").val(saved);
+    loadLang(saved);
 
-      $("#language-select").on("change", function() {
-        const lang = $(this).val();
-        localStorage.setItem(LANG_KEY, lang);
-        loadLang(lang);
-      });
+    // On change
+    $("#language-select").on("change", function() {
+      const lang = $(this).val();
+      localStorage.setItem(LANG_KEY, lang);
+      loadLang(lang);
     });
   </script>
 
   <!--
-    IMPORTANT:
-    Damit das Icon oben links sichtbar ist, brauchst du in style.css diese Klassen.
-    Kopiere das exakt in style.css (einmalig – gilt dann auf ALLEN Seiten):
-    
+    WICHTIG: Damit das Icon oben links gut aussieht, in style.css (einmalig):
     .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
     .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
     .brand-text h1 { margin:0; }
