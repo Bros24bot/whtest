@@ -39,14 +39,14 @@
 
     <nav class="nav">
       <div class="container nav-inner">
-        <a href="index.html" class="active">🏠 Home</a>
-        <a href="history.html">📖 History</a>
-        <a href="alliances.html">🛡️ Alliances</a>
-        <a href="rules.html">📜 Rules</a>
-        <a href="fort.html">🏰 Fort</a>
-        <a href="news.html">🔥 News</a>
-        <a href="apply.html">📝 Apply</a>
-        <a href="community.html">💬 Community</a>
+        <a href="index.html" class="active" id="nav-home">🏠 Home</a>
+        <a href="history.html" id="nav-history">📖 History</a>
+        <a href="alliances.html" id="nav-alliances">🛡️ Alliances</a>
+        <a href="rules.html" id="nav-rules">📜 Rules</a>
+        <a href="fort.html" id="nav-fort">🏰 Fort</a>
+        <a href="news.html" id="nav-news">🔥 News</a>
+        <a href="apply.html" id="nav-apply">📝 Apply</a>
+        <a href="community.html" id="nav-community">💬 Community</a>
       </div>
     </nav>
   </header>
@@ -100,32 +100,32 @@
 
       <section class="card">
         <div class="section-head">
-          <h3>Community</h3>
-          <p class="muted">Links & tools</p>
+          <h3 id="community-title">Community</h3>
+          <p class="muted" id="community-subtitle">Links & tools</p>
         </div>
 
         <div class="social-grid">
           <a href="https://discord.gg/rNtp9vrkk9" target="_blank" rel="noopener" class="social-card">
             <img src="assets/discord.jpg" alt="Join Discord" />
             <div class="card-text">
-              <div class="caption">Discord</div>
-              <div class="sub">Join State 214</div>
+              <div class="caption" id="social-discord-title">Discord</div>
+              <div class="sub" id="social-discord-sub">Join State 214</div>
             </div>
           </a>
 
           <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" rel="noopener" class="social-card">
             <img src="assets/renee.jpg" alt="Follow on YouTube" />
             <div class="card-text">
-              <div class="caption">YouTube</div>
-              <div class="sub">Videos & guides</div>
+              <div class="caption" id="social-youtube-title">YouTube</div>
+              <div class="sub" id="social-youtube-sub">Videos & guides</div>
             </div>
           </a>
 
           <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener" class="social-card">
             <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
             <div class="card-text">
-              <div class="caption">Bros24 Bot</div>
-              <div class="sub">Invite & commands</div>
+              <div class="caption" id="social-bot-title">Bros24 Bot</div>
+              <div class="sub" id="social-bot-sub">Invite & commands</div>
             </div>
           </a>
         </div>
@@ -154,9 +154,27 @@
 
   <script>
     $.getJSON('index.json', function(data) {
+      const setNavText = (lang) => {
+        // Menü / Nav (Keys müssen in index.json existieren: home, history, alliances, rules, fort, news, apply, community)
+        $('#nav-home').text(data[lang]["home"]);
+        $('#nav-history').text(data[lang]["history"]);
+        $('#nav-alliances').text(data[lang]["alliances"]);
+        $('#nav-rules').text(data[lang]["rules"]);
+        $('#nav-fort').text(data[lang]["fort"]);
+        $('#nav-news').text(data[lang]["news"]);
+        $('#nav-apply').text(data[lang]["apply"]);
+        $('#nav-community').text(data[lang]["community"]);
+      };
+
       const translatePage = (lang) => {
+        // Header
         $('#page-title').text(data[lang]["page-title"]);
-        $('#intro-text').text(data[lang]["home"]);
+        $('#intro-text').html("<strong>" + data[lang]["intro-text"] + "</strong>");
+
+        // Nav
+        setNavText(lang);
+
+        // Content
         $('#welcome-title').text(data[lang]["welcome-title"]);
         $('#welcome-text').text(data[lang]["welcome-text"]);
         $('#about-title').text(data[lang]["about-title"]);
@@ -170,8 +188,17 @@
         $('#footer-text').text(data[lang]["footer-text"]);
       };
 
-      translatePage('en');
-      $('#language-select').change(function() { translatePage($(this).val()); });
+      // Start: gespeicherte Sprache nutzen (optional), sonst en
+      const saved = localStorage.getItem('state214_lang') || 'en';
+      $('#language-select').val(saved);
+      translatePage(saved);
+
+      // Change
+      $('#language-select').change(function() {
+        const lang = $(this).val();
+        localStorage.setItem('state214_lang', lang);
+        translatePage(lang);
+      });
     });
   </script>
 </body>
