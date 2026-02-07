@@ -5,6 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Community – State 214</title>
+
+  <!-- FAVICON / SITE ICON -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-192x192.png">
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -12,9 +18,16 @@
 <body class="page">
   <header class="site-header">
     <div class="container header-inner">
+
+      <!-- BRAND + HOME ICON (CLICKABLE) -->
       <div class="brand">
-        <h1 id="page-title">Community</h1>
-        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+        <a class="brand-home" href="index.html" aria-label="Go to Home">
+          <img src="/assets/favicon-192x192.png" alt="State 214" class="brand-logo">
+          <div class="brand-text">
+            <h1 id="page-title">Community</h1>
+            <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+          </div>
+        </a>
       </div>
 
       <div class="lang">
@@ -123,7 +136,7 @@
   </footer>
 
   <script>
-    // FIX: NAV immer aus index.json (nav-*), Page/Text aus community.json
+    // NAV immer aus index.json (nav-*), Page/Text aus community.json
     const FALLBACK_LANG = 'en';
     const LANG_KEY = 'state214_lang';
 
@@ -200,7 +213,6 @@
 
           if(footer) $('#footer-text').text(footer);
 
-          // NAV immer setzen
           translateNav(indexData, lang);
         }
 
@@ -219,5 +231,13 @@
       });
     });
   </script>
+
+  <!--
+    WICHTIG: Damit das Icon oben links sichtbar ist, brauchst du in style.css (einmalig):
+    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
+    .brand-text h1 { margin:0; }
+    .brand-text p { margin:0; }
+  -->
 </body>
 </html>
