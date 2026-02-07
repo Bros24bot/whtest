@@ -14,7 +14,7 @@
     <div class="container header-inner">
       <div class="brand">
         <h1 id="page-title">The History of State 214</h1>
-        <p id="intro-text"><strong>All Stars United</strong></p>
+        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
       </div>
 
       <div class="lang">
@@ -37,15 +37,17 @@
       </div>
     </div>
 
+    <!-- NAV (Reihenfolge wie im Screenshot): Home, History, Alliances, Rules, Fort, News, Apply, Community -->
     <nav class="nav">
       <div class="container nav-inner">
-        <a href="index.html">🏠 Home</a>
-        <a href="history.html" class="active">📖 History</a>
-        <a href="alliances.html">🛡️ Alliances</a>
-        <a href="rules.html">📜 Rules</a>
-        <a href="fort.html">🏰 Fort</a>
-        <a href="news.html">🔥 News</a>
-        <a href="community.html">💬 Community</a>
+        <a id="nav-home" href="index.html">🏠 Home</a>
+        <a id="nav-history" href="history.html" class="active">📖 History</a>
+        <a id="nav-alliances" href="alliances.html">🛡️ Alliances</a>
+        <a id="nav-rules" href="rules.html">📜 Rules</a>
+        <a id="nav-fort" href="fort.html">🏰 Fort</a>
+        <a id="nav-news" href="news.html">🔥 News</a>
+        <a id="nav-apply" href="apply.html">📝 Apply</a>
+        <a id="nav-community" href="community.html">💬 Community</a>
       </div>
     </nav>
   </header>
@@ -53,7 +55,7 @@
   <main class="content">
     <div class="container">
 
-      <!-- Hero (wie Startseite) -->
+      <!-- Hero -->
       <section class="hero">
         <img src="assets/history.jpg" alt="State 214 History Banner" class="hero-img" />
         <div class="hero-overlay"></div>
@@ -69,9 +71,8 @@
         </div>
       </section>
 
-      <!-- Content Blocks -->
       <section class="card">
-        <h3>Growth</h3>
+        <h3 id="growth-title">Growth</h3>
         <p id="growth">
           Through countless battles, strategic decisions, and community efforts, State 214 has become one of the most successful and respected states in the game.
           Its strength lies in the cohesion and teamwork fostered among its players, allowing for consistent growth and achievement.
@@ -113,11 +114,10 @@
         </p>
       </section>
 
-      <!-- Recent developments in a clean timeline style -->
       <section class="card">
         <div class="section-head">
           <h3 id="recent-developments-title">Recent Developments</h3>
-          <p class="muted">Latest state changes</p>
+          <p class="muted" id="recent-developments-sub">Latest state changes</p>
         </div>
 
         <div class="timeline">
@@ -169,44 +169,117 @@
           <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
         </div>
         <div class="footer-line">
-          Design & Build: <span class="footer-strong">Bros24</span>
+          Design &amp; Build: <span class="footer-strong">Bros24</span>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
+    const FALLBACK_LANG = 'en';
+
+    function getSafe(dict, lang, key){
+      if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
+      if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
+      return null;
+    }
+
+    function translateCommon(dict, lang){
+      const home = getSafe(dict, lang, "home");
+      const history = getSafe(dict, lang, "history");
+      const alliances = getSafe(dict, lang, "alliances");
+      const rules = getSafe(dict, lang, "rules");
+      const fort = getSafe(dict, lang, "fort");
+      const news = getSafe(dict, lang, "news");
+      const apply = getSafe(dict, lang, "apply-nav");
+      const community = getSafe(dict, lang, "community");
+
+      if(home) $('#nav-home').text('🏠 ' + home);
+      if(history) $('#nav-history').text('📖 ' + history);
+      if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
+      if(rules) $('#nav-rules').text('📜 ' + rules);
+      if(fort) $('#nav-fort').text('🏰 ' + fort);
+      if(news) $('#nav-news').text('🔥 ' + news);
+      if(apply) $('#nav-apply').text(apply); // apply-nav already includes 📝
+      if(community) $('#nav-community').text('💬 ' + community);
+    }
+
     $(document).ready(function() {
       $.getJSON('history.json', function(data) {
 
-        const translatePage = (lang) => {
-          $('#page-title').text(data[lang]["page-title"]);
-          $('#intro-text').text(data[lang]["home"]);
-          $('#history-title').text(data[lang]["history"]);
-          $('#introduction').text(data[lang]["introduction"]);
-          $('#growth').text(data[lang]["growth"]);
-          $('#losses-title').text(data[lang]["losses-and-challenges"]);
-          $('#losses').text(data[lang]["losses-text"]);
-          $('#alliances-title').text(data[lang]["new-alliances"]);
-          $('#alliances-text').html(data[lang]["new-alliances-text"]);
-          $('#key-milestones-title').text(data[lang]["key-milestones"]);
-          $('#key-milestones').html(data[lang]["key-milestones-text"]);
-          $('#fusion').text(data[lang]["fusion"]);
+        function translatePage(lang){
+          const pageTitle = getSafe(data, lang, "page-title");
+          const intro = getSafe(data, lang, "home");
 
-          $('#recent-developments-title').text(data[lang]["recent-developments"]);
-          $('#recent-story-1').html(data[lang]["recent-story-1"]);
-          $('#recent-story-2').html(data[lang]["recent-story-2"]);
-          $('#recent-story-3').html(data[lang]["recent-story-3"]);
-          $('#recent-story-4').html(data[lang]["recent-story-4"]);
+          const historyTitle = getSafe(data, lang, "history-title") || getSafe(data, lang, "page-title");
+          const introduction = getSafe(data, lang, "introduction");
 
-          $('#looking-ahead-title').text(data[lang]["looking-ahead"]);
-          $('#looking-ahead').text(data[lang]["looking-ahead-text"]);
-          $('#footer-text').text(data[lang]["footer-text"]);
-        };
+          const growthTitle = getSafe(data, lang, "growth-title");
+          const growth = getSafe(data, lang, "growth");
+
+          const lossesTitle = getSafe(data, lang, "losses-and-challenges");
+          const losses = getSafe(data, lang, "losses-text");
+
+          const alliancesTitle = getSafe(data, lang, "new-alliances");
+          const alliancesText = getSafe(data, lang, "new-alliances-text");
+
+          const keyMilestonesTitle = getSafe(data, lang, "key-milestones");
+          const keyMilestonesText = getSafe(data, lang, "key-milestones-text");
+          const fusion = getSafe(data, lang, "fusion");
+
+          const recentTitle = getSafe(data, lang, "recent-developments");
+          const recentSub = getSafe(data, lang, "recent-developments-sub");
+
+          const rs1 = getSafe(data, lang, "recent-story-1");
+          const rs2 = getSafe(data, lang, "recent-story-2");
+          const rs3 = getSafe(data, lang, "recent-story-3");
+          const rs4 = getSafe(data, lang, "recent-story-4");
+
+          const lookingAheadTitle = getSafe(data, lang, "looking-ahead");
+          const lookingAheadText = getSafe(data, lang, "looking-ahead-text");
+          const coreAlliances = getSafe(data, lang, "core-alliances");
+
+          const footer = getSafe(data, lang, "footer-text");
+
+          if(pageTitle) $('#page-title').text(pageTitle);
+          if(intro) $('#intro-text').text(intro);
+
+          if(historyTitle) $('#history-title').text(historyTitle);
+          if(introduction) $('#introduction').text(introduction);
+
+          if(growthTitle) $('#growth-title').text(growthTitle);
+          if(growth) $('#growth').text(growth);
+
+          if(lossesTitle) $('#losses-title').text(lossesTitle);
+          if(losses) $('#losses').text(losses);
+
+          if(alliancesTitle) $('#alliances-title').text(alliancesTitle);
+          if(alliancesText) $('#alliances-text').html(alliancesText);
+
+          if(keyMilestonesTitle) $('#key-milestones-title').text(keyMilestonesTitle);
+          if(keyMilestonesText) $('#key-milestones').html(keyMilestonesText);
+          if(fusion) $('#fusion').text(fusion);
+
+          if(recentTitle) $('#recent-developments-title').text(recentTitle);
+          if(recentSub) $('#recent-developments-sub').text(recentSub);
+
+          if(rs1) $('#recent-story-1').html(rs1);
+          if(rs2) $('#recent-story-2').html(rs2);
+          if(rs3) $('#recent-story-3').html(rs3);
+          if(rs4) $('#recent-story-4').html(rs4);
+
+          if(lookingAheadTitle) $('#looking-ahead-title').text(lookingAheadTitle);
+          if(lookingAheadText) $('#looking-ahead').text(lookingAheadText);
+          if(coreAlliances) $('#core-alliances').text(coreAlliances);
+
+          if(footer) $('#footer-text').text(footer);
+
+          translateCommon(data, lang);
+        }
 
         translatePage('en');
 
-        $('#language-select').change(function() {
+        $('#language-select').on('change', function() {
           translatePage($(this).val());
         });
 
