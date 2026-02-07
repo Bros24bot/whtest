@@ -5,6 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fortress Strategy – State 214</title>
+
+  <!-- FAVICON / SITE ICON -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-192x192.png">
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -12,9 +18,16 @@
 <body class="page">
   <header class="site-header">
     <div class="container header-inner">
+
+      <!-- BRAND + HOME ICON (CLICKABLE) -->
       <div class="brand">
-        <h1 id="page-title">Fortress Strategy</h1>
-        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+        <a class="brand-home" href="index.html" aria-label="Go to Home">
+          <img src="/assets/favicon-192x192.png" alt="State 214" class="brand-logo">
+          <div class="brand-text">
+            <h1 id="page-title">Fortress Strategy</h1>
+            <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+          </div>
+        </a>
       </div>
 
       <div class="lang">
@@ -142,25 +155,33 @@
         .replace(/\bBIG\s*5\b/ig, 'TOP 3');
     }
 
+    // Entfernt führende Emojis/Icons, damit keine doppelten Emojis entstehen
+    function stripLeadingIcons(text){
+      if(!text) return "";
+      return String(text).replace(
+        /^[\s\u200D\uFE0F]*(?:[\p{Extended_Pictographic}\p{Emoji_Presentation}\p{Emoji}\u2600-\u27BF]\s*)+/gu,
+        ""
+      ).trim();
+    }
+
+    // Baut immer GENAU 1 Emoji + Label
+    function navLabel(t, navKey, plainKey, emoji, fallback){
+      const raw = t[navKey] ?? t[plainKey] ?? fallback;
+      const clean = stripLeadingIcons(raw);
+      return `${emoji} ${clean || stripLeadingIcons(fallback)}`;
+    }
+
     function translateNav(dict, lang){
       const t = dict[lang] || dict[FALLBACK_LANG] || {};
-      const nHome = t["nav-home"] || (t["home"] ? "🏠 " + t["home"] : null);
-      const nHistory = t["nav-history"] || (t["history"] ? "📖 " + t["history"] : null);
-      const nAlliances = t["nav-alliances"] || (t["alliances"] ? "🛡️ " + t["alliances"] : null);
-      const nRules = t["nav-rules"] || (t["rules"] ? "📜 " + t["rules"] : null);
-      const nFort = t["nav-fort"] || (t["fort"] ? "🏰 " + t["fort"] : null);
-      const nNews = t["nav-news"] || (t["news"] ? "🔥 " + t["news"] : null);
-      const nApply = t["nav-apply"] || t["apply-nav"] || (t["apply"] ? "📝 " + t["apply"] : null);
-      const nCommunity = t["nav-community"] || (t["community"] ? "💬 " + t["community"] : null);
-
-      if(nHome) $('#nav-home').text(nHome);
-      if(nHistory) $('#nav-history').text(nHistory);
-      if(nAlliances) $('#nav-alliances').text(nAlliances);
-      if(nRules) $('#nav-rules').text(nRules);
-      if(nFort) $('#nav-fort').text(nFort);
-      if(nNews) $('#nav-news').text(nNews);
-      if(nApply) $('#nav-apply').text(nApply);
-      if(nCommunity) $('#nav-community').text(nCommunity);
+      $('#nav-home').text(navLabel(t, "nav-home", "home", "🏠", "Home"));
+      $('#nav-history').text(navLabel(t, "nav-history", "history", "📖", "History"));
+      $('#nav-alliances').text(navLabel(t, "nav-alliances", "alliances", "🛡️", "Alliances"));
+      $('#nav-rules').text(navLabel(t, "nav-rules", "rules", "📜", "Rules"));
+      $('#nav-fort').text(navLabel(t, "nav-fort", "fort", "🏰", "Fort"));
+      $('#nav-news').text(navLabel(t, "nav-news", "news", "🔥", "News"));
+      // manche JSON nutzen apply-nav statt apply
+      $('#nav-apply').text(navLabel(t, "nav-apply", "apply-nav", "📝", "Apply"));
+      $('#nav-community').text(navLabel(t, "nav-community", "community", "💬", "Community"));
     }
 
     $(document).ready(function(){
@@ -168,14 +189,13 @@
 
         function translatePage(lang){
           const pageTitle = getSafe(data, lang, "page-title");
-          const intro = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home");
+          const intro = getSafe(data, lang, "intro-text") || "ALL STARS UNITED";
 
           const fortTitle = getSafe(data, lang, "fort-title");
           const fortDesc = getSafe(data, lang, "fort-description");
           const fortDetailsTitle = getSafe(data, lang, "fort-details-title") || getSafe(data, lang, "rank-title");
           const fortDetails = getSafe(data, lang, "fort-details");
 
-          // TOP 3 lines (use your new keys)
           const rank1 = getSafe(data, lang, "rank-1");
           const rank2 = getSafe(data, lang, "rank-2");
           const rank3 = getSafe(data, lang, "rank-3");
@@ -184,15 +204,14 @@
           const important = getSafe(data, lang, "important-note");
           const footer = getSafe(data, lang, "footer-text");
 
-          if(pageTitle) $('#page-title').text(pageTitle);
-          if(intro) $('#intro-text').text(intro);
+          if(pageTitle) $('#page-title').text(forceTop3(pageTitle));
+          if(intro) $('#intro-text').text(forceTop3(intro));
 
           if(fortTitle) $('#fort-title').text(forceTop3(fortTitle));
-          if(fortDesc) $('#fort-description').text(forceTop3(fortDesc)); // your JSON is plain text
+          if(fortDesc) $('#fort-description').text(forceTop3(fortDesc));
           if(fortDetailsTitle) $('#fort-details-title').text(forceTop3(fortDetailsTitle));
           if(fortDetails) $('#fort-details').text(forceTop3(fortDetails));
 
-          // update TOP 3 only
           if(rank1) $('#rank-1').text(forceTop3(rank1));
           if(rank2) $('#rank-2').text(forceTop3(rank2));
           if(rank3) $('#rank-3').text(forceTop3(rank3));
@@ -220,5 +239,14 @@
       });
     });
   </script>
+
+  <!--
+    EINMALIG in style.css hinzufügen (für alle Seiten, damit Logo oben links sauber sitzt):
+
+    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
+    .brand-text h1 { margin:0; }
+    .brand-text p { margin:0; }
+  -->
 </body>
 </html>
