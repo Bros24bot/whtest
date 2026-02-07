@@ -84,13 +84,13 @@
               <div class="info"><span class="label">Foundry Legion (1)</span><span class="value">14:00 UTC</span></div>
               <div class="info"><span class="label">Foundry Legion (2)</span><span class="value">14:00 UTC</span></div>
 
-              <div class="info full"><span class="label">Main Language</span><span class="value">Thai &amp; English</span></div>
+              <div class="info full"><span class="label">Main Language</span><span class="value">Thai & English</span></div>
             </div>
 
             <div class="desc">
               SRC was born from zero and has grown by gathering active players from many different states since Generation 4.
               We’ve made it all the way to State 214 and we’re still going strong. We’re now recruiting new active members who
-              want to grow together with us. Let’s build something great — together!
+              want to grow together with us. Let’s build something great — together! 😊
             </div>
           </article>
 
@@ -180,7 +180,7 @@
               <div class="info"><span class="label">Foundry Legion (1)</span><span class="value">14:00 UTC</span></div>
               <div class="info"><span class="label">Foundry Legion (2)</span><span class="value">19:00 UTC</span></div>
 
-              <div class="info full"><span class="label">Main Language</span><span class="value">German &amp; English</span></div>
+              <div class="info full"><span class="label">Main Language</span><span class="value">German & English</span></div>
             </div>
 
             <div class="desc">
@@ -242,10 +242,9 @@
   </footer>
 
   <script>
-    // FIX:
-    // - "#intro-text" MUST use "intro-text" (ALL STARS UNITED)
-    // - nav-home MUST use "home" (Home)
-    // - keeps NAV order + Apply menu
+    // FIX: prevent nav-home becoming "ALL STARS UNITED"
+    // - #intro-text uses "intro-text" ONLY
+    // - nav labels use "home/history/..." BUT ignore "home" if it equals the slogan
 
     const FALLBACK_LANG = 'en';
 
@@ -255,48 +254,45 @@
       return null;
     }
 
-    function translateCommon(dict, lang){
-      // Header / brand line:
-      const introBrand = getSafe(dict, lang, "intro-text"); // "ALL STARS UNITED"
-      // Page title may exist in the json, but alliances page can keep its own title if not:
-      const pageTitle = getSafe(dict, lang, "page-title");
+    function isSlogan(val){
+      return /all\s*stars\s*united/i.test(String(val || '').trim());
+    }
 
-      // NAV labels:
-      const navHome = getSafe(dict, lang, "home");          // "Home"
+    function translateCommon(dict, lang){
+      const pageTitle = getSafe(dict, lang, "page-title");
+      const introBrand = getSafe(dict, lang, "intro-text"); // slogan line
+
+      // menu labels
+      const navHome = getSafe(dict, lang, "home");
       const history = getSafe(dict, lang, "history");
       const alliances = getSafe(dict, lang, "alliances");
       const rules = getSafe(dict, lang, "rules");
       const fort = getSafe(dict, lang, "fort");
       const news = getSafe(dict, lang, "news");
-      const apply = getSafe(dict, lang, "apply-nav");       // "📝 Apply"
+      const apply = getSafe(dict, lang, "apply-nav");
       const community = getSafe(dict, lang, "community");
       const footer = getSafe(dict, lang, "footer-text");
 
       if(pageTitle) $('#page-title').text(pageTitle);
+      if(introBrand) $('#intro-text').text(introBrand); // never use "home" here
 
-      // IMPORTANT: do NOT fall back to "home" here, otherwise you get "Home" instead of ALL STARS UNITED
-      if(introBrand) $('#intro-text').text(introBrand);
+      // IMPORTANT: only overwrite nav-home if it's NOT the slogan
+      if(navHome && !isSlogan(navHome)) $('#nav-home').text('🏠 ' + navHome);
 
-      if(navHome) $('#nav-home').text('🏠 ' + navHome);
       if(history) $('#nav-history').text('📖 ' + history);
       if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
       if(rules) $('#nav-rules').text('📜 ' + rules);
       if(fort) $('#nav-fort').text('🏰 ' + fort);
       if(news) $('#nav-news').text('🔥 ' + news);
-
-      // apply-nav already contains 📝 in your json
-      if(apply) $('#nav-apply').text(apply);
-
+      if(apply) $('#nav-apply').text(apply); // includes 📝 in JSON
       if(community) $('#nav-community').text('💬 ' + community);
 
       if(footer) $('#footer-text').text(footer);
     }
 
     $(document).ready(function(){
-      // Must load a json that contains BOTH:
-      // - intro-text (ALL STARS UNITED)
-      // - home/history/alliances/... and apply-nav
-      const candidates = ['index.json','history.json','community.json','rules.json','news.json','fort.json'];
+      // Prefer index.json (usually has proper menu labels). Do NOT rely on rules.json for menu labels.
+      const candidates = ['index.json','community.json','news.json','fort.json','history.json','rules.json'];
 
       function tryLoad(i){
         if(i >= candidates.length) return;
