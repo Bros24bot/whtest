@@ -5,6 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News – State 214</title>
+
+  <!-- FAVICON / SITE ICON -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-192x192.png">
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -12,9 +18,16 @@
 <body class="page">
   <header class="site-header">
     <div class="container header-inner">
+
+      <!-- BRAND + HOME ICON (CLICKABLE) -->
       <div class="brand">
-        <h1 id="page-title">News</h1>
-        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+        <a class="brand-home" href="index.html" aria-label="Go to Home">
+          <img src="/assets/favicon-192x192.png" alt="State 214" class="brand-logo">
+          <div class="brand-text">
+            <h1 id="page-title">News</h1>
+            <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+          </div>
+        </a>
       </div>
 
       <div class="lang">
@@ -70,7 +83,7 @@
           <p class="muted" id="news-feed-sub">Latest community highlights</p>
         </div>
 
-        <!-- We will sort articles dynamically (newest -> oldest) -->
+        <!-- We sort articles dynamically (newest -> oldest) -->
         <div class="news-grid" id="news-grid">
 
           <!-- SECTION 6 (26–31 Jan 2026) -->
@@ -78,7 +91,6 @@
             <h2 class="news-title" id="section6-title">Successful SvS Event: State 214 Prevails Against State 268</h2>
             <p class="muted" id="section6-meta" style="margin-top:-6px;"></p>
 
-            <!-- Preview image (compact, full image visible). Click to open lightbox. -->
             <div class="news-article-media center" id="section6-media" style="display:none;" role="button" tabindex="0" aria-label="Open image">
               <img id="section6-img" class="news-article-img" src="" alt="SvS Report Image" />
               <div class="news-zoom-hint" aria-hidden="true">Click to enlarge</div>
@@ -111,7 +123,6 @@
           </article>
 
           <!-- SECTION 3 (fallback: 10 Aug 2025) -->
-          <!-- NOTE: section3 has no explicit date in json; we use a fixed date for sorting. Adjust if needed. -->
           <article class="news-card" data-date="2025-08-10" data-order="3">
             <h2 class="news-title" id="section3-title">Teamwork in Action</h2>
             <p id="section3-text1"></p>
@@ -175,26 +186,36 @@
       return null;
     }
 
+    // FIX: remove leading emojis/icons to avoid duplicates
+    function stripLeadingIcons(text){
+      if(!text) return "";
+      return String(text).replace(
+        /^[\s\u200D\uFE0F]*(?:[\p{Extended_Pictographic}\p{Emoji_Presentation}\p{Emoji}\u2600-\u27BF]\s*)+/gu,
+        ""
+      ).trim();
+    }
+
+    // FIX: build nav label with exactly one emoji
+    function navLabel(t, navKey, plainKey, emoji, fallback){
+      const raw = (t && (t[navKey] ?? t[plainKey])) ?? fallback;
+      const clean = stripLeadingIcons(raw);
+      return `${emoji} ${clean || stripLeadingIcons(fallback)}`;
+    }
+
     function translateNav(dict, lang){
       const t = (dict && (dict[lang] || dict[FALLBACK_LANG])) || {};
 
-      const nHome = t["nav-home"] || (t["home"] ? "🏠 " + t["home"] : null);
-      const nHistory = t["nav-history"] || (t["history"] ? "📖 " + t["history"] : null);
-      const nAlliances = t["nav-alliances"] || (t["alliances"] ? "🛡️ " + t["alliances"] : null);
-      const nRules = t["nav-rules"] || (t["rules"] ? "📜 " + t["rules"] : null);
-      const nFort = t["nav-fort"] || (t["fort"] ? "🏰 " + t["fort"] : null);
-      const nNews = t["nav-news"] || (t["news"] ? "🔥 " + t["news"] : null);
-      const nApply = t["nav-apply"] || t["apply-nav"] || (t["apply"] ? "📝 " + t["apply"] : null);
-      const nCommunity = t["nav-community"] || (t["community"] ? "💬 " + t["community"] : null);
+      $('#nav-home').text(navLabel(t, "nav-home", "home", "🏠", "Home"));
+      $('#nav-history').text(navLabel(t, "nav-history", "history", "📖", "History"));
+      $('#nav-alliances').text(navLabel(t, "nav-alliances", "alliances", "🛡️", "Alliances"));
+      $('#nav-rules').text(navLabel(t, "nav-rules", "rules", "📜", "Rules"));
+      $('#nav-fort').text(navLabel(t, "nav-fort", "fort", "🏰", "Fort"));
+      $('#nav-news').text(navLabel(t, "nav-news", "news", "🔥", "News"));
 
-      if(nHome) $('#nav-home').text(nHome);
-      if(nHistory) $('#nav-history').text(nHistory);
-      if(nAlliances) $('#nav-alliances').text(nAlliances);
-      if(nRules) $('#nav-rules').text(nRules);
-      if(nFort) $('#nav-fort').text(nFort);
-      if(nNews) $('#nav-news').text(nNews);
-      if(nApply) $('#nav-apply').text(nApply);
-      if(nCommunity) $('#nav-community').text(nCommunity);
+      const applyRaw = t["nav-apply"] ?? t["apply-nav"] ?? t["apply"] ?? "Apply";
+      $('#nav-apply').text(`📝 ${stripLeadingIcons(applyRaw)}`);
+
+      $('#nav-community').text(navLabel(t, "nav-community", "community", "💬", "Community"));
     }
 
     // Sort articles newest -> oldest using data-date (YYYY-MM-DD)
@@ -205,11 +226,8 @@
       $items.sort(function(a,b){
         const da = (a.getAttribute('data-date') || '').trim();
         const db = (b.getAttribute('data-date') || '').trim();
-
-        // primary: date desc
         if(da && db && da !== db) return db.localeCompare(da);
 
-        // fallback: keep stable order by data-order desc (bigger = newer)
         const oa = parseInt(a.getAttribute('data-order') || '0', 10);
         const ob = parseInt(b.getAttribute('data-order') || '0', 10);
         return ob - oa;
@@ -220,7 +238,6 @@
 
     $(document).ready(function(){
 
-      // ensure order is correct even before translations
       sortNews();
 
       // ---------- Lightbox logic ----------
@@ -364,9 +381,10 @@
           const footer = getSafe(data, lang, "footer-text");
           if(footer) $('#footer-text').text(footer);
 
+          // NAV (fix duplicates)
           translateNav(data, lang);
 
-          // keep DOM sorted after any dynamic changes
+          // keep DOM sorted
           sortNews();
         }
 
@@ -385,5 +403,14 @@
       });
     });
   </script>
+
+  <!--
+    EINMALIG in style.css hinzufügen (für alle Seiten):
+
+    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
+    .brand-text h1 { margin:0; }
+    .brand-text p { margin:0; }
+  -->
 </body>
 </html>
