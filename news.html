@@ -77,9 +77,10 @@
             <h2 class="news-title" id="section6-title">Successful SvS Event: State 214 Prevails Against State 268</h2>
             <p class="muted" id="section6-meta" style="margin-top:-6px;"></p>
 
-            <!-- IMPORTANT: wrapper + class controls HEIGHT in CSS (no inline styles) -->
-            <div class="news-article-media center" id="section6-media" style="display:none;">
+            <!-- Preview image (compact, full image visible). Click to open lightbox. -->
+            <div class="news-article-media center" id="section6-media" style="display:none;" role="button" tabindex="0" aria-label="Open image">
               <img id="section6-img" class="news-article-img" src="" alt="SvS Report Image" />
+              <div class="news-zoom-hint" aria-hidden="true">Click to enlarge</div>
             </div>
 
             <p id="section6-text1"></p>
@@ -154,6 +155,14 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">✕</button>
+      <img class="lightbox-img" id="lightbox-img" src="" alt="Expanded image" />
+    </div>
+  </div>
+
   <script>
     const FALLBACK_LANG = 'en';
     const LANG_KEY = 'state214_lang';
@@ -187,6 +196,50 @@
     }
 
     $(document).ready(function(){
+
+      // ---------- Lightbox logic ----------
+      const $lightbox = $('#lightbox');
+      const $lightboxImg = $('#lightbox-img');
+
+      function openLightbox(src, alt){
+        if(!src) return;
+        $lightboxImg.attr('src', src);
+        $lightboxImg.attr('alt', alt || 'Expanded image');
+        $lightbox.addClass('open').attr('aria-hidden','false');
+      }
+
+      function closeLightbox(){
+        $lightbox.removeClass('open').attr('aria-hidden','true');
+        $lightboxImg.attr('src','');
+      }
+
+      $('#lightbox-close').on('click', closeLightbox);
+      $('#lightbox').on('click', function(e){
+        if(e.target.id === 'lightbox') closeLightbox(); // outside click
+      });
+      $(document).on('keydown', function(e){
+        if(e.key === 'Escape') closeLightbox();
+      });
+
+      function bindSection6Zoom(){
+        $(document).off('click', '#section6-media').on('click', '#section6-media', function(){
+          const src = $('#section6-img').attr('src');
+          const alt = $('#section6-img').attr('alt');
+          openLightbox(src, alt);
+        });
+
+        $(document).off('keydown', '#section6-media').on('keydown', '#section6-media', function(e){
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            const src = $('#section6-img').attr('src');
+            const alt = $('#section6-img').attr('alt');
+            openLightbox(src, alt);
+          }
+        });
+      }
+      bindSection6Zoom();
+      // -----------------------------------
+
       $.getJSON('news.json', function(data){
 
         function translatePage(lang){
