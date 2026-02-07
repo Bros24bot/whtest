@@ -37,7 +37,6 @@
       </div>
     </div>
 
-    <!-- NAV (Reihenfolge wie im Screenshot): Home, History, Alliances, Rules, Fort, News, Apply, Community -->
     <nav class="nav">
       <div class="container nav-inner">
         <a id="nav-home" href="index.html">🏠 Home</a>
@@ -77,17 +76,17 @@
 
         <div class="fort-grid">
           <article class="fort-card top">
-            <div class="badge top">RANK 1</div>
+            <div class="badge top" id="badge-rank1">RANK 1</div>
             <div class="fort-line" id="rank-1">2x Stronghold & 5x Fort</div>
           </article>
 
           <article class="fort-card">
-            <div class="badge">RANK 2</div>
+            <div class="badge" id="badge-rank2">RANK 2</div>
             <div class="fort-line" id="rank-2">1x Stronghold & 4x Fort</div>
           </article>
 
           <article class="fort-card">
-            <div class="badge">RANK 3</div>
+            <div class="badge" id="badge-rank3">RANK 3</div>
             <div class="fort-line" id="rank-3">1x Stronghold & 3x Fort</div>
           </article>
         </div>
@@ -124,7 +123,9 @@
   </footer>
 
   <script>
+    // FIX: Menü übersetzen (nav-* ODER alte Keys) + Language speichern/übernehmen
     const FALLBACK_LANG = 'en';
+    const LANG_KEY = 'state214_lang';
 
     function getSafe(dict, lang, key){
       if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
@@ -132,68 +133,90 @@
       return null;
     }
 
-    function translateCommon(dict, lang){
-      const home = getSafe(dict, lang, "home");
-      const history = getSafe(dict, lang, "history");
-      const alliances = getSafe(dict, lang, "alliances");
-      const rules = getSafe(dict, lang, "rules");
-      const fort = getSafe(dict, lang, "fort");
-      const news = getSafe(dict, lang, "news");
-      const apply = getSafe(dict, lang, "apply-nav");
-      const community = getSafe(dict, lang, "community");
+    function translateNav(dict, lang){
+      const t = dict[lang] || dict[FALLBACK_LANG] || {};
 
-      if(home) $('#nav-home').text('🏠 ' + home);
-      if(history) $('#nav-history').text('📖 ' + history);
-      if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
-      if(rules) $('#nav-rules').text('📜 ' + rules);
-      if(fort) $('#nav-fort').text('🏰 ' + fort);
-      if(news) $('#nav-news').text('🔥 ' + news);
-      if(apply) $('#nav-apply').text(apply); // apply-nav already includes 📝
-      if(community) $('#nav-community').text('💬 ' + community);
+      const nHome = t["nav-home"] || (t["home"] ? "🏠 " + t["home"] : null);
+      const nHistory = t["nav-history"] || (t["history"] ? "📖 " + t["history"] : null);
+      const nAlliances = t["nav-alliances"] || (t["alliances"] ? "🛡️ " + t["alliances"] : null);
+      const nRules = t["nav-rules"] || (t["rules"] ? "📜 " + t["rules"] : null);
+      const nFort = t["nav-fort"] || (t["fort"] ? "🏰 " + t["fort"] : null);
+      const nNews = t["nav-news"] || (t["news"] ? "🔥 " + t["news"] : null);
+      const nApply = t["nav-apply"] || t["apply-nav"] || (t["apply"] ? "📝 " + t["apply"] : null);
+      const nCommunity = t["nav-community"] || (t["community"] ? "💬 " + t["community"] : null);
+
+      if(nHome) $('#nav-home').text(nHome);
+      if(nHistory) $('#nav-history').text(nHistory);
+      if(nAlliances) $('#nav-alliances').text(nAlliances);
+      if(nRules) $('#nav-rules').text(nRules);
+      if(nFort) $('#nav-fort').text(nFort);
+      if(nNews) $('#nav-news').text(nNews);
+      if(nApply) $('#nav-apply').text(nApply);
+      if(nCommunity) $('#nav-community').text(nCommunity);
     }
 
-    $.getJSON('fort.json', function(data){
-      function translatePage(lang){
-        const pageTitle = getSafe(data, lang, "page-title");
-        const intro = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home");
+    $(document).ready(function(){
+      $.getJSON('fort.json', function(data){
 
-        const fortTitle = getSafe(data, lang, "fort-title");
-        const fortDesc = getSafe(data, lang, "fort-description");
-        const fortDetailsTitle = getSafe(data, lang, "fort-details-title");
-        const fortDetails = getSafe(data, lang, "fort-details");
+        function translatePage(lang){
+          const pageTitle = getSafe(data, lang, "page-title");
+          const intro = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home");
 
-        const rank1 = getSafe(data, lang, "rank-1");
-        const rank2 = getSafe(data, lang, "rank-2");
-        const rank3 = getSafe(data, lang, "rank-3");
+          const fortTitle = getSafe(data, lang, "fort-title");
+          const fortDesc = getSafe(data, lang, "fort-description");
+          const fortDetailsTitle = getSafe(data, lang, "fort-details-title");
+          const fortDetails = getSafe(data, lang, "fort-details");
 
-        const importantTitle = getSafe(data, lang, "important-note-title");
-        const important = getSafe(data, lang, "important-note");
-        const footer = getSafe(data, lang, "footer-text");
+          const rank1 = getSafe(data, lang, "rank-1");
+          const rank2 = getSafe(data, lang, "rank-2");
+          const rank3 = getSafe(data, lang, "rank-3");
 
-        if(pageTitle) $('#page-title').text(pageTitle);
-        if(intro) $('#intro-text').text(intro);
+          const rank1Badge = getSafe(data, lang, "rank-1-badge");
+          const rank2Badge = getSafe(data, lang, "rank-2-badge");
+          const rank3Badge = getSafe(data, lang, "rank-3-badge");
 
-        if(fortTitle) $('#fort-title').text(fortTitle);
-        if(fortDesc) $('#fort-description').html(fortDesc); // keep <strong> tags if present in JSON
-        if(fortDetailsTitle) $('#fort-details-title').text(fortDetailsTitle);
-        if(fortDetails) $('#fort-details').text(fortDetails);
+          const importantTitle = getSafe(data, lang, "important-note-title");
+          const important = getSafe(data, lang, "important-note");
+          const footer = getSafe(data, lang, "footer-text");
 
-        if(rank1) $('#rank-1').text(rank1);
-        if(rank2) $('#rank-2').text(rank2);
-        if(rank3) $('#rank-3').text(rank3);
+          if(pageTitle) $('#page-title').text(pageTitle);
+          if(intro) $('#intro-text').text(intro);
 
-        if(importantTitle) $('#important-note-title').text(importantTitle);
-        if(important) $('#important-note').text(important);
+          if(fortTitle) $('#fort-title').text(fortTitle);
+          if(fortDesc) $('#fort-description').html(fortDesc);
+          if(fortDetailsTitle) $('#fort-details-title').text(fortDetailsTitle);
+          if(fortDetails) $('#fort-details').text(fortDetails);
 
-        if(footer) $('#footer-text').text(footer);
+          if(rank1) $('#rank-1').text(rank1);
+          if(rank2) $('#rank-2').text(rank2);
+          if(rank3) $('#rank-3').text(rank3);
 
-        translateCommon(data, lang);
-      }
+          if(rank1Badge) $('#badge-rank1').text(rank1Badge);
+          if(rank2Badge) $('#badge-rank2').text(rank2Badge);
+          if(rank3Badge) $('#badge-rank3').text(rank3Badge);
 
-      translatePage('en');
+          if(importantTitle) $('#important-note-title').text(importantTitle);
+          if(important) $('#important-note').text(important);
 
-      $('#language-select').on('change', function(){
-        translatePage($(this).val());
+          if(footer) $('#footer-text').text(footer);
+
+          // NAV immer setzen
+          translateNav(data, lang);
+        }
+
+        // init: saved lang
+        const saved = localStorage.getItem(LANG_KEY) || 'en';
+        $('#language-select').val(saved);
+        translatePage(saved);
+
+        $('#language-select').on('change', function(){
+          const lang = $(this).val();
+          localStorage.setItem(LANG_KEY, lang);
+          translatePage(lang);
+        });
+      })
+      .fail(function(){
+        console.error("Error loading fort.json");
       });
     });
   </script>
