@@ -5,6 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>State 214</title>
+
+  <!-- FAVICON / SITE ICON -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-192x192.png">
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -12,9 +18,16 @@
 <body class="page">
   <header class="site-header">
     <div class="container header-inner">
+
+      <!-- BRAND + HOME ICON (CLICKABLE) -->
       <div class="brand">
-        <h1 id="page-title">State 214</h1>
-        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+        <a class="brand-home" href="index.html" aria-label="Go to Home">
+          <img src="/assets/favicon-192x192.png" alt="State 214" class="brand-logo">
+          <div class="brand-text">
+            <h1 id="page-title">State 214</h1>
+            <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+          </div>
+        </a>
       </div>
 
       <div class="lang">
@@ -121,7 +134,8 @@
             </div>
           </a>
 
-          <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener" class="social-card">
+          <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands"
+             target="_blank" rel="noopener" class="social-card">
             <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
             <div class="card-text">
               <div class="caption" id="social-bot-title">Bros24 Bot</div>
@@ -153,52 +167,110 @@
   </footer>
 
   <script>
-    $.getJSON('index.json', function(data) {
+    const FALLBACK_LANG = "en";
+    const LANG_KEY = "state214_lang";
 
-      const translatePage = (lang) => {
-        const t = data[lang] || data["en"];
+    function getSafe(dict, lang, key){
+      if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
+      if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
+      return null;
+    }
 
-        // Header
-        $('#page-title').text(t["page-title"]);
-        $('#intro-text').html("<strong>" + t["home"] + "</strong>");
+    // Entfernt führende Emojis/Icons, damit keine doppelten Emojis entstehen
+    function stripLeadingIcons(text){
+      if(!text) return "";
+      return String(text).replace(
+        /^[\s\u200D\uFE0F]*(?:[\p{Extended_Pictographic}\p{Emoji_Presentation}\p{Emoji}\u2600-\u27BF]\s*)+/gu,
+        ""
+      ).trim();
+    }
 
-        // NAV (Keys in JSON: nav-home, nav-history, ...)
-        $('#nav-home').text(t["nav-home"]);
-        $('#nav-history').text(t["nav-history"]);
-        $('#nav-alliances').text(t["nav-alliances"]);
-        $('#nav-rules').text(t["nav-rules"]);
-        $('#nav-fort').text(t["nav-fort"]);
-        $('#nav-news').text(t["nav-news"]);
-        $('#nav-apply').text(t["nav-apply"]);
-        $('#nav-community').text(t["nav-community"]);
+    // Baut immer GENAU 1 Emoji + Label
+    function navLabel(t, navKey, plainKey, emoji, fallback){
+      const raw = t[navKey] ?? t[plainKey] ?? fallback;
+      const clean = stripLeadingIcons(raw);
+      return `${emoji} ${clean || stripLeadingIcons(fallback)}`;
+    }
 
-        // Content
-        $('#welcome-title').text(t["welcome-title"]);
-        $('#welcome-text').text(t["welcome-text"]);
-        $('#about-title').text(t["about-title"]);
-        $('#highlight1').text(t["highlight1"]);
-        $('#highlight2').text(t["highlight2"]);
-        $('#highlight3').text(t["highlight3"]);
-        $('#highlight4').text(t["highlight4"]);
-        $('#highlight5').text(t["highlight5"]);
-        $('#mission-title').text(t["mission-title"]);
-        $('#mission-text').text(t["mission-text"]);
-        $('#footer-text').text(t["footer-text"]);
-      };
+    function translateNav(all, lang){
+      const t = all[lang] || all[FALLBACK_LANG] || {};
+      $("#nav-home").text(navLabel(t, "nav-home", "home", "🏠", "Home"));
+      $("#nav-history").text(navLabel(t, "nav-history", "history", "📖", "History"));
+      $("#nav-alliances").text(navLabel(t, "nav-alliances", "alliances", "🛡️", "Alliances"));
+      $("#nav-rules").text(navLabel(t, "nav-rules", "rules", "📜", "Rules"));
+      $("#nav-fort").text(navLabel(t, "nav-fort", "fort", "🏰", "Fort"));
+      $("#nav-news").text(navLabel(t, "nav-news", "news", "🔥", "News"));
+      const applyRaw = t["nav-apply"] ?? t["apply-nav"] ?? t["apply"] ?? "Apply";
+      $("#nav-apply").text(`📝 ${stripLeadingIcons(applyRaw)}`);
+      $("#nav-community").text(navLabel(t, "nav-community", "community", "💬", "Community"));
+    }
 
-      // Init with saved language
-      const saved = localStorage.getItem('state214_lang') || 'en';
-      $('#language-select').val(saved);
-      translatePage(saved);
+    $(document).ready(function(){
+      $.getJSON("index.json", function(data){
 
-      // Change handler
-      $('#language-select').change(function() {
-        const lang = $(this).val();
-        localStorage.setItem('state214_lang', lang);
-        translatePage(lang);
+        function translatePage(lang){
+          const t = data[lang] || data[FALLBACK_LANG] || {};
+
+          // Header
+          const pt = getSafe(data, lang, "page-title") || "State 214";
+          const intro = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home") || "ALL STARS UNITED";
+          $("#page-title").text(pt);
+          $("#intro-text").html("<strong>" + intro + "</strong>");
+
+          // NAV (fix: keine doppelten emojis)
+          translateNav(data, lang);
+
+          // Content
+          $("#welcome-title").text(getSafe(data, lang, "welcome-title") || "Welcome to State 214");
+          $("#welcome-text").text(getSafe(data, lang, "welcome-text") || "");
+
+          $("#about-title").text(getSafe(data, lang, "about-title") || "❄️ About This Website");
+          $("#highlight1").text(getSafe(data, lang, "highlight1") || "");
+          $("#highlight2").text(getSafe(data, lang, "highlight2") || "");
+          $("#highlight3").text(getSafe(data, lang, "highlight3") || "");
+          $("#highlight4").text(getSafe(data, lang, "highlight4") || "");
+          $("#highlight5").text(getSafe(data, lang, "highlight5") || "");
+
+          $("#mission-title").text(getSafe(data, lang, "mission-title") || "🌐 Our Mission");
+          $("#mission-text").text(getSafe(data, lang, "mission-text") || "");
+
+          $("#community-title").text(getSafe(data, lang, "community-title") || "Community");
+          $("#community-subtitle").text(getSafe(data, lang, "community-subtitle") || "Links & tools");
+
+          $("#social-discord-title").text(getSafe(data, lang, "social-discord-title") || "Discord");
+          $("#social-discord-sub").text(getSafe(data, lang, "social-discord-sub") || "");
+          $("#social-youtube-title").text(getSafe(data, lang, "social-youtube-title") || "YouTube");
+          $("#social-youtube-sub").text(getSafe(data, lang, "social-youtube-sub") || "");
+          $("#social-bot-title").text(getSafe(data, lang, "social-bot-title") || "Bros24 Bot");
+          $("#social-bot-sub").text(getSafe(data, lang, "social-bot-sub") || "");
+
+          const footer = getSafe(data, lang, "footer-text") || $("#footer-text").text();
+          $("#footer-text").text(footer);
+        }
+
+        const saved = localStorage.getItem(LANG_KEY) || "en";
+        $("#language-select").val(saved);
+        translatePage(saved);
+
+        $("#language-select").on("change", function(){
+          const lang = $(this).val();
+          localStorage.setItem(LANG_KEY, lang);
+          translatePage(lang);
+        });
+
+      }).fail(function(){
+        console.error("index.json could not be loaded.");
       });
-
     });
   </script>
+
+  <!--
+    EINMALIG in style.css hinzufügen (für alle Seiten):
+
+    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
+    .brand-text h1 { margin:0; }
+    .brand-text p { margin:0; }
+  -->
 </body>
 </html>
