@@ -7,24 +7,6 @@
   <title>News – State 214</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- kleine Ergänzung nur für Artikel-Bild (ohne style.css anfassen) -->
-  <style>
-    .news-article-img{
-      width:100%;
-      height:auto;
-      border-radius:14px;
-      display:block;
-      margin: 10px 0 12px;
-      object-fit: cover;
-      max-height: 520px;
-    }
-    .news-meta{
-      opacity:.85;
-      font-size:.95rem;
-      margin-top:6px;
-    }
-  </style>
 </head>
 
 <body class="page">
@@ -55,6 +37,7 @@
       </div>
     </div>
 
+    <!-- NAV (Reihenfolge wie im Screenshot): Home, History, Alliances, Rules, Fort, News, Apply, Community -->
     <nav class="nav">
       <div class="container nav-inner">
         <a id="nav-home" href="index.html">🏠 Home</a>
@@ -78,7 +61,7 @@
         <div class="hero-content">
           <div class="hero-kicker">STATE 214</div>
           <h2 id="news-hero-title">🔥 News & Highlights</h2>
-          <p id="news-date">—</p>
+          <p id="news-date">30 July – 16 August 2025</p>
         </div>
       </section>
 
@@ -90,19 +73,21 @@
 
         <div class="news-grid">
 
-          <!-- NEWEST ARTICLE (mit Bild) -->
-          <article class="news-card" id="latest-article">
-            <h2 class="news-title" id="latest-title">Latest</h2>
+          <!-- NEWEST: SECTION 6 -->
+          <article class="news-card">
+            <h2 class="news-title" id="section6-title">Successful SvS Event: State 214 Prevails Against State 268</h2>
+            <p class="muted" id="section6-meta" style="margin-top:-6px;"></p>
 
-            <img id="latest-img" class="news-article-img" src="" alt="Latest News Image" />
+            <img id="section6-img"
+                 src=""
+                 alt="SvS Report Image"
+                 style="width:100%; max-width:980px; display:block; margin:12px auto 14px; border-radius:16px; object-fit:cover;" />
 
-            <div class="news-meta" id="latest-meta"></div>
-
-            <p id="latest-p1"></p>
-            <p id="latest-p2"></p>
-            <p id="latest-p3"></p>
-            <p id="latest-p4"></p>
-            <p id="latest-p5"></p>
+            <p id="section6-text1"></p>
+            <p id="section6-text2"></p>
+            <p id="section6-text3"></p>
+            <p id="section6-text4"></p>
+            <p id="section6-text5"></p>
           </article>
 
           <!-- SECTION 1 -->
@@ -144,7 +129,6 @@
             <p id="section5-text4"></p>
             <p id="section5-text5"></p>
           </article>
-
         </div>
       </section>
 
@@ -180,16 +164,19 @@
       return null;
     }
 
-    function translateNav(indexDict, lang){
-      const t = indexDict[lang] || indexDict[FALLBACK_LANG] || {};
+    // Works with either:
+    // - home/history/... + apply-nav
+    // - nav-home/nav-history/... (already includes emoji)
+    function translateNav(dict, lang){
+      const t = (dict && (dict[lang] || dict[FALLBACK_LANG])) || {};
 
-      const nHome      = t["nav-home"]      || (t["home"] ? "🏠 " + t["home"] : null);
-      const nHistory   = t["nav-history"]   || (t["history"] ? "📖 " + t["history"] : null);
+      const nHome = t["nav-home"] || (t["home"] ? "🏠 " + t["home"] : null);
+      const nHistory = t["nav-history"] || (t["history"] ? "📖 " + t["history"] : null);
       const nAlliances = t["nav-alliances"] || (t["alliances"] ? "🛡️ " + t["alliances"] : null);
-      const nRules     = t["nav-rules"]     || (t["rules"] ? "📜 " + t["rules"] : null);
-      const nFort      = t["nav-fort"]      || (t["fort"] ? "🏰 " + t["fort"] : null);
-      const nNews      = t["nav-news"]      || (t["news"] ? "🔥 " + t["news"] : null);
-      const nApply     = t["nav-apply"]     || t["apply-nav"] || (t["apply"] ? "📝 " + t["apply"] : null);
+      const nRules = t["nav-rules"] || (t["rules"] ? "📜 " + t["rules"] : null);
+      const nFort = t["nav-fort"] || (t["fort"] ? "🏰 " + t["fort"] : null);
+      const nNews = t["nav-news"] || (t["news"] ? "🔥 " + t["news"] : null);
+      const nApply = t["nav-apply"] || t["apply-nav"] || (t["apply"] ? "📝 " + t["apply"] : null);
       const nCommunity = t["nav-community"] || (t["community"] ? "💬 " + t["community"] : null);
 
       if(nHome) $('#nav-home').text(nHome);
@@ -203,67 +190,44 @@
     }
 
     $(document).ready(function(){
-      $.when(
-        $.getJSON('index.json'),
-        $.getJSON('news.json')
-      ).done(function(indexRes, newsRes){
-        const indexData = indexRes[0];
-        const data = newsRes[0];
+      $.getJSON('news.json', function(data){
 
         function translatePage(lang){
-          // header
-          const pageTitle = getSafe(data, lang, "page-title") || "News";
-          const introBrand = getSafe(data, lang, "intro-text") || "ALL STARS UNITED";
+          const pageTitle = getSafe(data, lang, "page-title");
+          const introText = getSafe(data, lang, "intro-text");
           if(pageTitle) $('#page-title').text(pageTitle);
-          if(introBrand) $('#intro-text').text(introBrand);
+          if(introText) $('#intro-text').text(introText);
 
-          // hero
           const heroTitle = getSafe(data, lang, "news-hero-title");
           const date = getSafe(data, lang, "date");
           if(heroTitle) $('#news-hero-title').text(heroTitle);
           if(date) $('#news-date').text(date);
 
-          // feed
           const feedTitle = getSafe(data, lang, "news-feed-title");
           const feedSub = getSafe(data, lang, "news-feed-sub");
           if(feedTitle) $('#news-feed-title').text(feedTitle);
           if(feedSub) $('#news-feed-sub').text(feedSub);
 
-          // newest article
-          const latestTitle = getSafe(data, lang, "latest-title");
-          const latestMeta = getSafe(data, lang, "latest-meta");
-          const latestImg = getSafe(data, lang, "latest-img");
+          // NEWEST (SECTION 6)
+          const s6t = getSafe(data, lang, "section6-title");
+          const s6m = getSafe(data, lang, "section6-meta");
+          const s6img = getSafe(data, lang, "section6-img");
+          const s6a = getSafe(data, lang, "section6-text1");
+          const s6b = getSafe(data, lang, "section6-text2");
+          const s6c = getSafe(data, lang, "section6-text3");
+          const s6d = getSafe(data, lang, "section6-text4");
+          const s6e = getSafe(data, lang, "section6-text5");
 
-          const p1 = getSafe(data, lang, "latest-p1");
-          const p2 = getSafe(data, lang, "latest-p2");
-          const p3 = getSafe(data, lang, "latest-p3");
-          const p4 = getSafe(data, lang, "latest-p4");
-          const p5 = getSafe(data, lang, "latest-p5");
+          if(s6t) $('#section6-title').text(s6t);
+          if(s6m != null) $('#section6-meta').text(s6m);
+          if(s6img) $('#section6-img').attr('src', s6img);
+          if(s6a != null) $('#section6-text1').text(s6a);
+          if(s6b != null) $('#section6-text2').text(s6b);
+          if(s6c != null) $('#section6-text3').text(s6c);
+          if(s6d != null) $('#section6-text4').text(s6d);
+          if(s6e != null) $('#section6-text5').text(s6e);
 
-          if(latestTitle) $('#latest-title').text(latestTitle);
-          if(latestMeta) $('#latest-meta').text(latestMeta);
-
-          if(latestImg){
-            $('#latest-img').attr('src', latestImg).show();
-          } else {
-            $('#latest-img').hide();
-          }
-
-          // leere Absätze sauber ausblenden
-          function setP(id, val){
-            if(val != null && String(val).trim() !== ''){
-              $(id).text(val).show();
-            } else {
-              $(id).hide();
-            }
-          }
-          setP('#latest-p1', p1);
-          setP('#latest-p2', p2);
-          setP('#latest-p3', p3);
-          setP('#latest-p4', p4);
-          setP('#latest-p5', p5);
-
-          // existing sections (wie bisher)
+          // OLD sections 1–5 (unchanged)
           const s1t = getSafe(data, lang, "section1-title");
           const s1a = getSafe(data, lang, "section1-text1");
           const s1b = getSafe(data, lang, "section1-text2");
@@ -309,12 +273,10 @@
           if(s5d != null) $('#section5-text4').text(s5d);
           if(s5e != null) $('#section5-text5').text(s5e);
 
-          // footer
-          const footer = getSafe(data, lang, "footer-text") || getSafe(indexData, lang, "footer-text");
+          const footer = getSafe(data, lang, "footer-text");
           if(footer) $('#footer-text').text(footer);
 
-          // NAV immer aus index.json
-          translateNav(indexData, lang);
+          translateNav(data, lang);
         }
 
         const saved = localStorage.getItem(LANG_KEY) || 'en';
@@ -326,9 +288,9 @@
           localStorage.setItem(LANG_KEY, lang);
           translatePage(lang);
         });
-
-      }).fail(function(){
-        console.error("Could not load index.json and/or news.json");
+      })
+      .fail(function(){
+        console.warn('news.json could not be loaded.');
       });
     });
   </script>
