@@ -39,14 +39,14 @@
 
     <nav class="nav">
       <div class="container nav-inner">
-        <a href="index.html">🏠 Home</a>
-        <a href="history.html">📖 History</a>
-        <a href="alliances.html">🛡️ Alliances</a>
-        <a href="rules.html">📜 Rules</a>
-        <a href="fort.html">🏰 Fort</a>
-        <a href="news.html">🔥 News</a>
-        <a href="apply.html" class="active">📝 Apply</a>
-        <a href="community.html">💬 Community</a>
+        <a href="index.html" id="nav-home">🏠 Home</a>
+        <a href="history.html" id="nav-history">📖 History</a>
+        <a href="alliances.html" id="nav-alliances">🛡️ Alliances</a>
+        <a href="rules.html" id="nav-rules">📜 Rules</a>
+        <a href="fort.html" id="nav-fort">🏰 Fort</a>
+        <a href="news.html" id="nav-news">🔥 News</a>
+        <a href="apply.html" class="active" id="nav-apply">📝 Apply</a>
+        <a href="community.html" id="nav-community">💬 Community</a>
       </div>
     </nav>
   </header>
@@ -55,46 +55,46 @@
     <div class="container">
       <section class="card">
         <div class="section-head">
-          <h3>📝 Application Form</h3>
-          <p class="muted">Apply to DOA / LOU / SRC in State 214</p>
+          <h3 id="apply-title">📝 Application Form</h3>
+          <p class="muted" id="apply-subtitle">Apply to DOA / LOU / SRC in State 214</p>
         </div>
 
         <form action="https://formspree.io/f/xwvnkbvd" method="POST" class="apply-form">
           <div class="grid-2">
             <div class="row">
-              <label for="ingame">In-Game Name *</label>
+              <label for="ingame" id="label-ingame">In-Game Name *</label>
               <input id="ingame" type="text" name="In-Game Name" required>
             </div>
 
             <div class="row">
-              <label for="state">State *</label>
+              <label for="state" id="label-state">State *</label>
               <input id="state" type="number" name="State" required min="1" step="1" value="214">
             </div>
 
             <div class="row">
-              <label for="playerid">Player ID *</label>
+              <label for="playerid" id="label-playerid">Player ID *</label>
               <input id="playerid" type="text" name="Player ID" required placeholder="e.g. 123456789">
             </div>
 
             <div class="row">
-              <label for="curall">Current Alliance *</label>
+              <label for="curall" id="label-curall">Current Alliance *</label>
               <input id="curall" type="text" name="Current Alliance" required placeholder="e.g. ABC">
             </div>
 
             <div class="row">
-              <label for="furnace">Furnace Level *</label>
+              <label for="furnace" id="label-furnace">Furnace Level *</label>
               <input id="furnace" type="text" name="Furnace Level" required placeholder="e.g. F30">
             </div>
 
             <div class="row">
-              <label for="power">Power *</label>
+              <label for="power" id="label-power">Power *</label>
               <input id="power" type="text" name="Power" required placeholder="e.g. 80M">
             </div>
 
             <div class="row">
-              <label for="applyto">Apply to *</label>
+              <label for="applyto" id="label-applyto">Apply to *</label>
               <select id="applyto" name="Apply to" required>
-                <option value="" selected disabled>Select alliance…</option>
+                <option value="" selected disabled id="applyto-placeholder">Select alliance…</option>
                 <option value="DOA">DOA</option>
                 <option value="LOU">LOU</option>
                 <option value="SRC">SRC</option>
@@ -102,13 +102,13 @@
             </div>
 
             <div class="row">
-              <label for="email">Email (optional)</label>
+              <label for="email" id="label-email">Email (optional)</label>
               <input id="email" type="email" name="email" placeholder="you@example.com">
             </div>
           </div>
 
           <div class="row">
-            <label for="msg">Message *</label>
+            <label for="msg" id="label-msg">Message *</label>
             <textarea id="msg" name="Message" rows="7" required
               placeholder="Tell us why you want to join, what are your event times and what you expect from the alliance."></textarea>
           </div>
@@ -116,7 +116,7 @@
           <input type="text" name="_gotcha" style="display:none">
           <input type="hidden" name="_subject" value="State 214 – New Application">
 
-          <button type="submit">Send Application</button>
+          <button type="submit" id="btn-send">Send Application</button>
         </form>
       </section>
     </div>
@@ -125,28 +125,94 @@
   <footer class="site-footer">
     <div class="container footer-wrap">
       <div class="footer-top">
-        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
-        <div class="footer-meta">© 2026 State 214 Community — Built by players, for players.</div>
+        <div class="footer-brand" id="footer-brand">STATE 214 • ALL STARS UNITED</div>
+        <div class="footer-meta" id="footer-meta">© 2026 State 214 Community — Built by players, for players.</div>
       </div>
 
       <div class="footer-bottom">
         <div class="footer-line">
-          © WOSC — Whiteout Survival Community •
+          <span id="footer-line-wosc">© WOSC — Whiteout Survival Community •</span>
           <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
         </div>
         <div class="footer-line">
-          Design & Build: <span class="footer-strong">Bros24</span>
+          <span id="footer-design">Design & Build:</span> <span class="footer-strong" id="footer-strong">Bros24</span>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    $('#language-select').change(function() {
-      localStorage.setItem('state214_lang', $(this).val());
+    const LANG_KEY = "state214_lang";
+
+    function applyTranslations(dict) {
+      // Header
+      $("#page-title").text(dict["page-title"] || "State 214");
+      $("#intro-text").html("<strong>" + (dict["intro-text"] || "ALL STARS UNITED") + "</strong>");
+
+      // Nav
+      $("#nav-home").text(dict.home || "🏠 Home");
+      $("#nav-history").text(dict.history || "📖 History");
+      $("#nav-alliances").text(dict.alliances || "🛡️ Alliances");
+      $("#nav-rules").text(dict.rules || "📜 Rules");
+      $("#nav-fort").text(dict.fort || "🏰 Fort");
+      $("#nav-news").text(dict.news || "🔥 News");
+      $("#nav-apply").text(dict.apply || "📝 Apply");
+      $("#nav-community").text(dict.community || "💬 Community");
+
+      // Apply Section
+      $("#apply-title").text(dict["apply-title"] || "📝 Application Form");
+      $("#apply-subtitle").text(dict["apply-subtitle"] || "Apply to DOA / LOU / SRC in State 214");
+
+      $("#label-ingame").text(dict["label-ingame"] || "In-Game Name *");
+      $("#label-state").text(dict["label-state"] || "State *");
+      $("#label-playerid").text(dict["label-playerid"] || "Player ID *");
+      $("#label-curall").text(dict["label-curall"] || "Current Alliance *");
+      $("#label-furnace").text(dict["label-furnace"] || "Furnace Level *");
+      $("#label-power").text(dict["label-power"] || "Power *");
+      $("#label-applyto").text(dict["label-applyto"] || "Apply to *");
+      $("#label-email").text(dict["label-email"] || "Email (optional)");
+      $("#label-msg").text(dict["label-msg"] || "Message *");
+
+      $("#playerid").attr("placeholder", dict["ph-playerid"] || "e.g. 123456789");
+      $("#curall").attr("placeholder", dict["ph-curall"] || "e.g. ABC");
+      $("#furnace").attr("placeholder", dict["ph-furnace"] || "e.g. F30");
+      $("#power").attr("placeholder", dict["ph-power"] || "e.g. 80M");
+      $("#email").attr("placeholder", dict["ph-email"] || "you@example.com");
+      $("#msg").attr("placeholder", dict["ph-msg"] || "Tell us why you want to join, what are your event times and what you expect from the alliance.");
+
+      $("#applyto-placeholder").text(dict["applyto-placeholder"] || "Select alliance…");
+      $("#btn-send").text(dict["btn-send"] || "Send Application");
+
+      // Footer (optional translations)
+      $("#footer-brand").text(dict["footer-brand"] || "STATE 214 • ALL STARS UNITED");
+      $("#footer-meta").text(dict["footer-meta"] || "© 2026 State 214 Community — Built by players, for players.");
+      $("#footer-line-wosc").text(dict["footer-line-wosc"] || "© WOSC — Whiteout Survival Community •");
+      $("#footer-design").text(dict["footer-design"] || "Design & Build:");
+      $("#footer-strong").text(dict["footer-strong"] || "Bros24");
+    }
+
+    function loadLang(lang) {
+      return $.getJSON("apply.json")
+        .then((all) => {
+          const dict = all[lang] || all["en"] || {};
+          applyTranslations(dict);
+        })
+        .catch((err) => {
+          console.error("Could not load apply.json", err);
+        });
+    }
+
+    // Init: load saved lang + apply
+    const saved = localStorage.getItem(LANG_KEY) || "en";
+    $("#language-select").val(saved);
+    loadLang(saved);
+
+    // On change: save + apply
+    $("#language-select").on("change", function() {
+      const lang = $(this).val();
+      localStorage.setItem(LANG_KEY, lang);
+      loadLang(lang);
     });
-    const saved = localStorage.getItem('state214_lang');
-    if (saved) $('#language-select').val(saved);
   </script>
 </body>
 </html>
