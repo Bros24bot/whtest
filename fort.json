@@ -2,6 +2,16 @@
   "en": {
     "page-title": "Fortress Strategy – State 214",
     "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 Home",
+    "nav-history": "📖 History",
+    "nav-alliances": "🛡️ Alliances",
+    "nav-rules": "📜 Rules",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 News",
+    "nav-apply": "📝 Apply",
+    "nav-community": "💬 Community",
+
     "fort-title": "⚔️ Fortress Strategy & Distribution",
     "fort-description": "At State 214, we believe that a fair and transparent fortress distribution is essential to maintaining a healthy and united state. Our strategy is built around teamwork, smart planning, and preparation for major events like State vs State (SvS) and the Frost Dragon Tyrant Event.",
     "fort-details": "The weekly fortress battles are not just for glory – they are a key part of our state’s long-term strategy. Here's how we structure the distribution:",
@@ -16,6 +26,16 @@
   "de": {
     "page-title": "Burg-Strategie – State 214",
     "intro-text": "ALLE STERNE VEREINT",
+
+    "nav-home": "🏠 Start",
+    "nav-history": "📖 Geschichte",
+    "nav-alliances": "🛡️ Allianzen",
+    "nav-rules": "📜 Regeln",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 News",
+    "nav-apply": "📝 Bewerbung",
+    "nav-community": "💬 Community",
+
     "fort-title": "⚔️ Burg-Strategie & Verteilung",
     "fort-description": "In State 214 glauben wir, dass eine faire und transparente Burgverteilung entscheidend für die Aufrechterhaltung eines gesunden und vereinten Staates ist. Unsere Strategie basiert auf Teamarbeit, kluger Planung und Vorbereitung auf große Ereignisse wie State vs State (SvS) und das Frostdrache Tyrant Event.",
     "fort-details": "Die wöchentlichen Burgkämpfe sind nicht nur für Ruhm – sie sind ein wesentlicher Bestandteil der langfristigen Strategie unseres Staates. Hier ist, wie wir die Verteilung strukturieren:",
@@ -30,6 +50,16 @@
   "fr": {
     "page-title": "Stratégie de la forteresse – État 214",
     "intro-text": "TOUS LES ÉTOILES UNIS",
+
+    "nav-home": "🏠 Accueil",
+    "nav-history": "📖 Histoire",
+    "nav-alliances": "🛡️ Alliances",
+    "nav-rules": "📜 Règles",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 News",
+    "nav-apply": "📝 Candidature",
+    "nav-community": "💬 Communauté",
+
     "fort-title": "⚔️ Stratégie et distribution de la forteresse",
     "fort-description": "Dans l'État 214, nous croyons qu'une distribution équitable et transparente des forteresses est essentielle pour maintenir un état sain et uni. Notre stratégie repose sur le travail d'équipe, la planification intelligente et la préparation à des événements majeurs tels que State vs State (SvS) et l'événement Frost Dragon Tyrant.",
     "fort-details": "Les batailles hebdomadaires de la forteresse ne sont pas seulement pour la gloire - elles font partie intégrante de la stratégie à long terme de notre état. Voici comment nous structurons la distribution :",
@@ -44,6 +74,16 @@
   "pl": {
     "page-title": "Strategia Twierdzy – State 214",
     "intro-text": "WSZYSCY STARS ZJEDNOCZENI",
+
+    "nav-home": "🏠 Start",
+    "nav-history": "📖 Historia",
+    "nav-alliances": "🛡️ Sojusze",
+    "nav-rules": "📜 Zasady",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 Aktualności",
+    "nav-apply": "📝 Rekrutacja",
+    "nav-community": "💬 Społeczność",
+
     "fort-title": "⚔️ Strategia Twierdzy & Podział",
     "fort-description": "W State 214 wierzymy, że uczciwa i przejrzysta dystrybucja twierdz jest kluczowa dla utrzymania zdrowego i zjednoczonego państwa. Nasza strategia opiera się na pracy zespołowej, mądrym planowaniu i przygotowaniach do ważnych wydarzeń, takich jak State vs State (SvS) oraz Frost Dragon Tyrant Event.",
     "fort-details": "Cotygodniowe bitwy o twierdzę nie są tylko po to, by zdobywać chwałę – są kluczową częścią naszej długoterminowej strategii. Oto jak strukturalizujemy dystrybucję:",
@@ -58,6 +98,16 @@
   "it": {
     "page-title": "Strategia della Fortezza – Stato 214",
     "intro-text": "TUTTI GLI STELLE UNITI",
+
+    "nav-home": "🏠 Home",
+    "nav-history": "📖 Storia",
+    "nav-alliances": "🛡️ Alleanze",
+    "nav-rules": "📜 Regole",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 News",
+    "nav-apply": "📝 Candidati",
+    "nav-community": "💬 Comunità",
+
     "fort-title": "⚔️ Strategia e distribuzione della fortezza",
     "fort-description": "In Stato 214, crediamo che una distribuzione equa e trasparente delle fortezze sia essenziale per mantenere uno stato sano e unito. La nostra strategia si basa sul lavoro di squadra, una pianificazione intelligente e la preparazione per eventi importanti come State vs State (SvS) e l'evento Frost Dragon Tyrant.",
     "fort-details": "Le battaglie settimanali della fortezza non sono solo per la gloria – sono una parte chiave della nostra strategia a lungo termine. Ecco come strutturiamo la distribuzione:",
@@ -72,6 +122,16 @@
   "es": {
     "page-title": "Estrategia de Fortaleza – Estado 214",
     "intro-text": "TODOS LAS ESTRELLAS UNIDAS",
+
+    "nav-home": "🏠 Inicio",
+    "nav-history": "📖 Historia",
+    "nav-alliances": "🛡️ Alianzas",
+    "nav-rules": "📜 Reglas",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 Noticias",
+    "nav-apply": "📝 Solicitar",
+    "nav-community": "💬 Comunidad",
+
     "fort-title": "⚔️ Estrategia y distribución de la fortaleza",
     "fort-description": "En Estado 214, creemos que una distribución justa y transparente de las fortalezas es esencial para mantener un estado sano y unido. Nuestra estrategia se basa en el trabajo en equipo, la planificación inteligente y la preparación para eventos importantes como State vs State (SvS) y el evento Frost Dragon Tyrant.",
     "fort-details": "Las batallas semanales de la fortaleza no son solo para la gloria: son una parte clave de nuestra estrategia a largo plazo. Así es como estructuramos la distribución:",
@@ -86,6 +146,16 @@
   "th": {
     "page-title": "กลยุทธ์ปราสาท – State 214",
     "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 หน้าแรก",
+    "nav-history": "📖 ประวัติ",
+    "nav-alliances": "🛡️ พันธมิตร",
+    "nav-rules": "📜 กฎ",
+    "nav-fort": "🏰 ฟอร์ต",
+    "nav-news": "🔥 ข่าว",
+    "nav-apply": "📝 สมัครเข้าร่วม",
+    "nav-community": "💬 ชุมชน",
+
     "fort-title": "⚔️ กลยุทธ์และการจัดสรรปราสาท",
     "fort-description": "ใน State 214 เราเชื่อว่าการแจกจ่ายปราสาทอย่างยุติธรรมและโปร่งใสเป็นสิ่งสำคัญในการรักษารัฐที่มีสุขภาพดีและเป็นหนึ่งเดียว กลยุทธ์ของเราสร้างขึ้นจากการทำงานเป็นทีม การวางแผนที่ชาญฉลาด และการเตรียมพร้อมสำหรับกิจกรรมสำคัญ เช่น State vs State (SvS) และ Frost Dragon Tyrant Event",
     "fort-details": "การต่อสู้ประจำสัปดาห์ที่ปราสาทไม่ใช่แค่เพื่อเกียรติยศ – แต่เป็นส่วนสำคัญของกลยุทธ์ระยะยาวของเรา นี่คือวิธีที่เราจัดการการแจกจ่าย:",
@@ -100,6 +170,16 @@
   "ar": {
     "page-title": "استراتيجية القلعة – State 214",
     "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 الرئيسية",
+    "nav-history": "📖 التاريخ",
+    "nav-alliances": "🛡️ التحالفات",
+    "nav-rules": "📜 القواعد",
+    "nav-fort": "🏰 الحصن",
+    "nav-news": "🔥 الأخبار",
+    "nav-apply": "📝 تقديم طلب",
+    "nav-community": "💬 المجتمع",
+
     "fort-title": "⚔️ استراتيجية وتوزيع القلعة",
     "fort-description": "في State 214 نؤمن أن توزيع القلعة بشكل عادل وشفاف أمر أساسي للحفاظ على دولة صحية وموحدة. استراتيجيتنا مبنية على العمل الجماعي، التخطيط الذكي والاستعداد للأحداث الكبيرة مثل State vs State (SvS) وحدث Frost Dragon Tyrant.",
     "fort-details": "معارك القلعة الأسبوعية ليست فقط من أجل المجد – بل هي جزء أساسي من استراتيجيتنا طويلة المدى. إليك كيفية هيكلة التوزيع:",
@@ -114,6 +194,16 @@
   "tr": {
     "page-title": "Kale Stratejisi – State 214",
     "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 Ana Sayfa",
+    "nav-history": "📖 Tarih",
+    "nav-alliances": "🛡️ İttifaklar",
+    "nav-rules": "📜 Kurallar",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 Haberler",
+    "nav-apply": "📝 Başvuru",
+    "nav-community": "💬 Topluluk",
+
     "fort-title": "⚔️ Kale Stratejisi & Dağıtımı",
     "fort-description": "State 214'te, adil ve şeffaf bir kale dağılımının sağlıklı ve birleşmiş bir devletin korunması için önemli olduğuna inanıyoruz. Stratejimiz, takım çalışması, akıllı planlama ve State vs State (SvS) ve Frost Dragon Tyrant Etkinliği gibi büyük etkinliklere hazırlık üzerine kuruludur.",
     "fort-details": "Haftalık kale savaşları sadece zafer için değil, aynı zamanda devletimizin uzun vadeli stratejisinin önemli bir parçasıdır. İşte dağılımı nasıl yapılandırıyoruz:",
@@ -128,6 +218,16 @@
   "id": {
     "page-title": "Strategi Benteng – State 214",
     "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 Beranda",
+    "nav-history": "📖 Sejarah",
+    "nav-alliances": "🛡️ Aliansi",
+    "nav-rules": "📜 Aturan",
+    "nav-fort": "🏰 Fort",
+    "nav-news": "🔥 Berita",
+    "nav-apply": "📝 Daftar",
+    "nav-community": "💬 Komunitas",
+
     "fort-title": "⚔️ Strategi dan Pembagian Benteng",
     "fort-description": "Di State 214, kami percaya bahwa distribusi benteng yang adil dan transparan sangat penting untuk mempertahankan negara yang sehat dan bersatu. Strategi kami dibangun di atas kerja tim, perencanaan cerdas, dan persiapan untuk acara besar seperti State vs State (SvS) dan Frost Dragon Tyrant Event.",
     "fort-details": "Pertempuran benteng mingguan bukan hanya untuk kemuliaan – mereka adalah bagian kunci dari strategi jangka panjang negara kami. Inilah cara kami menyusun distribusi:",
@@ -142,6 +242,16 @@
   "ko": {
     "page-title": "성 전략 – State 214",
     "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 홈",
+    "nav-history": "📖 역사",
+    "nav-alliances": "🛡️ 동맹",
+    "nav-rules": "📜 규칙",
+    "nav-fort": "🏰 포트",
+    "nav-news": "🔥 뉴스",
+    "nav-apply": "📝 지원하기",
+    "nav-community": "💬 커뮤니티",
+
     "fort-title": "⚔️ 성 전략 & 배치",
     "fort-description": "State 214에서는 공정하고 투명한 성 배치가 건강하고 단합된 국가를 유지하는 데 중요하다고 믿습니다. 우리의 전략은 팀워크, 스마트한 계획, 그리고 State vs State (SvS) 및 Frost Dragon Tyrant Event와 같은 주요 이벤트를 위한 준비를 기반으로 구축되었습니다.",
     "fort-details": "주간 성 전투는 단순히 영광을 위한 것이 아닙니다. 그것은 우리 국가의 장기적인 전략의 중요한 부분입니다. 배분 구조는 다음과 같습니다:",
@@ -156,6 +266,16 @@
   "ru": {
     "page-title": "Стратегия Крепости – State 214",
     "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 Главная",
+    "nav-history": "📖 История",
+    "nav-alliances": "🛡️ Альянсы",
+    "nav-rules": "📜 Правила",
+    "nav-fort": "🏰 Форт",
+    "nav-news": "🔥 Новости",
+    "nav-apply": "📝 Заявка",
+    "nav-community": "💬 Сообщество",
+
     "fort-title": "⚔️ Стратегия и распределение крепости",
     "fort-description": "В State 214 мы верим, что справедливое и прозрачное распределение крепости необходимо для поддержания здорового и единого государства. Наша стратегия основана на командной работе, умном планировании и подготовке к важным событиям, таким как State vs State (SvS) и событие Frost Dragon Tyrant.",
     "fort-details": "Еженедельные сражения за крепость не только для славы — они являются важной частью нашей долгосрочной стратегии. Вот как мы структурируем распределение:",
@@ -170,6 +290,16 @@
   "zh": {
     "page-title": "堡垒战略 – State 214",
     "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 首页",
+    "nav-history": "📖 历史",
+    "nav-alliances": "🛡️ 联盟",
+    "nav-rules": "📜 规则",
+    "nav-fort": "🏰 要塞",
+    "nav-news": "🔥 新闻",
+    "nav-apply": "📝 申请加入",
+    "nav-community": "💬 社区",
+
     "fort-title": "⚔️ 堡垒战略 & 分配",
     "fort-description": "在State 214，我们相信公平和透明的堡垒分配对于保持一个健康和团结的国家至关重要。我们的战略建立在团队合作、智能规划以及为State vs State（SvS）和Frost Dragon Tyrant事件等重大活动做准备的基础上。",
     "fort-details": "每周的堡垒战斗不仅仅是为了荣耀——它们是我们国家长期战略的重要组成部分。我们如何构建分配结构：",
@@ -184,6 +314,16 @@
   "uk": {
     "page-title": "Стратегія фортеці – State 214",
     "intro-text": "ALL STARS UNITED",
+
+    "nav-home": "🏠 Головна",
+    "nav-history": "📖 Історія",
+    "nav-alliances": "🛡️ Альянси",
+    "nav-rules": "📜 Правила",
+    "nav-fort": "🏰 Форт",
+    "nav-news": "🔥 Новини",
+    "nav-apply": "📝 Заявка",
+    "nav-community": "💬 Спільнота",
+
     "fort-title": "⚔️ Стратегія та розподіл фортеці",
     "fort-description": "У State 214 ми віримо, що справедливий та прозорий розподіл фортеці є необхідним для підтримки здорової та єдиної держави. Наша стратегія побудована на командній роботі, розумному плануванні та підготовці до великих подій, таких як State vs State (SvS) та подія Frost Dragon Tyrant.",
     "fort-details": "Щотижневі битви за фортецю – це не тільки для слави, але й важлива частина нашої довгострокової стратегії. Ось як ми структуровано розподіляємо фортецю:",
