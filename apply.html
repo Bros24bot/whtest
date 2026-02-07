@@ -5,6 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Apply • State 214</title>
+
+  <!-- FAVICON / SITE ICON -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-192x192.png">
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -12,9 +18,16 @@
 <body class="page">
   <header class="site-header">
     <div class="container header-inner">
+
+      <!-- BRAND + HOME ICON (CLICKABLE) -->
       <div class="brand">
-        <h1 id="page-title">State 214</h1>
-        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+        <a class="brand-home" href="index.html" aria-label="Go to Home">
+          <img src="/assets/favicon-192x192.png" alt="State 214" class="brand-logo">
+          <div class="brand-text">
+            <h1 id="page-title">State 214</h1>
+            <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+          </div>
+        </a>
       </div>
 
       <div class="lang">
@@ -149,15 +162,15 @@
       $("#page-title").text(dict["page-title"] || "State 214");
       $("#intro-text").html("<strong>" + (dict["intro-text"] || "ALL STARS UNITED") + "</strong>");
 
-      // Nav
-      $("#nav-home").text(dict.home || "🏠 Home");
-      $("#nav-history").text(dict.history || "📖 History");
-      $("#nav-alliances").text(dict.alliances || "🛡️ Alliances");
-      $("#nav-rules").text(dict.rules || "📜 Rules");
-      $("#nav-fort").text(dict.fort || "🏰 Fort");
-      $("#nav-news").text(dict.news || "🔥 News");
-      $("#nav-apply").text(dict.apply || "📝 Apply");
-      $("#nav-community").text(dict.community || "💬 Community");
+      // Nav (supports both apply / apply-nav)
+      $("#nav-home").text(dict["nav-home"] || (dict.home ? "🏠 " + dict.home : "🏠 Home"));
+      $("#nav-history").text(dict["nav-history"] || (dict.history ? "📖 " + dict.history : "📖 History"));
+      $("#nav-alliances").text(dict["nav-alliances"] || (dict.alliances ? "🛡️ " + dict.alliances : "🛡️ Alliances"));
+      $("#nav-rules").text(dict["nav-rules"] || (dict.rules ? "📜 " + dict.rules : "📜 Rules"));
+      $("#nav-fort").text(dict["nav-fort"] || (dict.fort ? "🏰 " + dict.fort : "🏰 Fort"));
+      $("#nav-news").text(dict["nav-news"] || (dict.news ? "🔥 " + dict.news : "🔥 News"));
+      $("#nav-apply").text(dict["nav-apply"] || dict["apply-nav"] || (dict.apply ? "📝 " + dict.apply : "📝 Apply"));
+      $("#nav-community").text(dict["nav-community"] || (dict.community ? "💬 " + dict.community : "💬 Community"));
 
       // Apply Section
       $("#apply-title").text(dict["apply-title"] || "📝 Application Form");
@@ -183,7 +196,7 @@
       $("#applyto-placeholder").text(dict["applyto-placeholder"] || "Select alliance…");
       $("#btn-send").text(dict["btn-send"] || "Send Application");
 
-      // Footer (optional translations)
+      // Footer
       $("#footer-brand").text(dict["footer-brand"] || "STATE 214 • ALL STARS UNITED");
       $("#footer-meta").text(dict["footer-meta"] || "© 2026 State 214 Community — Built by players, for players.");
       $("#footer-line-wosc").text(dict["footer-line-wosc"] || "© WOSC — Whiteout Survival Community •");
@@ -202,17 +215,29 @@
         });
     }
 
-    // Init: load saved lang + apply
-    const saved = localStorage.getItem(LANG_KEY) || "en";
-    $("#language-select").val(saved);
-    loadLang(saved);
+    // Init: load saved lang + apply (runs after DOM is ready)
+    $(document).ready(function(){
+      const saved = localStorage.getItem(LANG_KEY) || "en";
+      $("#language-select").val(saved);
+      loadLang(saved);
 
-    // On change: save + apply
-    $("#language-select").on("change", function() {
-      const lang = $(this).val();
-      localStorage.setItem(LANG_KEY, lang);
-      loadLang(lang);
+      $("#language-select").on("change", function() {
+        const lang = $(this).val();
+        localStorage.setItem(LANG_KEY, lang);
+        loadLang(lang);
+      });
     });
   </script>
+
+  <!--
+    IMPORTANT:
+    Damit das Icon oben links sichtbar ist, brauchst du in style.css diese Klassen.
+    Kopiere das exakt in style.css (einmalig – gilt dann auf ALLEN Seiten):
+    
+    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
+    .brand-text h1 { margin:0; }
+    .brand-text p { margin:0; }
+  -->
 </body>
 </html>
