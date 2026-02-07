@@ -84,13 +84,13 @@
               <div class="info"><span class="label">Foundry Legion (1)</span><span class="value">14:00 UTC</span></div>
               <div class="info"><span class="label">Foundry Legion (2)</span><span class="value">14:00 UTC</span></div>
 
-              <div class="info full"><span class="label">Main Language</span><span class="value">Thai & English</span></div>
+              <div class="info full"><span class="label">Main Language</span><span class="value">Thai &amp; English</span></div>
             </div>
 
             <div class="desc">
               SRC was born from zero and has grown by gathering active players from many different states since Generation 4.
               We’ve made it all the way to State 214 and we’re still going strong. We’re now recruiting new active members who
-              want to grow together with us. Let’s build something great — together! 😊
+              want to grow together with us. Let’s build something great — together!
             </div>
           </article>
 
@@ -180,7 +180,7 @@
               <div class="info"><span class="label">Foundry Legion (1)</span><span class="value">14:00 UTC</span></div>
               <div class="info"><span class="label">Foundry Legion (2)</span><span class="value">19:00 UTC</span></div>
 
-              <div class="info full"><span class="label">Main Language</span><span class="value">German & English</span></div>
+              <div class="info full"><span class="label">Main Language</span><span class="value">German &amp; English</span></div>
             </div>
 
             <div class="desc">
@@ -242,8 +242,10 @@
   </footer>
 
   <script>
-    // Translates header/nav/footer using an existing JSON that already contains common keys.
-    // NAV order is fixed in HTML (Home, History, Alliances, Rules, Fort, News, Apply, Community).
+    // FIX:
+    // - "#intro-text" MUST use "intro-text" (ALL STARS UNITED)
+    // - nav-home MUST use "home" (Home)
+    // - keeps NAV order + Apply menu
 
     const FALLBACK_LANG = 'en';
 
@@ -254,31 +256,35 @@
     }
 
     function translateCommon(dict, lang){
-      // Some JSON files use intro-text vs home for the header line.
+      // Header / brand line:
+      const introBrand = getSafe(dict, lang, "intro-text"); // "ALL STARS UNITED"
+      // Page title may exist in the json, but alliances page can keep its own title if not:
       const pageTitle = getSafe(dict, lang, "page-title");
-      const intro = getSafe(dict, lang, "intro-text") || getSafe(dict, lang, "home");
 
-      const home = getSafe(dict, lang, "home");
+      // NAV labels:
+      const navHome = getSafe(dict, lang, "home");          // "Home"
       const history = getSafe(dict, lang, "history");
       const alliances = getSafe(dict, lang, "alliances");
       const rules = getSafe(dict, lang, "rules");
       const fort = getSafe(dict, lang, "fort");
       const news = getSafe(dict, lang, "news");
-      const apply = getSafe(dict, lang, "apply-nav");
+      const apply = getSafe(dict, lang, "apply-nav");       // "📝 Apply"
       const community = getSafe(dict, lang, "community");
       const footer = getSafe(dict, lang, "footer-text");
 
       if(pageTitle) $('#page-title').text(pageTitle);
-      if(intro) $('#intro-text').text(intro);
 
-      if(home) $('#nav-home').text('🏠 ' + home);
+      // IMPORTANT: do NOT fall back to "home" here, otherwise you get "Home" instead of ALL STARS UNITED
+      if(introBrand) $('#intro-text').text(introBrand);
+
+      if(navHome) $('#nav-home').text('🏠 ' + navHome);
       if(history) $('#nav-history').text('📖 ' + history);
       if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
       if(rules) $('#nav-rules').text('📜 ' + rules);
       if(fort) $('#nav-fort').text('🏰 ' + fort);
       if(news) $('#nav-news').text('🔥 ' + news);
 
-      // apply-nav in your JSON already includes 📝, so keep it as-is.
+      // apply-nav already contains 📝 in your json
       if(apply) $('#nav-apply').text(apply);
 
       if(community) $('#nav-community').text('💬 ' + community);
@@ -287,15 +293,15 @@
     }
 
     $(document).ready(function(){
-      // Try ONE of your existing json files that has the common keys.
-      // Priority: index.json (usually has apply-nav), then history/community.
-      const candidates = ['index.json','history.json','community.json','rules.json'];
+      // Must load a json that contains BOTH:
+      // - intro-text (ALL STARS UNITED)
+      // - home/history/alliances/... and apply-nav
+      const candidates = ['index.json','history.json','community.json','rules.json','news.json','fort.json'];
 
       function tryLoad(i){
         if(i >= candidates.length) return;
 
         $.getJSON(candidates[i], function(data){
-          // init
           translateCommon(data, FALLBACK_LANG);
 
           $('#language-select').off('change').on('change', function(){
