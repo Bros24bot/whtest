@@ -1,0 +1,157 @@
+<!-- FILE: apply.html  (NEU anlegen) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply • State 214</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 id="page-title">State 214</h1>
+        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+      </div>
+
+      <div class="lang">
+        <select id="language-select" aria-label="Language">
+          <option value="en">🇬🇧 English</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="pl">🇵🇱 Polski</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="th">🇹🇭 ไทย</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="id">🇮🇩 Indonesia</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="uk">🇺🇦 Українська</option>
+        </select>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="index.html">🏠 Home</a>
+        <a href="history.html">📖 History</a>
+        <a href="alliances.html">🛡️ Alliances</a>
+        <a href="rules.html">📜 Rules</a>
+        <a href="fort.html">🏰 Fort</a>
+        <a href="news.html">🔥 News</a>
+        <a href="apply.html" class="active">📝 Apply</a>
+        <a href="community.html">💬 Community</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="content">
+    <div class="container">
+      <section class="card">
+        <div class="section-head">
+          <h3 id="apply-title">📝 Application Form</h3>
+          <p class="muted" id="apply-sub">Apply to DOA / LOU / SRC in State 214</p>
+        </div>
+
+        <form action="https://formspree.io/f/xwvnkbvd" method="POST" class="apply-form">
+          <div class="grid-2">
+            <div class="row">
+              <label for="ingame">In-Game Name *</label>
+              <input id="ingame" type="text" name="In-Game Name" required>
+            </div>
+
+            <div class="row">
+              <label for="state">State *</label>
+              <input id="state" type="number" name="State" required min="1" step="1" placeholder="214">
+            </div>
+
+            <div class="row">
+              <label for="playerid">Player ID *</label>
+              <input id="playerid" type="text" name="Player ID" required placeholder="e.g. 123456789">
+            </div>
+
+            <div class="row">
+              <label for="alliance">Current Alliance *</label>
+              <input id="alliance" type="text" name="Current Alliance" required placeholder="e.g. ABC">
+            </div>
+
+            <div class="row">
+              <label for="furnace">Furnace Level *</label>
+              <input id="furnace" type="text" name="Furnace Level" required placeholder="e.g. F30">
+            </div>
+
+            <div class="row">
+              <label for="power">Power *</label>
+              <input id="power" type="text" name="Power" required placeholder="e.g. 80M">
+            </div>
+
+            <div class="row">
+              <label for="applyto">Apply to *</label>
+              <select id="applyto" name="Apply to" required>
+                <option value="" selected disabled>Select alliance…</option>
+                <option value="DOA">DOA</option>
+                <option value="LOU">LOU</option>
+                <option value="SRC">SRC</option>
+              </select>
+            </div>
+
+            <div class="row">
+              <label for="email">Email (optional)</label>
+              <input id="email" type="email" name="email" placeholder="you@example.com">
+            </div>
+          </div>
+
+          <div class="row">
+            <label for="msg">Message *</label>
+            <textarea id="msg" name="Message" rows="7" required
+              placeholder="Tell us why you want to join, what are your event times (Bear/Fort/SvS), and what you expect from the alliance."></textarea>
+          </div>
+
+          <!-- Spam honeypot -->
+          <input type="text" name="_gotcha" style="display:none">
+
+          <!-- Mail subject -->
+          <input type="hidden" name="_subject" value="State 214 – New Application">
+
+          <button type="submit">Send Application</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand">STATE 214 • ALL STARS UNITED</div>
+        <div class="footer-meta">© 2026 State 214 Community — Built by players, for players.</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-line">
+          © WOSC — Whiteout Survival Community •
+          <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
+        </div>
+        <div class="footer-line">
+          Design & Build: <span class="footer-strong">Bros24</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Optional: translate header/footer if you later add apply.json -->
+  <script>
+    // Keep language dropdown consistent (no page translations on apply yet)
+    $('#language-select').change(function() {
+      localStorage.setItem('state214_lang', $(this).val());
+    });
+    const saved = localStorage.getItem('state214_lang');
+    if (saved) $('#language-select').val(saved);
+  </script>
+</body>
+</html>
