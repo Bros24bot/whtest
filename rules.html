@@ -136,7 +136,8 @@
   </footer>
 
   <script>
-    // FIX: Menü übersetzen egal ob dein JSON nav-* nutzt oder alte keys
+    // FIX: Menu kommt IMMER aus index.json (nav-*), Rules/Text aus rules.json
+    // => du musst in rules.json KEINE nav-keys pflegen, aber es geht auch wenn sie da sind.
     const FALLBACK_LANG = 'en';
     const LANG_KEY = 'state214_lang';
 
@@ -150,22 +151,23 @@
       return String(str)
         .replace(/\bNAP\s*5\b/ig, 'NAP 3')
         .replace(/\bBIG\s*5\b/ig, 'Top 3')
+        .replace(/\bBIG\s*3\b/ig, 'Top 3')
         .replace(/\bTop\s*5\b/ig, 'Top 3')
         .replace(/\bTop-5\b/ig, 'Top 3')
         .replace(/\bBig-5\b/ig, 'Top 3');
     }
 
-    function translateNav(dict, lang){
-      const t = dict[lang] || dict[FALLBACK_LANG] || {};
+    function translateNav(indexDict, lang){
+      const t = indexDict[lang] || indexDict[FALLBACK_LANG] || {};
 
-      // preferred: nav-* keys (wie index.json)
-      const nHome = t["nav-home"] || (t["home"] ? "🏠 " + t["home"] : null);
-      const nHistory = t["nav-history"] || (t["history"] ? "📖 " + t["history"] : null);
+      // nav-* preferred
+      const nHome      = t["nav-home"]      || (t["home"] ? "🏠 " + t["home"] : null);
+      const nHistory   = t["nav-history"]   || (t["history"] ? "📖 " + t["history"] : null);
       const nAlliances = t["nav-alliances"] || (t["alliances"] ? "🛡️ " + t["alliances"] : null);
-      const nRules = t["nav-rules"] || (t["rules"] ? "📜 " + t["rules"] : null);
-      const nFort = t["nav-fort"] || (t["fort"] ? "🏰 " + t["fort"] : null);
-      const nNews = t["nav-news"] || (t["news"] ? "🔥 " + t["news"] : null);
-      const nApply = t["nav-apply"] || t["apply-nav"] || (t["apply"] ? "📝 " + t["apply"] : null);
+      const nRules     = t["nav-rules"]     || (t["rules"] ? "📜 " + t["rules"] : null);
+      const nFort      = t["nav-fort"]      || (t["fort"] ? "🏰 " + t["fort"] : null);
+      const nNews      = t["nav-news"]      || (t["news"] ? "🔥 " + t["news"] : null);
+      const nApply     = t["nav-apply"]     || t["apply-nav"] || (t["apply"] ? "📝 " + t["apply"] : null);
       const nCommunity = t["nav-community"] || (t["community"] ? "💬 " + t["community"] : null);
 
       if(nHome) $('#nav-home').text(nHome);
@@ -179,30 +181,36 @@
     }
 
     $(document).ready(function(){
-      $.getJSON('rules.json', function(data){
+      $.when(
+        $.getJSON('index.json'),
+        $.getJSON('rules.json')
+      ).done(function(indexRes, rulesRes){
+        const indexData = indexRes[0];
+        const rulesData = rulesRes[0];
 
         function translatePage(lang){
-          const pageTitle = getSafe(data, lang, "page-title");
-          const intro = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home");
+          // Title + slogan from rules.json, fallback to index.json
+          const pageTitle = getSafe(rulesData, lang, "page-title") || getSafe(indexData, lang, "page-title");
+          const intro = getSafe(rulesData, lang, "intro-text") || getSafe(indexData, lang, "home");
 
-          const keTitle = getSafe(data, lang, "ke-title");
-          const keSub = getSafe(data, lang, "ke-sub");
+          const keTitle = getSafe(rulesData, lang, "ke-title");
+          const keSub = getSafe(rulesData, lang, "ke-sub"); // optional
 
-          const eventTitle = getSafe(data, lang, "event-title");
-          const r1 = getSafe(data, lang, "rule-1");
-          const r1t = getSafe(data, lang, "rule-1-text");
-          const r2 = getSafe(data, lang, "rule-2");
-          const r2t = getSafe(data, lang, "rule-2-text");
-          const r3 = getSafe(data, lang, "rule-3");
-          const r3t = getSafe(data, lang, "rule-3-text");
+          const eventTitle = getSafe(rulesData, lang, "event-title");
+          const r1 = getSafe(rulesData, lang, "rule-1");
+          const r1t = getSafe(rulesData, lang, "rule-1-text");
+          const r2 = getSafe(rulesData, lang, "rule-2");
+          const r2t = getSafe(rulesData, lang, "rule-2-text");
+          const r3 = getSafe(rulesData, lang, "rule-3");
+          const r3t = getSafe(rulesData, lang, "rule-3-text");
 
-          const castleTitle = getSafe(data, lang, "castle-title");
-          const castleText = getSafe(data, lang, "castle-text");
+          const castleTitle = getSafe(rulesData, lang, "castle-title");
+          const castleText = getSafe(rulesData, lang, "castle-text");
 
-          const facilityTitle = getSafe(data, lang, "facility-title");
-          const facilityText = getSafe(data, lang, "facility-text");
+          const facilityTitle = getSafe(rulesData, lang, "facility-title");
+          const facilityText = getSafe(rulesData, lang, "facility-text");
 
-          const footer = getSafe(data, lang, "footer-text");
+          const footer = getSafe(rulesData, lang, "footer-text") || getSafe(indexData, lang, "footer-text");
 
           if(pageTitle) $('#page-title').text(pageTitle);
           if(intro) $('#intro-text').text(intro);
@@ -229,11 +237,10 @@
 
           if(footer) $('#footer-text').text(footer);
 
-          // NAV immer setzen
-          translateNav(data, lang);
+          // NAV always from index.json
+          translateNav(indexData, lang);
         }
 
-        // init: saved language
         const saved = localStorage.getItem(LANG_KEY) || 'en';
         $('#language-select').val(saved);
         translatePage(saved);
@@ -243,9 +250,9 @@
           localStorage.setItem(LANG_KEY, lang);
           translatePage(lang);
         });
-      })
-      .fail(function(){
-        console.warn('rules.json could not be loaded.');
+
+      }).fail(function(){
+        console.error("Could not load index.json and/or rules.json");
       });
     });
   </script>
