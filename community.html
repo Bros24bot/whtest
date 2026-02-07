@@ -74,7 +74,6 @@
         </div>
 
         <div class="social-grid">
-          <!-- Discord -->
           <a href="https://discord.gg/rNtp9vrkk9" target="_blank" rel="noopener" class="social-card">
             <img src="assets/discord.jpg" alt="Join Discord" />
             <div class="card-text">
@@ -83,7 +82,6 @@
             </div>
           </a>
 
-          <!-- YouTube -->
           <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" rel="noopener" class="social-card">
             <img src="assets/renee.jpg" alt="Follow on YouTube" />
             <div class="card-text">
@@ -92,7 +90,6 @@
             </div>
           </a>
 
-          <!-- Bros24 Bot -->
           <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands"
              target="_blank" rel="noopener" class="social-card">
             <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
@@ -127,17 +124,16 @@
   </footer>
 
   <script>
-    // FIX:
-    // - Header line (#intro-text) must use "intro-text" (ALL STARS UNITED), NOT "home"
-    // - Nav Home must use "home" (Home)
-    // - Keeps NAV order + Apply menu
-
     const FALLBACK_LANG = 'en';
 
     function getSafe(dict, lang, key){
       if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
       if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
       return null;
+    }
+
+    function isSlogan(val){
+      return /all\s*stars\s*united/i.test(String(val || '').trim());
     }
 
     function translateCommon(dict, lang){
@@ -150,34 +146,31 @@
       const apply = getSafe(dict, lang, "apply-nav");
       const community = getSafe(dict, lang, "community");
 
-      if(navHome) $('#nav-home').text('🏠 ' + navHome);
+      if(navHome && !isSlogan(navHome)) $('#nav-home').text('🏠 ' + navHome);
       if(history) $('#nav-history').text('📖 ' + history);
       if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
       if(rules) $('#nav-rules').text('📜 ' + rules);
       if(fort) $('#nav-fort').text('🏰 ' + fort);
       if(news) $('#nav-news').text('🔥 ' + news);
-      if(apply) $('#nav-apply').text(apply); // includes 📝 in JSON
+      if(apply) $('#nav-apply').text(apply);
       if(community) $('#nav-community').text('💬 ' + community);
     }
 
     $.getJSON('community.json', function(data){
       function translatePage(lang){
         const pageTitle = getSafe(data, lang, "page-title");
-        const introBrand = getSafe(data, lang, "intro-text"); // ALL STARS UNITED
+        const introBrand = getSafe(data, lang, "intro-text"); // slogan
         const title = getSafe(data, lang, "community-title");
         const desc = getSafe(data, lang, "community-description");
         const footer = getSafe(data, lang, "footer-text");
 
         if(pageTitle) $('#page-title').text(pageTitle);
-
-        // IMPORTANT: do NOT fall back to "home" here
-        if(introBrand) $('#intro-text').text(introBrand);
+        if(introBrand) $('#intro-text').text(introBrand); // never fallback to "home"
 
         if(title) $('#community-title').text(title);
         if(desc) $('#community-description').text(desc);
         if(footer) $('#footer-text').text(footer);
 
-        // Optional card texts
         const cdT = getSafe(data, lang, "card-discord-title");
         const cdS = getSafe(data, lang, "card-discord-sub");
         const ytT = getSafe(data, lang, "card-youtube-title");
