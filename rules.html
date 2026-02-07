@@ -1,4 +1,4 @@
-<!-- FILE: rules.html (ALLES ersetzen) -->
+<!-- FILE: rules.html  (ALLES ersetzen) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -175,7 +175,7 @@
       if(rules) $('#nav-rules').text('📜 ' + rules);
       if(fort) $('#nav-fort').text('🏰 ' + fort);
       if(news) $('#nav-news').text('🔥 ' + news);
-      if(apply) $('#nav-apply').text(apply); // includes 📝 in JSON
+      if(apply) $('#nav-apply').text(apply); // apply-nav should include 📝 in JSON
       if(community) $('#nav-community').text('💬 ' + community);
     }
 
@@ -185,6 +185,7 @@
         const pageTitle = getSafe(data, lang, "page-title");
         const intro = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home"); // support both
         const keTitle = getSafe(data, lang, "ke-title");
+        const keSub = getSafe(data, lang, "ke-sub"); // optional
         const eventTitle = getSafe(data, lang, "event-title");
         const r1 = getSafe(data, lang, "rule-1");
         const r1t = getSafe(data, lang, "rule-1-text");
@@ -201,17 +202,19 @@
         if(pageTitle) $('#page-title').text(pageTitle);
 
         if(intro){
-          // intro-text is a <p> with <strong> in HTML, so keep text clean:
+          // header line is <p><strong>...</strong></p> -> keep as text
           $('#intro-text').text(intro);
         }
 
         if(keTitle) $('#ke-title').text(keTitle);
+        if(keSub) $('#ke-sub').text(keSub);
 
         if(eventTitle) $('#event-title').text(forceNap3(eventTitle));
 
         if(r1) $('#rule-1').text(forceNap3(r1));
         if(r1t) $('#rule-1-text').text(forceNap3(r1t));
 
+        // even if JSON still says NAP5, this enforces NAP3 in output
         if(r2) $('#rule-2').text(forceNap3(r2));
         if(r2t) $('#rule-2-text').text(forceNap3(r2t));
 
@@ -219,10 +222,7 @@
         if(r3t) $('#rule-3-text').text(forceNap3(r3t));
 
         if(castleTitle) $('#castle-title').text(forceNap3(castleTitle));
-
-        if(castleText){
-          $('#castle-text').text(forceNap3(castleText));
-        }
+        if(castleText) $('#castle-text').text(forceNap3(castleText));
 
         if(facilityTitle) $('#facility-title').text(forceNap3(facilityTitle));
         if(facilityText) $('#facility-text').text(forceNap3(facilityText));
@@ -232,7 +232,6 @@
         translateCommon(data, lang);
       }
 
-      // default
       translatePage('en');
 
       $('#language-select').on('change', function(){
@@ -240,7 +239,6 @@
       });
     })
     .fail(function(){
-      // If rules.json fails to load, keep English defaults (no crash).
       console.warn('rules.json could not be loaded.');
     });
   </script>
