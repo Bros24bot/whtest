@@ -30,6 +30,11 @@
   --news-img-h: 220px;
   --news-img-h-md: 200px;
   --news-img-h-sm: 170px;
+
+  /* APPLY banner tuning */
+  --apply-hero-h: 240px;
+  --apply-hero-h-md: 210px;
+  --apply-hero-h-sm: 170px;
 }
 
 *{ box-sizing:border-box; }
