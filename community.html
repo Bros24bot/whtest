@@ -23,7 +23,7 @@
           <option value="de">🇩🇪 Deutsch</option>
           <option value="fr">🇫🇷 Français</option>
           <option value="pl">🇵🇱 Polski</option>
-          <option value="it">🇮🇩 Italiano</option>
+          <option value="it">🇮🇹 Italiano</option>
           <option value="es">🇪🇸 Español</option>
           <option value="th">🇹🇭 ไทย</option>
           <option value="ar">🇸🇦 العربية</option>
@@ -37,6 +37,7 @@
       </div>
     </div>
 
+    <!-- NAV (Reihenfolge wie im Screenshot): Home, History, Alliances, Rules, Fort, News, Apply, Community -->
     <nav class="nav">
       <div class="container nav-inner">
         <a id="nav-home" href="index.html">🏠 Home</a>
@@ -45,6 +46,7 @@
         <a id="nav-rules" href="rules.html">📜 Rules</a>
         <a id="nav-fort" href="fort.html">🏰 Fort</a>
         <a id="nav-news" href="news.html">🔥 News</a>
+        <a id="nav-apply" href="apply.html">📝 Apply</a>
         <a id="nav-community" href="community.html" class="active">💬 Community</a>
       </div>
     </nav>
@@ -118,7 +120,7 @@
           <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
         </div>
         <div class="footer-line">
-          Design & Build: <span class="footer-strong">Bros24</span>
+          Design &amp; Build: <span class="footer-strong">Bros24</span>
         </div>
       </div>
     </div>
@@ -140,6 +142,7 @@
       const rules = getSafe(dict, lang, "rules");
       const fort = getSafe(dict, lang, "fort");
       const news = getSafe(dict, lang, "news");
+      const apply = getSafe(dict, lang, "apply-nav");
       const community = getSafe(dict, lang, "community");
 
       if(home) $('#nav-home').text('🏠 ' + home);
@@ -148,13 +151,17 @@
       if(rules) $('#nav-rules').text('📜 ' + rules);
       if(fort) $('#nav-fort').text('🏰 ' + fort);
       if(news) $('#nav-news').text('🔥 ' + news);
+
+      // apply-nav already contains 📝 in your JSON, keep as-is
+      if(apply) $('#nav-apply').text(apply);
+
       if(community) $('#nav-community').text('💬 ' + community);
     }
 
     $.getJSON('community.json', function(data){
       function translatePage(lang){
         const pageTitle = getSafe(data, lang, "page-title");
-        const intro = getSafe(data, lang, "home");
+        const intro = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home");
         const title = getSafe(data, lang, "community-title");
         const desc = getSafe(data, lang, "community-description");
         const footer = getSafe(data, lang, "footer-text");
@@ -165,7 +172,7 @@
         if(desc) $('#community-description').text(desc);
         if(footer) $('#footer-text').text(footer);
 
-        // Optional card texts (won't break if keys don't exist)
+        // Optional card texts
         const cdT = getSafe(data, lang, "card-discord-title");
         const cdS = getSafe(data, lang, "card-discord-sub");
         const ytT = getSafe(data, lang, "card-youtube-title");
