@@ -1,7 +1,3 @@
-/* FILE: index.json  (ALLES ersetzen)
-   Fix: vollständige Nav-Übersetzungen inkl. Apply + News, kompatibel mit dem Header-Script
-   Keys für Menü: nav-home, nav-history, nav-alliances, nav-rules, nav-fort, nav-news, nav-apply, nav-community
-*/
 {
   "en": {
     "page-title": "State 214 – Whiteout Survival",
