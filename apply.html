@@ -55,8 +55,8 @@
     <div class="container">
       <section class="card">
         <div class="section-head">
-          <h3 id="apply-title">📝 Application Form</h3>
-          <p class="muted" id="apply-sub">Apply to DOA / LOU / SRC in State 214</p>
+          <h3>📝 Application Form</h3>
+          <p class="muted">Apply to DOA / LOU / SRC in State 214</p>
         </div>
 
         <form action="https://formspree.io/f/xwvnkbvd" method="POST" class="apply-form">
@@ -77,8 +77,8 @@
             </div>
 
             <div class="row">
-              <label for="alliance">Current Alliance *</label>
-              <input id="alliance" type="text" name="Current Alliance" required placeholder="e.g. ABC">
+              <label for="curall">Current Alliance *</label>
+              <input id="curall" type="text" name="Current Alliance" required placeholder="e.g. ABC">
             </div>
 
             <div class="row">
@@ -113,10 +113,7 @@
               placeholder="Tell us why you want to join, what are your event times (Bear/Fort/SvS), and what you expect from the alliance."></textarea>
           </div>
 
-          <!-- Spam honeypot -->
           <input type="text" name="_gotcha" style="display:none">
-
-          <!-- Mail subject -->
           <input type="hidden" name="_subject" value="State 214 – New Application">
 
           <button type="submit">Send Application</button>
@@ -145,7 +142,6 @@
   </footer>
 
   <script>
-    // Keep language selection consistent across pages
     $('#language-select').change(function() {
       localStorage.setItem('state214_lang', $(this).val());
     });
