@@ -32,9 +32,10 @@
   --news-img-h-sm: 170px;
 
   /* APPLY banner tuning */
-  --apply-hero-h: 240px;
-  --apply-hero-h-md: 210px;
-  --apply-hero-h-sm: 170px;
+  --apply-hero-h: 260px;      /* größer */
+  --apply-hero-h-md: 220px;
+  --apply-hero-h-sm: 190px;
+  --apply-hero-pos: 30%;      /* mehr Bild “unten/mitte” */
 }
 
 *{ box-sizing:border-box; }
@@ -713,18 +714,19 @@ a:hover{ opacity:.96; }
 
 /* ===================== APPLY BANNER ===================== */
 .apply-hero{
-  margin: 12px 0 16px;
+  margin: 14px 0 22px; /* mehr Abstand nach unten */
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.10);
   box-shadow: 0 14px 40px rgba(0,0,0,.38);
 }
+
 .apply-hero img{
   width: 100%;
-  height: 170px;          /* HIER anpassen: z.B. 140px wenn kleiner */
+  height: var(--apply-hero-h);      /* FIX: größer */
   object-fit: cover;
-  object-position: center;
+  object-position: center var(--apply-hero-pos); /* FIX: Bildausschnitt */
   display: block;
   filter: saturate(1.06) contrast(1.08);
 }
@@ -737,8 +739,8 @@ a:hover{ opacity:.96; }
 .apply-form .grid-2{
   display:grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px 18px;         /* etwas mehr Luft, verhindert optische Kollision */
-  margin-bottom: 6px;     /* trennt Grid von Message-Bereich */
+  gap: 16px 18px;
+  margin-bottom: 14px; /* FIX: mehr Luft vor Message */
 }
 
 .apply-form .row{
@@ -746,13 +748,12 @@ a:hover{ opacity:.96; }
   flex-direction:column;
   gap: 8px;
   position: relative;
-  z-index: 1;             /* sicher über Card-Glow */
+  z-index: 1;
 }
 
 /* Message tiefer + garantiert unter Grid */
 .apply-form .message-row{
-  margin-top: 10px;
-  clear: both;
+  margin-top: 18px; /* FIX: deutlich tiefer */
 }
 
 .apply-form label{
@@ -782,7 +783,7 @@ a:hover{ opacity:.96; }
 }
 
 .apply-form textarea{
-  min-height: 170px;
+  min-height: 180px;
   resize: vertical;
 }
 
@@ -872,6 +873,8 @@ a:hover{ opacity:.96; }
   :root{
     --news-img-max: 100%;
     --news-img-h: var(--news-img-h-md);
+    --apply-hero-h: var(--apply-hero-h-md);
+    --apply-hero-pos: 32%;
   }
 }
 
@@ -886,7 +889,6 @@ a:hover{ opacity:.96; }
 
   /* brand home link centered on mobile */
   .brand-home{ justify-content:center; }
-
   .brand-text{ align-items:center; }
 
   .hero-content{
@@ -897,9 +899,9 @@ a:hover{ opacity:.96; }
 
   .footer-bottom{ flex-direction:column; align-items:center; }
 
-  .apply-hero img{ height: 150px; }
-
   :root{
     --news-img-h: var(--news-img-h-sm);
+    --apply-hero-h: var(--apply-hero-h-sm);
+    --apply-hero-pos: 34%;
   }
 }
