@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Apply • State 214</title>
 
-  <!-- FAVICON / SITE ICON -->
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-192x192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-192x192.png">
+  <!-- FAVICON / SITE ICON
+       FIX: keine führenden Slashes, damit es sowohl auf GitHub Pages (/whtest/)
+       als auch auf normalem Hosting funktioniert -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-192x192.png">
 
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -22,7 +24,8 @@
       <!-- BRAND + HOME ICON (CLICKABLE) -->
       <div class="brand">
         <a class="brand-home" href="index.html" aria-label="Go to Home">
-          <img src="/assets/favicon-192x192.png" alt="State 214" class="brand-logo">
+          <!-- FIX: auch hier relativ -->
+          <img src="assets/favicon-192x192.png" alt="State 214" class="brand-logo">
           <div class="brand-text">
             <h1 id="page-title">State 214</h1>
             <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
@@ -72,9 +75,10 @@
           <p class="muted" id="apply-subtitle">Apply to DOA / LOU / SRC in State 214</p>
         </div>
 
-        <!-- BANNER (apply.png) -->
+        <!-- BANNER (apply.png)
+             FIX: Datei liegt in assets/ -->
         <div class="apply-hero" aria-hidden="true">
-          <img src="apply.png" alt="Apply to State 214">
+          <img src="assets/apply.png?v=2" alt="Apply to State 214">
         </div>
 
         <form action="https://formspree.io/f/xwvnkbvd" method="POST" class="apply-form">
@@ -125,7 +129,7 @@
             </div>
           </div>
 
-          <!-- MESSAGE: extra spacing + forced below grid -->
+          <!-- MESSAGE: bleibt sicher unter dem Grid -->
           <div class="row message-row">
             <label for="msg" id="label-msg">Message *</label>
             <textarea id="msg" name="Message" rows="7" required
