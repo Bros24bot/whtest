@@ -1,21 +1,29 @@
+/* FILE: story.json  (ALLES ersetzen)
+   Fix: konsistente Keys + gleiche Struktur in allen Sprachen
+*/
 {
   "en": {
     "footer-text": "© 2026 State 214 Community – Built by players, for players · All Stars United",
     "date": "30 July – 16 August 2025",
+
     "section1-title": "One Team – Five Alliances – 30 July",
     "section1-text1": "On 30 July 2025, a major milestone was reached in State 214’s history. Through outstanding teamwork and unity, SRC, DOA, PBT, ODA, and BKK joined forces and registered together for the legendary Frostdragon Tyrant event. Over 180 players participated – made possible by shared planning and unified leadership.",
     "section1-text2": "From this union, three battle-ready alliances were strategically formed and successfully registered for the event. This structure was the result of deliberate coordination and trust among leaders.",
+
     "section2-title": "The Battle Begins – 3 August",
     "section2-text1": "On 3 August, State 214’s united forces faced the mighty Frostdragon Tyrant. The coordination between alliances paid off: despite fierce competition, we proudly secured a strong second place, narrowly missing the top spot.",
     "section2-text2": "The result reflected excellent preparation, trust across alliances, and the shared will to act as one State. This teamwork made the difference.",
+
     "section3-title": "Teamwork in Action",
     "section3-text1": "Five alliances, one vision – and three unified combat alliances. This event was not just about participation: it was about transformation – turning coordination into results.",
     "section3-text2": "Teamwork. Unity. One Goal – State 214.",
+
     "section4-title": "SVS Victory – 16 August",
     "section4-text1": "On 16 August 2025, State 214 achieved a historic triumph in the State vs State competition against State 249. Already in the preparation phase, our State secured a clear lead through excellent organization and coordination.",
     "section4-text2": "During the battle phase, our united forces conquered the enemy’s castle of State 249 – a spectacular success and proof of courage, strategy, and teamwork.",
     "section4-text3": "This victory was only possible thanks to the joint effort of our alliances: ODA, PBT, BKK, SRC, and DOA. Together we have shown that State 214 stands strong as one.",
     "section4-text4": "Congratulations to all fighters of State 214 – this success belongs to us all!",
+
     "section5-title": "Another Triumph – 13 September",
     "section5-text1": "On 13 September 2025, State 214 once again proved its strength in the State vs State competition – this time against the powerful State 194. Through determination and unity, we achieved a clear victory.",
     "section5-text2": "Already in the early hours of the preparation phase, our coordination and discipline created a decisive lead. When the battle phase began, our players attacked with precision, defending our territory while striking the enemy with force.",
@@ -23,23 +31,29 @@
     "section5-text4": "With this victory, State 214 continues its path of success, showing that our vision and unity carry us forward.",
     "section5-text5": "Congratulations to every player – together we made history once again!"
   },
+
   "de": {
     "footer-text": "© 2026 State 214 Community – Erstellt von Spielern für Spieler · All Stars United",
     "date": "30. Juli – 16. August 2025",
+
     "section1-title": "Ein Team – Fünf Allianzen – 30. Juli",
     "section1-text1": "Am 30. Juli 2025 wurde ein bedeutender Meilenstein in der Geschichte von Staat 214 erreicht. Durch herausragende Teamarbeit und Zusammenhalt schlossen sich SRC, DOA, PBT, ODA und BKK zusammen und meldeten sich gemeinsam für das legendäre Frostdragon-Tyrant-Event an. Über 180 Spieler nahmen teil – ermöglicht durch gemeinsame Planung und eine einheitliche Führung.",
     "section1-text2": "Aus diesem Zusammenschluss wurden drei kampfbereite Allianzen gebildet und erfolgreich registriert. Diese Struktur entstand durch gezielte Koordination und Vertrauen unter den Anführern.",
+
     "section2-title": "Der Kampf beginnt – 3. August",
     "section2-text1": "Am 3. August stellte sich die vereinte Macht von Staat 214 dem mächtigen Frostdragon Tyrant. Die Koordination zwischen den Allianzen zahlte sich aus: Trotz starker Konkurrenz sicherten wir uns stolz den zweiten Platz – nur knapp am ersten vorbei.",
     "section2-text2": "Das Ergebnis spiegelte hervorragende Vorbereitung, Vertrauen und den gemeinsamen Willen wider, als ein Staat zu handeln. Diese Teamarbeit war entscheidend.",
+
     "section3-title": "Teamwork in Aktion",
     "section3-text1": "Fünf Allianzen, eine Vision – und drei vereinte Kampf-Allianzen. Dieses Event war mehr als nur Teilnahme: Es war ein Wandel – Zusammenarbeit wurde zu Erfolg.",
     "section3-text2": "Teamwork. Einheit. Ein Ziel – Staat 214.",
+
     "section4-title": "SVS-Sieg – 16. August",
     "section4-text1": "Am 16. August 2025 errang Staat 214 einen historischen Triumph im Staat-vs-Staat-Wettkampf gegen Staat 249. Schon in der Vorbereitungsphase sicherte sich unser Staat durch hervorragende Organisation und Koordination einen klaren Vorsprung.",
     "section4-text2": "In der Kampfphase eroberten unsere vereinten Kräfte das Schloss von Staat 249 – ein spektakulärer Erfolg und ein Beweis für Mut, Strategie und Teamgeist.",
     "section4-text3": "Dieser Sieg war nur durch den gemeinsamen Einsatz unserer Allianzen möglich: ODA, PBT, BKK, SRC und DOA. Gemeinsam haben wir gezeigt, dass Staat 214 stark und geeint dasteht.",
     "section4-text4": "Herzlichen Glückwunsch an alle Kämpferinnen und Kämpfer von Staat 214 – dieser Erfolg gehört uns allen!",
+
     "section5-title": "Ein weiterer Triumph – 13. September",
     "section5-text1": "Am 13. September 2025 bewies Staat 214 erneut seine Stärke im Staat-vs-Staat-Wettkampf – diesmal gegen den mächtigen Staat 194. Mit Entschlossenheit und Einheit errangen wir einen klaren Sieg.",
     "section5-text2": "Schon in den frühen Stunden der Vorbereitungsphase verschafften uns Disziplin und Koordination einen entscheidenden Vorsprung. Als die Kampfphase begann, griffen unsere Spieler präzise an, verteidigten unser Territorium und schlugen den Feind mit Nachdruck.",
@@ -47,23 +61,29 @@
     "section5-text4": "Mit diesem Sieg setzt Staat 214 seinen Erfolgsweg fort und beweist, dass unsere Vision und Einheit uns weitertragen.",
     "section5-text5": "Herzlichen Glückwunsch an alle Spieler – gemeinsam haben wir erneut Geschichte geschrieben!"
   },
+
   "fr": {
     "footer-text": "© 2026 Communauté de l'État 214 – Créé par les joueurs, pour les joueurs · All Stars United",
     "date": "30 juillet – 16 août 2025",
+
     "section1-title": "Une équipe – Cinq alliances – 30 juillet",
     "section1-text1": "Le 30 juillet 2025 marque une étape importante dans l'histoire de l'État 214. Grâce à un excellent travail d'équipe et une unité forte, SRC, DOA, PBT, ODA et BKK se sont unis pour s’inscrire ensemble à l’événement légendaire du Tyran Dragon de Givre. Plus de 180 joueurs ont participé – rendu possible par une planification et un leadership communs.",
     "section1-text2": "De cette union sont nées trois alliances prêtes au combat, formées stratégiquement et inscrites avec succès. Cette structure est le fruit d’une coordination intentionnelle et d’une confiance entre leaders.",
+
     "section2-title": "Le combat commence – 3 août",
     "section2-text1": "Le 3 août, les forces unies de l’État 214 ont affronté le redoutable Tyran Dragon de Givre. La coordination entre les alliances a porté ses fruits : malgré une forte concurrence, nous avons fièrement obtenu la deuxième place.",
     "section2-text2": "Ce résultat reflète une préparation rigoureuse, une confiance mutuelle et une volonté partagée d’agir en tant qu’État uni.",
+
     "section3-title": "Le travail d'équipe en action",
     "section3-text1": "Cinq alliances, une vision – et trois alliances de combat unifiées. Cet événement n’était pas seulement une participation : c’était une transformation.",
     "section3-text2": "Travail d'équipe. Unité. Un objectif – État 214.",
+
     "section4-title": "Victoire SVS – 16 août",
     "section4-text1": "Le 16 août 2025, l'État 214 a remporté un triomphe historique dans la compétition État contre État contre l'État 249. Dès la phase de préparation, notre État s'est assuré une avance claire grâce à une excellente organisation et coordination.",
     "section4-text2": "Lors de la phase de combat, nos forces unies ont conquis le château de l'État 249 – un succès spectaculaire et la preuve de notre courage, de notre stratégie et de notre esprit d'équipe.",
     "section4-text3": "Cette victoire n'a été possible que grâce aux efforts conjoints de nos alliances : ODA, PBT, BKK, SRC et DOA. Ensemble, nous avons montré que l'État 214 se tient fort et uni.",
     "section4-text4": "Félicitations à tous les combattants de l'État 214 – ce succès nous appartient à tous !",
+
     "section5-title": "Un nouveau triomphe – 13 septembre",
     "section5-text1": "Le 13 septembre 2025, l'État 214 a une fois de plus démontré sa force dans la compétition État contre État – cette fois face au puissant État 194. Grâce à notre détermination et notre unité, nous avons remporté une victoire claire.",
     "section5-text2": "Dès les premières heures de la phase de préparation, notre discipline et notre coordination nous ont donné une avance décisive. Lorsque la phase de combat a commencé, nos joueurs ont attaqué avec précision, défendant notre territoire tout en frappant l’ennemi avec force.",
@@ -71,23 +91,29 @@
     "section5-text4": "Avec cette victoire, l'État 214 poursuit sa voie du succès, prouvant que notre vision et notre unité nous portent vers l’avant.",
     "section5-text5": "Félicitations à chaque joueur – ensemble, nous avons écrit une nouvelle page d’histoire !"
   },
+
   "pl": {
     "footer-text": "© 2026 Społeczność Stanu 214 – Stworzone przez graczy, dla graczy · All Stars United",
     "date": "30 lipca – 16 sierpnia 2025",
+
     "section1-title": "Jeden zespół – Pięć sojuszy – 30 lipca",
     "section1-text1": "30 lipca 2025 roku zapisze się w historii Stanu 214 jako wyjątkowy moment. Dzięki niesamowitej współpracy SRC, DOA, PBT, ODA i BKK połączyły siły i wspólnie zarejestrowały się na legendarne wydarzenie Frostdragon Tyrant. Ponad 180 graczy wzięło udział – możliwe dzięki wspólnemu planowaniu i zjednoczonemu przywództwu.",
     "section1-text2": "Z tego połączenia powstały trzy gotowe do walki sojusze, które skutecznie zarejestrowano. Był to efekt świadomej koordynacji i zaufania liderów.",
+
     "section2-title": "Bitwa się rozpoczyna – 3 sierpnia",
     "section2-text1": "3 sierpnia zjednoczone siły Stanu 214 stanęły naprzeciw mroźnego smoka tyrana. Dzięki koordynacji udało się zająć dumne drugie miejsce – zaledwie o włos od zwycięstwa.",
     "section2-text2": "To efekt doskonałego przygotowania, zaufania i woli wspólnego działania jako jeden stan.",
+
     "section3-title": "Współpraca w praktyce",
     "section3-text1": "Pięć sojuszy, jedna wizja – i trzy zjednoczone sojusze bojowe. To wydarzenie to coś więcej niż udział – to przemiana.",
     "section3-text2": "Współpraca. Jedność. Jeden cel – Stan 214.",
+
     "section4-title": "Zwycięstwo SVS – 16 sierpnia",
     "section4-text1": "16 sierpnia 2025 roku Stan 214 odniósł historyczny triumf w rywalizacji Stan kontra Stan przeciwko Stanowi 249. Już w fazie przygotowań nasz stan zdobył wyraźną przewagę dzięki doskonałej organizacji i koordynacji.",
     "section4-text2": "W fazie bitwy nasze zjednoczone siły zdobyły zamek Stanu 249 – spektakularny sukces i dowód odwagi, strategii i współpracy.",
     "section4-text3": "To zwycięstwo było możliwe tylko dzięki wspólnym wysiłkom naszych sojuszy: ODA, PBT, BKK, SRC i DOA. Razem pokazaliśmy, że Stan 214 stoi silny i zjednoczony.",
     "section4-text4": "Gratulacje dla wszystkich wojowników Stanu 214 – to zwycięstwo należy do nas wszystkich!",
+
     "section5-title": "Kolejny triumf – 13 września",
     "section5-text1": "13 września 2025 roku Stan 214 ponownie udowodnił swoją siłę w rywalizacji Stan kontra Stan – tym razem przeciwko potężnemu Stanowi 194. Dzięki determinacji i jedności odnieśliśmy wyraźne zwycięstwo.",
     "section5-text2": "Już we wczesnych godzinach fazy przygotowań dyscyplina i koordynacja dały nam decydującą przewagę. Gdy rozpoczęła się faza bitwy, nasi gracze atakowali precyzyjnie, broniąc naszego terytorium i silnie uderzając wroga.",
@@ -95,23 +121,29 @@
     "section5-text4": "Dzięki temu zwycięstwu Stan 214 kontynuuje swoją drogę sukcesu, pokazując, że nasza wizja i jedność prowadzą nas dalej.",
     "section5-text5": "Gratulacje dla wszystkich graczy – razem ponownie zapisaliśmy się w historii!"
   },
+
   "it": {
     "footer-text": "© 2026 Comunità dello Stato 214 – Creato dai giocatori, per i giocatori · All Stars United",
     "date": "30 luglio – 16 agosto 2025",
+
     "section1-title": "Un Team – Cinque Alleanze – 30 luglio",
     "section1-text1": "Il 30 luglio 2025 è stata raggiunta una pietra miliare nella storia dello Stato 214. Grazie a uno straordinario lavoro di squadra, SRC, DOA, PBT, ODA e BKK si sono uniti per partecipare insieme all'evento leggendario Frostdragon Tyrant. Oltre 180 giocatori hanno partecipato – reso possibile da una pianificazione condivisa e leadership unificata.",
     "section1-text2": "Da questa unione sono nate tre alleanze pronte al combattimento e registrate con successo per l'evento. Una struttura basata su fiducia e coordinamento tra leader.",
+
     "section2-title": "La battaglia ha inizio – 3 agosto",
     "section2-text1": "Il 3 agosto, le forze unite dello Stato 214 hanno affrontato il potente Frostdragon Tyrant. Nonostante la forte concorrenza, abbiamo conquistato con orgoglio un solido secondo posto.",
     "section2-text2": "Un risultato che riflette preparazione, fiducia e unità d’intenti.",
+
     "section3-title": "Il lavoro di squadra in azione",
     "section3-text1": "Cinque alleanze, una visione – e tre alleanze da battaglia unificate. Questo evento non era solo partecipazione: era trasformazione.",
     "section3-text2": "Lavoro di squadra. Unità. Un obiettivo – Stato 214.",
+
     "section4-title": "Vittoria SVS – 16 agosto",
     "section4-text1": "Il 16 agosto 2025, lo Stato 214 ha ottenuto un trionfo storico nella competizione Stato vs Stato contro lo Stato 249. Già nella fase di preparazione, il nostro Stato si è assicurato un chiaro vantaggio grazie a un'organizzazione e a un coordinamento eccellenti.",
     "section4-text2": "Nella fase di battaglia, le nostre forze unite hanno conquistato il castello dello Stato 249 – un successo spettacolare e la prova di coraggio, strategia e lavoro di squadra.",
     "section4-text3": "Questa vittoria è stata possibile solo grazie allo sforzo congiunto delle nostre alleanze: ODA, PBT, BKK, SRC e DOA. Insieme abbiamo dimostrato che lo Stato 214 è forte e unito.",
     "section4-text4": "Congratulazioni a tutti i combattenti dello Stato 214 – questo successo è di tutti noi!",
+
     "section5-title": "Un altro trionfo – 13 settembre",
     "section5-text1": "Il 13 settembre 2025 lo Stato 214 ha dimostrato ancora una volta la sua forza nella competizione Stato vs Stato – questa volta contro il potente Stato 194. Grazie a determinazione e unità abbiamo ottenuto una chiara vittoria.",
     "section5-text2": "Già nelle prime ore della fase di preparazione, la nostra disciplina e coordinazione ci hanno dato un vantaggio decisivo. Quando è iniziata la fase di battaglia, i nostri giocatori hanno attaccato con precisione, difendendo il nostro territorio e colpendo il nemico con forza.",
@@ -119,23 +151,29 @@
     "section5-text4": "Con questa vittoria, lo Stato 214 continua il suo percorso di successo, dimostrando che la nostra visione e unità ci portano avanti.",
     "section5-text5": "Congratulazioni a tutti i giocatori – insieme abbiamo scritto di nuovo la storia!"
   },
+
   "es": {
     "footer-text": "© 2026 Comunidad del Estado 214 – Creado por jugadores, para jugadores · All Stars United",
     "date": "30 de julio – 16 de agosto de 2025",
+
     "section1-title": "Un equipo – Cinco alianzas – 30 de julio",
     "section1-text1": "El 30 de julio de 2025 se logró un gran hito en la historia del Estado 214. Gracias al increíble trabajo en equipo y la unidad, SRC, DOA, PBT, ODA y BKK se unieron y se registraron juntos para el legendario evento del Tirano del Dragón de Hielo. Más de 180 jugadores participaron, gracias a la planificación compartida y el liderazgo conjunto.",
     "section1-text2": "De esta unión se formaron estratégicamente tres alianzas listas para la batalla, registradas con éxito para el evento. Esto fue posible gracias a la coordinación intencional y la confianza entre líderes.",
+
     "section2-title": "Comienza la batalla – 3 de agosto",
     "section2-text1": "El 3 de agosto, las fuerzas unidas del Estado 214 enfrentaron al poderoso Tirano del Dragón de Hielo. Gracias a la coordinación, logramos con orgullo el segundo lugar, muy cerca del primero.",
     "section2-text2": "Este resultado refleja una excelente preparación, confianza entre alianzas y la voluntad común de actuar como un solo estado.",
+
     "section3-title": "Trabajo en equipo en acción",
     "section3-text1": "Cinco alianzas, una visión – y tres alianzas de combate unidas. Este evento no fue solo participación: fue transformación.",
     "section3-text2": "Trabajo en equipo. Unidad. Un objetivo – Estado 214.",
+
     "section4-title": "Victoria en SVS – 16 de agosto",
     "section4-text1": "El 16 de agosto de 2025, el Estado 214 logró un triunfo histórico en la competición Estado vs Estado contra el Estado 249. Ya en la fase de preparación, nuestro Estado obtuvo una ventaja clara gracias a una excelente organización y coordinación.",
     "section4-text2": "Durante la fase de batalla, nuestras fuerzas unidas conquistaron el castillo del Estado 249 – un éxito espectacular y prueba de coraje, estrategia y trabajo en equipo.",
     "section4-text3": "Esta victoria solo fue posible gracias al esfuerzo conjunto de nuestras alianzas: ODA, PBT, BKK, SRC y DOA. Juntos demostramos que el Estado 214 se mantiene fuerte y unido.",
     "section4-text4": "¡Felicidades a todos los combatientes del Estado 214 – este éxito es de todos!",
+
     "section5-title": "Otro triunfo – 13 de septiembre",
     "section5-text1": "El 13 de septiembre de 2025, el Estado 214 volvió a demostrar su fuerza en la competición Estado vs Estado – esta vez contra el poderoso Estado 194. Gracias a la determinación y la unidad logramos una clara victoria.",
     "section5-text2": "Ya en las primeras horas de la fase de preparación, nuestra disciplina y coordinación nos dieron una ventaja decisiva. Cuando comenzó la fase de batalla, nuestros jugadores atacaron con precisión, defendiendo nuestro territorio y golpeando al enemigo con fuerza.",
@@ -143,23 +181,29 @@
     "section5-text4": "Con esta victoria, el Estado 214 continúa su camino de éxito, demostrando que nuestra visión y unidad nos impulsan hacia adelante.",
     "section5-text5": "¡Felicidades a cada jugador – juntos volvimos a hacer historia!"
   },
+
   "th": {
     "footer-text": "© 2026 ชุมชนรัฐ 214 – สร้างโดยผู้เล่น เพื่อผู้เล่น · All Stars United",
     "date": "30 ก.ค. – 16 ส.ค. 2025",
+
     "section1-title": "หนึ่งทีม – ห้าพันธมิตร – 30 กรกฎาคม",
     "section1-text1": "ในวันที่ 30 กรกฎาคม 2025 เป็นอีกหนึ่งก้าวสำคัญของรัฐ 214 ด้วยความร่วมมืออันยอดเยี่ยม SRC, DOA, PBT, ODA และ BKK ได้รวมตัวกันเพื่อเข้าร่วมกิจกรรม Frostdragon Tyrant อันทรงเกียรติ โดยมีผู้เล่นเข้าร่วมกว่า 180 คน ด้วยการวางแผนและการนำร่วมกัน",
     "section1-text2": "จากการรวมพลังนี้ ได้ก่อตั้ง 3 พันธมิตรต่อสู้ที่พร้อมและลงทะเบียนสำเร็จ ด้วยการประสานงานอย่างรอบคอบและความไว้วางใจระหว่างผู้นำ",
+
     "section2-title": "การต่อสู้เริ่มขึ้น – 3 สิงหาคม",
     "section2-text1": "เมื่อวันที่ 3 สิงหาคม กองกำลังของรัฐ 214 ได้เผชิญหน้ากับ Frostdragon Tyrant อย่างกล้าหาญ ด้วยความร่วมมือ เราคว้าอันดับ 2 มาได้อย่างภาคภูมิใจ",
     "section2-text2": "ผลลัพธ์สะท้อนถึงการเตรียมตัวที่ยอดเยี่ยม ความไว้วางใจ และเจตจำนงร่วมที่จะทำหน้าที่เป็นหนึ่งเดียว",
+
     "section3-title": "พลังทีมเวิร์ค",
     "section3-text1": "ห้าพันธมิตร หนึ่งวิสัยทัศน์ – สามพันธมิตรต่อสู้รวมพลัง เหตุการณ์นี้คือการเปลี่ยนแปลง ไม่ใช่แค่เข้าร่วม",
     "section3-text2": "ทีมเวิร์ค ความเป็นหนึ่งเดียว เป้าหมายเดียว – รัฐ 214",
+
     "section4-title": "ชัยชนะ SVS – 16 สิงหาคม",
     "section4-text1": "วันที่ 16 สิงหาคม 2025 รัฐ 214 คว้าชัยชนะครั้งประวัติศาสตร์ในการแข่งขันรัฐปะทะรัฐกับรัฐ 249 ตั้งแต่ช่วงเตรียมการ เราออกนำอย่างชัดเจนด้วยการจัดการและการประสานงานที่ยอดเยี่ยม",
     "section4-text2": "ในช่วงการสู้รบ กำลังรบที่เป็นหนึ่งเดียวของเรายึดปราสาทของรัฐ 249 ได้สำเร็จ – ความสำเร็จอันยิ่งใหญ่ที่พิสูจน์ถึงความกล้าหาญ กลยุทธ์ และการทำงานเป็นทีม",
     "section4-text3": "ชัยชนะนี้เกิดขึ้นได้จากความร่วมมือของพันธมิตร: ODA, PBT, BKK, SRC และ DOA เราได้แสดงให้เห็นว่ารัฐ 214 แข็งแกร่งเมื่อรวมพลัง",
     "section4-text4": "ขอแสดงความยินดีกับนักรบทุกคนของรัฐ 214 – ชัยชนะนี้เป็นของพวกเราทุกคน!",
+
     "section5-title": "อีกหนึ่งชัยชนะ – 13 กันยายน",
     "section5-text1": "วันที่ 13 กันยายน 2025 รัฐ 214 ได้พิสูจน์พลังอีกครั้งในการแข่งขันรัฐปะทะรัฐ – คราวนี้กับรัฐ 194 ที่แข็งแกร่ง เราสามารถคว้าชัยชนะได้อย่างชัดเจนด้วยความมุ่งมั่นและความสามัคคี",
     "section5-text2": "ตั้งแต่ชั่วโมงแรกของการเตรียมการ วินัยและการประสานงานของเราได้สร้างความได้เปรียบอย่างเด็ดขาด เมื่อเข้าสู่ช่วงการสู้รบ ผู้เล่นของเราได้โจมตีอย่างแม่นยำ ป้องกันดินแดนของเราและโจมตีศัตรูอย่างรุนแรง",
@@ -167,23 +211,29 @@
     "section5-text4": "ด้วยชัยชนะครั้งนี้ รัฐ 214 ยังคงเดินหน้าตามเส้นทางแห่งความสำเร็จ แสดงให้เห็นว่าวิสัยทัศน์และความสามัคคีของเราพาเราไปข้างหน้า",
     "section5-text5": "ขอแสดงความยินดีกับผู้เล่นทุกคน – เราได้สร้างประวัติศาสตร์อีกครั้งร่วมกัน!"
   },
+
   "ar": {
     "footer-text": "© 2026 مجتمع الدولة 214 – أنشئ بواسطة اللاعبين، من أجل اللاعبين · All Stars United",
     "date": "30 يوليو – 16 أغسطس 2025",
+
     "section1-title": "فريق واحد – خمس تحالفات – 30 يوليو",
     "section1-text1": "في 30 يوليو 2025، تم تحقيق إنجاز كبير في تاريخ الدولة 214. من خلال العمل الجماعي الرائع والوحدة، اتحدت SRC وDOA وPBT وODA وBKK وسجلوا معًا في فعالية طاغية التنين الجليدي الأسطورية. شارك أكثر من 180 لاعبًا – بفضل التخطيط المشترك والقيادة الموحدة.",
     "section1-text2": "من هذا التحالف، تم تشكيل ثلاث تحالفات قتالية استراتيجية وتم تسجيلها بنجاح. تم تحقيق هذا من خلال التنسيق المقصود والثقة بين القادة.",
+
     "section2-title": "بداية المعركة – 3 أغسطس",
     "section2-text1": "في 3 أغسطس، واجهت قوات الدولة 214 الموحدة طاغية التنين الجليدي. أثمرت التنسيقات بين التحالفات: فاز فريقنا بالمركز الثاني بفارق بسيط عن الأول.",
     "section2-text2": "يعكس هذا الإنجاز الإعداد الممتاز والثقة المتبادلة والإرادة المشتركة للتصرف كدولة واحدة.",
+
     "section3-title": "العمل الجماعي في الميدان",
     "section3-text1": "خمس تحالفات، رؤية واحدة – وثلاث تحالفات قتالية موحدة. لم تكن المشاركة فقط، بل كانت تحولًا حقيقيًا.",
     "section3-text2": "العمل الجماعي. الوحدة. هدف واحد – الدولة 214.",
+
     "section4-title": "انتصار SVS – 16 أغسطس",
     "section4-text1": "في 16 أغسطس 2025 حققت الدولة 214 انتصارًا تاريخيًا في منافسة دولة مقابل دولة ضد الدولة 249. منذ مرحلة الإعداد ضمنّا تقدمًا واضحًا بفضل التنظيم والتنسيق الممتازين.",
     "section4-text2": "وخلال مرحلة القتال، استطاعت قواتنا الموحَّدة الاستيلاء على قلعة الدولة 249 – نجاحٌ باهر يثبت الشجاعة والاستراتيجية وروح الفريق.",
     "section4-text3": "لم يكن هذا الفوز ليتحقق إلا بفضل الجهد المشترك لتحالفاتنا: ODA وPBT وBKK وSRC وDOA. معًا أثبتنا أن الدولة 214 تقف قوية ومتوحدة.",
     "section4-text4": "تهانينا لجميع مقاتلي الدولة 214 – هذا النجاح نجاحنا جميعًا!",
+
     "section5-title": "انتصار آخر – 13 سبتمبر",
     "section5-text1": "في 13 سبتمبر 2025 أثبتت الدولة 214 قوتها مرة أخرى في منافسة دولة مقابل دولة – هذه المرة ضد الدولة 194 القوية. من خلال العزيمة والوحدة حققنا فوزًا واضحًا.",
     "section5-text2": "منذ الساعات الأولى لمرحلة الإعداد، منحتنا الانضباط والتنسيق ميزة حاسمة. وعندما بدأت مرحلة القتال، هاجم لاعبونا بدقة، مدافعين عن أراضينا وضاربين العدو بقوة.",
@@ -191,23 +241,29 @@
     "section5-text4": "بهذا الانتصار، تواصل الدولة 214 مسيرتها الناجحة، مما يثبت أن رؤيتنا ووحدتنا تقودنا إلى الأمام.",
     "section5-text5": "مبروك لكل لاعب – لقد صنعنا التاريخ معًا مرة أخرى!"
   },
+
   "tr": {
     "footer-text": "© 2026 Eyalet 214 Topluluğu – Oyuncular tarafından, oyuncular için · All Stars United",
     "date": "30 Temmuz – 16 Ağustos 2025",
+
     "section1-title": "Bir Takım – Beş İttifak – 30 Temmuz",
     "section1-text1": "30 Temmuz 2025'te, Eyalet 214 tarihinde büyük bir dönüm noktası yaşandı. Harika ekip çalışması ve birlik sayesinde SRC, DOA, PBT, ODA ve BKK güçlerini birleştirerek Efsanevi Buz Ejderhası Tiran etkinliğine birlikte kaydoldu. 180'den fazla oyuncu katıldı – bu başarı, ortak planlama ve birleşik liderlikle mümkün oldu.",
     "section1-text2": "Bu birleşmeden üç savaş ittifakı oluşturularak etkinliğe başarıyla kaydedildi. Bu yapı, liderler arasındaki güvene dayalı koordinasyonun sonucuydu.",
+
     "section2-title": "Savaş Başlıyor – 3 Ağustos",
     "section2-text1": "3 Ağustos'ta, Eyalet 214'ün birleşik güçleri güçlü Frostdragon Tyrant ile karşılaştı. İttifaklar arasındaki koordinasyon sayesinde kıyasıya mücadeleye rağmen gururla ikinci sırayı elde ettik.",
     "section2-text2": "Bu sonuç, mükemmel hazırlık, güven ve tek bir devlet gibi hareket etme iradesinin yansımasıydı.",
+
     "section3-title": "Takım Çalışması Gerçekleşti",
     "section3-text1": "Beş ittifak, tek bir vizyon – üç birleşik savaş ittifakı. Bu etkinlik sadece katılım değil, bir dönüşümdü.",
     "section3-text2": "Takım çalışması. Birlik. Tek Hedef – Eyalet 214.",
+
     "section4-title": "SVS Zaferi – 16 Ağustos",
     "section4-text1": "16 Ağustos 2025'te Eyalet 214, Eyalet 249'a karşı yapılan Eyalet vs Eyalet mücadelesinde tarihi bir zafer kazandı. Hazırlık aşamasında, mükemmel organizasyon ve koordinasyonla net bir üstünlük elde ettik.",
     "section4-text2": "Savaş aşamasında birleşik güçlerimiz, Eyalet 249'un kalesini fethetti – cesaretin, stratejinin ve ekip çalışmasının çarpıcı bir kanıtı.",
     "section4-text3": "Bu zafer, ittifaklarımızın ortak çabası sayesinde mümkün oldu: ODA, PBT, BKK, SRC ve DOA. Birlikte 214'ün güçlü ve tek vücut olduğunu gösterdik.",
     "section4-text4": "Eyalet 214'ün tüm savaşçılarını tebrik ederiz – bu başarı hepimizin!",
+
     "section5-title": "Bir Zafer Daha – 13 Eylül",
     "section5-text1": "13 Eylül 2025'te Eyalet 214, Eyalet vs Eyalet mücadelesinde gücünü bir kez daha kanıtladı – bu sefer güçlü Eyalet 194'e karşı. Kararlılık ve birlik sayesinde net bir zafer elde ettik.",
     "section5-text2": "Hazırlık aşamasının ilk saatlerinden itibaren disiplinimiz ve koordinasyonumuz bize belirleyici bir avantaj sağladı. Savaş aşaması başladığında oyuncularımız hassasiyetle saldırdı, bölgemizi savundu ve düşmana güçlü darbeler indirdi.",
@@ -215,23 +271,29 @@
     "section5-text4": "Bu zaferle birlikte Eyalet 214, başarının yolunda ilerlemeye devam ediyor ve vizyonumuz ile birliğimizin bizi ileriye taşıdığını kanıtlıyor.",
     "section5-text5": "Her oyuncuyu tebrik ederiz – birlikte bir kez daha tarih yazdık!"
   },
+
   "id": {
     "footer-text": "© 2026 Komunitas State 214 – Dibuat oleh pemain, untuk pemain · All Stars United",
     "date": "30 Juli – 16 Agustus 2025",
+
     "section1-title": "Satu Tim – Lima Aliansi – 30 Juli",
     "section1-text1": "Pada tanggal 30 Juli 2025, tonggak sejarah besar tercapai di State 214. Melalui kerja sama tim yang luar biasa, SRC, DOA, PBT, ODA, dan BKK bersatu dan mendaftar bersama untuk acara legendaris Frostdragon Tyrant. Lebih dari 180 pemain berpartisipasi – semua berkat perencanaan dan kepemimpinan yang bersatu.",
     "section1-text2": "Dari persatuan ini, tiga aliansi tempur dibentuk secara strategis dan berhasil mendaftar untuk acara tersebut. Struktur ini lahir dari koordinasi dan kepercayaan antar pemimpin.",
+
     "section2-title": "Pertempuran Dimulai – 3 Agustus",
     "section2-text1": "Pada 3 Agustus, pasukan gabungan State 214 menghadapi Frostdragon Tyrant. Koordinasi antar aliansi membuahkan hasil: kami bangga meraih posisi kedua, hampir merebut posisi pertama.",
     "section2-text2": "Hasil ini mencerminkan persiapan yang hebat, kepercayaan, dan kehendak untuk bertindak sebagai satu negara.",
+
     "section3-title": "Kerja Sama dalam Aksi",
     "section3-text1": "Lima aliansi, satu visi – dan tiga aliansi tempur yang bersatu. Acara ini bukan sekadar partisipasi: ini adalah transformasi.",
     "section3-text2": "Kerja sama tim. Persatuan. Satu Tujuan – State 214.",
+
     "section4-title": "Kemenangan SVS – 16 Agustus",
     "section4-text1": "Pada 16 Agustus 2025, State 214 meraih kemenangan bersejarah dalam kompetisi State vs State melawan State 249. Sejak fase persiapan, kami sudah unggul berkat organisasi dan koordinasi yang sangat baik.",
     "section4-text2": "Pada fase pertempuran, kekuatan kami yang bersatu berhasil menaklukkan kastil State 249 – sebuah keberhasilan spektakuler yang membuktikan nyali, strategi, dan kerja sama tim.",
     "section4-text3": "Kemenangan ini hanya mungkin berkat upaya bersama aliansi kami: ODA, PBT, BKK, SRC, dan DOA. Bersama-sama, kami menunjukkan bahwa State 214 berdiri kuat dan bersatu.",
     "section4-text4": "Selamat untuk semua pejuang State 214 – keberhasilan ini milik kita semua!",
+
     "section5-title": "Kemenangan Lain – 13 September",
     "section5-text1": "Pada 13 September 2025, State 214 kembali membuktikan kekuatannya dalam kompetisi State vs State – kali ini melawan State 194 yang tangguh. Dengan tekad dan persatuan, kami meraih kemenangan yang jelas.",
     "section5-text2": "Sejak jam-jam awal fase persiapan, disiplin dan koordinasi kami menciptakan keunggulan yang menentukan. Saat fase pertempuran dimulai, para pemain kami menyerang dengan presisi, mempertahankan wilayah kami sambil menghantam musuh dengan keras.",
@@ -239,23 +301,29 @@
     "section5-text4": "Dengan kemenangan ini, State 214 melanjutkan jalannya menuju kesuksesan, menunjukkan bahwa visi dan persatuan kami membawa kami maju.",
     "section5-text5": "Selamat kepada setiap pemain – bersama-sama kita sekali lagi mencatat sejarah!"
   },
+
   "ko": {
     "footer-text": "© 2026 214번 주 커뮤니티 – 플레이어에 의해, 플레이어를 위해 · All Stars United",
     "date": "2025년 7월 30일 – 8월 16일",
+
     "section1-title": "하나의 팀 – 다섯 개의 동맹 – 7월 30일",
     "section1-text1": "2025년 7월 30일, 214번 주 역사에 중요한 이정표가 세워졌습니다. 뛰어난 협력과 단합으로 SRC, DOA, PBT, ODA, BKK가 힘을 합쳐 전설적인 프로스트드래곤 타이런트 이벤트에 함께 등록했습니다. 180명 이상의 플레이어가 참여하였고, 이는 공동 계획과 통합된 리더십 덕분입니다.",
     "section1-text2": "이 연합에서 전략적으로 3개의 전투 동맹이 구성되어 성공적으로 등록되었습니다. 이는 리더들 간의 신뢰와 조율의 결과입니다.",
+
     "section2-title": "전투 시작 – 8월 3일",
     "section2-text1": "8월 3일, 214번 주의 연합군은 강력한 프로스트드래곤 타이런트를 맞이했습니다. 동맹 간의 훌륭한 조율 덕분에 우리는 아깝게 1위를 놓쳤지만 자랑스럽게 2위를 차지했습니다.",
     "section2-text2": "이 결과는 훌륭한 준비, 동맹 간의 신뢰, 그리고 하나의 주로서 행동하려는 의지를 보여줍니다.",
+
     "section3-title": "실천하는 팀워크",
     "section3-text1": "다섯 개의 동맹, 하나의 비전 – 세 개의 통합 전투 동맹. 이 이벤트는 단순한 참여가 아닌 변화를 보여주었습니다.",
-    "section3-text2": "팀워크. 단결. 하나의 목표 – 주 214",
+    "section3-text2": "팀워크. 단결. 하나의 목표 – 주 214.",
+
     "section4-title": "SVS 승리 – 8월 16일",
     "section4-text1": "2025년 8월 16일, 214번 주는 249번 주를 상대로 한 주 대 주(SVS) 대결에서 역사적인 승리를 거두었습니다. 준비 단계부터 뛰어난 조직력과 조율로 분명한 우위를 확보했습니다.",
     "section4-text2": "전투 단계에서 우리의 연합 전력은 249번 주의 성을 점령했습니다. 이는 용기·전략·팀워크를 입증하는 눈부신 성과였습니다.",
     "section4-text3": "이 승리는 ODA, PBT, BKK, SRC, DOA 동맹의 공동 노력 덕분에 가능했습니다. 함께 우리는 214번 주가 강하고 단결되어 있음을 보여주었습니다.",
     "section4-text4": "214번 주의 모든 전사들에게 축하를 전합니다 – 이 성공은 우리 모두의 것입니다!",
+
     "section5-title": "또 다른 승리 – 9월 13일",
     "section5-text1": "2025년 9월 13일, 214번 주는 주 대 주 대결에서 또 한 번의 힘을 입증했습니다 – 이번에는 강력한 194번 주를 상대로 했습니다. 결단력과 단합을 통해 우리는 명확한 승리를 거두었습니다.",
     "section5-text2": "준비 단계의 초기 시간부터 우리의 규율과 조율은 결정적인 우위를 만들어냈습니다. 전투 단계가 시작되자, 우리 플레이어들은 정밀하게 공격하며 영토를 방어하고 적을 강하게 타격했습니다.",
@@ -263,23 +331,29 @@
     "section5-text4": "이번 승리로 214번 주는 성공의 길을 이어가며 우리의 비전과 단결이 우리를 앞으로 나아가게 함을 보여줍니다.",
     "section5-text5": "모든 플레이어에게 축하를 전합니다 – 함께 우리는 다시 한 번 역사를 만들었습니다!"
   },
+
   "ru": {
     "footer-text": "© 2026 Сообщество Штата 214 – Создано игроками, для игроков · All Stars United",
     "date": "30 июля – 16 августа 2025",
+
     "section1-title": "Одна команда – Пять альянсов – 30 июля",
     "section1-text1": "30 июля 2025 года в истории Штата 214 было достигнуто важное событие. Благодаря потрясающей командной работе и единству, альянсы SRC, DOA, PBT, ODA и BKK объединились и зарегистрировались вместе на легендарное событие Тиран Ледяного Дракона. В нём приняли участие более 180 игроков благодаря совместному планированию и лидерству.",
     "section1-text2": "Из этого объединения были стратегически сформированы три боевых альянса, которые успешно зарегистрировались на мероприятие. Это стало возможным благодаря целенаправленной координации и доверию между лидерами.",
+
     "section2-title": "Начало битвы – 3 августа",
     "section2-text1": "3 августа объединённые силы Штата 214 столкнулись с могущественным Тираном Ледяного Дракона. Координация между альянсами принесла плоды – мы заняли почётное второе место, совсем немного уступив первому.",
     "section2-text2": "Этот результат говорит о блестящей подготовке, доверии и желании действовать как единое целое.",
+
     "section3-title": "Командная работа в действии",
     "section3-text1": "Пять альянсов, одно видение – три объединённых боевых альянса. Это событие стало не просто участием, а настоящей трансформацией.",
     "section3-text2": "Командная работа. Единство. Одна цель – Штат 214.",
+
     "section4-title": "Победа в SVS – 16 августа",
     "section4-text1": "16 августа 2025 года Штат 214 одержал историческую победу в противостоянии «штат против штата» со Штатом 249. Уже на этапе подготовки мы получили явное преимущество благодаря отличной организации и координации.",
     "section4-text2": "В боевой фазе наши объединённые силы захватили замок Штата 249 — впечатляющий успех и доказательство мужества, стратегии и командной работы.",
     "section4-text3": "Эта победа стала возможной благодаря совместным усилиям наших альянсов: ODA, PBT, BKK, SRC и DOA. Вместе мы показали, что Штат 214 силён и един.",
     "section4-text4": "Поздравляем всех бойцов Штата 214 — этот успех принадлежит нам всем!",
+
     "section5-title": "Ещё одна победа – 13 сентября",
     "section5-text1": "13 сентября 2025 года Штат 214 вновь доказал свою силу в противостоянии «штат против штата» – на этот раз против мощного Штата 194. Благодаря решимости и единству мы одержали явную победу.",
     "section5-text2": "С самых ранних часов подготовительной фазы дисциплина и координация обеспечили нам решающее преимущество. Когда началась боевая фаза, наши игроки атаковали точно, защищая наши территории и мощно поражая врага.",
@@ -287,23 +361,29 @@
     "section5-text4": "Этой победой Штат 214 продолжает свой путь успеха, показывая, что наше видение и единство ведут нас вперёд.",
     "section5-text5": "Поздравляем каждого игрока – вместе мы снова вошли в историю!"
   },
+
   "zh": {
     "footer-text": "© 2026 第214州社区 – 玩家创造，为玩家服务 · All Stars United",
     "date": "2025年7月30日 – 8月16日",
+
     "section1-title": "一个团队 – 五个联盟 – 7月30日",
     "section1-text1": "2025年7月30日，第214州历史上迎来了重要的里程碑。SRC、DOA、PBT、ODA 和 BKK 联手并共同报名参加了传奇的冰霜龙暴君活动，展现了卓越的团队合作与团结精神。超过180名玩家参与，这一切都得益于统一的规划和领导。",
     "section1-text2": "在这次联合中，我们策略性地组成了三个战斗联盟，并成功报名参加了活动。这一结构是领导者之间深度协调与信任的结晶。",
+
     "section2-title": "战斗打响 – 8月3日",
     "section2-text1": "8月3日，第214州联合军团迎战强大的冰霜龙暴君。尽管竞争激烈，我们依然凭借协调一致的作战赢得了第二名，仅以微弱差距落后第一。",
     "section2-text2": "这一成果展示了卓越的准备、联盟间的信任，以及统一行动的意愿。",
+
     "section3-title": "团队合作的力量",
     "section3-text1": "五个联盟，一个愿景 – 三个联合战斗联盟。这不仅是一次参与，更是一次蜕变。",
     "section3-text2": "团队协作。团结一心。共同目标 – 第214州。",
+
     "section4-title": "SVS胜利 – 8月16日",
     "section4-text1": "2025年8月16日，第214州在对阵第249州的州际对决中取得历史性胜利。早在准备阶段，我们就凭借出色的组织与协调取得了明显领先。",
     "section4-text2": "在战斗阶段，我们的联军成功攻下第249州的城堡——这是一场壮观的胜利，证明了勇气、策略与团队协作。",
     "section4-text3": "这场胜利离不开我们的联盟共同努力：ODA、PBT、BKK、SRC 和 DOA。我们一起证明了第214州的团结与强大。",
     "section4-text4": "向第214州的所有战士致敬——这份荣耀属于我们每一个人！",
+
     "section5-title": "再一次胜利 – 9月13日",
     "section5-text1": "2025年9月13日，第214州在州际对决中再次证明了自己的实力——这一次对手是强大的第194州。凭借决心和团结，我们取得了一场明确的胜利。",
     "section5-text2": "从准备阶段的最初时刻起，我们的纪律和协调就为我们创造了决定性的优势。战斗阶段一开始，我们的玩家们就精准进攻，既守住了自己的领土，又猛烈打击了敌人。",
@@ -311,23 +391,29 @@
     "section5-text4": "凭借这场胜利，第214州继续走在成功之路上，证明了我们的愿景和团结推动我们不断前进。",
     "section5-text5": "祝贺每一位玩家——我们再次共同创造了历史！"
   },
+
   "uk": {
     "footer-text": "© 2026 Спільнота Штату 214 – Створено гравцями, для гравців · All Stars United",
     "date": "30 липня – 16 серпня 2025",
+
     "section1-title": "Одна команда – П’ять альянсів – 30 липня",
     "section1-text1": "30 липня 2025 року в історії Штату 214 була досягнута важлива віха. Завдяки неймовірній командній роботі та єдності, SRC, DOA, PBT, ODA та BKK об’єдналися і зареєструвалися разом на легендарну подію Тирана Морозного Дракона. Участь взяли понад 180 гравців – завдяки спільному плануванню та лідерству.",
     "section1-text2": "З цього об'єднання були стратегічно сформовані три бойові альянси, які успішно пройшли реєстрацію. Це стало можливим завдяки злагодженій координації та довірі між лідерами.",
+
     "section2-title": "Битва починається – 3 серпня",
     "section2-text1": "3 серпня об’єднані сили Штату 214 зіткнулися з могутнім Тираном Морозного Дракона. Завдяки чудовій координації ми з гордістю посіли друге місце, лише трохи відставши від першого.",
     "section2-text2": "Цей результат свідчить про чудову підготовку, довіру та спільну волю діяти як єдине ціле.",
+
     "section3-title": "Командна робота в дії",
     "section3-text1": "П’ять альянсів, єдине бачення – три об’єднані бойові альянси. Ця подія стала не просто участю, а трансформацією.",
     "section3-text2": "Командна робота. Єдність. Одна ціль – Штат 214.",
+
     "section4-title": "Перемога в SVS – 16 серпня",
     "section4-text1": "16 серпня 2025 року Штат 214 здобув історичну перемогу в протистоянні «штат проти штату» зі Штатом 249. Уже на етапі підготовки ми здобули відчутну перевагу завдяки відмінній організації та координації.",
     "section4-text2": "Під час бойової фази наші об’єднані сили захопили замок Штату 249 — вражаючий успіх і доказ сміливості, стратегії та командної роботи.",
     "section4-text3": "Ця перемога стала можливою завдяки спільним зусиллям наших альянсів: ODA, PBT, BKK, SRC та DOA. Разом ми показали, що Штат 214 сильний і єдиний.",
     "section4-text4": "Вітаємо всіх бійців Штату 214 — цей успіх належить нам усім!",
+
     "section5-title": "Ще одна перемога – 13 вересня",
     "section5-text1": "13 вересня 2025 року Штат 214 знову довів свою силу у протистоянні «штат проти штату» – цього разу проти могутнього Штату 194. Завдяки рішучості та єдності ми здобули переконливу перемогу.",
     "section5-text2": "З перших годин підготовчої фази наша дисципліна та координація дали нам вирішальну перевагу. Коли почалася бойова фаза, наші гравці атакували з точністю, захищаючи нашу територію та сильно вражаючи ворога.",
