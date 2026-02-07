@@ -40,6 +40,7 @@
     <nav class="nav">
       <div class="container nav-inner">
         <a id="nav-home" href="index.html">🏠 Home</a>
+        <a id="nav-apply" href="apply.html">📝 Apply</a>
         <a id="nav-history" href="history.html">📖 History</a>
         <a id="nav-alliances" href="alliances.html">🛡️ Alliances</a>
         <a id="nav-rules" href="rules.html" class="active">📜 Rules</a>
@@ -74,8 +75,8 @@
             </div>
 
             <div class="rule-block">
-              <h4 id="rule-2">2️⃣ Attacking NAP 5, SUB Members, or Players Inside NAP 5/SUB Base or HQ</h4>
-              <p id="rule-2-text" class="state-bad">Not allowed. Do not attack players under NAP 5, SUB alliances, or those located in NAP 5/SUB base or HQ.</p>
+              <h4 id="rule-2">2️⃣ Attacking NAP 3, SUB Members, or Players Inside NAP 3/SUB Base or HQ</h4>
+              <p id="rule-2-text" class="state-bad">Not allowed. Do not attack players under NAP 3, SUB alliances, or those located in NAP 3/SUB base or HQ.</p>
             </div>
 
             <div class="rule-block">
@@ -90,8 +91,9 @@
               <div class="badge">CASTLE</div>
               <h2 class="rule-title" id="castle-title">2️⃣ Castle Rotation</h2>
             </div>
+
             <p id="castle-text" class="state-good">
-              The Top 3 alliances rotate control of the castle every 2 weeks. This ensures that every alliance within the Top 3 has an opportunity to control the castle.
+              The top 3 alliances will rotate control of the castle every 2 weeks. This ensures that every alliance within the Big 3 has an opportunity to control the castle.
             </p>
 
             <div class="pill-row">
@@ -138,17 +140,33 @@
   </footer>
 
   <script>
-    // Uses your existing rules.json (no rebuild needed). Adds safe fallbacks.
-    const FALLBACK_LANG = 'en';
+    // FILE: rules.html
+    // Expects: rules.json page keys + common nav keys (home, apply-nav, history, alliances, rules, fort, news, community)
 
-    function getSafe(dict, lang, key){
-      if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
-      if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
+    const FALLBACK_LANG = "en";
+
+    function getSafe(dict, lang, key) {
+      if (dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
+      if (dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
       return null;
     }
 
-    function translateCommon(dict, lang){
+    function applyDir(lang) {
+      const rtl = (lang === "ar");
+      document.documentElement.setAttribute("dir", rtl ? "rtl" : "ltr");
+      document.documentElement.setAttribute("lang", lang || "en");
+    }
+
+    function forceNap3(text) {
+      return String(text)
+        .replace(/NAP\s*5/ig, "NAP 3")
+        .replace(/\bTop\s*5\b/ig, "Top 3")
+        .replace(/\bBig\s*5\b/ig, "Big 3");
+    }
+
+    function translateCommon(dict, lang) {
       const home = getSafe(dict, lang, "home");
+      const apply = getSafe(dict, lang, "apply-nav");
       const history = getSafe(dict, lang, "history");
       const alliances = getSafe(dict, lang, "alliances");
       const rules = getSafe(dict, lang, "rules");
@@ -156,66 +174,75 @@
       const news = getSafe(dict, lang, "news");
       const community = getSafe(dict, lang, "community");
 
-      if(home) $('#nav-home').text('🏠 ' + home);
-      if(history) $('#nav-history').text('📖 ' + history);
-      if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
-      if(rules) $('#nav-rules').text('📜 ' + rules);
-      if(fort) $('#nav-fort').text('🏰 ' + fort);
-      if(news) $('#nav-news').text('🔥 ' + news);
-      if(community) $('#nav-community').text('💬 ' + community);
+      if (home) $("#nav-home").text("🏠 " + home);
+      if (apply) $("#nav-apply").text(apply); // already includes emoji in JSON
+      if (history) $("#nav-history").text("📖 " + history);
+      if (alliances) $("#nav-alliances").text("🛡️ " + alliances);
+      if (rules) $("#nav-rules").text("📜 " + rules);
+      if (fort) $("#nav-fort").text("🏰 " + fort);
+      if (news) $("#nav-news").text("🔥 " + news);
+      if (community) $("#nav-community").text("💬 " + community);
     }
 
-    $.getJSON('rules.json', function(data){
-      function translatePage(lang){
-        const pageTitle = getSafe(data, lang, "page-title");
-        const intro = getSafe(data, lang, "home");
-        const keTitle = getSafe(data, lang, "ke-title");
-        const eventTitle = getSafe(data, lang, "event-title");
-        const r1 = getSafe(data, lang, "rule-1");
-        const r1t = getSafe(data, lang, "rule-1-text");
-        const r2 = getSafe(data, lang, "rule-2");
-        const r2t = getSafe(data, lang, "rule-2-text");
-        const r3 = getSafe(data, lang, "rule-3");
-        const r3t = getSafe(data, lang, "rule-3-text");
-        const castleTitle = getSafe(data, lang, "castle-title");
-        const castleText = getSafe(data, lang, "castle-text");
-        const facilityTitle = getSafe(data, lang, "facility-title");
-        const facilityText = getSafe(data, lang, "facility-text");
-        const footer = getSafe(data, lang, "footer-text");
+    $.getJSON("rules.json")
+      .done(function (data) {
+        function translatePage(lang) {
+          applyDir(lang);
 
-        if(pageTitle) $('#page-title').text(pageTitle);
-        if(intro) $('#intro-text').text(intro);
-        if(keTitle) $('#ke-title').text(keTitle);
-        if(eventTitle) $('#event-title').text(eventTitle);
-        if(r1) $('#rule-1').text(r1);
-        if(r1t) $('#rule-1-text').text(r1t);
-        if(r2) $('#rule-2').text(r2);
-        if(r2t) $('#rule-2-text').text(r2t);
-        if(r3) $('#rule-3').text(r3);
-        if(r3t) $('#rule-3-text').text(r3t);
-        if(castleTitle) $('#castle-title').text(castleTitle);
+          const pageTitle = getSafe(data, lang, "page-title");
+          const introText = getSafe(data, lang, "intro-text");
+          const keTitle = getSafe(data, lang, "ke-title");
 
-        // Ensure Top 3 wording even if old JSON still says Top 5:
-        if(castleText){
-          const fixed = String(castleText)
-            .replace(/top\s*5/ig, 'Top 3')
-            .replace(/big\s*5/ig, 'Top 3');
-          $('#castle-text').text(fixed);
+          const eventTitle = getSafe(data, lang, "event-title");
+          const r1 = getSafe(data, lang, "rule-1");
+          const r1t = getSafe(data, lang, "rule-1-text");
+          const r2 = getSafe(data, lang, "rule-2");
+          const r2t = getSafe(data, lang, "rule-2-text");
+          const r3 = getSafe(data, lang, "rule-3");
+          const r3t = getSafe(data, lang, "rule-3-text");
+
+          const castleTitle = getSafe(data, lang, "castle-title");
+          const castleText = getSafe(data, lang, "castle-text");
+
+          const facilityTitle = getSafe(data, lang, "facility-title");
+          const facilityText = getSafe(data, lang, "facility-text");
+
+          const footer = getSafe(data, lang, "footer-text");
+
+          if (pageTitle) $("#page-title").text(pageTitle);
+          if (introText) $("#intro-text").text(introText);
+          if (keTitle) $("#ke-title").text(keTitle);
+
+          if (eventTitle) $("#event-title").text(forceNap3(eventTitle));
+          if (r1) $("#rule-1").text(forceNap3(r1));
+          if (r1t) $("#rule-1-text").text(forceNap3(r1t));
+          if (r2) $("#rule-2").text(forceNap3(r2));
+          if (r2t) $("#rule-2-text").text(forceNap3(r2t));
+          if (r3) $("#rule-3").text(forceNap3(r3));
+          if (r3t) $("#rule-3-text").text(forceNap3(r3t));
+
+          if (castleTitle) $("#castle-title").text(forceNap3(castleTitle));
+          if (castleText) $("#castle-text").text(forceNap3(castleText));
+
+          if (facilityTitle) $("#facility-title").text(forceNap3(facilityTitle));
+          if (facilityText) $("#facility-text").text(forceNap3(facilityText));
+
+          if (footer) $("#footer-text").text(footer);
+
+          $(".pill.top").text("TOP 3");
+
+          translateCommon(data, lang);
         }
 
-        if(facilityTitle) $('#facility-title').text(facilityTitle);
-        if(facilityText) $('#facility-text').text(facilityText);
-        if(footer) $('#footer-text').text(footer);
+        translatePage(FALLBACK_LANG);
 
-        translateCommon(data, lang);
-      }
-
-      translatePage('en');
-
-      $('#language-select').on('change', function(){
-        translatePage($(this).val());
+        $("#language-select").on("change", function () {
+          translatePage($(this).val());
+        });
+      })
+      .fail(function () {
+        applyDir("en");
       });
-    });
   </script>
 </body>
 </html>
