@@ -5,6 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kill Event Rules</title>
+
+  <!-- FAVICON / SITE ICON -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-192x192.png">
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -12,9 +18,16 @@
 <body class="page">
   <header class="site-header">
     <div class="container header-inner">
+
+      <!-- BRAND + HOME ICON (CLICKABLE) -->
       <div class="brand">
-        <h1 id="page-title">Kill Event (KE) Rules</h1>
-        <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+        <a class="brand-home" href="index.html" aria-label="Go to Home">
+          <img src="/assets/favicon-192x192.png" alt="State 214" class="brand-logo">
+          <div class="brand-text">
+            <h1 id="page-title">Kill Event (KE) Rules</h1>
+            <p id="intro-text"><strong>ALL STARS UNITED</strong></p>
+          </div>
+        </a>
       </div>
 
       <div class="lang">
@@ -136,8 +149,7 @@
   </footer>
 
   <script>
-    // FIX: Menu kommt IMMER aus index.json (nav-*), Rules/Text aus rules.json
-    // => du musst in rules.json KEINE nav-keys pflegen, aber es geht auch wenn sie da sind.
+    // NAV always from index.json (nav-*), page text from rules.json
     const FALLBACK_LANG = 'en';
     const LANG_KEY = 'state214_lang';
 
@@ -145,6 +157,22 @@
       if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
       if(dict && dict[FALLBACK_LANG] && dict[FALLBACK_LANG][key] != null) return dict[FALLBACK_LANG][key];
       return null;
+    }
+
+    // FIX: remove leading emojis/icons to avoid duplicates in NAV
+    function stripLeadingIcons(text){
+      if(!text) return "";
+      return String(text).replace(
+        /^[\s\u200D\uFE0F]*(?:[\p{Extended_Pictographic}\p{Emoji_Presentation}\p{Emoji}\u2600-\u27BF]\s*)+/gu,
+        ""
+      ).trim();
+    }
+
+    // Build nav label with exactly one emoji
+    function navLabel(t, navKey, plainKey, emoji, fallback){
+      const raw = (t && (t[navKey] ?? t[plainKey])) ?? fallback;
+      const clean = stripLeadingIcons(raw);
+      return `${emoji} ${clean || stripLeadingIcons(fallback)}`;
     }
 
     function forceNap3(str){
@@ -160,24 +188,17 @@
     function translateNav(indexDict, lang){
       const t = indexDict[lang] || indexDict[FALLBACK_LANG] || {};
 
-      // nav-* preferred
-      const nHome      = t["nav-home"]      || (t["home"] ? "🏠 " + t["home"] : null);
-      const nHistory   = t["nav-history"]   || (t["history"] ? "📖 " + t["history"] : null);
-      const nAlliances = t["nav-alliances"] || (t["alliances"] ? "🛡️ " + t["alliances"] : null);
-      const nRules     = t["nav-rules"]     || (t["rules"] ? "📜 " + t["rules"] : null);
-      const nFort      = t["nav-fort"]      || (t["fort"] ? "🏰 " + t["fort"] : null);
-      const nNews      = t["nav-news"]      || (t["news"] ? "🔥 " + t["news"] : null);
-      const nApply     = t["nav-apply"]     || t["apply-nav"] || (t["apply"] ? "📝 " + t["apply"] : null);
-      const nCommunity = t["nav-community"] || (t["community"] ? "💬 " + t["community"] : null);
+      $('#nav-home').text(navLabel(t, "nav-home", "home", "🏠", "Home"));
+      $('#nav-history').text(navLabel(t, "nav-history", "history", "📖", "History"));
+      $('#nav-alliances').text(navLabel(t, "nav-alliances", "alliances", "🛡️", "Alliances"));
+      $('#nav-rules').text(navLabel(t, "nav-rules", "rules", "📜", "Rules"));
+      $('#nav-fort').text(navLabel(t, "nav-fort", "fort", "🏰", "Fort"));
+      $('#nav-news').text(navLabel(t, "nav-news", "news", "🔥", "News"));
 
-      if(nHome) $('#nav-home').text(nHome);
-      if(nHistory) $('#nav-history').text(nHistory);
-      if(nAlliances) $('#nav-alliances').text(nAlliances);
-      if(nRules) $('#nav-rules').text(nRules);
-      if(nFort) $('#nav-fort').text(nFort);
-      if(nNews) $('#nav-news').text(nNews);
-      if(nApply) $('#nav-apply').text(nApply);
-      if(nCommunity) $('#nav-community').text(nCommunity);
+      const applyRaw = t["nav-apply"] ?? t["apply-nav"] ?? t["apply"] ?? "Apply";
+      $('#nav-apply').text(`📝 ${stripLeadingIcons(applyRaw)}`);
+
+      $('#nav-community').text(navLabel(t, "nav-community", "community", "💬", "Community"));
     }
 
     $(document).ready(function(){
@@ -189,12 +210,17 @@
         const rulesData = rulesRes[0];
 
         function translatePage(lang){
-          // Title + slogan from rules.json, fallback to index.json
-          const pageTitle = getSafe(rulesData, lang, "page-title") || getSafe(indexData, lang, "page-title");
-          const intro = getSafe(rulesData, lang, "intro-text") || getSafe(indexData, lang, "home");
+          // Header
+          const pageTitle = getSafe(rulesData, lang, "page-title") || "Kill Event (KE) Rules";
+          const intro = getSafe(rulesData, lang, "intro-text") || getSafe(indexData, lang, "home") || "ALL STARS UNITED";
+          if(pageTitle) $('#page-title').text(pageTitle);
+          if(intro) $('#intro-text').text(intro);
 
+          // Page strings
           const keTitle = getSafe(rulesData, lang, "ke-title");
-          const keSub = getSafe(rulesData, lang, "ke-sub"); // optional
+          const keSub = getSafe(rulesData, lang, "ke-sub");
+          if(keTitle) $('#ke-title').text(keTitle);
+          if(keSub) $('#ke-sub').text(keSub);
 
           const eventTitle = getSafe(rulesData, lang, "event-title");
           const r1 = getSafe(rulesData, lang, "rule-1");
@@ -209,14 +235,6 @@
 
           const facilityTitle = getSafe(rulesData, lang, "facility-title");
           const facilityText = getSafe(rulesData, lang, "facility-text");
-
-          const footer = getSafe(rulesData, lang, "footer-text") || getSafe(indexData, lang, "footer-text");
-
-          if(pageTitle) $('#page-title').text(pageTitle);
-          if(intro) $('#intro-text').text(intro);
-
-          if(keTitle) $('#ke-title').text(keTitle);
-          if(keSub) $('#ke-sub').text(keSub);
 
           if(eventTitle) $('#event-title').text(forceNap3(eventTitle));
 
@@ -235,9 +253,10 @@
           if(facilityTitle) $('#facility-title').text(forceNap3(facilityTitle));
           if(facilityText) $('#facility-text').text(forceNap3(facilityText));
 
+          const footer = getSafe(rulesData, lang, "footer-text") || getSafe(indexData, lang, "footer-text");
           if(footer) $('#footer-text').text(footer);
 
-          // NAV always from index.json
+          // NAV always from index.json (and fixed for emoji duplicates)
           translateNav(indexData, lang);
         }
 
@@ -256,5 +275,13 @@
       });
     });
   </script>
+
+  <!--
+    EINMALIG in style.css hinzufügen (für alle Seiten):
+    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
+    .brand-text h1 { margin:0; }
+    .brand-text p { margin:0; }
+  -->
 </body>
 </html>
