@@ -37,7 +37,6 @@
       </div>
     </div>
 
-    <!-- NAV (Reihenfolge wie im Screenshot): Home, History, Alliances, Rules, Fort, News, Apply, Community -->
     <nav class="nav">
       <div class="container nav-inner">
         <a id="nav-home" href="index.html">🏠 Home</a>
@@ -78,10 +77,10 @@
             <h2 class="news-title" id="section6-title">Successful SvS Event: State 214 Prevails Against State 268</h2>
             <p class="muted" id="section6-meta" style="margin-top:-6px;"></p>
 
-            <img id="section6-img"
-                 src=""
-                 alt="SvS Report Image"
-                 style="width:100%; max-width:980px; display:block; margin:12px auto 14px; border-radius:16px; object-fit:cover;" />
+            <!-- IMPORTANT: wrapper + class controls HEIGHT in CSS (no inline styles) -->
+            <div class="news-article-media center" id="section6-media" style="display:none;">
+              <img id="section6-img" class="news-article-img" src="" alt="SvS Report Image" />
+            </div>
 
             <p id="section6-text1"></p>
             <p id="section6-text2"></p>
@@ -129,6 +128,7 @@
             <p id="section5-text4"></p>
             <p id="section5-text5"></p>
           </article>
+
         </div>
       </section>
 
@@ -164,9 +164,6 @@
       return null;
     }
 
-    // Works with either:
-    // - home/history/... + apply-nav
-    // - nav-home/nav-history/... (already includes emoji)
     function translateNav(dict, lang){
       const t = (dict && (dict[lang] || dict[FALLBACK_LANG])) || {};
 
@@ -220,14 +217,23 @@
 
           if(s6t) $('#section6-title').text(s6t);
           if(s6m != null) $('#section6-meta').text(s6m);
-          if(s6img) $('#section6-img').attr('src', s6img);
+
+          // show/hide media block safely
+          if(s6img){
+            $('#section6-img').attr('src', s6img);
+            $('#section6-media').show();
+          }else{
+            $('#section6-media').hide();
+            $('#section6-img').attr('src', '');
+          }
+
           if(s6a != null) $('#section6-text1').text(s6a);
           if(s6b != null) $('#section6-text2').text(s6b);
           if(s6c != null) $('#section6-text3').text(s6c);
           if(s6d != null) $('#section6-text4').text(s6d);
           if(s6e != null) $('#section6-text5').text(s6e);
 
-          // OLD sections 1–5 (unchanged)
+          // OLD sections 1–5
           const s1t = getSafe(data, lang, "section1-title");
           const s1a = getSafe(data, lang, "section1-text1");
           const s1b = getSafe(data, lang, "section1-text2");
