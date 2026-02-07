@@ -24,6 +24,10 @@
 
   --max:1100px;
   --gap:18px;
+
+  /* NEWS ARTICLE IMAGE tuning */
+  --news-img-max: 760px;      /* max width on desktop */
+  --news-img-max-h: 340px;    /* max height (prevents "too high") */
 }
 
 *{ box-sizing:border-box; }
@@ -577,6 +581,54 @@ a:hover{ opacity:.96; }
   line-height:1.65;
 }
 
+/* NEWS: Artikelbild passend, nicht zu hoch, modern/3D */
+.news-article-media{
+  margin: 12px 0 14px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.10);
+  box-shadow: 0 16px 46px rgba(0,0,0,.42);
+  max-width: var(--news-img-max);
+}
+
+.news-article-media.center{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.news-article-img{
+  width: 100%;
+  height: clamp(180px, 26vw, var(--news-img-max-h)); /* <- dynamisch, nie zu hoch */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: saturate(1.05) contrast(1.06);
+  transform: translateZ(0);
+}
+
+/* leichter 3D-Glow + Vignette */
+.news-article-media::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  pointer-events:none;
+  background:
+    radial-gradient(520px 260px at 15% 5%, rgba(108,198,255,.20), transparent 60%),
+    radial-gradient(520px 260px at 85% 0%, rgba(255,191,89,.18), transparent 60%);
+  opacity:.9;
+}
+.news-article-media{
+  position:relative;
+}
+.news-article-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.32));
+}
+
 /* ===================== FOOTER ===================== */
 .site-footer{
   border-top:1px solid rgba(255,255,255,.14);
@@ -770,6 +822,11 @@ a:hover{ opacity:.96; }
   .apply-form .grid-2{
     grid-template-columns: 1fr;
   }
+
+  :root{
+    --news-img-max: 100%;
+    --news-img-max-h: 300px;
+  }
 }
 
 @media (max-width: 760px){
@@ -788,4 +845,8 @@ a:hover{ opacity:.96; }
   .hero-kicker{ margin-left:auto; margin-right:auto; }
 
   .footer-bottom{ flex-direction:column; align-items:center; }
+
+  :root{
+    --news-img-max-h: 260px;
+  }
 }
