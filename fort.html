@@ -74,20 +74,21 @@
           The weekly fortress battles are not just for glory – they are a key part of our state’s long-term strategy. Here's how we structure the distribution:
         </p>
 
+        <!-- TOP 3 ONLY -->
         <div class="fort-grid">
           <article class="fort-card top">
             <div class="badge top" id="badge-rank1">RANK 1</div>
-            <div class="fort-line" id="rank-1">2x Stronghold & 5x Fort</div>
+            <div class="fort-line" id="rank-1">Rank 1: 1x Stronghold & 4x Fort</div>
           </article>
 
           <article class="fort-card">
             <div class="badge" id="badge-rank2">RANK 2</div>
-            <div class="fort-line" id="rank-2">1x Stronghold & 4x Fort</div>
+            <div class="fort-line" id="rank-2">Rank 2: 1x Stronghold & 3x Fort</div>
           </article>
 
           <article class="fort-card">
             <div class="badge" id="badge-rank3">RANK 3</div>
-            <div class="fort-line" id="rank-3">1x Stronghold & 3x Fort</div>
+            <div class="fort-line" id="rank-3">Rank 3: 1x Stronghold & 2x Fort</div>
           </article>
         </div>
 
@@ -123,7 +124,6 @@
   </footer>
 
   <script>
-    // FIX: Menü übersetzen (nav-* ODER alte Keys) + Language speichern/übernehmen
     const FALLBACK_LANG = 'en';
     const LANG_KEY = 'state214_lang';
 
@@ -133,9 +133,17 @@
       return null;
     }
 
+    // enforce TOP 3 only (remove/ignore any old Top5 wording if it exists in text)
+    function forceTop3(str){
+      return String(str)
+        .replace(/\bTop\s*5\b/ig, 'Top 3')
+        .replace(/\bTOP\s*5\b/ig, 'TOP 3')
+        .replace(/\bBig\s*5\b/ig, 'Top 3')
+        .replace(/\bBIG\s*5\b/ig, 'TOP 3');
+    }
+
     function translateNav(dict, lang){
       const t = dict[lang] || dict[FALLBACK_LANG] || {};
-
       const nHome = t["nav-home"] || (t["home"] ? "🏠 " + t["home"] : null);
       const nHistory = t["nav-history"] || (t["history"] ? "📖 " + t["history"] : null);
       const nAlliances = t["nav-alliances"] || (t["alliances"] ? "🛡️ " + t["alliances"] : null);
@@ -164,47 +172,39 @@
 
           const fortTitle = getSafe(data, lang, "fort-title");
           const fortDesc = getSafe(data, lang, "fort-description");
-          const fortDetailsTitle = getSafe(data, lang, "fort-details-title");
+          const fortDetailsTitle = getSafe(data, lang, "fort-details-title") || getSafe(data, lang, "rank-title");
           const fortDetails = getSafe(data, lang, "fort-details");
 
+          // TOP 3 lines (use your new keys)
           const rank1 = getSafe(data, lang, "rank-1");
           const rank2 = getSafe(data, lang, "rank-2");
           const rank3 = getSafe(data, lang, "rank-3");
 
-          const rank1Badge = getSafe(data, lang, "rank-1-badge");
-          const rank2Badge = getSafe(data, lang, "rank-2-badge");
-          const rank3Badge = getSafe(data, lang, "rank-3-badge");
-
-          const importantTitle = getSafe(data, lang, "important-note-title");
+          const importantTitle = getSafe(data, lang, "important-note-title") || "Important";
           const important = getSafe(data, lang, "important-note");
           const footer = getSafe(data, lang, "footer-text");
 
           if(pageTitle) $('#page-title').text(pageTitle);
           if(intro) $('#intro-text').text(intro);
 
-          if(fortTitle) $('#fort-title').text(fortTitle);
-          if(fortDesc) $('#fort-description').html(fortDesc);
-          if(fortDetailsTitle) $('#fort-details-title').text(fortDetailsTitle);
-          if(fortDetails) $('#fort-details').text(fortDetails);
+          if(fortTitle) $('#fort-title').text(forceTop3(fortTitle));
+          if(fortDesc) $('#fort-description').text(forceTop3(fortDesc)); // your JSON is plain text
+          if(fortDetailsTitle) $('#fort-details-title').text(forceTop3(fortDetailsTitle));
+          if(fortDetails) $('#fort-details').text(forceTop3(fortDetails));
 
-          if(rank1) $('#rank-1').text(rank1);
-          if(rank2) $('#rank-2').text(rank2);
-          if(rank3) $('#rank-3').text(rank3);
+          // update TOP 3 only
+          if(rank1) $('#rank-1').text(forceTop3(rank1));
+          if(rank2) $('#rank-2').text(forceTop3(rank2));
+          if(rank3) $('#rank-3').text(forceTop3(rank3));
 
-          if(rank1Badge) $('#badge-rank1').text(rank1Badge);
-          if(rank2Badge) $('#badge-rank2').text(rank2Badge);
-          if(rank3Badge) $('#badge-rank3').text(rank3Badge);
+          if(importantTitle) $('#important-note-title').text(forceTop3(importantTitle));
+          if(important) $('#important-note').text(forceTop3(important));
 
-          if(importantTitle) $('#important-note-title').text(importantTitle);
-          if(important) $('#important-note').text(important);
+          if(footer) $('#footer-text').text(forceTop3(footer));
 
-          if(footer) $('#footer-text').text(footer);
-
-          // NAV immer setzen
           translateNav(data, lang);
         }
 
-        // init: saved lang
         const saved = localStorage.getItem(LANG_KEY) || 'en';
         $('#language-select').val(saved);
         translatePage(saved);
