@@ -5,6 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alliances in State 214</title>
+
+  <!-- FAVICON / SITE ICON -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-192x192.png">
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -198,19 +204,19 @@
             </div>
 
             <div class="info-grid">
-              <div class="info"><span class="label" id="lbl-hq-5">Headquarters (Tundra)</span><span class="value">[Insert Coordinates]</span></div>
-              <div class="info"><span class="label" id="lbl-contact-5">Primary Contact</span><span class="value">[Insert Contact Name or IGN]</span></div>
+              <div class="info"><span class="label" id="lbl-hq-5">Headquarters (Tundra)</span><span class="value">X:?? Y:??</span></div>
+              <div class="info"><span class="label" id="lbl-contact-5">Primary Contact</span><span class="value">[Set Contact]</span></div>
 
-              <div class="info"><span class="label" id="lbl-bear1-5">Bear Trap (1)</span><span class="value">[Insert Time]</span></div>
-              <div class="info"><span class="label" id="lbl-bear2-5">Bear Trap (2)</span><span class="value">[Insert Time]</span></div>
+              <div class="info"><span class="label" id="lbl-bear1-5">Bear Trap (1)</span><span class="value">13:15 UTC</span></div>
+              <div class="info"><span class="label" id="lbl-bear2-5">Bear Trap (2)</span><span class="value">14:45 UTC</span></div>
 
-              <div class="info"><span class="label" id="lbl-canyon1-5">Canyon Legion (1)</span><span class="value">[Insert Time]</span></div>
-              <div class="info"><span class="label" id="lbl-canyon2-5">Canyon Legion (2)</span><span class="value">[Insert Time]</span></div>
+              <div class="info"><span class="label" id="lbl-canyon1-5">Canyon Legion (1)</span><span class="value">12:00 UTC</span></div>
+              <div class="info"><span class="label" id="lbl-canyon2-5">Canyon Legion (2)</span><span class="value">19:00 UTC</span></div>
 
-              <div class="info"><span class="label" id="lbl-foundry1-5">Foundry Legion (1)</span><span class="value">[Insert Time]</span></div>
-              <div class="info"><span class="label" id="lbl-foundry2-5">Foundry Legion (2)</span><span class="value">[Insert Time]</span></div>
+              <div class="info"><span class="label" id="lbl-foundry1-5">Foundry Legion (1)</span><span class="value">12:00 UTC</span></div>
+              <div class="info"><span class="label" id="lbl-foundry2-5">Foundry Legion (2)</span><span class="value">19:00 UTC</span></div>
 
-              <div class="info full"><span class="label" id="lbl-lang-5">Main Language</span><span class="value">[Insert Language]</span></div>
+              <div class="info full"><span class="label" id="lbl-lang-5">Main Language</span><span class="value">[Set Language]</span></div>
             </div>
 
             <div class="desc" id="desc-gin">[description]</div>
@@ -251,7 +257,6 @@
     }
 
     function translateNav(dict, lang){
-      // Supports nav-* (preferred) and older keys
       const t = dict[lang] || dict[FALLBACK_LANG] || {};
       $('#nav-home').text(t["nav-home"] || ('🏠 ' + (t["home"] || 'Home')));
       $('#nav-history').text(t["nav-history"] || ('📖 ' + (t["history"] || 'History')));
@@ -264,22 +269,16 @@
     }
 
     function translatePage(dict, lang){
-      const t = dict[lang] || dict[FALLBACK_LANG];
-
-      // header
       const pageTitle = getSafe(dict, lang, "page-title");
       const intro = getSafe(dict, lang, "intro-text") || "ALL STARS UNITED";
       if(pageTitle) $("#page-title").text(pageTitle);
       $("#intro-text").text(intro);
 
-      // nav
       translateNav(dict, lang);
 
-      // page strings
       $("#alliances-head").text(getSafe(dict, lang, "alliances-head") || "Alliances");
       $("#alliances-sub").text(getSafe(dict, lang, "alliances-sub") || "Meet the core alliances of State 214");
 
-      // badges + labels (shared)
       $("#badge-top, #badge-top-2, #badge-top-3").text(getSafe(dict, lang, "badge-top") || "TOP ALLIANCE");
       $("#badge-std, #badge-std-2").text(getSafe(dict, lang, "badge-std") || "ALLIANCE");
 
@@ -293,14 +292,12 @@
       $("#lbl-foundry2, #lbl-foundry2-2, #lbl-foundry2-3, #lbl-foundry2-4, #lbl-foundry2-5").text(getSafe(dict, lang, "lbl-foundry2") || "Foundry Legion (2)");
       $("#lbl-lang, #lbl-lang-2, #lbl-lang-3, #lbl-lang-4, #lbl-lang-5").text(getSafe(dict, lang, "lbl-lang") || "Main Language");
 
-      // descriptions
       const d1 = getSafe(dict, lang, "desc-src"); if(d1) $("#desc-src").text(d1);
       const d2 = getSafe(dict, lang, "desc-lou"); if(d2) $("#desc-lou").text(d2);
       const d3 = getSafe(dict, lang, "desc-doa"); if(d3) $("#desc-doa").text(d3);
       const d4 = getSafe(dict, lang, "desc-frz"); if(d4) $("#desc-frz").text(d4);
       const d5 = getSafe(dict, lang, "desc-gin"); if(d5) $("#desc-gin").text(d5);
 
-      // footer
       const footer = getSafe(dict, lang, "footer-text");
       if(footer) $("#footer-text").text(footer);
     }
