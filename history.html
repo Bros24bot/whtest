@@ -55,7 +55,6 @@
   <main class="content">
     <div class="container">
 
-      <!-- Hero -->
       <section class="hero">
         <img src="assets/history.jpg" alt="State 214 History Banner" class="hero-img" />
         <div class="hero-overlay"></div>
@@ -122,19 +121,19 @@
 
         <div class="timeline">
           <div class="t-item" id="recent-story-1">
-            <span class="highlight">October 2025:</span> With regret, <strong>BKK</strong> transferred out of State 214. We sincerely thank them for the time and effort they invested here, and we wish them all the best on their new path.
+            <span class="highlight">October 2025:</span> With regret, <strong>BKK</strong> transferred out of State 214.
           </div>
 
           <div class="t-item" id="recent-story-2">
-            <span class="highlight">November 2025:</span> State 214 was strengthened by an alliance arriving from State <strong>153</strong>. Together, they established <strong>LOU</strong> in 214 and immediately became a valuable part of our community. We look forward to strong, respectful cooperation.
+            <span class="highlight">November 2025:</span> State 214 was strengthened by an alliance arriving from State <strong>153</strong>.
           </div>
 
           <div class="t-item" id="recent-story-3">
-            <span class="highlight">December 2025:</span> <strong>ODA</strong> also left State 214. We are grateful for the shared journey and wish them continued success and good luck ahead.
+            <span class="highlight">December 2025:</span> <strong>ODA</strong> also left State 214.
           </div>
 
           <div class="t-item" id="recent-story-4">
-            <span class="highlight">January 2026:</span> During the State Transfer, <strong>PBT</strong> departed State 214. We appreciate the time we shared together and wish them all the best on their journey ahead.
+            <span class="highlight">January 2026:</span> During the State Transfer, <strong>PBT</strong> departed State 214.
           </div>
         </div>
       </section>
@@ -142,14 +141,11 @@
       <section class="card">
         <h3 id="looking-ahead-title">Looking Ahead</h3>
         <p id="looking-ahead">
-          The future of State 214 is focused on a common goal: the Frostdragon Tyrant. The ambition now is to unite three elite alliances in this high-stakes
-          event and, ultimately, to bring the Tyrant itself under State 214’s banner. This vision drives our community to keep pushing the limits of what we can
-          achieve together.
+          The future of State 214 is focused on a common goal: the Frostdragon Tyrant.
         </p>
 
         <p id="core-alliances">
-          State 214 stands as a testament to what can be accomplished when players unite with a shared purpose. Our collective achievements, backed by strategic
-          alliances and a commitment to growth, have made us a model for success in the world of Whiteout Survival.
+          State 214 stands as a testament to what can be accomplished when players unite with a shared purpose.
         </p>
       </section>
 
@@ -184,8 +180,12 @@
       return null;
     }
 
+    function isSlogan(val){
+      return /all\s*stars\s*united/i.test(String(val || '').trim());
+    }
+
     function translateCommon(dict, lang){
-      const home = getSafe(dict, lang, "home");
+      const navHome = getSafe(dict, lang, "home");
       const history = getSafe(dict, lang, "history");
       const alliances = getSafe(dict, lang, "alliances");
       const rules = getSafe(dict, lang, "rules");
@@ -194,13 +194,15 @@
       const apply = getSafe(dict, lang, "apply-nav");
       const community = getSafe(dict, lang, "community");
 
-      if(home) $('#nav-home').text('🏠 ' + home);
+      // DO NOT overwrite nav-home with the slogan value
+      if(navHome && !isSlogan(navHome)) $('#nav-home').text('🏠 ' + navHome);
+
       if(history) $('#nav-history').text('📖 ' + history);
       if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
       if(rules) $('#nav-rules').text('📜 ' + rules);
       if(fort) $('#nav-fort').text('🏰 ' + fort);
       if(news) $('#nav-news').text('🔥 ' + news);
-      if(apply) $('#nav-apply').text(apply); // apply-nav already includes 📝
+      if(apply) $('#nav-apply').text(apply);
       if(community) $('#nav-community').text('💬 ' + community);
     }
 
@@ -209,7 +211,7 @@
 
         function translatePage(lang){
           const pageTitle = getSafe(data, lang, "page-title");
-          const intro = getSafe(data, lang, "home");
+          const introBrand = getSafe(data, lang, "intro-text"); // FIX: slogan only (not "home")
 
           const historyTitle = getSafe(data, lang, "history-title") || getSafe(data, lang, "page-title");
           const introduction = getSafe(data, lang, "introduction");
@@ -242,7 +244,7 @@
           const footer = getSafe(data, lang, "footer-text");
 
           if(pageTitle) $('#page-title').text(pageTitle);
-          if(intro) $('#intro-text').text(intro);
+          if(introBrand) $('#intro-text').text(introBrand); // FIX
 
           if(historyTitle) $('#history-title').text(historyTitle);
           if(introduction) $('#introduction').text(introduction);
@@ -284,7 +286,7 @@
         });
 
       }).fail(function() {
-        console.error("Error loading the JSON file.");
+        console.error("Error loading history.json");
       });
     });
   </script>
