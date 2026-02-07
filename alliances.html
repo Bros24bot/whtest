@@ -37,6 +37,7 @@
       </div>
     </div>
 
+    <!-- NAV (Reihenfolge wie im Screenshot): Home, History, Alliances, Rules, Fort, News, Apply, Community -->
     <nav class="nav">
       <div class="container nav-inner">
         <a id="nav-home" href="index.html">🏠 Home</a>
@@ -45,6 +46,7 @@
         <a id="nav-rules" href="rules.html">📜 Rules</a>
         <a id="nav-fort" href="fort.html">🏰 Fort</a>
         <a id="nav-news" href="news.html">🔥 News</a>
+        <a id="nav-apply" href="apply.html">📝 Apply</a>
         <a id="nav-community" href="community.html">💬 Community</a>
       </div>
     </nav>
@@ -233,16 +235,15 @@
           <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
         </div>
         <div class="footer-line">
-          Design & Build: <span class="footer-strong">Bros24</span>
+          Design &amp; Build: <span class="footer-strong">Bros24</span>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Reuse an existing JSON (no new alliances.json needed):
-    // This updates header/nav/footer translations only.
-    // If a key is missing, it falls back to the existing text.
+    // Translates header/nav/footer using an existing JSON that already contains common keys.
+    // NAV order is fixed in HTML (Home, History, Alliances, Rules, Fort, News, Apply, Community).
 
     const FALLBACK_LANG = 'en';
 
@@ -253,18 +254,22 @@
     }
 
     function translateCommon(dict, lang){
+      // Some JSON files use intro-text vs home for the header line.
       const pageTitle = getSafe(dict, lang, "page-title");
+      const intro = getSafe(dict, lang, "intro-text") || getSafe(dict, lang, "home");
+
       const home = getSafe(dict, lang, "home");
       const history = getSafe(dict, lang, "history");
       const alliances = getSafe(dict, lang, "alliances");
       const rules = getSafe(dict, lang, "rules");
       const fort = getSafe(dict, lang, "fort");
       const news = getSafe(dict, lang, "news");
+      const apply = getSafe(dict, lang, "apply-nav");
       const community = getSafe(dict, lang, "community");
       const footer = getSafe(dict, lang, "footer-text");
 
       if(pageTitle) $('#page-title').text(pageTitle);
-      if(home) $('#intro-text').text(home);
+      if(intro) $('#intro-text').text(intro);
 
       if(home) $('#nav-home').text('🏠 ' + home);
       if(history) $('#nav-history').text('📖 ' + history);
@@ -272,15 +277,19 @@
       if(rules) $('#nav-rules').text('📜 ' + rules);
       if(fort) $('#nav-fort').text('🏰 ' + fort);
       if(news) $('#nav-news').text('🔥 ' + news);
+
+      // apply-nav in your JSON already includes 📝, so keep it as-is.
+      if(apply) $('#nav-apply').text(apply);
+
       if(community) $('#nav-community').text('💬 ' + community);
 
       if(footer) $('#footer-text').text(footer);
     }
 
     $(document).ready(function(){
-      // Pick ONE existing json that already contains the common keys above.
-      // Try index.json first, then history.json, then community.json (fallback).
-      const candidates = ['index.json','history.json','community.json'];
+      // Try ONE of your existing json files that has the common keys.
+      // Priority: index.json (usually has apply-nav), then history/community.
+      const candidates = ['index.json','history.json','community.json','rules.json'];
 
       function tryLoad(i){
         if(i >= candidates.length) return;
