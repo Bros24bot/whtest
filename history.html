@@ -37,7 +37,6 @@
       </div>
     </div>
 
-    <!-- NAV (Reihenfolge wie im Screenshot): Home, History, Alliances, Rules, Fort, News, Apply, Community -->
     <nav class="nav">
       <div class="container nav-inner">
         <a id="nav-home" href="index.html">🏠 Home</a>
@@ -173,6 +172,7 @@
 
   <script>
     const FALLBACK_LANG = 'en';
+    const LANG_KEY = 'state214_lang';
 
     function getSafe(dict, lang, key){
       if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
@@ -180,30 +180,31 @@
       return null;
     }
 
-    function isSlogan(val){
-      return /all\s*stars\s*united/i.test(String(val || '').trim());
+    // Menü: unterstützt BEIDE Key-Styles:
+    // 1) index.json-style: nav-home, nav-history, ...
+    // 2) alte style keys: home/history/alliances/... + apply-nav
+    function navKey(dict, lang, id, fallbackKey){
+      return getSafe(dict, lang, "nav-" + id) || getSafe(dict, lang, fallbackKey);
     }
 
-    function translateCommon(dict, lang){
-      const navHome = getSafe(dict, lang, "home");
-      const history = getSafe(dict, lang, "history");
-      const alliances = getSafe(dict, lang, "alliances");
-      const rules = getSafe(dict, lang, "rules");
-      const fort = getSafe(dict, lang, "fort");
-      const news = getSafe(dict, lang, "news");
-      const apply = getSafe(dict, lang, "apply-nav");
-      const community = getSafe(dict, lang, "community");
+    function translateNav(dict, lang){
+      const home = navKey(dict, lang, "home", "home");
+      const history = navKey(dict, lang, "history", "history");
+      const alliances = navKey(dict, lang, "alliances", "alliances");
+      const rules = navKey(dict, lang, "rules", "rules");
+      const fort = navKey(dict, lang, "fort", "fort");
+      const news = navKey(dict, lang, "news", "news");
+      const apply = navKey(dict, lang, "apply", "apply-nav") || navKey(dict, lang, "apply", "apply");
+      const community = navKey(dict, lang, "community", "community");
 
-      // DO NOT overwrite nav-home with the slogan value
-      if(navHome && !isSlogan(navHome)) $('#nav-home').text('🏠 ' + navHome);
-
-      if(history) $('#nav-history').text('📖 ' + history);
-      if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
-      if(rules) $('#nav-rules').text('📜 ' + rules);
-      if(fort) $('#nav-fort').text('🏰 ' + fort);
-      if(news) $('#nav-news').text('🔥 ' + news);
+      if(home) $('#nav-home').text(home);
+      if(history) $('#nav-history').text(history);
+      if(alliances) $('#nav-alliances').text(alliances);
+      if(rules) $('#nav-rules').text(rules);
+      if(fort) $('#nav-fort').text(fort);
+      if(news) $('#nav-news').text(news);
       if(apply) $('#nav-apply').text(apply);
-      if(community) $('#nav-community').text('💬 ' + community);
+      if(community) $('#nav-community').text(community);
     }
 
     $(document).ready(function() {
@@ -211,7 +212,7 @@
 
         function translatePage(lang){
           const pageTitle = getSafe(data, lang, "page-title");
-          const introBrand = getSafe(data, lang, "intro-text"); // FIX: slogan only (not "home")
+          const introBrand = getSafe(data, lang, "intro-text") || getSafe(data, lang, "home");
 
           const historyTitle = getSafe(data, lang, "history-title") || getSafe(data, lang, "page-title");
           const introduction = getSafe(data, lang, "introduction");
@@ -244,7 +245,7 @@
           const footer = getSafe(data, lang, "footer-text");
 
           if(pageTitle) $('#page-title').text(pageTitle);
-          if(introBrand) $('#intro-text').text(introBrand); // FIX
+          if(introBrand) $('#intro-text').text(introBrand);
 
           if(historyTitle) $('#history-title').text(historyTitle);
           if(introduction) $('#introduction').text(introduction);
@@ -276,13 +277,20 @@
 
           if(footer) $('#footer-text').text(footer);
 
-          translateCommon(data, lang);
+          // NAV immer übersetzen
+          translateNav(data, lang);
         }
 
-        translatePage('en');
+        // Init: saved lang
+        const saved = localStorage.getItem(LANG_KEY) || 'en';
+        $('#language-select').val(saved);
+        translatePage(saved);
 
+        // Change
         $('#language-select').on('change', function() {
-          translatePage($(this).val());
+          const lang = $(this).val();
+          localStorage.setItem(LANG_KEY, lang);
+          translatePage(lang);
         });
 
       }).fail(function() {
