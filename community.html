@@ -37,7 +37,6 @@
       </div>
     </div>
 
-    <!-- NAV (Reihenfolge wie im Screenshot): Home, History, Alliances, Rules, Fort, News, Apply, Community -->
     <nav class="nav">
       <div class="container nav-inner">
         <a id="nav-home" href="index.html">🏠 Home</a>
@@ -124,7 +123,9 @@
   </footer>
 
   <script>
+    // FIX: NAV immer aus index.json (nav-*), Page/Text aus community.json
     const FALLBACK_LANG = 'en';
+    const LANG_KEY = 'state214_lang';
 
     function getSafe(dict, lang, key){
       if(dict && dict[lang] && dict[lang][key] != null) return dict[lang][key];
@@ -132,69 +133,90 @@
       return null;
     }
 
-    function isSlogan(val){
-      return /all\s*stars\s*united/i.test(String(val || '').trim());
+    function translateNav(indexDict, lang){
+      const t = indexDict[lang] || indexDict[FALLBACK_LANG] || {};
+
+      const nHome      = t["nav-home"]      || (t["home"] ? "🏠 " + t["home"] : null);
+      const nHistory   = t["nav-history"]   || (t["history"] ? "📖 " + t["history"] : null);
+      const nAlliances = t["nav-alliances"] || (t["alliances"] ? "🛡️ " + t["alliances"] : null);
+      const nRules     = t["nav-rules"]     || (t["rules"] ? "📜 " + t["rules"] : null);
+      const nFort      = t["nav-fort"]      || (t["fort"] ? "🏰 " + t["fort"] : null);
+      const nNews      = t["nav-news"]      || (t["news"] ? "🔥 " + t["news"] : null);
+      const nApply     = t["nav-apply"]     || t["apply-nav"] || (t["apply"] ? "📝 " + t["apply"] : null);
+      const nCommunity = t["nav-community"] || (t["community"] ? "💬 " + t["community"] : null);
+
+      if(nHome) $('#nav-home').text(nHome);
+      if(nHistory) $('#nav-history').text(nHistory);
+      if(nAlliances) $('#nav-alliances').text(nAlliances);
+      if(nRules) $('#nav-rules').text(nRules);
+      if(nFort) $('#nav-fort').text(nFort);
+      if(nNews) $('#nav-news').text(nNews);
+      if(nApply) $('#nav-apply').text(nApply);
+      if(nCommunity) $('#nav-community').text(nCommunity);
     }
 
-    function translateCommon(dict, lang){
-      const navHome = getSafe(dict, lang, "home");
-      const history = getSafe(dict, lang, "history");
-      const alliances = getSafe(dict, lang, "alliances");
-      const rules = getSafe(dict, lang, "rules");
-      const fort = getSafe(dict, lang, "fort");
-      const news = getSafe(dict, lang, "news");
-      const apply = getSafe(dict, lang, "apply-nav");
-      const community = getSafe(dict, lang, "community");
+    $(document).ready(function(){
+      $.when(
+        $.getJSON('index.json'),
+        $.getJSON('community.json')
+      ).done(function(indexRes, communityRes){
+        const indexData = indexRes[0];
+        const communityData = communityRes[0];
 
-      if(navHome && !isSlogan(navHome)) $('#nav-home').text('🏠 ' + navHome);
-      if(history) $('#nav-history').text('📖 ' + history);
-      if(alliances) $('#nav-alliances').text('🛡️ ' + alliances);
-      if(rules) $('#nav-rules').text('📜 ' + rules);
-      if(fort) $('#nav-fort').text('🏰 ' + fort);
-      if(news) $('#nav-news').text('🔥 ' + news);
-      if(apply) $('#nav-apply').text(apply);
-      if(community) $('#nav-community').text('💬 ' + community);
-    }
+        function translatePage(lang){
+          const pageTitle = getSafe(communityData, lang, "page-title") || getSafe(indexData, lang, "page-title");
+          const introBrand = getSafe(communityData, lang, "intro-text") || "ALL STARS UNITED";
 
-    $.getJSON('community.json', function(data){
-      function translatePage(lang){
-        const pageTitle = getSafe(data, lang, "page-title");
-        const introBrand = getSafe(data, lang, "intro-text"); // slogan
-        const title = getSafe(data, lang, "community-title");
-        const desc = getSafe(data, lang, "community-description");
-        const footer = getSafe(data, lang, "footer-text");
+          const title = getSafe(communityData, lang, "community-title");
+          const desc = getSafe(communityData, lang, "community-description");
 
-        if(pageTitle) $('#page-title').text(pageTitle);
-        if(introBrand) $('#intro-text').text(introBrand); // never fallback to "home"
+          const connectTitle = getSafe(communityData, lang, "connect-title");
+          const connectSub = getSafe(communityData, lang, "connect-sub");
 
-        if(title) $('#community-title').text(title);
-        if(desc) $('#community-description').text(desc);
-        if(footer) $('#footer-text').text(footer);
+          const cdT = getSafe(communityData, lang, "card-discord-title");
+          const cdS = getSafe(communityData, lang, "card-discord-sub");
+          const ytT = getSafe(communityData, lang, "card-youtube-title");
+          const ytS = getSafe(communityData, lang, "card-youtube-sub");
+          const btT = getSafe(communityData, lang, "card-bot-title");
+          const btS = getSafe(communityData, lang, "card-bot-sub");
 
-        const cdT = getSafe(data, lang, "card-discord-title");
-        const cdS = getSafe(data, lang, "card-discord-sub");
-        const ytT = getSafe(data, lang, "card-youtube-title");
-        const ytS = getSafe(data, lang, "card-youtube-sub");
-        const btT = getSafe(data, lang, "card-bot-title");
-        const btS = getSafe(data, lang, "card-bot-sub");
+          const footer = getSafe(communityData, lang, "footer-text") || getSafe(indexData, lang, "footer-text");
 
-        if(cdT) $('#card-discord-title').text(cdT);
-        if(cdS) $('#card-discord-sub').text(cdS);
-        if(ytT) $('#card-youtube-title').text(ytT);
-        if(ytS) $('#card-youtube-sub').text(ytS);
-        if(btT) $('#card-bot-title').text(btT);
-        if(btS) $('#card-bot-sub').text(btS);
+          if(pageTitle) $('#page-title').text(pageTitle);
+          if(introBrand) $('#intro-text').text(introBrand);
 
-        translateCommon(data, lang);
-      }
+          if(title) $('#community-title').text(title);
+          if(desc) $('#community-description').text(desc);
 
-      translatePage('en');
+          if(connectTitle) $('#connect-title').text(connectTitle);
+          if(connectSub) $('#connect-sub').text(connectSub);
 
-      $('#language-select').on('change', function(){
-        translatePage($(this).val());
+          if(cdT) $('#card-discord-title').text(cdT);
+          if(cdS) $('#card-discord-sub').text(cdS);
+          if(ytT) $('#card-youtube-title').text(ytT);
+          if(ytS) $('#card-youtube-sub').text(ytS);
+          if(btT) $('#card-bot-title').text(btT);
+          if(btS) $('#card-bot-sub').text(btS);
+
+          if(footer) $('#footer-text').text(footer);
+
+          // NAV immer setzen
+          translateNav(indexData, lang);
+        }
+
+        const saved = localStorage.getItem(LANG_KEY) || 'en';
+        $('#language-select').val(saved);
+        translatePage(saved);
+
+        $('#language-select').on('change', function(){
+          const lang = $(this).val();
+          localStorage.setItem(LANG_KEY, lang);
+          translatePage(lang);
+        });
+
+      }).fail(function(){
+        console.error("Could not load index.json and/or community.json");
       });
-    }).fail(function(){
-      console.warn('community.json could not be loaded.');
     });
   </script>
 </body>
