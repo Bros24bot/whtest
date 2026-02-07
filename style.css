@@ -32,10 +32,9 @@
   --news-img-h-sm: 170px;
 
   /* APPLY banner tuning */
-  --apply-hero-h: 260px;      /* größer */
+  --apply-hero-h: 260px;
   --apply-hero-h-md: 220px;
   --apply-hero-h-sm: 190px;
-  --apply-hero-pos: 30%;      /* mehr Bild “unten/mitte” */
 }
 
 *{ box-sizing:border-box; }
@@ -713,8 +712,9 @@ a:hover{ opacity:.96; }
 .footer-link:hover{ text-decoration: underline; }
 
 /* ===================== APPLY BANNER ===================== */
+/* FIX: Bild komplett sichtbar -> object-fit: contain */
 .apply-hero{
-  margin: 14px 0 22px; /* mehr Abstand nach unten */
+  margin: 14px 0 22px;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.14);
@@ -724,11 +724,17 @@ a:hover{ opacity:.96; }
 
 .apply-hero img{
   width: 100%;
-  height: var(--apply-hero-h);      /* FIX: größer */
-  object-fit: cover;
-  object-position: center var(--apply-hero-pos); /* FIX: Bildausschnitt */
+  height: var(--apply-hero-h);  /* Feld bleibt gleich hoch */
+  object-fit: contain;          /* FIX: nichts wird abgeschnitten */
+  object-position: center;
   display: block;
-  filter: saturate(1.06) contrast(1.08);
+  filter: saturate(1.04) contrast(1.06);
+
+  /* dezenter Hintergrund, damit "Leerraum" hochwertig wirkt */
+  background:
+    radial-gradient(700px 260px at 50% 30%, rgba(108,198,255,.10), transparent 60%),
+    radial-gradient(700px 260px at 50% 80%, rgba(255,191,89,.08), transparent 60%),
+    rgba(0,0,0,.14);
 }
 
 /* ===================== APPLY FORM ===================== */
@@ -751,9 +757,9 @@ a:hover{ opacity:.96; }
   z-index: 1;
 }
 
-/* Message tiefer + garantiert unter Grid */
+/* FIX: Message tiefer */
 .apply-form .message-row{
-  margin-top: 18px; /* FIX: deutlich tiefer */
+  margin-top: 18px;
 }
 
 .apply-form label{
@@ -874,7 +880,6 @@ a:hover{ opacity:.96; }
     --news-img-max: 100%;
     --news-img-h: var(--news-img-h-md);
     --apply-hero-h: var(--apply-hero-h-md);
-    --apply-hero-pos: 32%;
   }
 }
 
@@ -902,6 +907,5 @@ a:hover{ opacity:.96; }
   :root{
     --news-img-h: var(--news-img-h-sm);
     --apply-hero-h: var(--apply-hero-h-sm);
-    --apply-hero-pos: 34%;
   }
 }
