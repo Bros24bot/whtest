@@ -37,6 +37,7 @@
       </div>
     </div>
 
+    <!-- NAV (Reihenfolge wie im Screenshot): Home, History, Alliances, Rules, Fort, News, Apply, Community -->
     <nav class="nav">
       <div class="container nav-inner">
         <a id="nav-home" href="index.html">🏠 Home</a>
@@ -45,6 +46,7 @@
         <a id="nav-rules" href="rules.html">📜 Rules</a>
         <a id="nav-fort" href="fort.html">🏰 Fort</a>
         <a id="nav-news" href="news.html" class="active">🔥 News</a>
+        <a id="nav-apply" href="apply.html">📝 Apply</a>
         <a id="nav-community" href="community.html">💬 Community</a>
       </div>
     </nav>
@@ -128,7 +130,7 @@
           <a class="footer-link" href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
         </div>
         <div class="footer-line">
-          Design & Build: <span class="footer-strong">Bros24</span>
+          Design &amp; Build: <span class="footer-strong">Bros24</span>
         </div>
       </div>
     </div>
@@ -150,6 +152,7 @@
       const rules = getSafe(dict, lang, "rules");
       const fort = getSafe(dict, lang, "fort");
       const news = getSafe(dict, lang, "news");
+      const apply = getSafe(dict, lang, "apply-nav");
       const community = getSafe(dict, lang, "community");
 
       if(home) $('#nav-home').text('🏠 ' + home);
@@ -158,6 +161,7 @@
       if(rules) $('#nav-rules').text('📜 ' + rules);
       if(fort) $('#nav-fort').text('🏰 ' + fort);
       if(news) $('#nav-news').text('🔥 ' + news);
+      if(apply) $('#nav-apply').text(apply); // apply-nav already contains 📝
       if(community) $('#nav-community').text('💬 ' + community);
     }
 
@@ -169,8 +173,16 @@
         if(pageTitle) $('#page-title').text(pageTitle);
         if(home) $('#intro-text').text(home);
 
+        const heroTitle = getSafe(data, lang, "news-hero-title");
+        if(heroTitle) $('#news-hero-title').text(heroTitle);
+
         const date = getSafe(data, lang, "date");
         if(date) $('#news-date').text(date);
+
+        const feedTitle = getSafe(data, lang, "news-feed-title");
+        const feedSub = getSafe(data, lang, "news-feed-sub");
+        if(feedTitle) $('#news-feed-title').text(feedTitle);
+        if(feedSub) $('#news-feed-sub').text(feedSub);
 
         const s1t = getSafe(data, lang, "section1-title");
         const s1a = getSafe(data, lang, "section1-text1");
