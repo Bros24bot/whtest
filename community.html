@@ -110,14 +110,14 @@
         </div>
       </section>
 
-      <section class="card">
+      <section class="card card-3d">
         <div class="section-head">
           <h3 id="connect-title">Connect</h3>
           <p class="muted" id="connect-sub">Discord • YouTube • Tools</p>
         </div>
 
         <div class="social-grid">
-          <a href="https://discord.gg/rNtp9vrkk9" target="_blank" rel="noopener" class="social-card">
+          <a href="https://discord.gg/rNtp9vrkk9" target="_blank" rel="noopener" class="social-card card-3d">
             <img src="assets/discord.jpg" alt="Join Discord" />
             <div class="card-text">
               <div class="caption" id="card-discord-title">Discord</div>
@@ -125,7 +125,7 @@
             </div>
           </a>
 
-          <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" rel="noopener" class="social-card">
+          <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" rel="noopener" class="social-card card-3d">
             <img src="assets/renee.jpg" alt="Follow on YouTube" />
             <div class="card-text">
               <div class="caption" id="card-youtube-title">YouTube</div>
@@ -134,7 +134,7 @@
           </a>
 
           <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands"
-             target="_blank" rel="noopener" class="social-card">
+             target="_blank" rel="noopener" class="social-card card-3d">
             <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
             <div class="card-text">
               <div class="caption" id="card-bot-title">Bros24 Bot</div>
@@ -263,25 +263,7 @@
     });
   </script>
 
-  <!--
-    WICHTIG: Damit das Icon oben links sichtbar ist, brauchst du in style.css (einmalig):
-    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
-    .brand-text h1 { margin:0; }
-    .brand-text p { margin:0; }
-  -->
-
-  <script>
-    (function wos_nav_init(){
-      const btn = document.querySelector('.nav-toggle');
-      const inner = document.querySelector('.nav-inner');
-      if(!btn || !inner) return;
-      btn.addEventListener('click', () => {
-        const open = inner.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
-
+  <script src="js/nav.js"></script>
+  <script src="js/tilt.js"></script>
 </body>
 </html>
