@@ -99,8 +99,10 @@
     <div class="container">
 
       <section class="hero">
-        <img src="assets/newspic.png" alt="State 214 News Banner" class="hero-img" />
-        <div class="hero-overlay"></div>
+        <div class="hero-inner">
+          <img src="assets/newspic.png" alt="State 214 News Banner" class="hero-img" loading="eager" />
+          <div class="hero-overlay"></div>
+        </div>
         <div class="hero-content">
           <div class="hero-kicker">STATE 214</div>
           <h2 id="news-hero-title">🔥 News & Highlights</h2>
@@ -108,7 +110,7 @@
         </div>
       </section>
 
-      <section class="card">
+      <section class="card card-3d">
         <div class="section-head">
           <h3 id="news-feed-title">News Feed</h3>
           <p class="muted" id="news-feed-sub">Latest community highlights</p>
@@ -118,7 +120,7 @@
         <div class="news-grid" id="news-grid">
 
           <!-- SECTION 6 (26–31 Jan 2026) -->
-          <article class="news-card" data-date="2026-01-31" data-order="6">
+          <article class="news-card card-3d" data-date="2026-01-31" data-order="6">
             <h2 class="news-title" id="section6-title">Successful SvS Event: State 214 Prevails Against State 268</h2>
             <p class="muted" id="section6-meta" style="margin-top:-6px;"></p>
 
@@ -135,7 +137,7 @@
           </article>
 
           <!-- SECTION 5 (13 Sep 2025) -->
-          <article class="news-card" data-date="2025-09-13" data-order="5">
+          <article class="news-card card-3d" data-date="2025-09-13" data-order="5">
             <h2 class="news-title" id="section5-title">Another Triumph – 13 September</h2>
             <p id="section5-text1"></p>
             <p id="section5-text2"></p>
@@ -145,7 +147,7 @@
           </article>
 
           <!-- SECTION 4 (16 Aug 2025) -->
-          <article class="news-card" data-date="2025-08-16" data-order="4">
+          <article class="news-card card-3d" data-date="2025-08-16" data-order="4">
             <h2 class="news-title" id="section4-title">SVS Victory – 16 August</h2>
             <p id="section4-text1"></p>
             <p id="section4-text2"></p>
@@ -154,21 +156,21 @@
           </article>
 
           <!-- SECTION 3 (fallback: 10 Aug 2025) -->
-          <article class="news-card" data-date="2025-08-10" data-order="3">
+          <article class="news-card card-3d" data-date="2025-08-10" data-order="3">
             <h2 class="news-title" id="section3-title">Teamwork in Action</h2>
             <p id="section3-text1"></p>
             <p id="section3-text2"></p>
           </article>
 
           <!-- SECTION 2 (3 Aug 2025) -->
-          <article class="news-card" data-date="2025-08-03" data-order="2">
+          <article class="news-card card-3d" data-date="2025-08-03" data-order="2">
             <h2 class="news-title" id="section2-title">The Battle Begins – 3 August</h2>
             <p id="section2-text1"></p>
             <p id="section2-text2"></p>
           </article>
 
           <!-- SECTION 1 (30 Jul 2025) -->
-          <article class="news-card" data-date="2025-07-30" data-order="1">
+          <article class="news-card card-3d" data-date="2025-07-30" data-order="1">
             <h2 class="news-title" id="section1-title">One Team – Five Alliances – 30 July</h2>
             <p id="section1-text1"></p>
             <p id="section1-text2"></p>
@@ -435,26 +437,7 @@
     });
   </script>
 
-  <!--
-    EINMALIG in style.css hinzufügen (für alle Seiten):
-
-    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
-    .brand-text h1 { margin:0; }
-    .brand-text p { margin:0; }
-  -->
-
-  <script>
-    (function wos_nav_init(){
-      const btn = document.querySelector('.nav-toggle');
-      const inner = document.querySelector('.nav-inner');
-      if(!btn || !inner) return;
-      btn.addEventListener('click', () => {
-        const open = inner.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
-
+  <script src="js/nav.js"></script>
+  <script src="js/tilt.js"></script>
 </body>
 </html>
