@@ -98,7 +98,7 @@
   <main class="content">
     <div class="container">
 
-      <section class="card">
+      <section class="card card-3d">
         <div class="section-head">
           <h3 id="ke-title">📢 Please respect all guidelines during the event</h3>
           <p class="muted" id="ke-sub">State 214 ruleset</p>
@@ -106,7 +106,7 @@
 
         <div class="rules-grid">
 
-          <article class="rule-card">
+          <article class="rule-card card-3d">
             <div class="rule-head">
               <div class="badge" id="badge-event">EVENT</div>
               <h2 class="rule-title" id="event-title">1️⃣ Kill Event – Brothers in Arms (BIA)</h2>
@@ -128,7 +128,7 @@
             </div>
           </article>
 
-          <article class="rule-card">
+          <article class="rule-card card-3d">
             <div class="rule-head">
               <div class="badge" id="badge-castle">CASTLE</div>
               <h2 class="rule-title" id="castle-title">2️⃣ Castle Rotation</h2>
@@ -144,7 +144,7 @@
             </div>
           </article>
 
-          <article class="rule-card">
+          <article class="rule-card card-3d">
             <div class="rule-head">
               <div class="badge" id="badge-state">STATE</div>
               <h2 class="rule-title" id="facility-title">3️⃣ Facility Assignment</h2>
@@ -307,25 +307,7 @@
     });
   </script>
 
-  <!--
-    EINMALIG in style.css hinzufügen (für alle Seiten):
-    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
-    .brand-text h1 { margin:0; }
-    .brand-text p { margin:0; }
-  -->
-
-  <script>
-    (function wos_nav_init(){
-      const btn = document.querySelector('.nav-toggle');
-      const inner = document.querySelector('.nav-inner');
-      if(!btn || !inner) return;
-      btn.addEventListener('click', () => {
-        const open = inner.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
-
+  <script src="js/nav.js"></script>
+  <script src="js/tilt.js"></script>
 </body>
 </html>
