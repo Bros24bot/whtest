@@ -99,9 +99,10 @@
     <div class="container">
 
       <section class="hero">
-        <img src="assets/history.jpg" alt="State 214 History Banner" class="hero-img" />
-        <div class="hero-overlay"></div>
-
+        <div class="hero-inner">
+          <img src="assets/history.jpg" alt="State 214 History Banner" class="hero-img" loading="eager" />
+          <div class="hero-overlay"></div>
+        </div>
         <div class="hero-content">
           <div class="hero-kicker">STATE 214</div>
           <h2 id="history-title">State 214: A Story of Growth and Unity</h2>
@@ -113,7 +114,7 @@
         </div>
       </section>
 
-      <section class="card">
+      <section class="card card-3d">
         <h3 id="growth-title">Growth</h3>
         <p id="growth">
           Through countless battles, strategic decisions, and community efforts, State 214 has become one of the most successful and respected states in the game.
@@ -121,7 +122,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section class="card card-3d">
         <h3 id="losses-title">Losses and Challenges: January - March 2024</h3>
         <p id="losses">
           From January to March 2024, State 214 experienced significant losses. We saw the dissolution of several key alliances, including AXE (formerly TEX),
@@ -130,7 +131,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section class="card card-3d">
         <h3 id="alliances-title">Challenges with New Alliances: September - December 2024</h3>
         <p id="alliances-text">
           In September 2024, we welcomed a new alliance that initially joined State 214 with good intentions. However, after a short period, some members of this
@@ -141,7 +142,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section class="card card-3d">
         <h3 id="key-milestones-title">Key Milestones</h3>
         <p id="key-milestones">
           In April 2024, State 214 welcomed <strong>ODA</strong> from State 245, marking a pivotal moment in its development. Their leadership and participation
@@ -156,7 +157,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section class="card card-3d">
         <div class="section-head">
           <h3 id="recent-developments-title">Recent Developments</h3>
           <p class="muted" id="recent-developments-sub">Latest state changes</p>
@@ -181,7 +182,7 @@
         </div>
       </section>
 
-      <section class="card">
+      <section class="card card-3d">
         <h3 id="looking-ahead-title">Looking Ahead</h3>
         <p id="looking-ahead">
           The future of State 214 is focused on a common goal: the Frostdragon Tyrant.
@@ -343,26 +344,7 @@
     });
   </script>
 
-  <!--
-    EINMALIG in style.css hinzufügen (für alle Seiten):
-
-    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
-    .brand-text h1 { margin:0; }
-    .brand-text p { margin:0; }
-  -->
-
-  <script>
-    (function wos_nav_init(){
-      const btn = document.querySelector('.nav-toggle');
-      const inner = document.querySelector('.nav-inner');
-      if(!btn || !inner) return;
-      btn.addEventListener('click', () => {
-        const open = inner.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
-
+  <script src="js/nav.js"></script>
+  <script src="js/tilt.js"></script>
 </body>
 </html>
