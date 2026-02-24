@@ -42,6 +42,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-192x192.png">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -98,9 +100,10 @@
   <main class="content">
     <div class="container">
       <section class="hero">
-        <img src="assets/start.jpg" alt="State 214 Banner" class="hero-img" />
-        <div class="hero-overlay"></div>
-
+        <div class="hero-inner">
+          <img src="assets/start.jpg" alt="State 214 Banner" class="hero-img" loading="eager" />
+          <div class="hero-overlay"></div>
+        </div>
         <div class="hero-content">
           <div class="hero-kicker">STATE 214</div>
           <h2 id="welcome-title">Welcome to State 214</h2>
@@ -112,7 +115,7 @@
       </section>
 
       <div class="grid-2">
-        <section class="card highlights">
+        <section class="card card-3d highlights">
           <h3 id="about-title">❄️ About This Website</h3>
           <ul class="list">
             <li id="highlight1">🧭 Orientation for new players joining State 214</li>
@@ -123,7 +126,7 @@
           </ul>
         </section>
 
-        <section class="card community">
+        <section class="card card-3d community">
           <h3 id="mission-title">🌐 Our Mission</h3>
           <p id="mission-text">
             We aim to keep State 214 fair, organized, and united. Through diplomacy, leadership and active communication,
@@ -142,23 +145,23 @@
         </section>
       </div>
 
-      <section class="card">
+      <section class="card card-3d">
         <div class="section-head">
           <h3 id="community-title">Community</h3>
           <p class="muted" id="community-subtitle">Links & tools</p>
         </div>
 
         <div class="social-grid">
-          <a href="https://discord.gg/rNtp9vrkk9" target="_blank" rel="noopener" class="social-card">
-            <img src="assets/discord.jpg" alt="Join Discord" />
+          <a href="https://discord.gg/rNtp9vrkk9" target="_blank" rel="noopener" class="social-card card-3d">
+            <img src="assets/discord.jpg" alt="Join Discord" loading="lazy" />
             <div class="card-text">
               <div class="caption" id="social-discord-title">Discord</div>
               <div class="sub" id="social-discord-sub">Join State 214</div>
             </div>
           </a>
 
-          <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" rel="noopener" class="social-card">
-            <img src="assets/renee.jpg" alt="Follow on YouTube" />
+          <a href="https://www.youtube.com/channel/UCnayE7qrEbkQWOqE4XsfWmQ" target="_blank" rel="noopener" class="social-card card-3d">
+            <img src="assets/renee.jpg" alt="Follow on YouTube" loading="lazy" />
             <div class="card-text">
               <div class="caption" id="social-youtube-title">YouTube</div>
               <div class="sub" id="social-youtube-sub">Videos & guides</div>
@@ -166,8 +169,8 @@
           </a>
 
           <a href="https://discord.com/oauth2/authorize?client_id=1387844888187375758&permissions=17869211692048&integration_type=0&scope=bot+applications.commands"
-             target="_blank" rel="noopener" class="social-card">
-            <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" />
+             target="_blank" rel="noopener" class="social-card card-3d">
+            <img src="assets/botbros.jpg" alt="Invite Bros24 Bot" loading="lazy" />
             <div class="card-text">
               <div class="caption" id="social-bot-title">Bros24 Bot</div>
               <div class="sub" id="social-bot-sub">Invite & commands</div>
@@ -295,26 +298,7 @@
     });
   </script>
 
-  <!--
-    EINMALIG in style.css hinzufügen (für alle Seiten):
-
-    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
-    .brand-text h1 { margin:0; }
-    .brand-text p { margin:0; }
-  -->
-
-  <script>
-    (function wos_nav_init(){
-      const btn = document.querySelector('.nav-toggle');
-      const inner = document.querySelector('.nav-inner');
-      if(!btn || !inner) return;
-      btn.addEventListener('click', () => {
-        const open = inner.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
-
+  <script src="js/nav.js"></script>
+  <script src="js/tilt.js"></script>
 </body>
 </html>
