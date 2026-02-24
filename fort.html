@@ -99,8 +99,10 @@
     <div class="container">
 
       <section class="hero">
-        <img src="assets/fortrules.jpg" alt="Fortress Rules" class="hero-img" />
-        <div class="hero-overlay"></div>
+        <div class="hero-inner">
+          <img src="assets/fortrules.jpg" alt="Fortress Rules" class="hero-img" loading="eager" />
+          <div class="hero-overlay"></div>
+        </div>
         <div class="hero-content">
           <div class="hero-kicker">STATE 214</div>
           <h2 id="fort-title">⚔️ Fortress Strategy & Distribution</h2>
@@ -112,7 +114,7 @@
         </div>
       </section>
 
-      <section class="card">
+      <section class="card card-3d">
         <h3 id="fort-details-title">Distribution</h3>
         <p id="fort-details">
           The weekly fortress battles are not just for glory – they are a key part of our state’s long-term strategy. Here's how we structure the distribution:
@@ -120,17 +122,17 @@
 
         <!-- TOP 3 ONLY -->
         <div class="fort-grid">
-          <article class="fort-card top">
+          <article class="fort-card card-3d top">
             <div class="badge top" id="badge-rank1">RANK 1</div>
             <div class="fort-line" id="rank-1">Rank 1: 1x Stronghold & 4x Fort</div>
           </article>
 
-          <article class="fort-card">
+          <article class="fort-card card-3d">
             <div class="badge" id="badge-rank2">RANK 2</div>
             <div class="fort-line" id="rank-2">Rank 2: 1x Stronghold & 3x Fort</div>
           </article>
 
-          <article class="fort-card">
+          <article class="fort-card card-3d">
             <div class="badge" id="badge-rank3">RANK 3</div>
             <div class="fort-line" id="rank-3">Rank 3: 1x Stronghold & 2x Fort</div>
           </article>
@@ -271,26 +273,7 @@
     });
   </script>
 
-  <!--
-    EINMALIG in style.css hinzufügen (für alle Seiten, damit Logo oben links sauber sitzt):
-
-    .brand-home { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .brand-logo { width:42px; height:42px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
-    .brand-text h1 { margin:0; }
-    .brand-text p { margin:0; }
-  -->
-
-  <script>
-    (function wos_nav_init(){
-      const btn = document.querySelector('.nav-toggle');
-      const inner = document.querySelector('.nav-inner');
-      if(!btn || !inner) return;
-      btn.addEventListener('click', () => {
-        const open = inner.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
-
+  <script src="js/nav.js"></script>
+  <script src="js/tilt.js"></script>
 </body>
 </html>
