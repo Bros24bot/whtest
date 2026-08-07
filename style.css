@@ -532,8 +532,8 @@ a:hover { opacity: 0.92; }
 /* 3D Tilt – nur wenn .card-3d gesetzt */
 .card-3d {
   transform-style: preserve-3d;
-  transform: perspective(var(--perspective)) rotateX(0) rotateY(0);
-  transition: transform 0.15s ease-out, box-shadow var(--transition), border-color var(--transition-fast);
+  will-change: transform;
+  transition: box-shadow var(--transition), border-color var(--transition-fast);
 }
 
 .card-3d.tilt-active {
@@ -603,7 +603,16 @@ a:hover { opacity: 0.92; }
   background: rgba(255, 255, 255, 0.06);
 }
 
-.social-card.card-3d.tilt-active { transform: translateY(-4px); }
+.social-card.card-3d:hover {
+  /* tilt.js steuert transform; kein festes CSS-transform überschreiben */
+  transform: none;
+}
+
+.social-card.card-3d.tilt-active {
+  box-shadow: var(--lift), var(--glow-ice);
+  border-color: rgba(108, 198, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+}
 
 .social-card img {
   width: 100%;
