@@ -288,6 +288,208 @@ a:hover { opacity: 0.92; }
   font-size: 1.02rem;
 }
 
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.hero-home .hero-inner { min-height: min(72vh, 520px); }
+.hero-home .hero-img { height: min(72vh, 520px); }
+
+/* ===================== BUTTONS ===================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition), filter var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover { opacity: 1; transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn-gold {
+  background: linear-gradient(180deg, rgba(255, 191, 89, 0.98), rgba(180, 130, 50, 0.92));
+  color: #0b1223;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-gold:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.4), var(--glow-gold);
+}
+
+.btn-ice {
+  background: linear-gradient(180deg, rgba(108, 198, 255, 0.95), rgba(50, 120, 180, 0.9));
+  color: #041018;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.btn-ice:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.4), var(--glow-ice);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--text);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+/* ===================== PROMO SECTIONS (WSCO / Aria) ===================== */
+.promo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 0;
+  margin-bottom: var(--gap);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(165deg, var(--card1), var(--card2));
+  box-shadow: var(--shadow2);
+  animation: fadeInUp 0.7s var(--transition) both;
+  position: relative;
+}
+
+.promo-reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); }
+.promo-reverse .promo-media { order: 2; }
+.promo-reverse .promo-body { order: 1; }
+
+.promo-media {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.promo-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.promo:hover .promo-media img { transform: scale(1.04); }
+
+.promo-media-bot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(500px 280px at 50% 40%, rgba(108, 198, 255, 0.22), transparent 65%),
+    linear-gradient(160deg, #0c1528, #071018);
+}
+
+.promo-media-bot img {
+  width: min(100%, 360px);
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  padding: 28px;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
+}
+
+.promo-body {
+  padding: 28px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.promo-eyebrow {
+  margin: 0 0 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ice);
+}
+
+.promo-wsco .promo-eyebrow { color: var(--gold); }
+
+.promo-body h3 {
+  margin: 0 0 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.promo-body > p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-weight: 500;
+  max-width: 52ch;
+}
+
+.promo-list {
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.promo-list li {
+  position: relative;
+  padding-left: 22px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgba(238, 242, 255, 0.9);
+}
+
+.promo-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ice);
+  box-shadow: 0 0 12px rgba(108, 198, 255, 0.55);
+}
+
+.promo-wsco .promo-list li::before {
+  background: var(--gold);
+  box-shadow: 0 0 12px rgba(255, 191, 89, 0.5);
+}
+
+.promo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 /* ===================== BENTO GRID ===================== */
 .grid-2 {
   display: grid;
@@ -906,7 +1108,17 @@ a:hover { opacity: 0.92; }
   .fort-grid { grid-template-columns: 1fr; }
   .hero-img { height: 340px; }
   .hero-inner { min-height: 340px; }
+  .hero-home .hero-img,
+  .hero-home .hero-inner { height: min(58vh, 420px); min-height: 320px; }
   .hero-content h2 { font-size: 1.6rem; }
+  .hero-cta { justify-content: flex-start; }
+  .promo,
+  .promo-reverse { grid-template-columns: 1fr; }
+  .promo-reverse .promo-media,
+  .promo-reverse .promo-body { order: unset; }
+  .promo-media { min-height: 220px; }
+  .promo-media img { min-height: 220px; }
+  .promo-media-bot img { min-height: 0; max-height: 260px; }
   #language-select { min-width: 180px; }
   .footer-bottom { justify-content: center; text-align: center; }
   .apply-form .grid-2 { grid-template-columns: 1fr; }
@@ -929,6 +1141,14 @@ a:hover { opacity: 0.92; }
   .hero-content { padding: 20px 18px 18px; text-align: center; }
   .hero-kicker { margin-left: auto; margin-right: auto; }
   .hero-content p { margin-left: auto; margin-right: auto; }
+  .hero-cta { justify-content: center; }
+  .hero-home .hero-img,
+  .hero-home .hero-inner { height: min(52vh, 360px); min-height: 280px; }
+  .promo-body { padding: 22px 20px 20px; }
+  .promo-actions { justify-content: stretch; }
+  .promo-actions .btn { flex: 1 1 auto; }
+  .btn { width: 100%; max-width: 100%; }
+  .hero-cta .btn { width: auto; min-width: min(100%, 200px); }
   .grid-2 { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; align-items: center; }
   :root {
@@ -972,7 +1192,8 @@ a:hover { opacity: 0.92; }
 a, button { -webkit-tap-highlight-color: transparent; }
 
 img { max-width: 100%; height: auto; }
-.hero img { width: 100%; height: auto; }
+.hero .hero-img { width: 100%; height: 420px; object-fit: cover; }
+.hero-home .hero-img { height: min(72vh, 520px); }
 
 @media (max-width: 420px) {
   :root { --gap: 16px; }

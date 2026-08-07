@@ -2,308 +2,477 @@
   "en": {
     "page-title": "Community",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 Join Our Community",
-    "community-description": "Stay informed, connect with allies, participate in events, and be part of State 214's united voice.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "Join Our Community",
+    "community-description": "Stay informed, connect with allies, and use Aria for alliance ops — part of State 214’s united voice.",
+    "cta-wsco": "Join WSCO Discord",
+    "cta-aria": "Invite Aria Bot",
+    "wsco-eyebrow": "WSCO Community",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "Guides, gift codes, calculators, transfer board and multilingual help — the independent hub for chiefs worldwide.",
+    "wsco-f1": "26 language channels & live strategy talk",
+    "wsco-f2": "Gift codes, Event Day kits & calculators",
+    "wsco-f3": "Verified transfer board & alliance support",
+    "wsco-btn": "Join Discord",
+    "wsco-tools": "WSCO Tools Hub",
+    "aria-eyebrow": "Aria Bot · by WSCO",
+    "aria-title": "Alliance Ops. One Discord Bot.",
+    "aria-text": "Built for R4/R5: one unlock opens /wsco game ops and /aria Discord management — war boards, events, tickets, security.",
+    "aria-f1": "/wsco — war week, rallies, roster & event tools",
+    "aria-f2": "/aria — tickets, moderation, welcome & community",
+    "aria-f3": "Menus in 26 languages · developed by Bros24",
+    "aria-btn": "Invite Aria",
+    "aria-learn": "Product page",
     "connect-title": "Connect",
-    "connect-sub": "Discord • YouTube • Tools",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "Join the hub for events, guides, and coordination.",
-
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "Guides, codes & community",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "Highlights, guides, and community content.",
-
-    "card-bot-title": "Bros24 Bot",
-    "card-bot-sub": "Invite the bot for automation and tools.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "Videos & guides",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "Alliance ops & Discord tools",
+    "footer-text": "© 2026 State 214 · WSCO — Built by players, for players · All Stars United"
   },
-
   "de": {
     "page-title": "Community",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 Werde Teil unserer Community",
-    "community-description": "Bleib informiert, vernetze dich mit Verbündeten, nimm an Events teil und sei Teil der vereinten Stimme von State 214.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "Werde Teil unserer Community",
+    "community-description": "Bleib informiert, vernetze dich mit Verbündeten und nutze Aria für Allianz-Ops — Teil der vereinten Stimme von State 214.",
+    "cta-wsco": "WSCO Discord beitreten",
+    "cta-aria": "Aria Bot einladen",
+    "wsco-eyebrow": "WSCO Community",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "Guides, Gift Codes, Rechner, Transfer-Board und Hilfe in vielen Sprachen — der unabhängige Hub für Chiefs weltweit.",
+    "wsco-f1": "26 Sprachkanäle & Live-Strategie",
+    "wsco-f2": "Gift Codes, Event-Day-Kits & Rechner",
+    "wsco-f3": "Verifiziertes Transfer-Board & Allianz-Support",
+    "wsco-btn": "Discord beitreten",
+    "wsco-tools": "WSCO Tools Hub",
+    "aria-eyebrow": "Aria Bot · von WSCO",
+    "aria-title": "Allianz-Ops. Ein Discord-Bot.",
+    "aria-text": "Für R4/R5: Ein Unlock öffnet /wsco Game-Ops und /aria Discord-Management — War Boards, Events, Tickets, Security.",
+    "aria-f1": "/wsco — War Week, Rallies, Roster & Event-Tools",
+    "aria-f2": "/aria — Tickets, Moderation, Welcome & Community",
+    "aria-f3": "Menüs in 26 Sprachen · entwickelt von Bros24",
+    "aria-btn": "Aria einladen",
+    "aria-learn": "Produktseite",
     "connect-title": "Connect",
-    "connect-sub": "Discord • YouTube • Tools",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "Der Hub für Events, Guides und Koordination.",
-
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "Guides, Codes & Community",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "Highlights, Guides und Community-Content.",
-
-    "card-bot-title": "Bros24 Bot",
-    "card-bot-sub": "Lade den Bot für Automatisierung und Tools ein.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "Videos & Guides",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "Allianz-Ops & Discord-Tools",
+    "footer-text": "© 2026 Staat 214 · WSCO — Built by players, for players · All Stars United"
   },
-
   "fr": {
     "page-title": "Communauté",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 Rejoignez notre communauté",
-    "community-description": "Restez informé, connectez-vous avec vos alliés, participez aux événements et faites partie de la voix unie de l'État 214.",
-
-    "connect-title": "Se connecter",
-    "connect-sub": "Discord • YouTube • Outils",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "Rejoignez le hub pour les événements, guides et coordination.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "Rejoignez notre communauté",
+    "community-description": "Restez informé, connectez-vous aux alliés et utilisez Aria pour les ops d'alliance — la voix unie de l'État 214.",
+    "cta-wsco": "Rejoindre WSCO Discord",
+    "cta-aria": "Inviter Aria Bot",
+    "wsco-eyebrow": "Communauté WSCO",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "Guides, codes cadeaux, calculateurs, board de transfert et aide multilingue — le hub indépendant pour les chefs du monde entier.",
+    "wsco-f1": "26 canaux linguistiques & stratégie en direct",
+    "wsco-f2": "Codes cadeaux, kits Event Day & calculateurs",
+    "wsco-f3": "Board de transfert vérifié & support alliance",
+    "wsco-btn": "Rejoindre Discord",
+    "wsco-tools": "Hub Outils WSCO",
+    "aria-eyebrow": "Aria Bot · par WSCO",
+    "aria-title": "Ops d'alliance. Un bot Discord.",
+    "aria-text": "Pour R4/R5 : un unlock ouvre /wsco ops jeu et /aria gestion Discord — war boards, events, tickets, sécurité.",
+    "aria-f1": "/wsco — war week, rallies, roster & outils events",
+    "aria-f2": "/aria — tickets, modération, welcome & communauté",
+    "aria-f3": "Menus en 26 langues · développé par Bros24",
+    "aria-btn": "Inviter Aria",
+    "aria-learn": "Page produit",
+    "connect-title": "Connecter",
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "Guides, codes & communauté",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "Temps forts, guides et contenu communautaire.",
-
-    "card-bot-title": "Bot Bros24",
-    "card-bot-sub": "Invitez le bot pour l'automatisation et les outils.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "Vidéos & guides",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "Ops alliance & outils Discord",
+    "footer-text": "© 2026 État 214 · WSCO — Créé par des joueurs, pour des joueurs · All Stars United"
   },
-
   "pl": {
     "page-title": "Społeczność",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 Dołącz do naszej społeczności",
-    "community-description": "Bądź na bieżąco, połącz się z sojusznikami, bierz udział w wydarzeniach i twórz z nami zjednoczony głos State 214.",
-
-    "connect-title": "Kontakt",
-    "connect-sub": "Discord • YouTube • Narzędzia",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "Dołącz do centrum wydarzeń, poradników i koordynacji.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "Dołącz do naszej społeczności",
+    "community-description": "Bądź na bieżąco, łącz się z sojusznikami i używaj Arii do ops sojuszu — zjednoczony głos State 214.",
+    "cta-wsco": "Dołącz do WSCO Discord",
+    "cta-aria": "Zaproś Aria Bot",
+    "wsco-eyebrow": "Społeczność WSCO",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "Poradniki, kody, kalkulatory, tablica transferów i pomoc wielojęzyczna — niezależny hub dla chiefów na całym świecie.",
+    "wsco-f1": "26 kanałów językowych i strategia na żywo",
+    "wsco-f2": "Kody gift, zestawy Event Day i kalkulatory",
+    "wsco-f3": "Zweryfikowana tablica transferów i wsparcie sojuszu",
+    "wsco-btn": "Dołącz do Discord",
+    "wsco-tools": "Hub narzędzi WSCO",
+    "aria-eyebrow": "Aria Bot · od WSCO",
+    "aria-title": "Ops sojuszu. Jeden bot Discord.",
+    "aria-text": "Dla R4/R5: jeden unlock otwiera /wsco ops gry i /aria zarządzanie Discord — war boards, eventy, tickety, security.",
+    "aria-f1": "/wsco — war week, rally, roster i narzędzia eventów",
+    "aria-f2": "/aria — tickety, moderacja, welcome i społeczność",
+    "aria-f3": "Menu w 26 językach · stworzone przez Bros24",
+    "aria-btn": "Zaproś Arię",
+    "aria-learn": "Strona produktu",
+    "connect-title": "Połącz się",
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "Poradniki, kody i społeczność",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "Highlighty, poradniki i materiały społeczności.",
-
-    "card-bot-title": "Bot Bros24",
-    "card-bot-sub": "Zaproś bota do automatyzacji i narzędzi.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "Filmy i poradniki",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "Ops sojuszu i narzędzia Discord",
+    "footer-text": "© 2026 Stan 214 · WSCO — Zbudowane przez graczy, dla graczy · All Stars United"
   },
-
   "it": {
     "page-title": "Community",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 Unisciti alla nostra community",
-    "community-description": "Rimani informato, connettiti con gli alleati, partecipa agli eventi e fai parte della voce unita dello Stato 214.",
-
-    "connect-title": "Collegati",
-    "connect-sub": "Discord • YouTube • Strumenti",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "Unisciti all'hub per eventi, guide e coordinamento.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "Unisciti alla nostra community",
+    "community-description": "Resta informato, connettiti con gli alleati e usa Aria per le ops di alleanza — la voce unita dello Stato 214.",
+    "cta-wsco": "Unisciti a WSCO Discord",
+    "cta-aria": "Invita Aria Bot",
+    "wsco-eyebrow": "Community WSCO",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "Guide, gift code, calcolatori, transfer board e aiuto multilingue — l'hub indipendente per i chief di tutto il mondo.",
+    "wsco-f1": "26 canali lingua e strategia live",
+    "wsco-f2": "Gift code, kit Event Day e calcolatori",
+    "wsco-f3": "Transfer board verificato e supporto alleanza",
+    "wsco-btn": "Unisciti a Discord",
+    "wsco-tools": "Hub strumenti WSCO",
+    "aria-eyebrow": "Aria Bot · by WSCO",
+    "aria-title": "Ops alleanza. Un bot Discord.",
+    "aria-text": "Per R4/R5: un unlock apre /wsco game ops e /aria gestione Discord — war board, eventi, ticket, security.",
+    "aria-f1": "/wsco — war week, rally, roster e tool eventi",
+    "aria-f2": "/aria — ticket, moderazione, welcome e community",
+    "aria-f3": "Menu in 26 lingue · sviluppato da Bros24",
+    "aria-btn": "Invita Aria",
+    "aria-learn": "Pagina prodotto",
+    "connect-title": "Connettiti",
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "Guide, codici e community",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "Highlight, guide e contenuti della community.",
-
-    "card-bot-title": "Bot Bros24",
-    "card-bot-sub": "Invita il bot per automazione e strumenti.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "Video e guide",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "Ops alleanza e tool Discord",
+    "footer-text": "© 2026 Stato 214 · WSCO — Creato da giocatori, per giocatori · All Stars United"
   },
-
   "es": {
     "page-title": "Comunidad",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 Únete a nuestra comunidad",
-    "community-description": "Mantente informado, conéctate con aliados, participa en eventos y sé parte de la voz unida del Estado 214.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "Únete a nuestra comunidad",
+    "community-description": "Mantente informado, conéctate con aliados y usa Aria para ops de alianza — la voz unida del Estado 214.",
+    "cta-wsco": "Unirse a WSCO Discord",
+    "cta-aria": "Invitar Aria Bot",
+    "wsco-eyebrow": "Comunidad WSCO",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "Guías, gift codes, calculadoras, tablero de transferencias y ayuda multilingüe — el hub independiente para chiefs de todo el mundo.",
+    "wsco-f1": "26 canales de idioma y estrategia en vivo",
+    "wsco-f2": "Gift codes, kits Event Day y calculadoras",
+    "wsco-f3": "Tablero de transferencias verificado y soporte de alianza",
+    "wsco-btn": "Unirse a Discord",
+    "wsco-tools": "Hub de herramientas WSCO",
+    "aria-eyebrow": "Aria Bot · por WSCO",
+    "aria-title": "Ops de alianza. Un bot de Discord.",
+    "aria-text": "Para R4/R5: un unlock abre /wsco ops de juego y /aria gestión Discord — war boards, eventos, tickets, seguridad.",
+    "aria-f1": "/wsco — war week, rallies, roster y herramientas de eventos",
+    "aria-f2": "/aria — tickets, moderación, welcome y comunidad",
+    "aria-f3": "Menús en 26 idiomas · desarrollado por Bros24",
+    "aria-btn": "Invitar Aria",
+    "aria-learn": "Página del producto",
     "connect-title": "Conectar",
-    "connect-sub": "Discord • YouTube • Herramientas",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "Únete al centro para eventos, guías y coordinación.",
-
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "Guías, códigos y comunidad",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "Highlights, guías y contenido de la comunidad.",
-
-    "card-bot-title": "Bot Bros24",
-    "card-bot-sub": "Invita el bot para automatización y herramientas.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "Videos y guías",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "Ops de alianza y herramientas Discord",
+    "footer-text": "© 2026 Estado 214 · WSCO — Hecho por jugadores, para jugadores · All Stars United"
   },
-
   "th": {
     "page-title": "ชุมชน",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 เข้าร่วมชุมชนของเรา",
-    "community-description": "ติดตามข่าวสาร เชื่อมต่อกับพันธมิตร เข้าร่วมอีเวนต์ และเป็นส่วนหนึ่งของเสียงที่เป็นหนึ่งเดียวของ State 214",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "เข้าร่วมชุมชนของเรา",
+    "community-description": "ติดตามข้อมูล เชื่อมต่อพันธมิตร และใช้ Aria สำหรับ ops พันธมิตร — เสียงรวมของ State 214",
+    "cta-wsco": "เข้าร่วม WSCO Discord",
+    "cta-aria": "เชิญ Aria Bot",
+    "wsco-eyebrow": "ชุมชน WSCO",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "คู่มือ โค้ดของขวัญ เครื่องคิดเลข บอร์ดย้ายรัฐ และความช่วยเหลือหลายภาษา — ฮับอิสระสำหรับ Chief ทั่วโลก",
+    "wsco-f1": "ช่อง 26 ภาษาและการพูดคุยกลยุทธ์สด",
+    "wsco-f2": "Gift codes, ชุด Event Day และเครื่องคิดเลข",
+    "wsco-f3": "บอร์ดย้ายรัฐที่ยืนยันแล้วและการสนับสนุนพันธมิตร",
+    "wsco-btn": "เข้าร่วม Discord",
+    "wsco-tools": "WSCO Tools Hub",
+    "aria-eyebrow": "Aria Bot · โดย WSCO",
+    "aria-title": "Ops พันธมิตร บอท Discord เดียว",
+    "aria-text": "สำหรับ R4/R5: ปลดล็อกครั้งเดียวเปิด /wsco game ops และ /aria จัดการ Discord — war boards, อีเวนต์, ตั๋ว, ความปลอดภัย",
+    "aria-f1": "/wsco — war week, rallies, roster และเครื่องมืออีเวนต์",
+    "aria-f2": "/aria — ตั๋ว, ม็อด, welcome และชุมชน",
+    "aria-f3": "เมนู 26 ภาษา · พัฒนาโดย Bros24",
+    "aria-btn": "เชิญ Aria",
+    "aria-learn": "หน้าผลิตภัณฑ์",
     "connect-title": "เชื่อมต่อ",
-    "connect-sub": "Discord • YouTube • เครื่องมือ",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "เข้าร่วมศูนย์รวมสำหรับอีเวนต์ ไกด์ และการประสานงาน",
-
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "คู่มือ โค้ด และชุมชน",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "ไฮไลต์ ไกด์ และคอนเทนต์ชุมชน",
-
-    "card-bot-title": "Bros24 Bot",
-    "card-bot-sub": "เชิญบอทเพื่อระบบอัตโนมัติและเครื่องมือ",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "วิดีโอและคู่มือ",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "Ops พันธมิตรและเครื่องมือ Discord",
+    "footer-text": "© 2026 State 214 · WSCO — สร้างโดยผู้เล่น เพื่อผู้เล่น · All Stars United"
   },
-
   "ar": {
     "page-title": "المجتمع",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 انضم إلى مجتمعنا",
-    "community-description": "ابقَ على اطلاع، تواصل مع الحلفاء، شارك في الأحداث، وكن جزءًا من صوت State 214 الموحّد.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "انضم إلى مجتمعنا",
+    "community-description": "ابقَ على اطلاع، تواصل مع الحلفاء واستخدم Aria لعمليات التحالف — صوت الولاية 214 الموحد.",
+    "cta-wsco": "انضم إلى WSCO Discord",
+    "cta-aria": "ادعُ Aria Bot",
+    "wsco-eyebrow": "مجتمع WSCO",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "أدلة ورموز هدايا وآلات حاسبة ولوحة نقل ودعم متعدد اللغات — المركز المستقل للقادة حول العالم.",
+    "wsco-f1": "26 قناة لغوية ونقاش استراتيجي مباشر",
+    "wsco-f2": "رموز الهدايا ومجموعات Event Day والحاسبات",
+    "wsco-f3": "لوحة نقل موثّقة ودعم التحالف",
+    "wsco-btn": "انضم إلى Discord",
+    "wsco-tools": "مركز أدوات WSCO",
+    "aria-eyebrow": "Aria Bot · من WSCO",
+    "aria-title": "عمليات التحالف. بوت ديسكورد واحد.",
+    "aria-text": "لـ R4/R5: فتح واحد يفعّل /wsco لعمليات اللعبة و /aria لإدارة ديسكورد — لوحات الحرب والفعاليات والتذاكر والأمان.",
+    "aria-f1": "/wsco — أسبوع الحرب والتجمعات والروستر وأدوات الفعاليات",
+    "aria-f2": "/aria — تذاكر واعتدال وترحيب ومجتمع",
+    "aria-f3": "قوائم بـ 26 لغة · تطوير Bros24",
+    "aria-btn": "ادعُ Aria",
+    "aria-learn": "صفحة المنتج",
     "connect-title": "تواصل",
-    "connect-sub": "Discord • YouTube • أدوات",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "انضم إلى المركز للأحداث والإرشادات والتنسيق.",
-
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "أدلة ورموز ومجتمع",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "أبرز اللقطات، الإرشادات، ومحتوى المجتمع.",
-
-    "card-bot-title": "Bros24 Bot",
-    "card-bot-sub": "ادعُ البوت للأتمتة والأدوات.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "فيديوهات وأدلة",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "عمليات التحالف وأدوات ديسكورد",
+    "footer-text": "© 2026 الولاية 214 · WSCO — بُني بواسطة اللاعبين ولأجلهم · All Stars United"
   },
-
   "tr": {
     "page-title": "Topluluk",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 Topluluğumuza katılın",
-    "community-description": "Güncel kalın, müttefiklerle bağlantı kurun, etkinliklere katılın ve State 214’ün birleşik sesinin bir parçası olun.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "Topluluğumuza Katıl",
+    "community-description": "Bilgili kal, müttefiklerle bağlan ve ittifak ops için Aria kullan — State 214'ün birleşik sesi.",
+    "cta-wsco": "WSCO Discord'a Katıl",
+    "cta-aria": "Aria Bot'u Davet Et",
+    "wsco-eyebrow": "WSCO Topluluğu",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "Rehberler, hediye kodları, hesaplayıcılar, transfer panosu ve çok dilli yardım — dünya çapında chief'ler için bağımsız hub.",
+    "wsco-f1": "26 dil kanalı ve canlı strateji sohbeti",
+    "wsco-f2": "Hediye kodları, Event Day kitleri ve hesaplayıcılar",
+    "wsco-f3": "Doğrulanmış transfer panosu ve ittifak desteği",
+    "wsco-btn": "Discord'a Katıl",
+    "wsco-tools": "WSCO Araç Merkezi",
+    "aria-eyebrow": "Aria Bot · WSCO",
+    "aria-title": "İttifak Ops. Tek Discord Botu.",
+    "aria-text": "R4/R5 için: bir unlock /wsco oyun ops ve /aria Discord yönetimini açar — savaş panoları, etkinlikler, ticketlar, güvenlik.",
+    "aria-f1": "/wsco — war week, rally, roster ve etkinlik araçları",
+    "aria-f2": "/aria — ticket, moderasyon, welcome ve topluluk",
+    "aria-f3": "26 dilde menüler · Bros24 tarafından geliştirildi",
+    "aria-btn": "Aria'yı Davet Et",
+    "aria-learn": "Ürün sayfası",
     "connect-title": "Bağlan",
-    "connect-sub": "Discord • YouTube • Araçlar",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "Etkinlikler, rehberler ve koordinasyon için merkeze katılın.",
-
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "Rehberler, kodlar ve topluluk",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "Öne çıkanlar, rehberler ve topluluk içerikleri.",
-
-    "card-bot-title": "Bros24 Bot",
-    "card-bot-sub": "Otomasyon ve araçlar için botu davet edin.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "Videolar ve rehberler",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "İttifak ops ve Discord araçları",
+    "footer-text": "© 2026 State 214 · WSCO — Oyuncular tarafından, oyuncular için · All Stars United"
   },
-
   "id": {
     "page-title": "Komunitas",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 Bergabung dengan Komunitas Kami",
-    "community-description": "Tetap terinformasi, terhubung dengan sekutu, ikut event, dan jadi bagian dari suara bersatu State 214.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "Bergabung dengan komunitas kami",
+    "community-description": "Tetap terinformasi, terhubung dengan sekutu, dan gunakan Aria untuk ops aliansi — suara bersatu State 214.",
+    "cta-wsco": "Gabung WSCO Discord",
+    "cta-aria": "Undang Aria Bot",
+    "wsco-eyebrow": "Komunitas WSCO",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "Panduan, kode hadiah, kalkulator, papan transfer, dan bantuan multibahasa — hub independen untuk chief di seluruh dunia.",
+    "wsco-f1": "26 saluran bahasa & diskusi strategi langsung",
+    "wsco-f2": "Kode hadiah, kit Event Day & kalkulator",
+    "wsco-f3": "Papan transfer terverifikasi & dukungan aliansi",
+    "wsco-btn": "Gabung Discord",
+    "wsco-tools": "Hub Alat WSCO",
+    "aria-eyebrow": "Aria Bot · oleh WSCO",
+    "aria-title": "Ops Aliansi. Satu Bot Discord.",
+    "aria-text": "Untuk R4/R5: satu unlock membuka /wsco game ops dan /aria manajemen Discord — war board, event, tiket, keamanan.",
+    "aria-f1": "/wsco — war week, rally, roster & alat event",
+    "aria-f2": "/aria — tiket, moderasi, welcome & komunitas",
+    "aria-f3": "Menu dalam 26 bahasa · dikembangkan Bros24",
+    "aria-btn": "Undang Aria",
+    "aria-learn": "Halaman produk",
     "connect-title": "Terhubung",
-    "connect-sub": "Discord • YouTube • Tools",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "Bergabung untuk event, panduan, dan koordinasi.",
-
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "Panduan, kode & komunitas",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "Highlight, panduan, dan konten komunitas.",
-
-    "card-bot-title": "Bros24 Bot",
-    "card-bot-sub": "Undang bot untuk otomatisasi dan tools.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "Video & panduan",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "Ops aliansi & alat Discord",
+    "footer-text": "© 2026 State 214 · WSCO — Dibangun oleh pemain, untuk pemain · All Stars United"
   },
-
   "ko": {
     "page-title": "커뮤니티",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 커뮤니티에 참여하세요",
-    "community-description": "소식을 확인하고, 동맹과 연결하고, 이벤트에 참여하며 State 214의 단합된 목소리에 함께하세요.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "커뮤니티에 참여하세요",
+    "community-description": "소식을 확인하고 동맹과 연결하며 Aria로 동맹 ops를 운영하세요 — State 214의 하나된 목소리.",
+    "cta-wsco": "WSCO Discord 참여",
+    "cta-aria": "Aria Bot 초대",
+    "wsco-eyebrow": "WSCO 커뮤니티",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "가이드, 기프트 코드, 계산기, 이전 게시판, 다국어 지원 — 전 세계 치프를 위한 독립 허브.",
+    "wsco-f1": "26개 언어 채널 및 실시간 전략 토론",
+    "wsco-f2": "기프트 코드, Event Day 키트 및 계산기",
+    "wsco-f3": "검증된 이전 게시판 및 동맹 지원",
+    "wsco-btn": "Discord 참여",
+    "wsco-tools": "WSCO 도구 허브",
+    "aria-eyebrow": "Aria Bot · WSCO",
+    "aria-title": "동맹 Ops. 하나의 Discord 봇.",
+    "aria-text": "R4/R5용: 한 번의 언락으로 /wsco 게임 ops와 /aria Discord 관리 — 전쟁 보드, 이벤트, 티켓, 보안.",
+    "aria-f1": "/wsco — war week, 랠리, 로스터 및 이벤트 도구",
+    "aria-f2": "/aria — 티켓, 모더레이션, 환영 및 커뮤니티",
+    "aria-f3": "26개 언어 메뉴 · Bros24 개발",
+    "aria-btn": "Aria 초대",
+    "aria-learn": "제품 페이지",
     "connect-title": "연결",
-    "connect-sub": "Discord • YouTube • 도구",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "이벤트, 가이드, 조율을 위한 허브에 참여하세요.",
-
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "가이드, 코드 및 커뮤니티",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "하이라이트, 가이드, 커뮤니티 콘텐츠.",
-
-    "card-bot-title": "Bros24 Bot",
-    "card-bot-sub": "자동화와 도구를 위해 봇을 초대하세요.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "영상 및 가이드",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "동맹 ops 및 Discord 도구",
+    "footer-text": "© 2026 State 214 · WSCO — 플레이어가, 플레이어를 위해 · All Stars United"
   },
-
   "ru": {
     "page-title": "Сообщество",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 Присоединяйтесь к нашему сообществу",
-    "community-description": "Будьте в курсе, общайтесь с союзниками, участвуйте в событиях и станьте частью единого голоса State 214.",
-
-    "connect-title": "Связь",
-    "connect-sub": "Discord • YouTube • Инструменты",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "Присоединяйтесь к центру событий, гайдов и координации.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "Присоединяйтесь к сообществу",
+    "community-description": "Будьте в курсе, связывайтесь с союзниками и используйте Aria для ops альянса — единый голос штата 214.",
+    "cta-wsco": "Вступить в WSCO Discord",
+    "cta-aria": "Пригласить Aria Bot",
+    "wsco-eyebrow": "Сообщество WSCO",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "Гайды, гифт-коды, калькуляторы, доска трансферов и многоязычная помощь — независимый хаб для чифов по всему миру.",
+    "wsco-f1": "26 языковых каналов и живые стратегии",
+    "wsco-f2": "Гифт-коды, Event Day kits и калькуляторы",
+    "wsco-f3": "Проверенная доска трансферов и поддержка альянса",
+    "wsco-btn": "Вступить в Discord",
+    "wsco-tools": "Хабы инструментов WSCO",
+    "aria-eyebrow": "Aria Bot · от WSCO",
+    "aria-title": "Ops альянса. Один Discord-бот.",
+    "aria-text": "Для R4/R5: один unlock открывает /wsco game ops и /aria управление Discord — war boards, ивенты, тикеты, безопасность.",
+    "aria-f1": "/wsco — war week, ралли, ростер и инструменты ивентов",
+    "aria-f2": "/aria — тикеты, модерация, welcome и сообщество",
+    "aria-f3": "Меню на 26 языках · разработано Bros24",
+    "aria-btn": "Пригласить Aria",
+    "aria-learn": "Страница продукта",
+    "connect-title": "Связаться",
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "Гайды, коды и сообщество",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "Хайлайты, гайды и контент сообщества.",
-
-    "card-bot-title": "Bros24 Bot",
-    "card-bot-sub": "Пригласите бота для автоматизации и инструментов.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "Видео и гайды",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "Ops альянса и инструменты Discord",
+    "footer-text": "© 2026 Штат 214 · WSCO — Создано игроками для игроков · All Stars United"
   },
-
   "zh": {
     "page-title": "社区",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 加入我们的社区",
-    "community-description": "获取最新信息，与盟友联络，参与活动，成为 State 214 团结声音的一部分。",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "加入我们的社区",
+    "community-description": "保持信息同步，联系盟友，并用 Aria 管理联盟运营——State 214 的统一之声。",
+    "cta-wsco": "加入 WSCO Discord",
+    "cta-aria": "邀请 Aria Bot",
+    "wsco-eyebrow": "WSCO 社区",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "攻略、礼包码、计算器、转服板和多语言帮助——面向全球酋长的独立中心。",
+    "wsco-f1": "26 种语言频道与实时策略讨论",
+    "wsco-f2": "礼包码、活动日工具包与计算器",
+    "wsco-f3": "已验证转服板与联盟支持",
+    "wsco-btn": "加入 Discord",
+    "wsco-tools": "WSCO 工具中心",
+    "aria-eyebrow": "Aria Bot · 由 WSCO",
+    "aria-title": "联盟运营。一个 Discord 机器人。",
+    "aria-text": "为 R4/R5 打造：一次解锁开启 /wsco 游戏运营与 /aria Discord 管理——战争板、活动、工单、安全。",
+    "aria-f1": "/wsco — 战争周、集结、名册与活动工具",
+    "aria-f2": "/aria — 工单、管理、欢迎与社区",
+    "aria-f3": "26 种语言菜单 · 由 Bros24 开发",
+    "aria-btn": "邀请 Aria",
+    "aria-learn": "产品页",
     "connect-title": "连接",
-    "connect-sub": "Discord • YouTube • 工具",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "加入活动、攻略与协作的中心。",
-
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "攻略、礼包码与社区",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "精彩片段、攻略与社区内容。",
-
-    "card-bot-title": "Bros24 Bot",
-    "card-bot-sub": "邀请机器人用于自动化与工具功能。",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "视频与指南",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "联盟运营与 Discord 工具",
+    "footer-text": "© 2026 State 214 · WSCO — 由玩家打造，为玩家服务 · All Stars United"
   },
-
   "uk": {
     "page-title": "Спільнота",
     "intro-text": "ALL STARS UNITED",
-
-    "community-title": "🤝 Приєднуйтесь до нашої спільноти",
-    "community-description": "Будьте в курсі, спілкуйтесь із союзниками, беріть участь у подіях і станьте частиною єдиного голосу State 214.",
-
-    "connect-title": "Звʼязок",
-    "connect-sub": "Discord • YouTube • Інструменти",
-
-    "card-discord-title": "Discord",
-    "card-discord-sub": "Приєднуйтесь до центру подій, гайдів і координації.",
-
+    "hero-kicker": "WSCO · STATE 214",
+    "community-title": "Приєднуйтесь до спільноти",
+    "community-description": "Будьте в курсі, спілкуйтеся з союзниками та використовуйте Aria для ops альянсу — єдиний голос штату 214.",
+    "cta-wsco": "Приєднатися до WSCO Discord",
+    "cta-aria": "Запросити Aria Bot",
+    "wsco-eyebrow": "Спільнота WSCO",
+    "wsco-title": "Whiteout Survival Community",
+    "wsco-text": "Гайди, гіфт-коди, калькулятори, дошка трансферів і багатомовна допомога — незалежний хаб для чифів у всьому світі.",
+    "wsco-f1": "26 мовних каналів і живі стратегії",
+    "wsco-f2": "Гіфт-коди, Event Day kits і калькулятори",
+    "wsco-f3": "Перевірена дошка трансферів і підтримка альянсу",
+    "wsco-btn": "Приєднатися до Discord",
+    "wsco-tools": "Хаб інструментів WSCO",
+    "aria-eyebrow": "Aria Bot · від WSCO",
+    "aria-title": "Ops альянсу. Один Discord-бот.",
+    "aria-text": "Для R4/R5: один unlock відкриває /wsco game ops і /aria керування Discord — war boards, івенти, тікети, безпека.",
+    "aria-f1": "/wsco — war week, ралі, ростер і інструменти івентів",
+    "aria-f2": "/aria — тікети, модерація, welcome і спільнота",
+    "aria-f3": "Меню 26 мовами · розроблено Bros24",
+    "aria-btn": "Запросити Aria",
+    "aria-learn": "Сторінка продукту",
+    "connect-title": "Зв’язатися",
+    "connect-sub": "WSCO · Aria · YouTube",
+    "card-discord-title": "WSCO Discord",
+    "card-discord-sub": "Гайди, коди та спільнота",
     "card-youtube-title": "YouTube",
-    "card-youtube-sub": "Хайлайти, гайди та контент спільноти.",
-
-    "card-bot-title": "Bros24 Bot",
-    "card-bot-sub": "Запросіть бота для автоматизації та інструментів.",
-
-    "footer-text": "© 2026 State 214 Community — Built by players, for players."
+    "card-youtube-sub": "Відео та гайди",
+    "card-bot-title": "Aria Bot",
+    "card-bot-sub": "Ops альянсу та інструменти Discord",
+    "footer-text": "© 2026 Штат 214 · WSCO — Створено гравцями для гравців · All Stars United"
   }
 }
