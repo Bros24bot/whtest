@@ -2,7 +2,6 @@
   "en": {
     "page-title": "Alliances of State 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 Home",
     "nav-history": "📖 History",
     "nav-alliances": "🛡️ Alliances",
@@ -11,36 +10,30 @@
     "nav-news": "🔥 News",
     "nav-apply": "📝 Apply",
     "nav-community": "💬 Community",
-
     "alliances-head": "Alliances",
     "alliances-sub": "Meet the core alliances of State 214",
-
     "badge-top": "TOP ALLIANCE",
     "badge-std": "ALLIANCE",
-
     "lbl-hq": "Headquarters (Tundra)",
     "lbl-contact": "Primary Contact",
     "lbl-bear1": "Bear Trap (1)",
     "lbl-bear2": "Bear Trap (2)",
+    "lbl-bear3": "Bear Trap (3)",
     "lbl-canyon1": "Canyon Legion (1)",
     "lbl-canyon2": "Canyon Legion (2)",
     "lbl-foundry1": "Foundry Legion (1)",
     "lbl-foundry2": "Foundry Legion (2)",
     "lbl-lang": "Main Language",
-
     "desc-src": "SRC was born from zero and has grown by gathering active players from many different states since Generation 4. We’ve made it all the way to State 214 and we’re still going strong. We’re now recruiting new active members who want to grow together with us. Let’s build something great — together!",
     "desc-lou": "LOU (formerly EV1). Born in 150, boosted by 153, traveled to 214, fused with AOW. Active, helpful, slightly chaotic—in a good way. Join us if you like fun battles and good company!",
     "desc-doa": "DOA is a well-established gaming alliance founded in April 2023 in State 214. Our community brings together German-speaking and international players, fostering an inclusive environment where language is never a barrier. We maintain a global presence both in-game and on Discord, welcoming members from all over the world who share our passion for teamwork, growth, and success.",
     "desc-frz": "FRZ is a friendly alliance where all players support each other, follow the rules, and work towards common goals. We share strategies and strengthen our community through Discord.",
     "desc-gin": "[description]",
-
     "footer-text": "© 2026 State 214 Community — Built by players, for players."
   },
-
   "de": {
     "page-title": "Allianzen von Staat 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 Start",
     "nav-history": "📖 Geschichte",
     "nav-alliances": "🛡️ Allianzen",
@@ -49,36 +42,30 @@
     "nav-news": "🔥 News",
     "nav-apply": "📝 Bewerbung",
     "nav-community": "💬 Community",
-
     "alliances-head": "Allianzen",
     "alliances-sub": "Die Kern-Allianzen von Staat 214",
-
     "badge-top": "TOP-ALLIANZ",
     "badge-std": "ALLIANZ",
-
     "lbl-hq": "Hauptquartier (Tundra)",
     "lbl-contact": "Hauptkontakt",
     "lbl-bear1": "Bärenfalle (1)",
     "lbl-bear2": "Bärenfalle (2)",
+    "lbl-bear3": "Bärenfalle (3)",
     "lbl-canyon1": "Canyon-Legion (1)",
     "lbl-canyon2": "Canyon-Legion (2)",
     "lbl-foundry1": "Gießerei-Legion (1)",
     "lbl-foundry2": "Gießerei-Legion (2)",
     "lbl-lang": "Hauptsprache",
-
     "desc-src": "SRC startete bei null und wuchs seit Generation 4 durch aktive Spieler aus vielen Staaten. Wir sind bis nach Staat 214 gekommen und sind immer noch stark. Wir rekrutieren aktive Mitglieder, die mit uns gemeinsam wachsen wollen. Lass uns zusammen etwas Großes aufbauen!",
     "desc-lou": "LOU (früher EV1). Entstanden in 150, verstärkt durch 153, nach 214 gereist, mit AOW fusioniert. Aktiv, hilfsbereit, leicht chaotisch – im positiven Sinn. Komm zu uns, wenn du Spaß an Kämpfen und guter Gesellschaft hast!",
     "desc-doa": "DOA ist eine etablierte Gaming-Allianz, gegründet im April 2023 in Staat 214. Unsere Community vereint deutschsprachige und internationale Spieler – Sprache ist bei uns keine Barriere. Wir sind global vertreten, im Spiel und auf Discord, und heißen Mitglieder aus aller Welt willkommen, die Teamwork, Wachstum und Erfolg teilen.",
     "desc-frz": "FRZ ist eine freundliche Allianz, in der sich alle unterstützen, Regeln einhalten und gemeinsam Ziele erreichen. Wir teilen Strategien und stärken unsere Community über Discord.",
     "desc-gin": "[Beschreibung]",
-
     "footer-text": "© 2026 Staat 214 Community — Von Spielern gebaut, für Spieler."
   },
-
   "fr": {
     "page-title": "Alliances de l’État 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 Accueil",
     "nav-history": "📖 Histoire",
     "nav-alliances": "🛡️ Alliances",
@@ -87,36 +74,30 @@
     "nav-news": "🔥 Actus",
     "nav-apply": "📝 Candidature",
     "nav-community": "💬 Communauté",
-
     "alliances-head": "Alliances",
     "alliances-sub": "Découvrez les alliances principales de l’État 214",
-
     "badge-top": "ALLIANCE TOP",
     "badge-std": "ALLIANCE",
-
     "lbl-hq": "Quartier général (Toundra)",
     "lbl-contact": "Contact principal",
     "lbl-bear1": "Piège à ours (1)",
     "lbl-bear2": "Piège à ours (2)",
+    "lbl-bear3": "Piège à ours (3)",
     "lbl-canyon1": "Légion du canyon (1)",
     "lbl-canyon2": "Légion du canyon (2)",
     "lbl-foundry1": "Légion de la fonderie (1)",
     "lbl-foundry2": "Légion de la fonderie (2)",
     "lbl-lang": "Langue principale",
-
     "desc-src": "SRC est parti de zéro et a grandi en recrutant des joueurs actifs de nombreux États depuis la Génération 4. Nous sommes arrivés jusqu’à l’État 214 et nous restons solides. Nous recrutons des membres actifs qui veulent grandir avec nous. Construisons quelque chose de grand — ensemble !",
     "desc-lou": "LOU (anciennement EV1). Né en 150, renforcé par 153, arrivé en 214, fusionné avec AOW. Actif, serviable, un peu chaotique — dans le bon sens. Rejoins-nous si tu aimes les combats fun et la bonne compagnie !",
     "desc-doa": "DOA est une alliance bien établie, fondée en avril 2023 dans l’État 214. Notre communauté réunit des joueurs germanophones et internationaux dans un environnement inclusif où la langue n’est jamais une barrière. Présents en jeu et sur Discord, nous accueillons des membres du monde entier partageant notre passion pour l’équipe, la progression et la réussite.",
     "desc-frz": "FRZ est une alliance conviviale où les joueurs se soutiennent, respectent les règles et avancent vers des objectifs communs. Nous partageons des stratégies et renforçons la communauté via Discord.",
     "desc-gin": "[description]",
-
     "footer-text": "© 2026 Communauté État 214 — Créée par des joueurs, pour des joueurs."
   },
-
   "pl": {
     "page-title": "Sojusze Stanu 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 Start",
     "nav-history": "📖 Historia",
     "nav-alliances": "🛡️ Sojusze",
@@ -125,36 +106,30 @@
     "nav-news": "🔥 News",
     "nav-apply": "📝 Rekrutacja",
     "nav-community": "💬 Społeczność",
-
     "alliances-head": "Sojusze",
     "alliances-sub": "Poznaj główne sojusze Stanu 214",
-
     "badge-top": "TOP SOJUSZ",
     "badge-std": "SOJUSZ",
-
     "lbl-hq": "Kwatera główna (Tundra)",
     "lbl-contact": "Kontakt główny",
     "lbl-bear1": "Pułapka na niedźwiedzia (1)",
     "lbl-bear2": "Pułapka na niedźwiedzia (2)",
+    "lbl-bear3": "Pułapka na niedźwiedzia (3)",
     "lbl-canyon1": "Legion Kanionu (1)",
     "lbl-canyon2": "Legion Kanionu (2)",
     "lbl-foundry1": "Legion Odlewni (1)",
     "lbl-foundry2": "Legion Odlewni (2)",
     "lbl-lang": "Główny język",
-
     "desc-src": "SRC powstało od zera i od Generacji 4 rosło, zbierając aktywnych graczy z wielu stanów. Dotarliśmy do Stanu 214 i nadal trzymamy poziom. Rekrutujemy aktywnych członków, którzy chcą rosnąć razem z nami. Zbudujmy coś wielkiego — razem!",
     "desc-lou": "LOU (wcześniej EV1). Powstało w 150, wzmocnione przez 153, dotarło do 214, połączyło się z AOW. Aktywni, pomocni, trochę chaotyczni — w dobrym sensie. Dołącz, jeśli lubisz fajne walki i dobrą ekipę!",
     "desc-doa": "DOA to dobrze ugruntowany sojusz gamingowy założony w kwietniu 2023 w Stanie 214. Łączymy graczy niemieckojęzycznych i międzynarodowych — u nas język nie jest barierą. Działamy globalnie w grze i na Discordzie, witając graczy z całego świata, którzy cenią teamwork, rozwój i sukces.",
     "desc-frz": "FRZ to przyjazny sojusz, w którym wszyscy się wspierają, przestrzegają zasad i pracują na wspólne cele. Dzielimy się strategiami i wzmacniamy społeczność przez Discord.",
     "desc-gin": "[opis]",
-
     "footer-text": "© 2026 Społeczność Stan 214 — Zrobione przez graczy, dla graczy."
   },
-
   "it": {
     "page-title": "Alleanze dello Stato 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 Home",
     "nav-history": "📖 Storia",
     "nav-alliances": "🛡️ Alleanze",
@@ -163,36 +138,30 @@
     "nav-news": "🔥 News",
     "nav-apply": "📝 Candidati",
     "nav-community": "💬 Community",
-
     "alliances-head": "Alleanze",
     "alliances-sub": "Scopri le alleanze principali dello Stato 214",
-
     "badge-top": "ALLEANZA TOP",
     "badge-std": "ALLEANZA",
-
     "lbl-hq": "Quartier generale (Tundra)",
     "lbl-contact": "Contatto principale",
     "lbl-bear1": "Trappola Orso (1)",
     "lbl-bear2": "Trappola Orso (2)",
+    "lbl-bear3": "Trappola dell'orso (3)",
     "lbl-canyon1": "Legione del Canyon (1)",
     "lbl-canyon2": "Legione del Canyon (2)",
     "lbl-foundry1": "Legione Fonderia (1)",
     "lbl-foundry2": "Legione Fonderia (2)",
     "lbl-lang": "Lingua principale",
-
     "desc-src": "SRC è nato da zero ed è cresciuto raccogliendo giocatori attivi da molti stati diversi dalla Generazione 4. Siamo arrivati fino allo Stato 214 e siamo ancora forti. Ora reclutiamo nuovi membri attivi che vogliono crescere insieme a noi. Costruiamo qualcosa di grande — insieme!",
     "desc-lou": "LOU (ex EV1). Nato nel 150, potenziato dal 153, arrivato al 214, fuso con AOW. Attivi, disponibili, un po’ caotici — in senso buono. Unisciti a noi se ti piacciono battaglie divertenti e buona compagnia!",
     "desc-doa": "DOA è un’alleanza ben consolidata fondata nell’aprile 2023 nello Stato 214. La nostra community unisce giocatori di lingua tedesca e internazionali, in un ambiente inclusivo dove la lingua non è mai una barriera. Siamo presenti globalmente in-game e su Discord, accogliendo membri da tutto il mondo che condividono la passione per il teamwork, la crescita e il successo.",
     "desc-frz": "FRZ è un’alleanza amichevole in cui tutti si supportano, seguono le regole e lavorano verso obiettivi comuni. Condividiamo strategie e rafforziamo la community tramite Discord.",
     "desc-gin": "[descrizione]",
-
     "footer-text": "© 2026 State 214 Community — Creato da giocatori, per giocatori."
   },
-
   "es": {
     "page-title": "Alianzas del Estado 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 Inicio",
     "nav-history": "📖 Historia",
     "nav-alliances": "🛡️ Alianzas",
@@ -201,36 +170,30 @@
     "nav-news": "🔥 Noticias",
     "nav-apply": "📝 Solicitar",
     "nav-community": "💬 Comunidad",
-
     "alliances-head": "Alianzas",
     "alliances-sub": "Conoce las alianzas principales del Estado 214",
-
     "badge-top": "ALIANZA TOP",
     "badge-std": "ALIANZA",
-
     "lbl-hq": "Cuartel general (Tundra)",
     "lbl-contact": "Contacto principal",
     "lbl-bear1": "Trampa de oso (1)",
     "lbl-bear2": "Trampa de oso (2)",
+    "lbl-bear3": "Trampa del oso (3)",
     "lbl-canyon1": "Legión del Cañón (1)",
     "lbl-canyon2": "Legión del Cañón (2)",
     "lbl-foundry1": "Legión de la Fundición (1)",
     "lbl-foundry2": "Legión de la Fundición (2)",
     "lbl-lang": "Idioma principal",
-
     "desc-src": "SRC nació desde cero y ha crecido reuniendo jugadores activos de muchos estados desde la Generación 4. Hemos llegado hasta el Estado 214 y seguimos fuertes. Ahora reclutamos miembros activos que quieran crecer con nosotros. ¡Construyamos algo grande — juntos!",
     "desc-lou": "LOU (antes EV1). Nació en 150, reforzado por 153, viajó a 214 y se fusionó con AOW. Activos, serviciales, un poco caóticos — en el buen sentido. ¡Únete si te gustan las batallas divertidas y la buena compañía!",
     "desc-doa": "DOA es una alianza bien establecida fundada en abril de 2023 en el Estado 214. Nuestra comunidad reúne jugadores germanoparlantes e internacionales en un entorno inclusivo donde el idioma nunca es una barrera. Mantenemos presencia global dentro del juego y en Discord, dando la bienvenida a miembros de todo el mundo que comparten nuestra pasión por el trabajo en equipo, el crecimiento y el éxito.",
     "desc-frz": "FRZ es una alianza amistosa donde todos se apoyan, siguen las reglas y trabajan hacia objetivos comunes. Compartimos estrategias y fortalecemos la comunidad a través de Discord.",
     "desc-gin": "[descripción]",
-
     "footer-text": "© 2026 State 214 Community — Hecho por jugadores, para jugadores."
   },
-
   "th": {
     "page-title": "พันธมิตรของรัฐ 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 หน้าแรก",
     "nav-history": "📖 ประวัติ",
     "nav-alliances": "🛡️ พันธมิตร",
@@ -239,36 +202,30 @@
     "nav-news": "🔥 ข่าวสาร",
     "nav-apply": "📝 สมัครเข้าร่วม",
     "nav-community": "💬 ชุมชน",
-
     "alliances-head": "พันธมิตร",
     "alliances-sub": "พบกับพันธมิตรหลักของรัฐ 214",
-
     "badge-top": "พันธมิตรระดับสูง",
     "badge-std": "พันธมิตร",
-
     "lbl-hq": "สำนักงานใหญ่ (ทุ่งทุนดรา)",
     "lbl-contact": "ผู้ติดต่อหลัก",
     "lbl-bear1": "กับดักหมี (1)",
     "lbl-bear2": "กับดักหมี (2)",
+    "lbl-bear3": "กับดักหมี (3)",
     "lbl-canyon1": "กองทัพแคนยอน (1)",
     "lbl-canyon2": "กองทัพแคนยอน (2)",
     "lbl-foundry1": "กองทัพโรงหลอม (1)",
     "lbl-foundry2": "กองทัพโรงหลอม (2)",
     "lbl-lang": "ภาษาหลัก",
-
     "desc-src": "SRC เริ่มจากศูนย์และเติบโตจากการรวมผู้เล่นที่แอคทีฟจากหลายรัฐตั้งแต่ Generation 4 เรามาถึงรัฐ 214 และยังแข็งแกร่ง ตอนนี้เรากำลังรับสมาชิกใหม่ที่แอคทีฟและอยากเติบโตไปด้วยกัน มาสร้างสิ่งที่ยิ่งใหญ่ไปด้วยกัน!",
     "desc-lou": "LOU (เดิม EV1) เกิดใน 150 ได้รับการเสริมจาก 153 เดินทางมารัฐ 214 และรวมกับ AOW แอคทีฟ ช่วยเหลือเก่ง และวุ่นนิดหน่อย (ในทางที่ดี) มาร่วมถ้าคุณชอบการต่อสู้สนุกๆ และเพื่อนร่วมทีมดีๆ!",
     "desc-doa": "DOA เป็นพันธมิตรที่มั่นคง ก่อตั้งในเดือนเมษายน 2023 ในรัฐ 214 ชุมชนของเรารวมผู้เล่นเยอรมันและนานาชาติในสภาพแวดล้อมที่เปิดกว้าง ภาษาไม่ใช่อุปสรรค เรามีตัวตนทั้งในเกมและบน Discord และยินดีต้อนรับสมาชิกจากทั่วโลกที่รักทีมเวิร์ก การเติบโต และความสำเร็จ",
     "desc-frz": "FRZ เป็นพันธมิตรที่เป็นมิตร ทุกคนช่วยเหลือกัน ทำตามกฎ และทำงานเพื่อเป้าหมายร่วมกัน เราแชร์กลยุทธ์และเสริมความแข็งแกร่งให้ชุมชนผ่าน Discord",
     "desc-gin": "[คำอธิบาย]",
-
     "footer-text": "© 2026 ชุมชนรัฐ 214 — สร้างโดยผู้เล่น เพื่อผู้เล่น"
   },
-
   "ar": {
     "page-title": "تحالفات الدولة 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 الرئيسية",
     "nav-history": "📖 التاريخ",
     "nav-alliances": "🛡️ التحالفات",
@@ -277,36 +234,30 @@
     "nav-news": "🔥 الأخبار",
     "nav-apply": "📝 تقديم طلب",
     "nav-community": "💬 المجتمع",
-
     "alliances-head": "التحالفات",
     "alliances-sub": "تعرّف على التحالفات الأساسية في الدولة 214",
-
     "badge-top": "تحالف قوي",
     "badge-std": "تحالف",
-
     "lbl-hq": "المقر الرئيسي (التندرا)",
     "lbl-contact": "جهة الاتصال الرئيسية",
     "lbl-bear1": "فخ الدب (1)",
     "lbl-bear2": "فخ الدب (2)",
+    "lbl-bear3": "فخ الدب (3)",
     "lbl-canyon1": "فيلق الوادي (1)",
     "lbl-canyon2": "فيلق الوادي (2)",
     "lbl-foundry1": "فيلق المسبك (1)",
     "lbl-foundry2": "فيلق المسبك (2)",
     "lbl-lang": "اللغة الرئيسية",
-
     "desc-src": "وُلد SRC من الصفر ونما بجمع لاعبين نشطين من ولايات عديدة منذ الجيل الرابع. وصلنا إلى الدولة 214 وما زلنا أقوياء. نحن الآن نضم أعضاء نشطين يريدون النمو معنا. لنبنِ شيئًا رائعًا — معًا!",
     "desc-lou": "LOU (سابقًا EV1). بدأ في 150، تعزّز في 153، انتقل إلى 214 واندمج مع AOW. نشطون، متعاونون، وفوضويون قليلًا — ولكن بشكل جميل. انضم إلينا إن كنت تحب المعارك الممتعة والرفقة الطيبة!",
     "desc-doa": "DOA تحالف راسخ تأسس في أبريل 2023 في الدولة 214. يجمع مجتمعنا لاعبين ناطقين بالألمانية ودوليين في بيئة شاملة لا تكون فيها اللغة عائقًا. لدينا حضور عالمي داخل اللعبة وعلى Discord، ونرحب بالأعضاء من كل أنحاء العالم الذين يشاركوننا شغف العمل الجماعي والنمو والنجاح.",
     "desc-frz": "FRZ تحالف ودود يدعم فيه اللاعبون بعضهم البعض، يلتزمون بالقواعد، ويعملون نحو أهداف مشتركة. نشارك الاستراتيجيات ونعزز مجتمعنا عبر Discord.",
     "desc-gin": "[الوصف]",
-
     "footer-text": "© 2026 مجتمع الدولة 214 — من اللاعبين ولأجل اللاعبين"
   },
-
   "tr": {
     "page-title": "State 214 İttifakları",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 Ana Sayfa",
     "nav-history": "📖 Tarih",
     "nav-alliances": "🛡️ İttifaklar",
@@ -315,36 +266,30 @@
     "nav-news": "🔥 Haberler",
     "nav-apply": "📝 Başvuru",
     "nav-community": "💬 Topluluk",
-
     "alliances-head": "İttifaklar",
     "alliances-sub": "State 214’ün çekirdek ittifaklarıyla tanışın",
-
     "badge-top": "ÜST DÜZEY İTTİFAK",
     "badge-std": "İTTİFAK",
-
     "lbl-hq": "Karargâh (Tundra)",
     "lbl-contact": "Birincil İletişim",
     "lbl-bear1": "Ayı Kapanı (1)",
     "lbl-bear2": "Ayı Kapanı (2)",
+    "lbl-bear3": "Ayı Tuzağı (3)",
     "lbl-canyon1": "Kanyon Lejyonu (1)",
     "lbl-canyon2": "Kanyon Lejyonu (2)",
     "lbl-foundry1": "Dökümhane Lejyonu (1)",
     "lbl-foundry2": "Dökümhane Lejyonu (2)",
     "lbl-lang": "Ana Dil",
-
     "desc-src": "SRC sıfırdan doğdu ve Generation 4’ten beri birçok farklı eyaletten aktif oyuncular toplayarak büyüdü. State 214’e kadar geldik ve hâlâ güçlüyüz. Şimdi bizimle birlikte büyümek isteyen aktif üyeler arıyoruz. Haydi birlikte harika bir şey inşa edelim!",
     "desc-lou": "LOU (eski adı EV1). 150’de doğdu, 153 ile güçlendi, 214’e geldi, AOW ile birleşti. Aktif, yardımsever, biraz kaotik — iyi anlamda. Eğlenceli savaşları ve iyi arkadaşlığı seviyorsan bize katıl!",
     "desc-doa": "DOA, Nisan 2023’te State 214’te kurulmuş köklü bir oyun ittifakıdır. Topluluğumuz Almanca konuşan ve uluslararası oyuncuları bir araya getirir; dil asla engel değildir. Hem oyun içinde hem Discord’da küresel bir varlığımız var ve ekip çalışması, gelişim ve başarı tutkusunu paylaşan herkesi memnuniyetle karşılarız.",
     "desc-frz": "FRZ, oyuncuların birbirini desteklediği, kurallara uyduğu ve ortak hedeflere çalıştığı dost canlısı bir ittifaktır. Stratejileri paylaşır ve Discord üzerinden topluluğu güçlendiririz.",
     "desc-gin": "[açıklama]",
-
     "footer-text": "© 2026 State 214 Community — Oyuncular tarafından, oyuncular için."
   },
-
   "id": {
     "page-title": "Aliansi State 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 Beranda",
     "nav-history": "📖 Sejarah",
     "nav-alliances": "🛡️ Aliansi",
@@ -353,36 +298,30 @@
     "nav-news": "🔥 Berita",
     "nav-apply": "📝 Daftar",
     "nav-community": "💬 Komunitas",
-
     "alliances-head": "Aliansi",
     "alliances-sub": "Kenali aliansi inti di State 214",
-
     "badge-top": "ALIANSI TERATAS",
     "badge-std": "ALIANSI",
-
     "lbl-hq": "Markas (Tundra)",
     "lbl-contact": "Kontak Utama",
     "lbl-bear1": "Bear Trap (1)",
     "lbl-bear2": "Bear Trap (2)",
+    "lbl-bear3": "Perangkap Beruang (3)",
     "lbl-canyon1": "Canyon Legion (1)",
     "lbl-canyon2": "Canyon Legion (2)",
     "lbl-foundry1": "Foundry Legion (1)",
     "lbl-foundry2": "Foundry Legion (2)",
     "lbl-lang": "Bahasa Utama",
-
     "desc-src": "SRC lahir dari nol dan berkembang dengan mengumpulkan pemain aktif dari banyak state sejak Generasi 4. Kami berhasil sampai ke State 214 dan masih kuat. Sekarang kami merekrut anggota aktif yang ingin berkembang bersama. Mari bangun sesuatu yang hebat — bersama!",
     "desc-lou": "LOU (dulunya EV1). Lahir di 150, diperkuat oleh 153, pindah ke 214, bergabung dengan AOW. Aktif, membantu, sedikit kacau — dalam arti yang baik. Bergabunglah jika kamu suka pertarungan seru dan teman yang asik!",
     "desc-doa": "DOA adalah aliansi gaming yang sudah mapan, didirikan pada April 2023 di State 214. Komunitas kami menggabungkan pemain berbahasa Jerman dan internasional dalam lingkungan yang inklusif, di mana bahasa bukan penghalang. Kami hadir secara global di dalam game dan di Discord, menyambut anggota dari seluruh dunia yang berbagi semangat teamwork, growth, dan success.",
     "desc-frz": "FRZ adalah aliansi ramah di mana semua pemain saling mendukung, mengikuti aturan, dan bekerja menuju tujuan bersama. Kami berbagi strategi dan memperkuat komunitas melalui Discord.",
     "desc-gin": "[deskripsi]",
-
     "footer-text": "© 2026 State 214 Community — Dibangun oleh pemain, untuk pemain."
   },
-
   "ko": {
     "page-title": "State 214 동맹",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 홈",
     "nav-history": "📖 역사",
     "nav-alliances": "🛡️ 동맹",
@@ -391,36 +330,30 @@
     "nav-news": "🔥 뉴스",
     "nav-apply": "📝 지원하기",
     "nav-community": "💬 커뮤니티",
-
     "alliances-head": "동맹",
     "alliances-sub": "State 214의 핵심 동맹을 만나보세요",
-
     "badge-top": "최상위 동맹",
     "badge-std": "동맹",
-
     "lbl-hq": "본부(툰드라)",
     "lbl-contact": "주요 연락처",
     "lbl-bear1": "베어 트랩 (1)",
     "lbl-bear2": "베어 트랩 (2)",
+    "lbl-bear3": "곰 함정 (3)",
     "lbl-canyon1": "캐니언 리전 (1)",
     "lbl-canyon2": "캐니언 리전 (2)",
     "lbl-foundry1": "파운드리 리전 (1)",
     "lbl-foundry2": "파운드리 리전 (2)",
     "lbl-lang": "주요 언어",
-
     "desc-src": "SRC는 제로에서 시작해 4세대부터 여러 주의 활동적인 플레이어를 모으며 성장했습니다. State 214까지 왔고 지금도 강합니다. 함께 성장할 활발한 새 멤버를 모집 중입니다. 함께 멋진 것을 만들어봐요!",
     "desc-lou": "LOU(구 EV1). 150에서 시작해 153에서 강화되고 214로 이동, AOW와 합병했습니다. 활발하고 친절하며 약간은 혼돈(?)—좋은 의미로요. 재미있는 전투와 좋은 동료를 원하면 합류하세요!",
     "desc-doa": "DOA는 2023년 4월 State 214에서 설립된 탄탄한 게임 동맹입니다. 독일어권 및 국제 플레이어를 포용적으로 모으며, 언어는 장벽이 아닙니다. 게임과 Discord에서 글로벌하게 활동하며 팀워크, 성장, 성공에 열정이 있는 전 세계 멤버를 환영합니다.",
     "desc-frz": "FRZ는 서로 돕고 규칙을 지키며 공동 목표를 향해 나아가는 친근한 동맹입니다. 전략을 공유하고 Discord를 통해 커뮤니티를 강화합니다.",
     "desc-gin": "[설명]",
-
     "footer-text": "© 2026 State 214 Community — 플레이어가 만들고, 플레이어를 위해."
   },
-
   "ru": {
     "page-title": "Альянсы State 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 Главная",
     "nav-history": "📖 История",
     "nav-alliances": "🛡️ Альянсы",
@@ -429,36 +362,30 @@
     "nav-news": "🔥 Новости",
     "nav-apply": "📝 Заявка",
     "nav-community": "💬 Сообщество",
-
     "alliances-head": "Альянсы",
     "alliances-sub": "Познакомьтесь с основными альянсами State 214",
-
     "badge-top": "ТОП-АЛЬЯНС",
     "badge-std": "АЛЬЯНС",
-
     "lbl-hq": "Штаб-квартира (Тундра)",
     "lbl-contact": "Основной контакт",
     "lbl-bear1": "Bear Trap (1)",
     "lbl-bear2": "Bear Trap (2)",
+    "lbl-bear3": "Медвежья ловушка (3)",
     "lbl-canyon1": "Canyon Legion (1)",
     "lbl-canyon2": "Canyon Legion (2)",
     "lbl-foundry1": "Foundry Legion (1)",
     "lbl-foundry2": "Foundry Legion (2)",
     "lbl-lang": "Основной язык",
-
     "desc-src": "SRC вырос с нуля и с 4-го поколения собирал активных игроков из разных штатов. Мы добрались до State 214 и остаёмся сильными. Сейчас мы ищем активных новых участников, которые хотят расти вместе с нами. Давайте построим что-то великое — вместе!",
     "desc-lou": "LOU (ранее EV1). Рождён в 150, усилен 153, прибыл в 214, объединился с AOW. Активные, полезные, немного хаотичные — в хорошем смысле. Присоединяйся, если любишь весёлые битвы и хорошую компанию!",
     "desc-doa": "DOA — устоявшийся игровой альянс, основанный в апреле 2023 года в State 214. Сообщество объединяет немецкоязычных и международных игроков, создавая инклюзивную среду, где язык не является барьером. Мы присутствуем глобально в игре и на Discord и приветствуем участников со всего мира, которые разделяют нашу любовь к командной игре, росту и успеху.",
     "desc-frz": "FRZ — дружелюбный альянс, где игроки поддерживают друг друга, соблюдают правила и работают над общими целями. Мы делимся стратегиями и укрепляем сообщество через Discord.",
     "desc-gin": "[описание]",
-
     "footer-text": "© 2026 State 214 Community — Создано игроками, для игроков."
   },
-
   "zh": {
     "page-title": "214州联盟",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 首页",
     "nav-history": "📖 历史",
     "nav-alliances": "🛡️ 联盟",
@@ -467,36 +394,30 @@
     "nav-news": "🔥 新闻",
     "nav-apply": "📝 申请加入",
     "nav-community": "💬 社区",
-
     "alliances-head": "联盟",
     "alliances-sub": "认识 214 州的核心联盟",
-
     "badge-top": "顶级联盟",
     "badge-std": "联盟",
-
     "lbl-hq": "总部（苔原）",
     "lbl-contact": "主要联系人",
     "lbl-bear1": "猎熊陷阱 (1)",
     "lbl-bear2": "猎熊陷阱 (2)",
+    "lbl-bear3": "熊陷阱 (3)",
     "lbl-canyon1": "峡谷军团 (1)",
     "lbl-canyon2": "峡谷军团 (2)",
     "lbl-foundry1": "铸炉军团 (1)",
     "lbl-foundry2": "铸炉军团 (2)",
     "lbl-lang": "主要语言",
-
     "desc-src": "SRC 从零开始，自第4世代起从多个州吸纳活跃玩家不断成长。我们一路来到 214 州，并且依旧强大。现在我们招募想与我们一起成长的活跃新成员。让我们一起打造更强的团队！",
     "desc-lou": "LOU（前身 EV1）。诞生于150州，153州加强，来到214州，并与AOW融合。活跃、乐于助人、略带“混乱感”（好的那种）。如果你喜欢有趣的战斗和好伙伴，就加入我们！",
     "desc-doa": "DOA 是一个成熟的联盟，于2023年4月在214州成立。我们汇聚德语玩家与国际玩家，打造包容环境，语言从不是障碍。我们在游戏内与Discord保持全球化存在，欢迎来自世界各地、热爱团队合作、成长与成功的成员加入。",
     "desc-frz": "FRZ 是一个友好的联盟，成员互相支持、遵守规则并共同朝目标努力。我们分享策略，并通过 Discord 强化社区联系。",
     "desc-gin": "[描述]",
-
     "footer-text": "© 2026 State 214 Community — 由玩家创建，供玩家使用。"
   },
-
   "uk": {
     "page-title": "Альянси State 214",
     "intro-text": "ALL STARS UNITED",
-
     "nav-home": "🏠 Головна",
     "nav-history": "📖 Історія",
     "nav-alliances": "🛡️ Альянси",
@@ -505,29 +426,25 @@
     "nav-news": "🔥 Новини",
     "nav-apply": "📝 Заявка",
     "nav-community": "💬 Спільнота",
-
     "alliances-head": "Альянси",
     "alliances-sub": "Познайомтесь з основними альянсами State 214",
-
     "badge-top": "ТОП-АЛЬЯНС",
     "badge-std": "АЛЬЯНС",
-
     "lbl-hq": "Штаб-квартира (Тундра)",
     "lbl-contact": "Основний контакт",
     "lbl-bear1": "Bear Trap (1)",
     "lbl-bear2": "Bear Trap (2)",
+    "lbl-bear3": "Ведмежа пастка (3)",
     "lbl-canyon1": "Canyon Legion (1)",
     "lbl-canyon2": "Canyon Legion (2)",
     "lbl-foundry1": "Foundry Legion (1)",
     "lbl-foundry2": "Foundry Legion (2)",
     "lbl-lang": "Основна мова",
-
     "desc-src": "SRC виріс із нуля та з Generation 4 збирав активних гравців із багатьох штатів. Ми дійшли до State 214 і досі сильні. Зараз ми набираємо активних нових учасників, які хочуть рости разом з нами. Давайте збудуємо щось велике — разом!",
     "desc-lou": "LOU (раніше EV1). Народився у 150, підсилений 153, прибув у 214, об’єднався з AOW. Активні, корисні, трохи хаотичні — у хорошому сенсі. Приєднуйся, якщо любиш веселі битви та хорошу компанію!",
     "desc-doa": "DOA — добре сформований ігровий альянс, заснований у квітні 2023 року в State 214. Наша спільнота об’єднує німецькомовних та міжнародних гравців, створюючи інклюзивне середовище, де мова ніколи не є бар’єром. Ми маємо глобальну присутність у грі та на Discord і вітаємо учасників з усього світу, які поділяють нашу пристрасть до командної гри, розвитку та успіху.",
     "desc-frz": "FRZ — дружній альянс, де всі підтримують один одного, дотримуються правил і працюють над спільними цілями. Ми ділимось стратегіями та зміцнюємо спільноту через Discord.",
     "desc-gin": "[опис]",
-
     "footer-text": "© 2026 State 214 Community — Створено гравцями, для гравців."
   }
 }
