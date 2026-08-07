@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
-Sitemap: https://whiteoutsurvival-community.com/sitemap.xml
+
+Sitemap: https://state-214.com/sitemap.xml
+Host: https://state-214.com
